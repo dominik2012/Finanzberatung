@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8">
     <title>accordion demo</title>
-    <link rel="stylesheet" href="\Yii\newapp\protected\views\site\pages\jquery-ui\css\custom-theme/jquery-ui-1.9.0.custom.css">
-    <script src="/Yii/newapp/protected/views/site/pages/jquery-ui/js/jquery-1.8.2.js"></script>
-    <script src="/Yii/newapp/protected/views/site/pages/jquery-ui/js/jquery-ui-1.9.0.custom.js"></script>
+    <link rel="stylesheet" href="\Yii\finanzberatung\protected\views\site\pages\jquery-ui\css\custom-theme/jquery-ui-1.9.0.custom.css">
+    <script src="/Yii/finanzberatung/protected/views/site/pages/jquery-ui/js/jquery-1.8.2.js"></script>
+    <script src="/Yii/finanzberatung/protected/views/site/pages/jquery-ui/js/jquery-ui-1.9.0.custom.js"></script>
     
 </head>
 <body>
@@ -28,7 +28,7 @@
 </table>
 </div>    
 <div id="accordion">
-    <h3>Kunde bei Beraterwechsel auswählen [03]</h3>
+    <h3><div><div style="float: left;">Kunde bei Beraterwechsel auswählen</div><div style="float: right;">Grobphase 03</div></div></h3>
     <div>
 
     

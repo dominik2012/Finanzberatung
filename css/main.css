@@ -57,7 +57,6 @@ body
 #function:hover
 {
 	left: 0;
-	opacity: 0.8;
 	-webkit-transition: all 1.0s ease-in;
 }
 
@@ -80,7 +79,6 @@ body
 #viewfilter:hover
 {
         right: 0;
-	opacity: 0.8;
 	-webkit-transition: all 1.0s ease-in;
 }
 
@@ -123,6 +121,7 @@ body
 	background: #292929;
         height: 35px;
         padding-top: 5px;
+        margin-left: -1px;
 }
 
 #mainmenu ul
