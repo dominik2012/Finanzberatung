@@ -28,7 +28,7 @@
 </table>
 </div>    
 <div id="accordion">
-    <h3><div><div style="float: left;">Kunde bei Beraterwechsel auswählen</div><div style="float: right;">Grobphase 03</div></div></h3>
+    <h3><div><div style="float: left;">Kunde bei Beraterwechsel auswählen</div><div style="float: right;">Grobphase 02</div></div></h3>
     <div>
 
     
