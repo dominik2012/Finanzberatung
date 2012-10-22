@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8">
     <title>accordion demo</title>
-    <link rel="stylesheet" href="/Yii/finanzberatung/protected/views/site/pages/jquery-ui/css/custom-theme/jquery-ui-1.9.0.custom.css">
-    <script src="/Yii/finanzberatung/protected/views/site/pages/jquery-ui/js/jquery-1.8.2.js"></script>
-    <script src="/Yii/finanzberatung/protected/views/site/pages/jquery-ui/js/jquery-ui-1.9.0.custom.js"></script>
+    <link rel="stylesheet" href="/Yii/finanzberatung/jquery-ui/css/custom-theme/jquery-ui-1.9.0.custom.css">
+    <script src="/Yii/finanzberatung/jquery-ui/js/jquery-1.8.2.js"></script>
+    <script src="/Yii/finanzberatung/jquery-ui/js/jquery-ui-1.9.0.custom.js"></script>
     
 </head>
 <body>
