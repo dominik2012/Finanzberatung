@@ -2545,3 +2545,210 @@ Stack trace:
 #5 {main}
 REQUEST_URI=/Yii/newapp/site/C:/xampp/htdocs/Yii/newapp/protected/views/site/pages/jquery-ui/js/jquery-1.8.2.js
 ---
+2012/10/21 11:36:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "gii".' in C:\xampp\htdocs\Yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 C:\xampp\htdocs\Yii\framework\web\CWebApplication.php(142): CWebApplication->runController('gii')
+#1 C:\xampp\htdocs\Yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\Yii\Finanzberatung\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Yii/Finanzberatung/gii
+---
+2012/10/22 13:18:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "gii".' in C:\xampp\htdocs\Yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 C:\xampp\htdocs\Yii\framework\web\CWebApplication.php(142): CWebApplication->runController('gii')
+#1 C:\xampp\htdocs\Yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\Yii\Finanzberatung\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Yii/Finanzberatung/gii
+---
+2012/10/22 14:09:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "gii".' in C:\xampp\htdocs\Yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 C:\xampp\htdocs\Yii\framework\web\CWebApplication.php(142): CWebApplication->runController('gii')
+#1 C:\xampp\htdocs\Yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\Yii\Finanzberatung\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Yii/Finanzberatung/gii
+---
+2012/10/22 14:48:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "gii".' in C:\xampp\htdocs\Yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 C:\xampp\htdocs\Yii\framework\web\CWebApplication.php(142): CWebApplication->runController('gii')
+#1 C:\xampp\htdocs\Yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\Yii\Finanzberatung\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/Finanzberatung/index.php?r=gii
+---
+2012/10/22 14:49:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "gii".' in C:\xampp\htdocs\Yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 C:\xampp\htdocs\Yii\framework\web\CWebApplication.php(142): CWebApplication->runController('gii')
+#1 C:\xampp\htdocs\Yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\Yii\Finanzberatung\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/Finanzberatung/index.php?r=gii
+---
+2012/10/22 14:50:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "gii".' in C:\xampp\htdocs\Yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 C:\xampp\htdocs\Yii\framework\web\CWebApplication.php(142): CWebApplication->runController('gii')
+#1 C:\xampp\htdocs\Yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\Yii\Finanzberatung\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Yii/Finanzberatung/index.php?r=gii
+---
+2012/10/22 14:50:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "gii".' in C:\xampp\htdocs\Yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 C:\xampp\htdocs\Yii\framework\web\CWebApplication.php(142): CWebApplication->runController('gii')
+#1 C:\xampp\htdocs\Yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\Yii\Finanzberatung\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Yii/Finanzberatung/index.php?r=gii
+---
+2012/10/22 14:50:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "gii".' in C:\xampp\htdocs\Yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 C:\xampp\htdocs\Yii\framework\web\CWebApplication.php(142): CWebApplication->runController('gii')
+#1 C:\xampp\htdocs\Yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\Yii\Finanzberatung\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Yii/Finanzberatung/index.php?r=gii
+---
+2012/10/22 14:51:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "gii".' in C:\xampp\htdocs\Yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 C:\xampp\htdocs\Yii\framework\web\CWebApplication.php(142): CWebApplication->runController('gii')
+#1 C:\xampp\htdocs\Yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\Yii\Finanzberatung\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Yii/Finanzberatung/index.php?r=gii
+---
+2012/10/22 14:51:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "gii".' in C:\xampp\htdocs\Yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 C:\xampp\htdocs\Yii\framework\web\CWebApplication.php(142): CWebApplication->runController('gii')
+#1 C:\xampp\htdocs\Yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\Yii\Finanzberatung\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Yii/Finanzberatung/index.php?r=gii
+---
+2012/10/22 14:51:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "gii".' in C:\xampp\htdocs\Yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 C:\xampp\htdocs\Yii\framework\web\CWebApplication.php(142): CWebApplication->runController('gii')
+#1 C:\xampp\htdocs\Yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\Yii\Finanzberatung\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Yii/Finanzberatung/index.php?r=gii
+---
+2012/10/22 14:51:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "gii".' in C:\xampp\htdocs\Yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 C:\xampp\htdocs\Yii\framework\web\CWebApplication.php(142): CWebApplication->runController('gii')
+#1 C:\xampp\htdocs\Yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\Yii\Finanzberatung\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Yii/Finanzberatung/index.php?r=gii
+---
+2012/10/22 14:51:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "gii".' in C:\xampp\htdocs\Yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 C:\xampp\htdocs\Yii\framework\web\CWebApplication.php(142): CWebApplication->runController('gii')
+#1 C:\xampp\htdocs\Yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\Yii\Finanzberatung\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Yii/Finanzberatung/index.php?r=gii
+---
+2012/10/22 14:51:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "gii".' in C:\xampp\htdocs\Yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 C:\xampp\htdocs\Yii\framework\web\CWebApplication.php(142): CWebApplication->runController('gii')
+#1 C:\xampp\htdocs\Yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\Yii\Finanzberatung\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Yii/Finanzberatung/index.php?r=gii
+---
+2012/10/22 14:53:40 [error] [exception.CException] exception 'CException' with message 'Alias "userGroups.components.WebUserGroups" is invalid. Make sure it points to an existing directory or file.' in C:\xampp\htdocs\Yii\framework\YiiBase.php:343
+Stack trace:
+#0 C:\xampp\htdocs\Yii\framework\YiiBase.php(198): YiiBase::import('userGroups.comp...', true)
+#1 C:\xampp\htdocs\Yii\framework\base\CModule.php(387): YiiBase::createComponent(Array)
+#2 C:\xampp\htdocs\Yii\framework\base\CModule.php(104): CModule->getComponent('user')
+#3 C:\xampp\htdocs\Yii\Finanzberatung\protected\views\layouts\main.php(40): CModule->__get('user')
+#4 C:\xampp\htdocs\Yii\framework\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#5 C:\xampp\htdocs\Yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#6 C:\xampp\htdocs\Yii\framework\web\widgets\CContentDecorator.php(77): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#7 C:\xampp\htdocs\Yii\framework\web\widgets\CContentDecorator.php(55): CContentDecorator->decorate('<div id="conten...')
+#8 C:\xampp\htdocs\Yii\framework\web\widgets\COutputProcessor.php(45): CContentDecorator->processOutput('<div id="conten...')
+#9 C:\xampp\htdocs\Yii\framework\web\CBaseController.php(207): COutputProcessor->run()
+#10 C:\xampp\htdocs\Yii\framework\web\CBaseController.php(301): CBaseController->endWidget('CContentDecorat...')
+#11 C:\xampp\htdocs\Yii\Finanzberatung\protected\views\layouts\column1.php(6): CBaseController->endContent()
+#12 C:\xampp\htdocs\Yii\framework\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#13 C:\xampp\htdocs\Yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#14 C:\xampp\htdocs\Yii\framework\web\CController.php(785): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#15 C:\xampp\htdocs\Yii\Finanzberatung\protected\controllers\SiteController.php(32): CController->render('index')
+#16 C:\xampp\htdocs\Yii\framework\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#17 C:\xampp\htdocs\Yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#18 C:\xampp\htdocs\Yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#19 C:\xampp\htdocs\Yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 C:\xampp\htdocs\Yii\framework\web\CWebApplication.php(283): CController->run('')
+#21 C:\xampp\htdocs\Yii\framework\web\CWebApplication.php(142): CWebApplication->runController('')
+#22 C:\xampp\htdocs\Yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#23 C:\xampp\htdocs\Yii\Finanzberatung\index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/Yii/Finanzberatung/
+---
+2012/10/22 14:53:53 [error] [exception.CException] exception 'CException' with message 'Alias "userGroups.components.WebUserGroups" is invalid. Make sure it points to an existing directory or file.' in C:\xampp\htdocs\Yii\framework\YiiBase.php:343
+Stack trace:
+#0 C:\xampp\htdocs\Yii\framework\YiiBase.php(198): YiiBase::import('userGroups.comp...', true)
+#1 C:\xampp\htdocs\Yii\framework\base\CModule.php(387): YiiBase::createComponent(Array)
+#2 C:\xampp\htdocs\Yii\framework\base\CModule.php(104): CModule->getComponent('user')
+#3 C:\xampp\htdocs\Yii\Finanzberatung\protected\views\layouts\main.php(40): CModule->__get('user')
+#4 C:\xampp\htdocs\Yii\framework\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#5 C:\xampp\htdocs\Yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#6 C:\xampp\htdocs\Yii\framework\web\widgets\CContentDecorator.php(77): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#7 C:\xampp\htdocs\Yii\framework\web\widgets\CContentDecorator.php(55): CContentDecorator->decorate('<div id="conten...')
+#8 C:\xampp\htdocs\Yii\framework\web\widgets\COutputProcessor.php(45): CContentDecorator->processOutput('<div id="conten...')
+#9 C:\xampp\htdocs\Yii\framework\web\CBaseController.php(207): COutputProcessor->run()
+#10 C:\xampp\htdocs\Yii\framework\web\CBaseController.php(301): CBaseController->endWidget('CContentDecorat...')
+#11 C:\xampp\htdocs\Yii\Finanzberatung\protected\views\layouts\column1.php(6): CBaseController->endContent()
+#12 C:\xampp\htdocs\Yii\framework\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#13 C:\xampp\htdocs\Yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#14 C:\xampp\htdocs\Yii\framework\web\CController.php(785): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#15 C:\xampp\htdocs\Yii\Finanzberatung\protected\controllers\SiteController.php(32): CController->render('index')
+#16 C:\xampp\htdocs\Yii\framework\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#17 C:\xampp\htdocs\Yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#18 C:\xampp\htdocs\Yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#19 C:\xampp\htdocs\Yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 C:\xampp\htdocs\Yii\framework\web\CWebApplication.php(283): CController->run('')
+#21 C:\xampp\htdocs\Yii\framework\web\CWebApplication.php(142): CWebApplication->runController('')
+#22 C:\xampp\htdocs\Yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#23 C:\xampp\htdocs\Yii\Finanzberatung\index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/Yii/Finanzberatung/
+---
+2012/10/22 14:54:02 [error] [exception.CException] exception 'CException' with message 'Alias "userGroups.components.WebUserGroups" is invalid. Make sure it points to an existing directory or file.' in C:\xampp\htdocs\Yii\framework\YiiBase.php:343
+Stack trace:
+#0 C:\xampp\htdocs\Yii\framework\YiiBase.php(198): YiiBase::import('userGroups.comp...', true)
+#1 C:\xampp\htdocs\Yii\framework\base\CModule.php(387): YiiBase::createComponent(Array)
+#2 C:\xampp\htdocs\Yii\framework\base\CModule.php(104): CModule->getComponent('user')
+#3 C:\xampp\htdocs\Yii\Finanzberatung\protected\views\layouts\main.php(40): CModule->__get('user')
+#4 C:\xampp\htdocs\Yii\framework\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#5 C:\xampp\htdocs\Yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#6 C:\xampp\htdocs\Yii\framework\web\widgets\CContentDecorator.php(77): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#7 C:\xampp\htdocs\Yii\framework\web\widgets\CContentDecorator.php(55): CContentDecorator->decorate('<div id="conten...')
+#8 C:\xampp\htdocs\Yii\framework\web\widgets\COutputProcessor.php(45): CContentDecorator->processOutput('<div id="conten...')
+#9 C:\xampp\htdocs\Yii\framework\web\CBaseController.php(207): COutputProcessor->run()
+#10 C:\xampp\htdocs\Yii\framework\web\CBaseController.php(301): CBaseController->endWidget('CContentDecorat...')
+#11 C:\xampp\htdocs\Yii\Finanzberatung\protected\views\layouts\column1.php(6): CBaseController->endContent()
+#12 C:\xampp\htdocs\Yii\framework\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#13 C:\xampp\htdocs\Yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#14 C:\xampp\htdocs\Yii\framework\web\CController.php(785): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#15 C:\xampp\htdocs\Yii\Finanzberatung\protected\controllers\SiteController.php(32): CController->render('index')
+#16 C:\xampp\htdocs\Yii\framework\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#17 C:\xampp\htdocs\Yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#18 C:\xampp\htdocs\Yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#19 C:\xampp\htdocs\Yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 C:\xampp\htdocs\Yii\framework\web\CWebApplication.php(283): CController->run('')
+#21 C:\xampp\htdocs\Yii\framework\web\CWebApplication.php(142): CWebApplication->runController('')
+#22 C:\xampp\htdocs\Yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#23 C:\xampp\htdocs\Yii\Finanzberatung\index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/Yii/Finanzberatung/index.php
+---
+2012/10/22 14:55:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "gii".' in C:\xampp\htdocs\Yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 C:\xampp\htdocs\Yii\framework\web\CWebApplication.php(142): CWebApplication->runController('gii')
+#1 C:\xampp\htdocs\Yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\Yii\Finanzberatung\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Yii/Finanzberatung/index.php?r=gii
+---

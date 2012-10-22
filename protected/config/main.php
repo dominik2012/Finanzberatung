@@ -27,14 +27,11 @@ return array(
 			// If removed, Gii defaults to localhost only. Edit carefully to taste.
 			//'ipFilters'=>array('127.0.0.1','::1'),
 		),
-	),
-    
-        'modules'=>array(
-            'userGroups'=>array(
+		
+		'userGroups'=>array(
                 'accessCode'=>'1234',
-            )
-        ),
-	
+        )
+	),
 
 	// application components
 	'components'=>array(
@@ -47,7 +44,7 @@ return array(
 		),
                 
 		// uncomment the following to enable URLs in path-format
-		
+		/*
 		'urlManager'=>array(
 			'urlFormat'=>'path',
 			'rules'=>array(
@@ -56,7 +53,7 @@ return array(
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 			),
 			'showScriptName'=>false,
-		),
+		),*/
 		
 		
 		
