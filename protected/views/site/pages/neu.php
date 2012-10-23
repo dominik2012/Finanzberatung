@@ -51,6 +51,24 @@ Erfolgen an den produktspezifischen Informationen, die dem Kunden bei der Anl.be
 </tr>
 </tbody>
 </table>
+<table class="table">
+<tbody>
+<tr>
+<th>MiFID II</th>
+<th>Hinweise</th>
+<th>Regulatorien</th>
+</tr>
+<tr>
+<td>Artikel 9 Abs. 6</td>
+<td>Orderannahme - Einzeltransaktionen Kapitalmaßnahmen
+BR:#: [WpHG] Alle WP-Kundengeschäfte: Privatkunde: Produktspez. Informationen - Wesentliche Änderungen mitteilen
+BR:#: [WpHG] Alle WP-Kundengeschäfte: Prof.Kunde: Produktspez. Informationen Wesentliche Änderungen mitteilen
+Für Zeitspanne zwischen Beratung und Orderabschluss :
+Erfolgen an den produktspezifischen Informationen, die dem Kunden bei der Anl.berat mitzuteilenden sind wesentliche Änderungen, müssen diese dem Kunden mitgeteilt werden.</td>
+<td>§ 31 Abs. 8 WpHG i. V. § 8 WpDVerOV</td>
+</tr>
+</tbody>
+</table>
 </p>
 <button style="float: right;">Details</button>
     </div>
