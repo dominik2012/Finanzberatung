@@ -15,7 +15,7 @@
 </div>
  
 <div style="viewfilter" id="viewfilter">
-    <div><p>Platzhalter für Anzeigefilter!!!</p></div>
+    <div><p>ANZEIGENFILTER</p></div>
 </div>
     <div id="contentarea">
 <div>
