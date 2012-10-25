@@ -15,7 +15,7 @@
 </div>
  
 <div style="viewfilter" id="viewfilter">
-    <div style="view_name" id="view_name"><p>ANZEIGENFILTER</p></div>
+    <div style="view_name" id="view_name"><p>ANZEIGEFILTER</p></div>
 </div>
     <div id="contentarea">
 <div>
