@@ -65,6 +65,15 @@ body
         -o-transition: all 1.0s ease-in;
         transition: all 1.0s ease-in;
 }
+#function_name
+{
+        float: right;
+        height: 100%;
+        -webkit-transform: rotate(90deg);
+        right: 165px;
+        padding-top: 50%;
+        position: absolute;
+}
 
 #viewfilter
 {

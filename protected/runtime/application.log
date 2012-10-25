@@ -2752,3 +2752,58 @@ Stack trace:
 #3 {main}
 REQUEST_URI=/Yii/Finanzberatung/index.php?r=gii
 ---
+2012/10/25 10:39:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "neu".' in C:\xampp\htdocs\Yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\Yii\framework\web\CController.php(271): CController->missingAction('neu')
+#1 C:\xampp\htdocs\Yii\framework\web\CWebApplication.php(283): CController->run('neu')
+#2 C:\xampp\htdocs\Yii\framework\web\CWebApplication.php(142): CWebApplication->runController('site/neu')
+#3 C:\xampp\htdocs\Yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\Yii\Finanzberatung\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/Yii/finanzberatung/index.php?r=site/neu
+HTTP_REFERER=http://localhost/Yii/finanzberatung/index.php?r=site/index
+---
+2012/10/25 10:39:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "neu".' in C:\xampp\htdocs\Yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\Yii\framework\web\CController.php(271): CController->missingAction('neu')
+#1 C:\xampp\htdocs\Yii\framework\web\CWebApplication.php(283): CController->run('neu')
+#2 C:\xampp\htdocs\Yii\framework\web\CWebApplication.php(142): CWebApplication->runController('site/neu')
+#3 C:\xampp\htdocs\Yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\Yii\Finanzberatung\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/Yii/finanzberatung/index.php?r=site/neu
+HTTP_REFERER=http://localhost/Yii/finanzberatung/index.php?r=site/neu
+---
+2012/10/25 10:39:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "neu".' in C:\xampp\htdocs\Yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\Yii\framework\web\CController.php(271): CController->missingAction('neu')
+#1 C:\xampp\htdocs\Yii\framework\web\CWebApplication.php(283): CController->run('neu')
+#2 C:\xampp\htdocs\Yii\framework\web\CWebApplication.php(142): CWebApplication->runController('site/neu')
+#3 C:\xampp\htdocs\Yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\Yii\Finanzberatung\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/Yii/finanzberatung/index.php?r=site/neu
+HTTP_REFERER=http://localhost/Yii/finanzberatung/index.php?r=site/neu
+---
+2012/10/25 10:39:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "neu".' in C:\xampp\htdocs\Yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\Yii\framework\web\CController.php(271): CController->missingAction('neu')
+#1 C:\xampp\htdocs\Yii\framework\web\CWebApplication.php(283): CController->run('neu')
+#2 C:\xampp\htdocs\Yii\framework\web\CWebApplication.php(142): CWebApplication->runController('site/neu')
+#3 C:\xampp\htdocs\Yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\Yii\Finanzberatung\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/Yii/finanzberatung/index.php?r=site/neu
+HTTP_REFERER=http://localhost/Yii/finanzberatung/index.php?r=userGroups
+---
+2012/10/25 10:40:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "neu".' in C:\xampp\htdocs\Yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\Yii\framework\web\CController.php(271): CController->missingAction('neu')
+#1 C:\xampp\htdocs\Yii\framework\web\CWebApplication.php(283): CController->run('neu')
+#2 C:\xampp\htdocs\Yii\framework\web\CWebApplication.php(142): CWebApplication->runController('site/neu')
+#3 C:\xampp\htdocs\Yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\Yii\Finanzberatung\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/Yii/finanzberatung/index.php?r=site/neu
+HTTP_REFERER=http://localhost/Yii/finanzberatung/index.php?r=userGroups
+---
