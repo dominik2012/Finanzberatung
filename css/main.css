@@ -68,6 +68,9 @@ body
 #function_name
 {
         -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
         right: -37px;
         top: 50%;
         position: absolute;
@@ -104,6 +107,9 @@ body
 #view_name
 {
         -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
         left: -54px;
         top: 50%;
         position: absolute;
