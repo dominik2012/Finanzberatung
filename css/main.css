@@ -101,6 +101,14 @@ body
         transition: all 1.0s ease-in;
 }
 
+#view_name
+{
+        -webkit-transform: rotate(90deg);
+        left: -54px;
+        top: 50%;
+        position: absolute;
+}
+
 #header
 {
 	margin: 0;
