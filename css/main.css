@@ -48,7 +48,7 @@ body
         padding-left: 20px;
         margin-top: 34px;
 	position: fixed;
-	background-color: #E25A3C;
+	background-color: #0075b8;
 	-webkit-transition: all 1.0s ease-out;
 	border-radius: 0 15px 15px 0;
 	color: white;
@@ -69,7 +69,7 @@ body
         right: -500px;
         padding-left: 20px;
         margin-top: 34px;
-	background-color: #E25A3C;
+	background-color: #0075b8;
 	-webkit-transition: all 1.0s ease-out;
 	border-radius: 15px 0 0 15px;
 	color: white;
@@ -148,7 +148,7 @@ body
 #mainmenu ul li a:hover, #mainmenu ul li.active a
 {
 	color: #ffffff;
-	background-color:#ef502d;
+	background-color:#0075b8;
 	text-decoration:none;
         height: 30px;
 }
