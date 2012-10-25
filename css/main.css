@@ -67,11 +67,9 @@ body
 }
 #function_name
 {
-        float: right;
-        height: 100%;
         -webkit-transform: rotate(90deg);
-        right: 165px;
-        padding-top: 50%;
+        right: -37px;
+        top: 50%;
         position: absolute;
 }
 
