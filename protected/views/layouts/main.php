@@ -33,7 +33,7 @@
                                         'url'=>array('/site/index')
                                 ),
                                 array(  'label'=>'Test', 
-                                        'url'=>array('/site/page', 'view'=>'neu')
+                                        'url'=>array('/site/neu')
                                 ),
 				array(  'label'=>'Benutzerverwaltung', 
                                         'url'=>array('/userGroups/admin'), 

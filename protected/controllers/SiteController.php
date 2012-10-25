@@ -106,4 +106,10 @@ class SiteController extends Controller
 		Yii::app()->user->logout();
 		$this->redirect(Yii::app()->homeUrl);
 	}
+	
+	public function actionNeu()
+	{
+		$model=new Funktion;
+		$this->render('neu',array('model'=>$model));
+	}
 }
