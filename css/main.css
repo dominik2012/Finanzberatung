@@ -50,6 +50,9 @@ body
 	position: fixed;
 	background-color: #0075b8;
 	-webkit-transition: all 1.0s ease-out;
+        -moz-transition: all 1.0s ease-out;
+        -o-transition: all 1.0s ease-out;
+        transition: all 1.0s ease-out;
 	border-radius: 0 15px 15px 0;
 	color: white;
 }
@@ -58,6 +61,9 @@ body
 {
 	left: 0;
 	-webkit-transition: all 1.0s ease-in;
+        -moz-transition: all 1.0s ease-in;
+        -o-transition: all 1.0s ease-in;
+        transition: all 1.0s ease-in;
 }
 
 #viewfilter
@@ -71,6 +77,9 @@ body
         margin-top: 34px;
 	background-color: #0075b8;
 	-webkit-transition: all 1.0s ease-out;
+        -moz-transition: all 1.0s ease-out;
+        -o-transition: all 1.0s ease-out;
+        transition: all 1.0s ease-out;
 	border-radius: 15px 0 0 15px;
 	color: white;
         
@@ -80,6 +89,9 @@ body
 {
         right: 0;
 	-webkit-transition: all 1.0s ease-in;
+        -moz-transition: all 1.0s ease-in;
+        -o-transition: all 1.0s ease-in;
+        transition: all 1.0s ease-in;
 }
 
 #header
