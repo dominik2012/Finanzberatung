@@ -66,7 +66,7 @@ return array(
 			'connectionString' => 'mysql:host=localhost;dbname=benutzerverwaltung',
 			'emulatePrepare' => true,
 			'username' => 'root',
-			'password' => '',
+			'password' => 'Aktiv007',
 			'charset' => 'utf8',
 		),
 		
