@@ -3,9 +3,15 @@
 <head>
     <meta charset="utf-8">
     <title>accordion demo</title>
+    
     <link rel="stylesheet" href="/finanzberatung/jquery-ui/css/custom-theme/jquery-ui-1.9.0.custom.css">
     <script src="/finanzberatung/jquery-ui/js/jquery-1.8.2.js"></script>
     <script src="/finanzberatung/jquery-ui/js/jquery-ui-1.9.0.custom.js"></script>
+    
+    <link rel="stylesheet" href="/finanzberatung/jquery-horizontal/css/liteaccordion.css">
+    <script src="/finanzberatung/jquery-horizontal/js/liteaccordion.jquery.js"></script>
+    <script src="/finanzberatung/jquery-horizontal/js/jquery.easing.1.3.js"></script>
+    
     
 </head>
 <body>
@@ -30,293 +36,80 @@
 <div id="accordion">
     <h3><div><div style="float: left;">Kunde bei Beraterwechsel auswählen</div><div style="float: right;">Grobphase 02</div></div></h3>
     <div>
-
-    
-
-<table class="table">
-<tbody>
-<tr>
-<th>MiFID II</th>
-<th>Hinweise</th>
-<th>Regulatorien</th>
-</tr>
-<tr>
-<td>Artikel 9 Abs. 6</td>
-<td>Orderannahme - Einzeltransaktionen Kapitalmaßnahmen
-BR:#: [WpHG] Alle WP-Kundengeschäfte: Privatkunde: Produktspez. Informationen - Wesentliche Änderungen mitteilen
-BR:#: [WpHG] Alle WP-Kundengeschäfte: Prof.Kunde: Produktspez. Informationen Wesentliche Änderungen mitteilen
-Für Zeitspanne zwischen Beratung und Orderabschluss :
-Erfolgen an den produktspezifischen Informationen, die dem Kunden bei der Anl.berat mitzuteilenden sind wesentliche Änderungen, müssen diese dem Kunden mitgeteilt werden.</td>
-<td>§ 31 Abs. 8 WpHG i. V. § 8 WpDVerOV</td>
-</tr>
-</tbody>
-</table>
-<table class="table">
-<tbody>
-<tr>
-<th>MiFID II</th>
-<th>Hinweise</th>
-<th>Regulatorien</th>
-</tr>
-<tr>
-<td>Artikel 9 Abs. 6</td>
-<td>Orderannahme - Einzeltransaktionen Kapitalmaßnahmen
-BR:#: [WpHG] Alle WP-Kundengeschäfte: Privatkunde: Produktspez. Informationen - Wesentliche Änderungen mitteilen
-BR:#: [WpHG] Alle WP-Kundengeschäfte: Prof.Kunde: Produktspez. Informationen Wesentliche Änderungen mitteilen
-Für Zeitspanne zwischen Beratung und Orderabschluss :
-Erfolgen an den produktspezifischen Informationen, die dem Kunden bei der Anl.berat mitzuteilenden sind wesentliche Änderungen, müssen diese dem Kunden mitgeteilt werden.</td>
-<td>§ 31 Abs. 8 WpHG i. V. § 8 WpDVerOV</td>
-</tr>
-</tbody>
-</table>
-</p>
-<button style="float: right;">Details</button>
-    </div>
-    <h3>Begrüßung des Kunden</h3>
-    <div>
-        <table class="table">
-<tbody>
-<tr>
-<th>MiFID II</th>
-<th>Hinweise</th>
-<th>Regulatorien</th>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-        <button style="float: right;">Details</button>
-    </div>
-    <h3>Aufteilung in Anlageklassen verifizieren</h3>
-    <div>
-        <table class="table">
-<tbody>
-<tr>
-<th>MiFID II</th>
-<th>Hinweise</th>
-<th>Regulatorien</th>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-        <button style="float: right;">Details</button>
+        <div id="one">
+                <ol>
+                    <li>
+                        <h2><span>Slide One</span></h2>
+                        <div></div>
+                    </li>
+                    <li>
+                        <h2><span>Slide Two</span></h2>
+                        <div></div>
+                    </li>
+                    <li>
+                        <h2><span>Slide Three</span></h2>
+                        <div></div>
+                    </li>
+                    <li>
+                        <h2><span>Slide Four</span></h2>
+                        <div></div>
+                    </li>
+                    <li>
+                        <h2><span>Slide Five</span></h2>
+                        <div></div>
+                    </li>
+                </ol>
+                <noscript>
+                    <p>Please enable JavaScript to get the full experience.</p>
+                </noscript>
+            </div>
     </div>
     
-        <h3>Aufteilung in Anlageklassen verifizieren</h3>
-    <div>
-        <table class="table">
-<tbody>
-<tr>
-<th>MiFID II</th>
-<th>Hinweise</th>
-<th>Regulatorien</th>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-        <button style="float: right;">Details</button>
+    <h3><div><div style="float: left;">Kunde bei Empfang</div><div style="float: right;">Grobphase 05</div></div></h3>
+        <div>
+        <div id="two">
+                <ol>
+                    <li>
+                        <h2><span>Slide One</span></h2>
+                        <div></div>
+                    </li>
+                    <li>
+                        <h2><span>Slide Two</span></h2>
+                        <div></div>
+                    </li>
+                    <li>
+                        <h2><span>Slide Three</span></h2>
+                        <div></div>
+                    </li>
+                    <li>
+                        <h2><span>Slide Four</span></h2>
+                        <div></div>
+                    </li>
+                    <li>
+                        <h2><span>Slide Five</span></h2>
+                        <div></div>
+                    </li>
+                </ol>
+                <noscript>
+                    <p>Please enable JavaScript to get the full experience.</p>
+                </noscript>
+            </div>
     </div>
-            <h3>Aufteilung in Anlageklassen verifizieren</h3>
-    <div>
-        <table class="table">
-<tbody>
-<tr>
-<th>MiFID II</th>
-<th>Hinweise</th>
-<th>Regulatorien</th>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-        <button style="float: right;">Details</button>
-    </div>
-                <h3>Aufteilung in Anlageklassen verifizieren</h3>
-    <div>
-        <table class="table">
-<tbody>
-<tr>
-<th>MiFID II</th>
-<th>Hinweise</th>
-<th>Regulatorien</th>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-        <button style="float: right;">Details</button>
-    </div>
-                    <h3>Aufteilung in Anlageklassen verifizieren</h3>
-    <div>
-        <table class="table">
-<tbody>
-<tr>
-<th>MiFID II</th>
-<th>Hinweise</th>
-<th>Regulatorien</th>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-        <button style="float: right;">Details</button>
-    </div>
-                        <h3>Aufteilung in Anlageklassen verifizieren</h3>
-    <div>
-        <table class="table">
-<tbody>
-<tr>
-<th>MiFID II</th>
-<th>Hinweise</th>
-<th>Regulatorien</th>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-        <button style="float: right;">Details</button>
-    </div>
-                            <h3>Aufteilung in Anlageklassen verifizieren</h3>
-    <div>
-        <table class="table">
-<tbody>
-<tr>
-<th>MiFID II</th>
-<th>Hinweise</th>
-<th>Regulatorien</th>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-        <button style="float: right;">Details</button>
-    </div>
-                                <h3>Aufteilung in Anlageklassen verifizieren</h3>
-    <div>
-        <table class="table">
-<tbody>
-<tr>
-<th>MiFID II</th>
-<th>Hinweise</th>
-<th>Regulatorien</th>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-        <button style="float: right;">Details</button>
-    </div>
-                                    <h3>Aufteilung in Anlageklassen verifizieren</h3>
-    <div>
-        <table class="table">
-<tbody>
-<tr>
-<th>MiFID II</th>
-<th>Hinweise</th>
-<th>Regulatorien</th>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-        <button style="float: right;">Details</button>
-    </div>
-                                        <h3>Aufteilung in Anlageklassen verifizieren</h3>
-    <div>
-        <table class="table">
-<tbody>
-<tr>
-<th>MiFID II</th>
-<th>Hinweise</th>
-<th>Regulatorien</th>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-        <button style="float: right;">Details</button>
-    </div>
-                                            <h3>Aufteilung in Anlageklassen verifizieren</h3>
-    <div>
-        <table class="table">
-<tbody>
-<tr>
-<th>MiFID II</th>
-<th>Hinweise</th>
-<th>Regulatorien</th>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-        <button style="float: right;">Details</button>
-    </div>
-                                                <h3>Aufteilung in Anlageklassen verifizieren</h3>
-    <div>
-        <table class="table">
-<tbody>
-<tr>
-<th>MiFID II</th>
-<th>Hinweise</th>
-<th>Regulatorien</th>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-        <button style="float: right;">Details</button>
-    </div>
-                                                
-    
-    
-</div>
-    </div> 
+</div> 
       
+        
     
 <script>
-$( "#accordion" ).accordion();
+    $( "#accordion" ).accordion();
 </script>
- 
+
+<script>
+    $("#one").liteAccordion();
+</script>
+
+<script>
+    $("#two").liteAccordion();
+</script>
+
 </body>
 </html>
