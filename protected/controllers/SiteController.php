@@ -109,7 +109,18 @@ class SiteController extends Controller
 	
 	public function actionNeu()
 	{
-		$model=new Funktion;
-		$this->render('neu',array('model'=>$model));
+		$funktion = new Funktion;
+		$filter = new NeuForm;
+		
+		if(isset($_POST['NeuForm']))
+		{
+			$filter->attributes = $_POST['NeuForm'];
+			$funktion = Funktion::model()->findAllByAttributes(array('grobphase_id'=>$filter->grobphase_id));
+			$this->render('neu',array('model'=>$funktion, 'model2' =>$filter, 'model3' =>$funktion));
+		}
+		else{
+		$model = array($funktion,$filter,);
+		$this->render('neu',array('model'=>$funktion, 'model2' =>$filter));
+		}
 	}
 }

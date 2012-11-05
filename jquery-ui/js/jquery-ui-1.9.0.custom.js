@@ -5247,7 +5247,7 @@ if ( $.uiBackCompat !== false ) {
 	// height options
 	(function( $, prototype ) {
 		$.extend( prototype.options, {
-			heightStyle: null, // remove default so we fall back to old values
+			heightStyle: auto, // remove default so we fall back to old values
 			autoHeight: true, // use heightStyle: "auto"
 			clearStyle: false, // use heightStyle: "content"
 			fillSpace: false // use heightStyle: "fill"

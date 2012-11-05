@@ -13,11 +13,35 @@
     <script src="/finanzberatung/jquery-horizontal/js/jquery.easing.1.3.js"></script>
     
     
+
+    
 </head>
 <body>
 
 <div style="function" id="function">
     <div style="function_name" id="function_name"><p>FUNKTIONSFILTER</p></div>
+        <div class="form">
+		<?php  $form = $this->beginWidget('CActiveForm', array(
+			'id'=>'neu-form',
+			'enableClientValidation'=>true,
+			'clientOptions'=>array(
+			'validateOnSubmit'=>true,
+	),
+)); ?>
+
+		<?php  echo $form->errorSummary($model2); ?>
+
+		<div class="row">
+			<?php echo $form->labelEx($model2,'grobphase_id'); ?>
+			<?php echo $form->textField($model2,'grobphase_id'); ?>
+			<?php echo $form->error($model2,'grobphase_id'); ?>
+		</div>
+		<div class="row buttons">
+		<?php echo CHtml::submitButton('Submit'); ?>
+		</div>
+
+		<?php $this->endWidget(); ?>
+	</div>
 </div>
  
 <div style="viewfilter" id="viewfilter">
@@ -28,87 +52,51 @@
 <table id="filterlist">
 <tbody>
 <tr>
-<td>Filter: &nbsp; <?php echo"Grobphase 01" ?> &diams; Grobphase 02 &diams; Gesetz &diams; Beratung</td>
+<td>Filter:</td>
 </tr>
 </tbody>
 </table>
 </div>    
 <div id="accordion">
-    <h3><div><div style="float: left;">Kunde bei Beraterwechsel auswählen</div><div style="float: right;">Grobphase 02</div></div></h3>
-    <div>
-        <div id="one">
+   <?php
+    if(isset($model3)){
+	for($i=0;$i<count($model);$i++){
+                                
+            echo 
+            '<h3><div><div style="float: left;">'.$model3[$i]["name"].'</div><div style="float: right;">Grobphase '.$model3[$i]["grobphase_id"].'</div></div></h3>
+            <div>
+                <div id="'.$i.'">
                 <ol>
                     <li>
-                        <h2><span>Slide One</span></h2>
-                        <div></div>
+                        <h2><span>Beschreibung</span></h2>
+                        <div><table´class="table"><tr><td>'.$model3[$i]["beschreibung"].'</td></tr></table></div>
                     </li>
-                    <li>
-                        <h2><span>Slide Two</span></h2>
-                        <div></div>
+					<li>
+                        <h2><span>Privat mit Beratung</span></h2>
+                        <div><table´class="table"><tr><td>'.$model3[$i]["priv_mit_beratung"].'</td></tr></table></div>
                     </li>
-                    <li>
-                        <h2><span>Slide Three</span></h2>
-                        <div></div>
-                    </li>
-                    <li>
-                        <h2><span>Slide Four</span></h2>
-                        <div></div>
-                    </li>
-                    <li>
-                        <h2><span>Slide Five</span></h2>
-                        <div></div>
-                    </li>
-                </ol>
+                    </ol>
                 <noscript>
                     <p>Please enable JavaScript to get the full experience.</p>
                 </noscript>
-            </div>
-    </div>
+              </div>
+            </div>';
+        }
     
-    <h3><div><div style="float: left;">Kunde bei Empfang</div><div style="float: right;">Grobphase 05</div></div></h3>
-        <div>
-        <div id="two">
-                <ol>
-                    <li>
-                        <h2><span>Slide One</span></h2>
-                        <div></div>
-                    </li>
-                    <li>
-                        <h2><span>Slide Two</span></h2>
-                        <div></div>
-                    </li>
-                    <li>
-                        <h2><span>Slide Three</span></h2>
-                        <div></div>
-                    </li>
-                    <li>
-                        <h2><span>Slide Four</span></h2>
-                        <div></div>
-                    </li>
-                    <li>
-                        <h2><span>Slide Five</span></h2>
-                        <div></div>
-                    </li>
-                </ol>
-                <noscript>
-                    <p>Please enable JavaScript to get the full experience.</p>
-                </noscript>
-            </div>
-    </div>
+    }?>
+   
 </div> 
-      
+
+    <?php       
+        if(isset($model3)){      
+            for($i=0;$i<count($model);$i++){
+                echo '<script>';
+                echo '$("#'.$i.'").liteAccordion({theme : "light"});';
+                echo '</script>';      
+    }}?>        
         
-    
 <script>
     $( "#accordion" ).accordion();
-</script>
-
-<script>
-    $("#one").liteAccordion();
-</script>
-
-<script>
-    $("#two").liteAccordion();
 </script>
 
 </body>
