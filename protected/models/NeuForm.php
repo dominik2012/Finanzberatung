@@ -1,15 +1,15 @@
 <?php
 class NeuForm extends CFormModel
 {
-	public $grobphase_id;
+	public $grobphase_id = array();	
 	
 	public function rules()
 	{
 		return array(
-			// grobphase_id are required
-			array('grobphase_id', 'required'),
 			
 		);
 	}
-	
+	public function getId(){
+		return $this->grobphase_id;
+		}
 }

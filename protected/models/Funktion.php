@@ -127,7 +127,40 @@ class Funktion extends CActiveRecord
 			'unterphase_id' => 'Unterphase',
 		);
 	}
-
+	public function getFieldNames()
+	{
+		return array(
+			'id' => 'iD',
+			'nummer' => 'nummer',
+			'name' => 'name',
+			'beschreibung' => 'beschreibung',
+			'priv_mit_beratung' => 'priv_mit_beratung',
+			'priv_ohne_beratung' => 'priv_ohne_beratung',
+			'prof_mit_beratung' => 'prof_mit_beratung',
+			'prof_ohne_beratung' => 'prof_ohne_beratung',
+			'hinweis' => 'hinweis',
+			'weiterereg' => 'weiterereg',
+			'hsr_aktuell' => 'hsr_aktuell',
+			'hsr_zukuenftig' => 'hsr_zukuenftig',
+			'r_ausf_geschaeft' => 'r_ausf_geschaeft',
+			'spezialist_vs_generalist' => 'spezialist_vs_generalist',
+			'frontoffice_generalist' => 'frontoffice_generalist',
+			'frontoffice_experte' => 'frontoffice_experte',
+			'backoffice' => 'backoffice',
+			'produktlieferant' => 'produktlieferant',
+			'bank' => 'bank',
+			'kunde' => 'kunde',
+			'verantwortlicher' => 'verantwortlicher',
+			'ressourcen' => 'ressourcen',
+			'funktionsfolge' => 'funktionsfolge',
+			'kanalwechsel' => 'kanalwechsel',
+			'inputdaten' => 'inputdaten',
+			'outputdaten' => 'outputdaten',
+			'datenfluss' => 'datenfluss',
+			'grobphase_id' => 'grobphase_id',
+			'unterphase_id' => 'unterphase_id',
+		);
+	}
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.

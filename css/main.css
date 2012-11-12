@@ -90,8 +90,8 @@ body
         -moz-transform: rotate(90deg);
         -o-transform: rotate(90deg);
         -ms-transform: rotate(90deg);
-        right: 195px;
-        height: 100%;
+        right: -44px;
+        top: 48%;
         position: absolute;
 }
 
@@ -125,12 +125,12 @@ body
 
 #view_name
 {
-        -webkit-transform: rotate(90deg);
-        -moz-transform: rotate(90deg);
-        -o-transform: rotate(90deg);
-        -ms-transform: rotate(90deg);
-        left: -282px;
-        height: 100%;
+        -webkit-transform: rotate(-90deg);
+        -moz-transform: rotate(-90deg);
+        -o-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+        left: -36px;
+        top: 48%;
         position: absolute;
 }
 

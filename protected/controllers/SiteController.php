@@ -111,16 +111,29 @@ class SiteController extends Controller
 	{
 		$funktion = new Funktion;
 		$filter = new NeuForm;
-		
+		$spaltennamen = Funktion::model()->getTableSchema()->getColumnNames();
 		if(isset($_POST['NeuForm']))
 		{
-			$filter->attributes = $_POST['NeuForm'];
-			$funktion = Funktion::model()->findAllByAttributes(array('grobphase_id'=>$filter->grobphase_id));
-			$this->render('neu',array('model'=>$funktion, 'model2' =>$filter, 'model3' =>$funktion));
+			
+			$filter->grobphase_id = $_POST['NeuForm'];
+			$filter2 = "0 ";
+			$filter3 = $filter->getId();
+			if(isset($filter3["grobphase_id"][0])){
+			$filter2 ="";
+			for($i=0;$i<sizeof($filter3["grobphase_id"]);$i++){
+			$filter2 .= $filter3["grobphase_id"][$i].",";
+			}
+			}
+			$filter2=substr($filter2, 0, -1);
+			//$filter2 = $filter->grobphase_id;
+			$funktion = Funktion::model()->findAllBySql("SELECT * FROM funktion WHERE grobphase_id IN ($filter2)");
+			//$funktion = Funktion::model()->findAllByAttributes(array('grobphase_id'=>$filter->grobphase_id));
+			
+			$this->render('neu',array('model'=>$funktion, 'model2' =>$filter, 'model3' =>$funktion, 'model4' => $filter2, 'model5' => $spaltennamen));
 		}
 		else{
 		$model = array($funktion,$filter,);
-		$this->render('neu',array('model'=>$funktion, 'model2' =>$filter));
+		$this->render('neu',array('model'=>$funktion, 'model2' =>$filter, 'model5' => $spaltennamen));
 		}
 	}
 }
