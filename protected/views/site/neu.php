@@ -4,15 +4,10 @@
     <meta charset="utf-8">
     <title>accordion demo</title>
     
-    <link rel="stylesheet" href="/finanzberatung/jquery-ui/css/custom-theme/jquery-ui-1.9.0.custom.css">
+    <link rel="stylesheet" href="/finanzberatung/jquery-multi/css/jquery-ui-1.8.9.custom/jquery-ui-1.8.9.custom.css">
     <script src="/finanzberatung/jquery-ui/js/jquery-1.8.2.js"></script>
     <script src="/finanzberatung/jquery-ui/js/jquery-ui-1.9.0.custom.js"></script>
-    
-    <link rel="stylesheet" href="/finanzberatung/jquery-horizontal/css/liteaccordion.css">
-    <script src="/finanzberatung/jquery-horizontal/js/liteaccordion.jquery.js"></script>
-    <script src="/finanzberatung/jquery-horizontal/js/jquery.easing.1.3.js"></script>
-
-    
+    <script src="/finanzberatung/jquery-multi/jquery.multi-accordion-1.5.3.js"></script>
     
 </head>
 <body>
@@ -68,7 +63,7 @@
 </tbody>
 </table>
 </div>    
-<div id="accordion">
+<div id="multiAccordion">
    <?php
     if(isset($model3)){
 	for($i=0;$i<count($model3);$i++){
@@ -83,8 +78,8 @@
 
                         echo '
                         <li class="'.$key.'" id="'.$key.'" style="display:none;">
-                            <div class="toggler" id="toggle'.$j.'" style="float: left; height: 200px; width: 25px; background-color: #aaa;"><p style="-webkit-transform: rotate(90deg); margin-top: 10px;">'.$key.'</p></div>
-                            <div class="toggle" id="toggle'.$j.'_content" style="float: left; width: 300px;"><span>'.$model3[$i][$key].'</span></div>
+                            <div class="toggler" id="toggle'.$i.''.$j.'" style="float: left; height: 200px; width: 25px; background-color: #aaa;"><p style="-webkit-transform: rotate(90deg); margin-top: 10px;">'.$key.'</p></div>
+                            <div class="toggle" id="toggle'.$i.''.$j.'_content" style="float: left; width: 300px;"><span>'.$model3[$i][$key].'</span></div>
                         </li>
                         ';
 			} 		
@@ -116,7 +111,13 @@
     });
     //]]>
 </script>        
-        
+
+<script type="text/javascript">
+	$(function(){
+		$('#multiAccordion').multiAccordion();
+	});
+</script>
+
 <script>
     $( "#accordion" ).accordion({ heightStyle: "content", collapsible: true });
 	
