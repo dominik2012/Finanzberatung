@@ -2983,3 +2983,24 @@ Stack trace:
 REQUEST_URI=/Finanzberatung/index.php?r=site/neu
 HTTP_REFERER=http://localhost/Finanzberatung/index.php?r=site/neu
 ---
+2012/11/07 17:15:36 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'benutzerverwaltung.funktion' doesn't exist. The SQL statement executed was: SHOW COLUMNS FROM `funktion`.
+in I:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php (112)
+in I:\xampp\htdocs\Finanzberatung\index.php (13)
+2012/11/07 17:15:36 [error] [exception.CDbException] exception 'CDbException' with message 'The table "funktion" for active record class "Funktion" cannot be found in the database.' in I:\xampp\htdocs\Finanzberatung\framework\db\ar\CActiveRecord.php:2312
+Stack trace:
+#0 I:\xampp\htdocs\Finanzberatung\framework\db\ar\CActiveRecord.php(388): CActiveRecordMetaData->__construct(Object(Funktion))
+#1 I:\xampp\htdocs\Finanzberatung\framework\db\ar\CActiveRecord.php(403): CActiveRecord::model('Funktion')
+#2 I:\xampp\htdocs\Finanzberatung\framework\db\ar\CActiveRecord.php(78): CActiveRecord->getMetaData()
+#3 I:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php(112): CActiveRecord->__construct()
+#4 I:\xampp\htdocs\Finanzberatung\framework\web\actions\CInlineAction.php(50): SiteController->actionNeu()
+#5 I:\xampp\htdocs\Finanzberatung\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#6 I:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#7 I:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 I:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): CController->run('neu')
+#9 I:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController('site/neu')
+#10 I:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 I:\xampp\htdocs\Finanzberatung\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/finanzberatung/index.php?r=site/neu
+HTTP_REFERER=http://localhost/finanzberatung/
+---
