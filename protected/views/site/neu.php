@@ -78,7 +78,7 @@
 
                         echo '
                         <li class="'.$key.'" id="'.$key.'" style="display:none;">
-                            <div class="toggler" id="toggle'.$j.'" style="float: left; height: 200px; width: 25px; background-color: #aaa;"><p style="-webkit-transform: rotate(90deg); margin-top: 10px;">'.$key.'</p></div>
+                            <div class="toggler" id="toggle'.$j.'"><p class="spalte_fct">'.$key.'</p></div>
                             <div class="toggle toggle'.$j.'_content" id="toggle'.$j.'_content" style="float: left; width: 300px;"><span>'.$model3[$i][$key].'</span></div>
                         </li>
                         ';
