@@ -78,8 +78,8 @@
 
                         echo '
                         <li class="'.$key.'" id="'.$key.'" style="display:none;">
-                            <div class="toggler" id="toggle'.$i.''.$j.'" style="float: left; height: 200px; width: 25px; background-color: #aaa;"><p style="-webkit-transform: rotate(90deg); margin-top: 10px;">'.$key.'</p></div>
-                            <div class="toggle" id="toggle'.$i.''.$j.'_content" style="float: left; width: 300px;"><span>'.$model3[$i][$key].'</span></div>
+                            <div class="toggler" id="toggle'.$j.'" style="float: left; height: 200px; width: 25px; background-color: #aaa;"><p style="-webkit-transform: rotate(90deg); margin-top: 10px;">'.$key.'</p></div>
+                            <div class="toggle toggle'.$j.'_content" id="toggle'.$j.'_content" style="float: left; width: 300px;"><span>'.$model3[$i][$key].'</span></div>
                         </li>
                         ';
 			} 		
@@ -102,10 +102,10 @@
         $('.toggler').click( function() {
           var target = this.id + '_content';
           // Use ID-selectors to toggle a single element.
-          $('#' + target).toggle();
+          // $('#' + target).toggle();
           // Use class-selectors to toggle groups of elements.
           $('.' + target).toggle();
-          $('.toggle.always').toggle();
+          // $('.toggle.always').toggle();
         });
         $('#toggle_everything').click( function() { $('.toggle').toggle(); });
     });
