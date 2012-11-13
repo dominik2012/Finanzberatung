@@ -70,7 +70,7 @@
                                 
             echo 
             '<h3><div><div style="float: left;">'.$model3[$i]["name"].'</div><div style="float: right;">Grobphase '.$model3[$i]["grobphase_id"].'</div></div></h3>
-             <div style="overflow: scroll; min-height: 210px;">
+             <div style="overflow: scroll; min-height: 250px;">
                 <div id="'.$i.'" style="width: 10000px;">';
 
 			for($j=0;$j<count($model5);$j++){
@@ -79,7 +79,7 @@
                         echo '
                         <li class="'.$key.'" id="'.$key.'" style="display:none;">
                             <div class="toggler" id="toggle'.$j.'"><p class="spalte_fct">'.$key.'</p></div>
-                            <div class="toggle toggle'.$j.'_content" id="toggle'.$j.'_content" style="float: left; width: 300px;"><span>'.$model3[$i][$key].'</span></div>
+                            <div class="toggle toggle'.$j.'_content" id="toggle'.$j.'_content" style="float: left; width: 300px; display: block; min-height: 250px; border-right: 2px solid #0075B8; "><span>'.$model3[$i][$key].'</span></div>
                         </li>
                         ';
 			} 		
