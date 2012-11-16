@@ -9,12 +9,17 @@
     <script src="/finanzberatung/jquery-ui/js/jquery-ui-1.9.0.custom.js"></script>
     <script src="/finanzberatung/jquery-multi/jquery.multi-accordion-1.5.3.js"></script>
     
+    <link rel="stylesheet" href="/finanzberatung/chosen-master/chosen/chosen.css">
+    <script src="/finanzberatung/chosen-master/chosen/chosen.jquery.js"></script>
+    
+    
 </head>
 <body>
 
 <div style="function" id="function">
     <div style="function_name" id="function_name"><p>FUNKTIONSFILTER</p></div>
-        <div class="form">
+
+    <div class="form">
 		<?php  $form = $this->beginWidget('CActiveForm', array(
 			'id'=>'neu-form',
 			'enableClientValidation'=>true,
@@ -42,13 +47,14 @@
     <div style="view_name" id="view_name"><p>ANZEIGEFILTER</p></div>
 	<div>
 		<form name="anzeigefilter">
-		<?php
-			
+		<select data-placeholder="Anzeigefilter" style="width:350px;" multiple class="chzn-select">
+                <option value=""></option>
+                <?php
 			for ($i=0;$i<count($model5);$i++){
-				echo '<label for="'.$model5[$i].'filter">'.$model5[$i].': </label>';
-				echo '<input type="checkbox" id="'.$model5[$i].'filter" name="'.$model5[$i].'" onClick=showtab("'.$model5[$i].'");><br>';
+				echo '<option id="'.$model5[$i].'filter" name="'.$model5[$i].'" onClick=showtab("'.$model5[$i].'");>'.$model5[$i].'</option>';
 			}
                 ?>
+                </select>
 		</form>
 	</div>
 </div>
@@ -95,6 +101,10 @@
    
 </div>       
 
+<script type="text/javascript"> 
+    $(".chzn-select").chosen(); $(".chzn-select-deselect").chosen({allow_single_deselect:true});
+</script>        
+        
 <script type="text/javascript">
     //<![CDATA[
     $(document).ready(function() {

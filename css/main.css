@@ -119,7 +119,7 @@ body
 	width: 500px;
 	z-index: 1000;
         position: fixed;
-        right: -500px;
+        right: 500px;
         padding-left: 20px;
         margin-top: 34px;
 	background-color: #0075b8;
@@ -128,13 +128,13 @@ body
         -o-transition: all 1.0s ease-out;
         transition: all 1.0s ease-out;
 	border-radius: 15px 0 0 15px;
-	color: white;
+	color: black;
         
 }
 
 #viewfilter:hover
 {
-        right: 0;
+        /*right: 0;*/
 	-webkit-transition: all 1.0s ease-in;
         -moz-transition: all 1.0s ease-in;
         -o-transition: all 1.0s ease-in;
