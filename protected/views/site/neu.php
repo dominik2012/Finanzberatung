@@ -5,9 +5,11 @@
     <title>accordion demo</title>
     
     <link rel="stylesheet" href="/finanzberatung/jquery-multi/css/jquery-ui-1.8.9.custom/jquery-ui-1.8.9.custom.css">
+    <link rel="stylesheet" href="/finanzberatung/multiselect/jquery.multiselect.css">
     <script src="/finanzberatung/jquery-ui/js/jquery-1.8.2.js"></script>
     <script src="/finanzberatung/jquery-ui/js/jquery-ui-1.9.0.custom.js"></script>
     <script src="/finanzberatung/jquery-multi/jquery.multi-accordion-1.5.3.js"></script>
+    <script src="/finanzberatung/multiselect/src/jquery.multiselect.js"></script>
     
     <link rel="stylesheet" href="/finanzberatung/chosen-master/chosen/chosen.css">
     <script src="/finanzberatung/chosen-master/chosen/chosen.jquery.js"></script>
@@ -31,7 +33,7 @@
 		<?php  echo $form->errorSummary($model2); ?>
 
 		<div class="row">
-			<?php echo "Grobphasen: ".$form->checkBoxList($model2,'grobphase_id',array('1'=>'1','2'=>'2','3'=>'3','4'=>'4','5'=>'5','6'=>'6','7'=>'7','8'=>'8','9'=>'9','10'=>'10',),array('separator'=>'','template'=>'<li style="display:inline; padding-left:10px;">{label}{input}</li>',)); 
+			<?php echo "Grobphasen: ".$form->dropDownList($model2,'grobphase_id',array('0'=>'0','1'=>'1','2'=>'2','3'=>'3','4'=>'4','5'=>'5','6'=>'6','7'=>'7','8'=>'8','9'=>'9','10'=>'10',),array('separator'=>'','template'=>'<li style="display:inline; padding-left:10px;">{label}{input}</li>',)); 
                         ?>
 		</div>
 		
@@ -46,13 +48,15 @@
 <div style="viewfilter" id="viewfilter">
     <div style="view_name" id="view_name"><p>ANZEIGEFILTER</p></div>
 	<div>
-		<form name="anzeigefilter">
-		<select data-placeholder="Anzeigefilter" style="width:350px;" multiple class="chzn-select">
+		<form name="anzeigefilter" id="anzeigefilter">
+		<select id="multiselect" data-placeholder="Anzeigefilter" style="width:350px;" multiple="multiple" <!--class="chzn-select-->">
                 <option value=""></option>
                 <?php
 			for ($i=0;$i<count($model5);$i++){
-				echo '<option id="'.$model5[$i].'filter" name="'.$model5[$i].'" onClick=showtab("'.$model5[$i].'");>'.$model5[$i].'</option>';
-			}
+				echo '<option value="'.$model5[$i].'" id="'.$model5[$i].'" name="'.$model5[$i].'");>'.$model6[$i].'</option>';
+                                //echo '<input type="checkbox" id="'.$model5[$i].'filter" name="'.$model5[$i].'" onClick=showtab("'.$model5[$i].'");><br>';
+			;
+                        }    
                 ?>
                 </select>
 		</form>
@@ -81,11 +85,12 @@
 
 			for($j=0;$j<count($model5);$j++){
 					$key = $model5[$j];
+                                        $key2 = $model6[$j];
 
                         echo '
-                        <li class="'.$key.'" id="'.$key.'" style="display:none;">
-                            <div class="toggler" id="toggle'.$j.'"><p class="spalte_fct">'.$key.'</p></div>
-                            <div class="toggle toggle'.$j.'_content" id="toggle'.$j.'_content" style="float: left; width: 300px; display: block; min-height: 250px; border-right: 2px solid #0075B8; "><span>'.$model3[$i][$key].'</span></div>
+                        <li class="'.$key.'" id="'.$key.'" style="">
+                            <div class="toggler" id="toggle'.$j.'"><p class="spalte_fct">'.$key2.'</p></div>
+                            <div class="toggle toggle'.$j.'_content" id="toggle'.$j.'_content" ><span>'.$model3[$i][$key].'</span></div>
                         </li>
                         ';
 			} 		
@@ -102,7 +107,38 @@
 </div>       
 
 <script type="text/javascript"> 
-    $(".chzn-select").chosen(); $(".chzn-select-deselect").chosen({allow_single_deselect:true});
+    //$(".chzn-select").chosen();
+    //$(".chzn-select-deselect").chosen({allow_single_deselect:true});
+    $("#multiselect").multiselect({
+        selectedText: "# of # selected"
+    });
+    
+    $("#multiselect").bind("multiselectclick", function(event, ui){
+
+        var value = ui.value;
+        alert('Display: ' + value);
+        var current_vis = document.getElementById(value).style.display;
+        
+		if(current_vis!="none"){
+			for(var i=0;$i<<?php echo count($model);?>;i++){
+			document.getElementsByClassName(name)[i].style.display="none";
+			}
+			}
+		else{
+			for(var i=0;i<<?php echo count($model);?>;i++){
+			document.getElementsByClassName(name)[i].style.display="block";
+			}
+			}
+        
+        /*
+	event: the original event object
+ 
+	ui.value: value of the checkbox
+	ui.text: text of the checkbox
+	ui.checked: whether or not the input was checked
+        or unchecked (boolean)
+	*/
+    });
 </script>        
         
 <script type="text/javascript">
@@ -131,7 +167,7 @@
 <script>
     $( "#accordion" ).accordion({ heightStyle: "content", collapsible: true });
 	
-	function showtab(name){
+        function showtab(name){
 		var current_vis = document.getElementById(name).style.display;
 		if(current_vis!="none"){
 			for(var i=0;$i<<?php echo count($model);?>;i++){
@@ -143,7 +179,8 @@
 			document.getElementsByClassName(name)[i].style.display="block";
 			}
 			}
-		}
+		
+      };
 </script>
 
 </body>

@@ -17,9 +17,19 @@
     background-color: #EEEEEE;
     border: 2px solid #0075B8;
     border-top: none;
-    border-bottom: none;
+    border-bottom: 1px solid #B8B5B5;
     border-left: 1px solid #0075B8;
     cursor: pointer;
+}
+
+.toggle {
+    float: left; 
+    width: 300px; 
+    display: block; 
+    min-height: 250px; 
+    border-right: 2px solid #0075B8;
+    border-bottom: 1px solid #B8B5B5;
+    background-color: #E4E4E4;
 }
 
 .spalte_fct {
@@ -27,7 +37,11 @@
     -moz-transform: rotate(90deg);
     -o-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
-    margin-top: 30px;
+     margin-top: 30px;
+     position: relative;
+     left: -100px;
+     top: 95px;
+     width: 240px;
 }
 
 body
@@ -119,7 +133,7 @@ body
 	width: 500px;
 	z-index: 1000;
         position: fixed;
-        right: 500px;
+        right: -500px;
         padding-left: 20px;
         margin-top: 34px;
 	background-color: #0075b8;
@@ -134,7 +148,7 @@ body
 
 #viewfilter:hover
 {
-        /*right: 0;*/
+        right: 0;
 	-webkit-transition: all 1.0s ease-in;
         -moz-transition: all 1.0s ease-in;
         -o-transition: all 1.0s ease-in;

@@ -111,7 +111,8 @@ class SiteController extends Controller
 	{
 		$funktion = new Funktion;
 		$filter = new NeuForm;
-		$spaltennamen = Funktion::model()->getTableSchema()->getColumnNames();
+		$spaltennamen2 = Funktion::model()->getTableSchema()->getColumnNames();
+                $spaltennamen = Funktion::model()->attributeLabelsIndexAreNumbers();
 		if(isset($_POST['NeuForm']))
 		{
 			
@@ -129,11 +130,11 @@ class SiteController extends Controller
 			$funktion = Funktion::model()->findAllBySql("SELECT * FROM funktion WHERE grobphase_id IN ($filter2)");
 			//$funktion = Funktion::model()->findAllByAttributes(array('grobphase_id'=>$filter->grobphase_id));
 			
-			$this->render('neu',array('model'=>$funktion, 'model2' =>$filter, 'model3' =>$funktion, 'model4' => $filter2, 'model5' => $spaltennamen));
+			$this->render('neu',array('model'=>$funktion, 'model2' =>$filter, 'model3' =>$funktion, 'model4' => $filter2, 'model6' => $spaltennamen, 'model5' => $spaltennamen2));
 		}
 		else{
 		$model = array($funktion,$filter,);
-		$this->render('neu',array('model'=>$funktion, 'model2' =>$filter, 'model5' => $spaltennamen));
+		$this->render('neu',array('model'=>$funktion, 'model2' =>$filter, 'model6' => $spaltennamen, 'model5' => $spaltennamen2));
 		}
 	}
 }

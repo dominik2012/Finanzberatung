@@ -165,6 +165,42 @@ class Funktion extends CActiveRecord
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
 	 */
+        
+        public function attributeLabelsIndexAreNumbers()
+{
+return array(
+0 => 'ID',
+1 => 'Nummer',
+2 => 'Name',
+3 => 'Beschreibung',
+4 => 'Privat mit Beratung',
+5 => 'Privat ohne Beratung',
+6 => 'Professionell mit Beratung',
+7 => 'Professionell ohne Beratung',
+8 => 'Hinweis',
+9 => 'Weitere Regulatorien',
+10 => 'Handlungsspielraum Aktuell',
+11 => 'Handlungsspielraum Zukuenftig',
+12 => 'Reines Ausfuehrungsgeschaeft',
+13 => 'Spezialist Vs. Generalist',
+14 => 'Frontoffice Generalist',
+15 => 'Frontoffice Experte',
+16 => 'Backoffice',
+17 => 'Produktlieferant',
+18 => 'Bank',
+19 => 'Kunde',
+20 => 'Verantwortlicher',
+21 => 'Ressourcen',
+22 => 'Funktionsfolge',
+23 => 'Kanalwechsel',
+24 => 'Inputdaten',
+25 => 'Outputdaten',
+26 => 'Datenfluss',
+27 => 'Grobphase',
+28 => 'Unterphase',
+);
+}
+        
 	public function search()
 	{
 		// Warning: Please modify the following code to remove attributes that
