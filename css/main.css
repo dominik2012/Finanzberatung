@@ -68,6 +68,22 @@ body
     margin-top: 4px;
 }
 
+#draggable {
+    width: 380px;
+    height: 30px;
+    z-index: 1000;
+    position: fixed;
+    right: 40px;
+    top: 117px;
+}
+
+#dragbutton {
+    width: 30px;
+    height: 30px;
+    background-color: #262CBD;
+    float: left;
+}
+
 #filterlist
 {
         position: relative;

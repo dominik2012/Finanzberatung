@@ -14,7 +14,11 @@
     <link rel="stylesheet" href="/finanzberatung/chosen-master/chosen/chosen.css">
     <script src="/finanzberatung/chosen-master/chosen/chosen.jquery.js"></script>
     
-    
+    <script type="text/javascript">
+    $(function() {
+        $( "#draggable" ).draggable();
+    });
+</script>
 </head>
 <body>
 
@@ -44,10 +48,15 @@
 		<?php $this->endWidget(); ?>
 	</div>
 </div>
- 
+
+<!-- VIEWFILTER -->    
 <div style="viewfilter" id="viewfilter">
     <div style="view_name" id="view_name"><p>ANZEIGEFILTER</p></div>
-	<div>
+</div>
+    
+<div id="draggable" class="ui-widget-content" style="">
+    <div id="dragbutton"></div>
+    <div style="float: right;">
 		<form name="anzeigefilter" id="anzeigefilter">
 		<select id="multiselect" data-placeholder="Anzeigefilter" style="width:350px;" multiple="multiple">
                 <?php
@@ -57,8 +66,11 @@
                 ?>
                 </select>
 		</form>
-	</div>
+    </div>
 </div>
+    
+    
+    
     <div id="contentarea">
 <div>
 <table id="filterlist">
@@ -110,6 +122,9 @@
 </div>       
 
 <!-- Scripte ------------------------------------------------------------------->
+
+
+
 <script type="text/javascript"> 
 
     $("#multiselect").multiselect({
