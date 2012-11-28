@@ -125,24 +125,24 @@
                             
                             //Grafik Abfragen
                             if($spaInhalt == "gesetzFunktion"){
-                                $spaInhalt = "<img src='/Finanzberatung/css/images/pfeile/gesetzFunktion.png'>";
+                                $spaInhalt = "<img src='/Finanzberatung/css/images/pfeile/gesetzFunktion.png' style='padding-top: 70px;'>";
                                 $style = " style='width: 52px; overflow: hidden;'";
                             }else if($spaInhalt == "funktionGesetz"){
-                                $spaInhalt = "<img src='/Finanzberatung/css/images/pfeile/funktionGesetz.png'>";
+                                $spaInhalt = "<img src='/Finanzberatung/css/images/pfeile/funktionGesetz.png' style='padding-top: 70px;'>";
                                 $style = " style='width: 52px; overflow: hidden;'";
                             }else if($spaInhalt == null){
                                if($spaName == "Privat mit Beratung" || $spaName == "Privat ohne Beratung" || $spaName == "Professionell mit Beratung" || $spaName == "Professionell ohne Beratung")
-                                $spaInhalt = "<img src='/Finanzberatung/css/images/pfeile/null.png'>";
+                                $spaInhalt = "<img src='/Finanzberatung/css/images/pfeile/null.png' style='padding-top: 70px;'>";
                                 $style = " style='width: 52px; overflow: hidden;'";
                             }else if($spaInhalt == "gelb"){
-                                $spaInhalt = "<img src='/Finanzberatung/css/images/pfeile/gelb.png'>";
+                                $spaInhalt = "<img src='/Finanzberatung/css/images/pfeile/gelb.png' style='padding-top: 70px;'>";
                                 $style = " style='width: 52px; overflow: hidden;'";
                             }else if($spaInhalt == "gruen"){
-                                $spaInhalt = "<img src='/Finanzberatung/css/images/pfeile/gruen.png'>";
+                                $spaInhalt = "<img src='/Finanzberatung/css/images/pfeile/gruen.png' style='padding-top: 70px;'>";
                                 $style = " style='width: 52px; overflow: hidden;'";
                             }
                             else if($spaInhalt == "gelbHoch"){
-                                $spaInhalt = "<img src='/Finanzberatung/css/images/pfeile/gelbHoch.png'>";
+                                $spaInhalt = "<img src='/Finanzberatung/css/images/pfeile/gelbHoch.png' style='padding-top: 70px;'>";
                                 $style = " style='width: 52px; overflow: hidden;'";
                             }
                             
