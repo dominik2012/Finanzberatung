@@ -110,7 +110,7 @@
             '<h3>
                 <div>
                     <div style="float: left;" title="[Funktion-Nr] Funktion-Name">['.$fktNr.']&nbsp;'.$fktName.' </div>
-                    <div id="detail_button_'.$i.'" class="detail_button" title="Detailansicht der Funktion"></div>
+                    <div id="'.$fktNr.'" class="detail_button" title="Detailansicht der Funktion"></div>
                     <div id="grobphaseR" title="Grobphase-Name[Grobphase-Nr][Unterphase-Nr]">'.$phaseName.'&nbsp;['.$phaseNr.']['.$uphaseNr.']</div>
                 </div>
             </h3>
@@ -178,10 +178,14 @@
 
 <!-- DETAIL-BUTTON ------------------------------------------------------------>   
 <script type="text/javascript"> 
-  $(document).ready(function() {
+  $(document).ready(function() {               
         $('.detail_button').click( function() {
-          var target = this.id;
-          alert(target);
+          var fktNr = this.id;
+          var fktName = "<?php echo $fktName ?>";
+          
+          alert(fktNr+fktName);
+          
+          //window.openDialog("http://localhost/finanzberatung/index.php?r=site/detail", "Details - ", "", fktNr);       
           return false;
         });
     });
