@@ -35,9 +35,6 @@
                                 array(  'label'=>'Filter', 
                                         'url'=>array('/site/neu')
                                 ),
-                                array(  'label'=>'Details', 
-                                        'url'=>array('/site/details')
-                                ),
 				array(  'label'=>'Benutzerverwaltung', 
                                         'url'=>array('/userGroups/admin'), 
                                         'visible'=>Yii::app()->user->level>=10
