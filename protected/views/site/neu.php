@@ -54,11 +54,11 @@
 <!-- ENDE --------------------------------------------------------------------->   
     
 <!-- VIEWFILTER --------------------------------------------------------------->    
-<div style="viewfilter" id="viewfilter">
+<div style="viewfilter" id="viewfilter" onclick="showdiv('draggable')" href="#">
     <div style="view_name" id="view_name"><p>ANZEIGEFILTER</p></div>
 </div>
     
-<div id="draggable">
+<div id="draggable" style="display: none;">
     <div id="dragbutton">FUNKTIONSFILTER</div>
     <div id="dragcontent">
 		<form name="anzeigefilter" id="anzeigefilter">
@@ -147,6 +147,20 @@
 
 <!-- Scripte ------------------------------------------------------------------>
 
+<!-- ANZEIGEFILTER SHOW/HIDE -------------------------------------------------->   
+<script type="text/javascript"> 
+    function showdiv(id){
+        
+        var current_vis = document.getElementById(id).style.display;
+        
+        if(current_vis != "none"){
+            document.getElementById(id).style.display = "none";
+        }
+        else{
+            document.getElementById(id).style.display = "block";
+        }
+    }
+</script>  
 
 <!-- MULTISELECT -------------------------------------------------------------->   
 <script type="text/javascript"> 
