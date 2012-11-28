@@ -54,7 +54,7 @@
 <!-- ENDE --------------------------------------------------------------------->   
     
 <!-- VIEWFILTER --------------------------------------------------------------->    
-<div style="viewfilter" id="viewfilter" onclick="showdiv('draggable')" href="#">
+<div style="viewfilter" id="viewfilter" onclick="showdiv('draggable')" href="#" title="anzeigen/verstecken des Filters">
     <div style="view_name" id="view_name"><p>ANZEIGEFILTER</p></div>
 </div>
     
@@ -109,12 +109,13 @@
             echo 
             '<h3>
                 <div>
-                    <div style="float: left;">['.$fktNr.']&nbsp;'.$fktName.'</div>
-                    <div id="grobphaseR">'.$phaseName.'&nbsp;['.$phaseNr.']['.$uphaseNr.']</div>
+                    <div style="float: left;" title="[Funktion-Nr] Funktion-Name">['.$fktNr.']&nbsp;'.$fktName.' </div>
+                    <div id="detail_button_'.$i.'" class="detail_button" title="Detailansicht der Funktion"></div>
+                    <div id="grobphaseR" title="Grobphase-Name[Grobphase-Nr][Unterphase-Nr]">'.$phaseName.'&nbsp;['.$phaseNr.']['.$uphaseNr.']</div>
                 </div>
             </h3>
                     
-             <div style="height: 210px;">
+             <div style="height: 210px; overflow: hidden;">
                 <div id="'.$i.'" style="width: 10000px;">';
 
 			for($j=0;$j<count($model5);$j++){
@@ -148,12 +149,14 @@
                             
                             
                             //Ausgabe Inhalt pro Accordion______________________
+                            
                             echo '
-                            <li class="'.$key.'" id="'.$key.'" style="display: none;">
-                                <div class="toggler" id="toggle'.$j.'"><p class="spalte_fct">'.$spaName.'</p></div>
-                                <div class="toggle toggle'.$j.'_content" id="toggle'.$j.'_content"'.$style.'><span>'.$spaInhalt.'</span></div>
-                            </li>
+                                <li class="'.$key.'" id="'.$key.'" style="display: none;">
+                                    <div class="toggler" id="toggle'.$j.'"><p class="spalte_fct">'.$spaName.'</p></div>
+                                    <div class="toggle toggle'.$j.'_content" id="toggle'.$j.'_content"'.$style.'><span>'.$spaInhalt.'</span></div>
+                                </li>
                             ';
+                            
 			}
                         
                         
@@ -173,6 +176,17 @@
 
 <!-- Scripte ------------------------------------------------------------------>
 
+<!-- DETAIL-BUTTON ------------------------------------------------------------>   
+<script type="text/javascript"> 
+  $(document).ready(function() {
+        $('.detail_button').click( function() {
+          var target = this.id;
+          alert(target);
+          return false;
+        });
+    });
+</script>  
+
 <!-- ANZEIGEFILTER SHOW/HIDE -------------------------------------------------->   
 <script type="text/javascript"> 
     function showdiv(id){
@@ -185,6 +199,7 @@
         else{
             document.getElementById(id).style.display = "block";
         }
+        showdiv.stopPropagation();
     }
 </script>  
 

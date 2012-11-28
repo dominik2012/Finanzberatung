@@ -46,6 +46,35 @@
     top: 65px;
     width: 200px;
 }
+/*
+#detail {
+    float: left;
+    left: 50%;
+    position: absolute;
+}*/
+
+.detail_button {
+        float: left;
+        left: 50%;
+        position: absolute;
+	background-color:#DFDCDC;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+	display:inline-block;
+	color:#ffffff;
+	font-family:arial;
+	font-size:8px;
+	font-weight:bold;
+        height: 12px;
+        width: 28px;
+	text-decoration:none;
+}.detail_button:hover {
+	background-color:#AFAEAE;
+}.detail_button:active {
+	top:2px;
+}
+
 
 body
 {
