@@ -15,13 +15,16 @@
     <script src="/finanzberatung/chosen-master/chosen/chosen.jquery.js"></script>
     
     <script type="text/javascript">
+    //VIEWFILTER
     $(function() {
         $( "#draggable" ).draggable();
     });
 </script>
 </head>
+<!----------------------------------------------------------------------------->   
 <body>
-
+    
+<!-- FUNKTIONSFILTER ---------------------------------------------------------->   
 <div style="function" id="function">
     <div style="function_name" id="function_name"><p>FUNKTIONSFILTER</p></div>
 
@@ -31,8 +34,8 @@
 			'enableClientValidation'=>true,
 			'clientOptions'=>array(
 			'validateOnSubmit'=>true,
-	),
-)); ?>
+                        ),
+                )); ?>
 
 		<?php  echo $form->errorSummary($model2); ?>
 
@@ -48,8 +51,9 @@
 		<?php $this->endWidget(); ?>
 	</div>
 </div>
-
-<!-- VIEWFILTER -->    
+<!-- ENDE --------------------------------------------------------------------->   
+    
+<!-- VIEWFILTER --------------------------------------------------------------->    
 <div style="viewfilter" id="viewfilter">
     <div style="view_name" id="view_name"><p>ANZEIGEFILTER</p></div>
 </div>
@@ -61,6 +65,7 @@
 		<select id="multiselect" data-placeholder="Anzeigefilter" style="width:350px;" multiple="multiple">
                 <?php
 			for ($i=0;$i<count($model5);$i++){
+                            //Aussortieren von unnötigen Spalten
                             if($model6[$i] == "ID" || $model6[$i] == "Nummer" || $model6[$i] == "Name" || $model6[$i] == "Unterphase" || $model6[$i] == "Grobphase"){
                             
                             }else{
@@ -72,20 +77,23 @@
 		</form>
     </div>
 </div>
+<!-- ENDE --------------------------------------------------------------------->       
     
-    
-    
-    <div id="contentarea">
-<div>
-<table id="filterlist">
-<tbody>
-<tr>
-<td>Filter: <?php if(isset($model4)){echo "Grobphase(n): ".($model4);}?></td>
+<!-- CONTENT MIDDLE ----------------------------------------------------------->       
+<div id="contentarea">
+    <!-- Filterleiste mit Anzeige für gefilterte Phasen -->
+    <div>
+        <table id="filterlist">
+            <tbody>
+                <tr>
+                    <td>Filter: <?php if(isset($model4)){echo "Grobphase(n): ".($model4);}?></td>
 
-</tr>
-</tbody>
-</table>
-</div>    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+<!-- ACCORDION ---------------------------------------------------------------->    
 <div id="multiAccordion">
    <?php
     if(isset($model3)){
@@ -97,6 +105,7 @@
             $phaseNr = $grobphase[$model3[$i]["grobphase_id"]]["grobphase_id"];
             $uphaseNr = $model3[$i]["unterphase_id"];
             
+            //Ausgabe Accordion_________________________________________________
             echo 
             '<h3>
                 <div>
@@ -109,19 +118,16 @@
                 <div id="'.$i.'" style="width: 10000px;">';
 
 			for($j=0;$j<count($model5);$j++){
-					$key = $model5[$j];
-                                        $key2 = $model6[$j];
-                        if($key2 == "ID" || $key2 == "Nummer" || $key2 == "Name" || $key2 == "Unterphase" || $key2 == "Grobphase"){
+                            $key = $model5[$j];
+                            $key2 = $model6[$j];
                             
-                        }else{
-
-                        echo '
-                        <li class="'.$key.'" id="'.$key.'" style="display: none;">
-                            <div class="toggler" id="toggle'.$j.'"><p class="spalte_fct">'.$key2.'</p></div>
-                            <div class="toggle toggle'.$j.'_content" id="toggle'.$j.'_content"><span>'.$model3[$i][$key].'</span></div>
-                        </li>
-                        ';
-                        }
+                            //Ausgabe Inhalt pro Accordion______________________
+                            echo '
+                            <li class="'.$key.'" id="'.$key.'" style="display: none;">
+                                <div class="toggler" id="toggle'.$j.'"><p class="spalte_fct">'.$key2.'</p></div>
+                                <div class="toggle toggle'.$j.'_content" id="toggle'.$j.'_content"><span>'.$model3[$i][$key].'</span></div>
+                            </li>
+                            ';
 			}
                         
                         
@@ -136,12 +142,13 @@
     
     }?>
    
-</div>       
+</div>
+<!-- ACCORDION ENDE ----------------------------------------------------------->   
 
-<!-- Scripte ------------------------------------------------------------------->
+<!-- Scripte ------------------------------------------------------------------>
 
 
-
+<!-- MULTISELECT -------------------------------------------------------------->   
 <script type="text/javascript"> 
 
     $("#multiselect").multiselect({
@@ -163,7 +170,8 @@
     });
     
 </script>        
-        
+
+<!-- ACCORDION INHALT --------------------------------------------------------->   
 <script type="text/javascript">
     //<![CDATA[
     $(document).ready(function() {
@@ -181,29 +189,14 @@
     //]]>
 </script>        
 
+<!-- ACCORDION ---------------------------------------------------------------->   
 <script type="text/javascript">
 	$(function(){
 		$('#multiAccordion').multiAccordion();
 	});
 </script>
-
 <script>
     $( "#accordion" ).accordion({ heightStyle: "content", collapsible: true });
-	
-        function showtab(name){
-		var current_vis = document.getElementById(name).style.display;
-		if(current_vis!="none"){
-			for(var i=0;$i<<?php echo count($model);?>;i++){
-			document.getElementsByClassName(name)[i].style.display="none";
-			}
-			}
-		else{
-			for(var i=0;i<<?php echo count($model);?>;i++){
-			document.getElementsByClassName(name)[i].style.display="block";
-			}
-			}
-		
-      };
 </script>
 
 </body>
