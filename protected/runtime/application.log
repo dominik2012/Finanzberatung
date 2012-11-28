@@ -3738,3 +3738,236 @@ Stack trace:
 REQUEST_URI=/finanzberatung/index.php?r=site/neu
 HTTP_REFERER=http://localhost/finanzberatung/index.php?r=site/neu
 ---
+2012/11/21 14:07:44 [error] [php] Undefined variable: grobphasen (C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php:135)
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): SiteController->runAction()
+#1 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#2 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): SiteController->run()
+#3 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#4 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\Finanzberatung\index.php(13): CWebApplication->run()
+REQUEST_URI=/Finanzberatung/index.php?r=site/neu
+in C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php (135)
+in C:\xampp\htdocs\Finanzberatung\index.php (13)
+2012/11/22 13:13:02 [error] [php] Undefined variable: model3 (C:\xampp\htdocs\Finanzberatung\protected\views\site\neu.php:36)
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(870): SiteController->renderFile()
+#1 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(783): SiteController->renderPartial()
+#2 C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php(139): SiteController->render()
+#3 C:\xampp\htdocs\Finanzberatung\framework\web\actions\CInlineAction.php(50): SiteController->actionNeu()
+#4 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): SiteController->runAction()
+#6 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#7 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): SiteController->run()
+#8 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#9 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\Finanzberatung\index.php(13): CWebApplication->run()
+REQUEST_URI=/finanzberatung/index.php?r=site/neu
+in C:\xampp\htdocs\Finanzberatung\protected\views\site\neu.php (36)
+in C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php (139)
+in C:\xampp\htdocs\Finanzberatung\index.php (13)
+2012/11/22 13:13:32 [error] [php] Undefined variable: model3 (C:\xampp\htdocs\Finanzberatung\protected\views\site\neu.php:36)
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(870): SiteController->renderFile()
+#1 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(783): SiteController->renderPartial()
+#2 C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php(139): SiteController->render()
+#3 C:\xampp\htdocs\Finanzberatung\framework\web\actions\CInlineAction.php(50): SiteController->actionNeu()
+#4 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): SiteController->runAction()
+#6 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#7 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): SiteController->run()
+#8 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#9 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\Finanzberatung\index.php(13): CWebApplication->run()
+REQUEST_URI=/finanzberatung/index.php?r=site/neu
+in C:\xampp\htdocs\Finanzberatung\protected\views\site\neu.php (36)
+in C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php (139)
+in C:\xampp\htdocs\Finanzberatung\index.php (13)
+2012/11/22 13:14:26 [error] [php] Undefined variable: model3 (C:\xampp\htdocs\Finanzberatung\protected\views\site\neu.php:36)
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(870): SiteController->renderFile()
+#1 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(783): SiteController->renderPartial()
+#2 C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php(139): SiteController->render()
+#3 C:\xampp\htdocs\Finanzberatung\framework\web\actions\CInlineAction.php(50): SiteController->actionNeu()
+#4 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): SiteController->runAction()
+#6 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#7 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): SiteController->run()
+#8 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#9 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\Finanzberatung\index.php(13): CWebApplication->run()
+REQUEST_URI=/finanzberatung/index.php?r=site/neu
+in C:\xampp\htdocs\Finanzberatung\protected\views\site\neu.php (36)
+in C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php (139)
+in C:\xampp\htdocs\Finanzberatung\index.php (13)
+2012/11/22 13:15:53 [error] [exception.CException] exception 'CException' with message 'Property "Funktion.0" is not defined.' in C:\xampp\htdocs\Finanzberatung\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\db\ar\CActiveRecord.php(144): CComponent->__get('0')
+#1 C:\xampp\htdocs\Finanzberatung\framework\base\CModel.php(593): CActiveRecord->__get('0')
+#2 C:\xampp\htdocs\Finanzberatung\protected\views\site\neu.php(36): CModel->offsetGet(0)
+#3 C:\xampp\htdocs\Finanzberatung\framework\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#4 C:\xampp\htdocs\Finanzberatung\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(870): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#6 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(783): CController->renderPartial('neu', Array, true)
+#7 C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php(139): CController->render('neu', Array)
+#8 C:\xampp\htdocs\Finanzberatung\framework\web\actions\CInlineAction.php(50): SiteController->actionNeu()
+#9 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#10 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#11 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): CController->run('neu')
+#13 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController('site/neu')
+#14 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\Finanzberatung\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/finanzberatung/index.php?r=site/neu
+HTTP_REFERER=http://localhost/finanzberatung/
+---
+2012/11/22 13:24:43 [error] [exception.CException] exception 'CException' with message 'Property "Funktion.0" is not defined.' in C:\xampp\htdocs\Finanzberatung\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\db\ar\CActiveRecord.php(144): CComponent->__get('0')
+#1 C:\xampp\htdocs\Finanzberatung\framework\base\CModel.php(593): CActiveRecord->__get('0')
+#2 C:\xampp\htdocs\Finanzberatung\protected\views\site\neu.php(36): CModel->offsetGet(0)
+#3 C:\xampp\htdocs\Finanzberatung\framework\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#4 C:\xampp\htdocs\Finanzberatung\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(870): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#6 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(783): CController->renderPartial('neu', Array, true)
+#7 C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php(139): CController->render('neu', Array)
+#8 C:\xampp\htdocs\Finanzberatung\framework\web\actions\CInlineAction.php(50): SiteController->actionNeu()
+#9 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#10 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#11 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): CController->run('neu')
+#13 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController('site/neu')
+#14 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\Finanzberatung\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/finanzberatung/index.php?r=site/neu
+HTTP_REFERER=http://localhost/finanzberatung/
+---
+2012/11/22 13:25:27 [error] [php] Undefined variable: id (C:\xampp\htdocs\Finanzberatung\protected\views\site\neu.php:36)
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(870): SiteController->renderFile()
+#1 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(783): SiteController->renderPartial()
+#2 C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php(139): SiteController->render()
+#3 C:\xampp\htdocs\Finanzberatung\framework\web\actions\CInlineAction.php(50): SiteController->actionNeu()
+#4 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): SiteController->runAction()
+#6 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#7 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): SiteController->run()
+#8 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#9 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\Finanzberatung\index.php(13): CWebApplication->run()
+REQUEST_URI=/finanzberatung/index.php?r=site/neu
+in C:\xampp\htdocs\Finanzberatung\protected\views\site\neu.php (36)
+in C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php (139)
+in C:\xampp\htdocs\Finanzberatung\index.php (13)
+2012/11/22 13:25:48 [error] [exception.CException] exception 'CException' with message 'Property "Funktion.0" is not defined.' in C:\xampp\htdocs\Finanzberatung\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\db\ar\CActiveRecord.php(144): CComponent->__get('0')
+#1 C:\xampp\htdocs\Finanzberatung\framework\base\CModel.php(593): CActiveRecord->__get('0')
+#2 C:\xampp\htdocs\Finanzberatung\protected\views\site\neu.php(36): CModel->offsetGet(0)
+#3 C:\xampp\htdocs\Finanzberatung\framework\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#4 C:\xampp\htdocs\Finanzberatung\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(870): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#6 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(783): CController->renderPartial('neu', Array, true)
+#7 C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php(139): CController->render('neu', Array)
+#8 C:\xampp\htdocs\Finanzberatung\framework\web\actions\CInlineAction.php(50): SiteController->actionNeu()
+#9 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#10 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#11 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): CController->run('neu')
+#13 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController('site/neu')
+#14 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\Finanzberatung\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/finanzberatung/index.php?r=site/neu
+HTTP_REFERER=http://localhost/finanzberatung/
+---
+2012/11/22 13:26:28 [error] [exception.CException] exception 'CException' with message 'Property "Funktion.0" is not defined.' in C:\xampp\htdocs\Finanzberatung\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\db\ar\CActiveRecord.php(144): CComponent->__get('0')
+#1 C:\xampp\htdocs\Finanzberatung\framework\base\CModel.php(593): CActiveRecord->__get('0')
+#2 C:\xampp\htdocs\Finanzberatung\protected\views\site\neu.php(82): CModel->offsetGet(0)
+#3 C:\xampp\htdocs\Finanzberatung\framework\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#4 C:\xampp\htdocs\Finanzberatung\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(870): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#6 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(783): CController->renderPartial('neu', Array, true)
+#7 C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php(139): CController->render('neu', Array)
+#8 C:\xampp\htdocs\Finanzberatung\framework\web\actions\CInlineAction.php(50): SiteController->actionNeu()
+#9 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#10 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#11 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): CController->run('neu')
+#13 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController('site/neu')
+#14 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\Finanzberatung\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/finanzberatung/index.php?r=site/neu
+HTTP_REFERER=http://localhost/finanzberatung/
+---
+2012/11/22 13:26:32 [error] [exception.CException] exception 'CException' with message 'Property "Funktion.0" is not defined.' in C:\xampp\htdocs\Finanzberatung\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\db\ar\CActiveRecord.php(144): CComponent->__get('0')
+#1 C:\xampp\htdocs\Finanzberatung\framework\base\CModel.php(593): CActiveRecord->__get('0')
+#2 C:\xampp\htdocs\Finanzberatung\protected\views\site\neu.php(82): CModel->offsetGet(0)
+#3 C:\xampp\htdocs\Finanzberatung\framework\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#4 C:\xampp\htdocs\Finanzberatung\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(870): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#6 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(783): CController->renderPartial('neu', Array, true)
+#7 C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php(139): CController->render('neu', Array)
+#8 C:\xampp\htdocs\Finanzberatung\framework\web\actions\CInlineAction.php(50): SiteController->actionNeu()
+#9 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#10 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#11 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): CController->run('neu')
+#13 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController('site/neu')
+#14 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\Finanzberatung\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/finanzberatung/index.php?r=site/neu
+HTTP_REFERER=http://localhost/finanzberatung/
+---
+2012/11/22 13:26:59 [error] [exception.CException] exception 'CException' with message 'Property "Funktion.0" is not defined.' in C:\xampp\htdocs\Finanzberatung\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\db\ar\CActiveRecord.php(144): CComponent->__get('0')
+#1 C:\xampp\htdocs\Finanzberatung\framework\base\CModel.php(593): CActiveRecord->__get('0')
+#2 C:\xampp\htdocs\Finanzberatung\protected\views\site\neu.php(82): CModel->offsetGet(0)
+#3 C:\xampp\htdocs\Finanzberatung\framework\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#4 C:\xampp\htdocs\Finanzberatung\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(870): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#6 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(783): CController->renderPartial('neu', Array, true)
+#7 C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php(139): CController->render('neu', Array)
+#8 C:\xampp\htdocs\Finanzberatung\framework\web\actions\CInlineAction.php(50): SiteController->actionNeu()
+#9 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#10 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#11 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): CController->run('neu')
+#13 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController('site/neu')
+#14 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\Finanzberatung\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/finanzberatung/index.php?r=site/neu
+HTTP_REFERER=http://localhost/finanzberatung/
+---
+2012/11/22 13:27:04 [error] [exception.CException] exception 'CException' with message 'Property "Funktion.0" is not defined.' in C:\xampp\htdocs\Finanzberatung\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\db\ar\CActiveRecord.php(144): CComponent->__get('0')
+#1 C:\xampp\htdocs\Finanzberatung\framework\base\CModel.php(593): CActiveRecord->__get('0')
+#2 C:\xampp\htdocs\Finanzberatung\protected\views\site\neu.php(82): CModel->offsetGet(0)
+#3 C:\xampp\htdocs\Finanzberatung\framework\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#4 C:\xampp\htdocs\Finanzberatung\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(870): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#6 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(783): CController->renderPartial('neu', Array, true)
+#7 C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php(139): CController->render('neu', Array)
+#8 C:\xampp\htdocs\Finanzberatung\framework\web\actions\CInlineAction.php(50): SiteController->actionNeu()
+#9 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#10 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#11 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): CController->run('neu')
+#13 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController('site/neu')
+#14 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\Finanzberatung\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/finanzberatung/index.php?r=site/neu
+HTTP_REFERER=http://localhost/finanzberatung/
+---

@@ -79,7 +79,7 @@
 	for($i=0;$i<count($model3);$i++){
                                 
             echo 
-            '<h3><div><div style="float: left;">'.$model3[$i]["name"].'</div><div style="float: right;">Grobphase '.$model3[$i]["grobphase_id"].'</div></div></h3>
+            '<h3><div><div style="float: left;">'.$model3[$i]["name"].'</div><div style="float: right;">'.$grobphase[$model3[$i]["grobphase_id"]]["name"].'</div></div></h3>
              <div style="overflow: scroll; min-height: 250px;">
                 <div id="'.$i.'" style="width: 10000px;">';
 
@@ -88,7 +88,7 @@
                                         $key2 = $model6[$j];
 
                         echo '
-                        <li class="'.$key.'" id="'.$key.'" style="">
+                        <li class="'.$key.'" id="'.$key.'" style="none">
                             <div class="toggler" id="toggle'.$j.'"><p class="spalte_fct">'.$key2.'</p></div>
                             <div class="toggle toggle'.$j.'_content" id="toggle'.$j.'_content" ><span>'.$model3[$i][$key].'</span></div>
                         </li>
@@ -117,8 +117,8 @@
 
         var value = ui.value;
         alert('Display: ' + value);
-        var current_vis = document.getElementById(value).style.display;
-        
+        var current_vis = $("#"+value).css("display");
+        alert('Di: ' + current_vis);
 		if(current_vis!="none"){
 			for(var i=0;$i<<?php echo count($model);?>;i++){
 			document.getElementsByClassName(name)[i].style.display="none";
