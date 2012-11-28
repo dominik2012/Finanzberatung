@@ -12,7 +12,7 @@
 
 .toggler {
     float: left;
-    height: 200px;
+    height: 205px;
     width: 40px;
     background-color: #EEEEEE;
     border: 2px solid #0075B8;
@@ -189,15 +189,11 @@ body
         cursor: pointer;
         border: 2px solid #5F5F5F;
 }
-/*
+
 #viewfilter:hover
 {
-        right: 0;
-	-webkit-transition: all 1.0s ease-in;
-        -moz-transition: all 1.0s ease-in;
-        -o-transition: all 1.0s ease-in;
-        transition: all 1.0s ease-in;
-}*/
+        background-color: #1695DD;
+}
 
 #view_name
 {

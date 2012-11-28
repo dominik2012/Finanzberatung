@@ -114,18 +114,44 @@
                 </div>
             </h3>
                     
-             <div style="height: 205px;">
+             <div style="height: 210px;">
                 <div id="'.$i.'" style="width: 10000px;">';
 
 			for($j=0;$j<count($model5);$j++){
                             $key = $model5[$j];
-                            $key2 = $model6[$j];
+                            $spaName = $model6[$j];
+                            $spaInhalt = $model3[$i][$key];
+                            $style = "";
+                            
+                            //Grafik Abfragen
+                            if($spaInhalt == "gesetzFunktion"){
+                                $spaInhalt = "<img src='/Finanzberatung/css/images/pfeile/gesetzFunktion.png'>";
+                                $style = " style='width: 52px; overflow: hidden;'";
+                            }else if($spaInhalt == "funktionGesetz"){
+                                $spaInhalt = "<img src='/Finanzberatung/css/images/pfeile/funktionGesetz.png'>";
+                                $style = " style='width: 52px; overflow: hidden;'";
+                            }else if($spaInhalt == null){
+                               if($spaName == "Privat mit Beratung" || $spaName == "Privat ohne Beratung" || $spaName == "Professionell mit Beratung" || $spaName == "Professionell ohne Beratung")
+                                $spaInhalt = "<img src='/Finanzberatung/css/images/pfeile/null.png'>";
+                                $style = " style='width: 52px; overflow: hidden;'";
+                            }else if($spaInhalt == "gelb"){
+                                $spaInhalt = "<img src='/Finanzberatung/css/images/pfeile/gelb.png'>";
+                                $style = " style='width: 52px; overflow: hidden;'";
+                            }else if($spaInhalt == "gruen"){
+                                $spaInhalt = "<img src='/Finanzberatung/css/images/pfeile/gruen.png'>";
+                                $style = " style='width: 52px; overflow: hidden;'";
+                            }
+                            else if($spaInhalt == "gelbHoch"){
+                                $spaInhalt = "<img src='/Finanzberatung/css/images/pfeile/gelbHoch.png'>";
+                                $style = " style='width: 52px; overflow: hidden;'";
+                            }
+                            
                             
                             //Ausgabe Inhalt pro Accordion______________________
                             echo '
                             <li class="'.$key.'" id="'.$key.'" style="display: none;">
-                                <div class="toggler" id="toggle'.$j.'"><p class="spalte_fct">'.$key2.'</p></div>
-                                <div class="toggle toggle'.$j.'_content" id="toggle'.$j.'_content"><span>'.$model3[$i][$key].'</span></div>
+                                <div class="toggler" id="toggle'.$j.'"><p class="spalte_fct">'.$spaName.'</p></div>
+                                <div class="toggle toggle'.$j.'_content" id="toggle'.$j.'_content"'.$style.'><span>'.$spaInhalt.'</span></div>
                             </li>
                             ';
 			}
