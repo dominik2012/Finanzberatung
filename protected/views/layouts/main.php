@@ -32,8 +32,11 @@
 				array(  'label'=>'Home', 
                                         'url'=>array('/site/index')
                                 ),
-                                array(  'label'=>'Test', 
+                                array(  'label'=>'Filter', 
                                         'url'=>array('/site/neu')
+                                ),
+                                array(  'label'=>'Details', 
+                                        'url'=>array('/site/details')
                                 ),
 				array(  'label'=>'Benutzerverwaltung', 
                                         'url'=>array('/userGroups/admin'), 

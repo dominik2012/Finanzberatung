@@ -3971,3 +3971,56 @@ Stack trace:
 REQUEST_URI=/finanzberatung/index.php?r=site/neu
 HTTP_REFERER=http://localhost/finanzberatung/
 ---
+2012/11/28 09:38:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "details".' in C:\xampp\htdocs\Finanzberatung\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(271): CController->missingAction('details')
+#1 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): CController->run('details')
+#2 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController('site/details')
+#3 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\Finanzberatung\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/finanzberatung/index.php?r=site/details
+HTTP_REFERER=http://localhost/finanzberatung/index.php?r=site/neu
+---
+2012/11/28 10:38:59 [error] [exception.CException] exception 'CException' with message 'CActiveForm and its behaviors do not have a method or closure named "checkList".' in C:\xampp\htdocs\Finanzberatung\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\protected\views\site\neu.php(36): CComponent->__call('checkList', Array)
+#1 C:\xampp\htdocs\Finanzberatung\protected\views\site\neu.php(36): CActiveForm->checkList(Object(NeuForm), 'grobphase_id', Array, Array)
+#2 C:\xampp\htdocs\Finanzberatung\framework\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\Finanzberatung\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(870): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(783): CController->renderPartial('neu', Array, true)
+#6 C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php(135): CController->render('neu', Array)
+#7 C:\xampp\htdocs\Finanzberatung\framework\web\actions\CInlineAction.php(50): SiteController->actionNeu()
+#8 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): CController->run('neu')
+#12 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController('site/neu')
+#13 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\Finanzberatung\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/finanzberatung/index.php?r=site/neu
+HTTP_REFERER=http://localhost/finanzberatung/index.php?r=site/neu
+---
+2012/11/28 10:39:15 [error] [exception.CException] exception 'CException' with message 'CActiveForm and its behaviors do not have a method or closure named "checkedList".' in C:\xampp\htdocs\Finanzberatung\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\protected\views\site\neu.php(36): CComponent->__call('checkedList', Array)
+#1 C:\xampp\htdocs\Finanzberatung\protected\views\site\neu.php(36): CActiveForm->checkedList(Object(NeuForm), 'grobphase_id', Array, Array)
+#2 C:\xampp\htdocs\Finanzberatung\framework\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\Finanzberatung\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(870): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(783): CController->renderPartial('neu', Array, true)
+#6 C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php(135): CController->render('neu', Array)
+#7 C:\xampp\htdocs\Finanzberatung\framework\web\actions\CInlineAction.php(50): SiteController->actionNeu()
+#8 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): CController->run('neu')
+#12 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController('site/neu')
+#13 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\Finanzberatung\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/finanzberatung/index.php?r=site/neu
+HTTP_REFERER=http://localhost/finanzberatung/index.php?r=site/neu
+---

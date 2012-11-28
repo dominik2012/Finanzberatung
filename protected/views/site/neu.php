@@ -33,7 +33,7 @@
 		<?php  echo $form->errorSummary($model2); ?>
 
 		<div class="row">
-			<?php echo "Grobphasen: ".$form->dropDownList($model2,'grobphase_id',array('0'=>'0','1'=>'1','2'=>'2','3'=>'3','4'=>'4','5'=>'5','6'=>'6','7'=>'7','8'=>'8','9'=>'9','10'=>'10',),array('separator'=>'','template'=>'<li style="display:inline; padding-left:10px;">{label}{input}</li>',)); 
+			<?php echo "Grobphasen: ".$form->checkBoxList($model2,'grobphase_id',array('0'=>'0','1'=>'1','2'=>'2','3'=>'3','4'=>'4','5'=>'5','6'=>'6','7'=>'7','8'=>'8','9'=>'9','10'=>'10',),array('separator'=>'','template'=>'<li style="display:inline; padding-left:10px;">{label}{input}</li>',)); 
                         ?>
 		</div>
 		
@@ -49,8 +49,8 @@
     <div style="view_name" id="view_name"><p>ANZEIGEFILTER</p></div>
 	<div>
 		<form name="anzeigefilter" id="anzeigefilter">
-		<select id="multiselect" data-placeholder="Anzeigefilter" style="width:350px;" multiple="multiple" <!--class="chzn-select-->">
-                <option value=""></option>
+		<select id="multiselect" data-placeholder="Anzeigefilter" style="width:350px;" multiple="multiple">
+                <!--<option value=""></option>-->
                 <?php
 			for ($i=0;$i<count($model5);$i++){
 				echo '<option value="'.$model5[$i].'" id="'.$model5[$i].'" name="'.$model5[$i].'");>'.$model6[$i].'</option>';
@@ -79,7 +79,13 @@
 	for($i=0;$i<count($model3);$i++){
                                 
             echo 
-            '<h3><div><div style="float: left;">'.$model3[$i]["name"].'</div><div style="float: right;">'.$grobphase[$model3[$i]["grobphase_id"]]["name"].'</div></div></h3>
+            '<h3>
+                <div>
+                    <div style="float: left;">['.$model3[$i]["nummer"].']&nbsp;'.$model3[$i]["name"].'</div>
+                    <div id="grobphaseR">'.$grobphase[$model3[$i]["grobphase_id"]]["name"].'&nbsp;['.$grobphase[$model3[$i]["grobphase_id"]]["grobphase_id"].']</div>
+                </div>
+            </h3>
+                    
              <div style="overflow: scroll; min-height: 250px;">
                 <div id="'.$i.'" style="width: 10000px;">';
 
@@ -106,9 +112,9 @@
    
 </div>       
 
+<!-- Scripte ------------------------------------------------------------------->
 <script type="text/javascript"> 
-    //$(".chzn-select").chosen();
-    //$(".chzn-select-deselect").chosen({allow_single_deselect:true});
+
     $("#multiselect").multiselect({
         selectedText: "# of # selected"
     });
@@ -116,29 +122,17 @@
     $("#multiselect").bind("multiselectclick", function(event, ui){
 
         var value = ui.value;
-        alert('Display: ' + value);
-        var current_vis = $("#"+value).css("display");
-        alert('Di: ' + current_vis);
-		if(current_vis!="none"){
-			for(var i=0;$i<<?php echo count($model);?>;i++){
-			document.getElementsByClassName(name)[i].style.display="none";
-			}
-			}
-		else{
-			for(var i=0;i<<?php echo count($model);?>;i++){
-			document.getElementsByClassName(name)[i].style.display="block";
-			}
-			}
-        
-        /*
-	event: the original event object
- 
-	ui.value: value of the checkbox
-	ui.text: text of the checkbox
-	ui.checked: whether or not the input was checked
-        or unchecked (boolean)
-	*/
+
+        var val = '.'+value;
+
+        if($(val).is(':visible')){
+            $(val).css('display','none');
+        }
+        else{
+            $(val).css('display','block');
+        }
     });
+    
 </script>        
         
 <script type="text/javascript">
