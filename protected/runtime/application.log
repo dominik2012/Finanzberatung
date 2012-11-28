@@ -4041,3 +4041,64 @@ REQUEST_URI=/finanzberatung/index.php?r=site/neu
 in C:\xampp\htdocs\Finanzberatung\protected\views\site\neu.php (120)
 in C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php (135)
 in C:\xampp\htdocs\Finanzberatung\index.php (13)
+2012/11/28 16:13:34 [error] [exception.CException] exception 'CException' with message 'Property "Grobphase.unterphase_id" is not defined.' in C:\xampp\htdocs\Finanzberatung\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\db\ar\CActiveRecord.php(144): CComponent->__get('unterphase_id')
+#1 C:\xampp\htdocs\Finanzberatung\framework\base\CModel.php(593): CActiveRecord->__get('unterphase_id')
+#2 C:\xampp\htdocs\Finanzberatung\protected\views\site\neu.php(98): CModel->offsetGet('unterphase_id')
+#3 C:\xampp\htdocs\Finanzberatung\framework\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#4 C:\xampp\htdocs\Finanzberatung\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(870): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#6 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(783): CController->renderPartial('neu', Array, true)
+#7 C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php(135): CController->render('neu', Array)
+#8 C:\xampp\htdocs\Finanzberatung\framework\web\actions\CInlineAction.php(50): SiteController->actionNeu()
+#9 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#10 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#11 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): CController->run('neu')
+#13 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController('site/neu')
+#14 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\Finanzberatung\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/finanzberatung/index.php?r=site/neu
+HTTP_REFERER=http://localhost/finanzberatung/index.php?r=site/neu
+---
+2012/11/28 16:13:54 [error] [exception.CException] exception 'CException' with message 'Property "Grobphase.unterphase_id" is not defined.' in C:\xampp\htdocs\Finanzberatung\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\db\ar\CActiveRecord.php(144): CComponent->__get('unterphase_id')
+#1 C:\xampp\htdocs\Finanzberatung\framework\base\CModel.php(593): CActiveRecord->__get('unterphase_id')
+#2 C:\xampp\htdocs\Finanzberatung\protected\views\site\neu.php(98): CModel->offsetGet('unterphase_id')
+#3 C:\xampp\htdocs\Finanzberatung\framework\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#4 C:\xampp\htdocs\Finanzberatung\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(870): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#6 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(783): CController->renderPartial('neu', Array, true)
+#7 C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php(135): CController->render('neu', Array)
+#8 C:\xampp\htdocs\Finanzberatung\framework\web\actions\CInlineAction.php(50): SiteController->actionNeu()
+#9 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#10 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#11 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): CController->run('neu')
+#13 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController('site/neu')
+#14 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\Finanzberatung\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/finanzberatung/index.php?r=site/neu
+HTTP_REFERER=http://localhost/finanzberatung/index.php?r=site/neu
+---
+2012/11/28 16:22:58 [error] [php] Undefined index: grobphase_id (C:\xampp\htdocs\Finanzberatung\protected\views\site\neu.php:98)
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(870): SiteController->renderFile()
+#1 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(783): SiteController->renderPartial()
+#2 C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php(135): SiteController->render()
+#3 C:\xampp\htdocs\Finanzberatung\framework\web\actions\CInlineAction.php(50): SiteController->actionNeu()
+#4 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): SiteController->runAction()
+#6 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#7 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): SiteController->run()
+#8 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#9 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\Finanzberatung\index.php(13): CWebApplication->run()
+REQUEST_URI=/finanzberatung/index.php?r=site/neu
+in C:\xampp\htdocs\Finanzberatung\protected\views\site\neu.php (98)
+in C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php (135)
+in C:\xampp\htdocs\Finanzberatung\index.php (13)

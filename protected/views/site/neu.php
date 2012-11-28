@@ -90,12 +90,18 @@
    <?php
     if(isset($model3)){
 	for($i=0;$i<count($model3);$i++){
-                                
+            
+            $fktNr = $model3[$i]["nummer"];
+            $fktName = $model3[$i]["name"];
+            $phaseName = $grobphase[$model3[$i]["grobphase_id"]]["name"];
+            $phaseNr = $grobphase[$model3[$i]["grobphase_id"]]["grobphase_id"];
+            $uphaseNr = $model3[$i]["unterphase_id"];
+            
             echo 
             '<h3>
                 <div>
-                    <div style="float: left;">['.$model3[$i]["nummer"].']&nbsp;'.$model3[$i]["name"].'</div>
-                    <div id="grobphaseR">'.$grobphase[$model3[$i]["grobphase_id"]]["name"].'&nbsp;['.$grobphase[$model3[$i]["grobphase_id"]]["grobphase_id"].']</div>
+                    <div style="float: left;">['.$fktNr.']&nbsp;'.$fktName.'</div>
+                    <div id="grobphaseR">'.$phaseName.'&nbsp;['.$phaseNr.']['.$uphaseNr.']</div>
                 </div>
             </h3>
                     
@@ -111,17 +117,8 @@
 
                         echo '
                         <li class="'.$key.'" id="'.$key.'" style="display: none;">
-                            <div class="toggler" id="toggle'.$j.'"><p class="spalte_fct">'.$key2.'</p></div>';
-                                
-                            if($key2 == "ID" || $key2 == "Nummer"){
-                                $style = " style='width: 50px;'";
-                            }
-                            else{
-                                $style = "";
-                            }
-                            
-                        echo '
-                            <div class="toggle toggle'.$j.'_content" id="toggle'.$j.'_content" '.$style.'><span>'.$model3[$i][$key].'</span></div>
+                            <div class="toggler" id="toggle'.$j.'"><p class="spalte_fct">'.$key2.'</p></div>
+                            <div class="toggle toggle'.$j.'_content" id="toggle'.$j.'_content"><span>'.$model3[$i][$key].'</span></div>
                         </li>
                         ';
                         }
