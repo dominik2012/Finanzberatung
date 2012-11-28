@@ -75,13 +75,15 @@ body
     position: fixed;
     right: 40px;
     top: 117px;
+    background-color: #0075B8;
 }
 
 #dragbutton {
     width: 30px;
     height: 30px;
-    background-color: #262CBD;
+    background-color: #0075B8;
     float: left;
+    cursor: move;
 }
 
 #filterlist
