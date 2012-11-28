@@ -54,14 +54,18 @@
     <div style="view_name" id="view_name"><p>ANZEIGEFILTER</p></div>
 </div>
     
-<div id="draggable" class="ui-widget-content" style="">
-    <div id="dragbutton"></div>
-    <div style="float: right;">
+<div id="draggable">
+    <div id="dragbutton">FUNKTIONSFILTER</div>
+    <div id="dragcontent">
 		<form name="anzeigefilter" id="anzeigefilter">
 		<select id="multiselect" data-placeholder="Anzeigefilter" style="width:350px;" multiple="multiple">
                 <?php
 			for ($i=0;$i<count($model5);$i++){
-				echo '<option value="'.$model5[$i].'" id="'.$model5[$i].'" name="'.$model5[$i].'");>'.$model6[$i].'</option>';
+                            if($model6[$i] == "ID" || $model6[$i] == "Nummer" || $model6[$i] == "Name" || $model6[$i] == "Unterphase" || $model6[$i] == "Grobphase"){
+                            
+                            }else{
+                                echo '<option value="'.$model5[$i].'" id="'.$model5[$i].'" name="'.$model5[$i].'");>'.$model6[$i].'</option>';
+                            }	
 			}    
                 ?>
                 </select>
@@ -95,20 +99,36 @@
                 </div>
             </h3>
                     
-             <div style="overflow: scroll; max-height: 200px;">
+             <div style="height: 205px;">
                 <div id="'.$i.'" style="width: 10000px;">';
 
 			for($j=0;$j<count($model5);$j++){
 					$key = $model5[$j];
                                         $key2 = $model6[$j];
+                        if($key2 == "ID" || $key2 == "Nummer" || $key2 == "Name" || $key2 == "Unterphase" || $key2 == "Grobphase"){
+                            
+                        }else{
 
                         echo '
                         <li class="'.$key.'" id="'.$key.'" style="display: none;">
-                            <div class="toggler" id="toggle'.$j.'"><p class="spalte_fct">'.$key2.'</p></div>
-                            <div class="toggle toggle'.$j.'_content" id="toggle'.$j.'_content" ><span>'.$model3[$i][$key].'</span></div>
+                            <div class="toggler" id="toggle'.$j.'"><p class="spalte_fct">'.$key2.'</p></div>';
+                                
+                            if($key2 == "ID" || $key2 == "Nummer"){
+                                $style = " style='width: 50px;'";
+                            }
+                            else{
+                                $style = "";
+                            }
+                            
+                        echo '
+                            <div class="toggle toggle'.$j.'_content" id="toggle'.$j.'_content" '.$style.'><span>'.$model3[$i][$key].'</span></div>
                         </li>
                         ';
-			} 		
+                        }
+			}
+                        
+                        
+                        
             echo '
                 <noscript>
                     <p>Please enable JavaScript to get the full experience.</p>
