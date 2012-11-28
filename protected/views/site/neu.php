@@ -50,13 +50,10 @@
 	<div>
 		<form name="anzeigefilter" id="anzeigefilter">
 		<select id="multiselect" data-placeholder="Anzeigefilter" style="width:350px;" multiple="multiple">
-                <!--<option value=""></option>-->
                 <?php
 			for ($i=0;$i<count($model5);$i++){
 				echo '<option value="'.$model5[$i].'" id="'.$model5[$i].'" name="'.$model5[$i].'");>'.$model6[$i].'</option>';
-                                //echo '<input type="checkbox" id="'.$model5[$i].'filter" name="'.$model5[$i].'" onClick=showtab("'.$model5[$i].'");><br>';
-			;
-                        }    
+			}    
                 ?>
                 </select>
 		</form>
@@ -94,7 +91,7 @@
                                         $key2 = $model6[$j];
 
                         echo '
-                        <li class="'.$key.'" id="'.$key.'" style="none">
+                        <li class="'.$key.'" id="'.$key.'" style="display: none;">
                             <div class="toggler" id="toggle'.$j.'"><p class="spalte_fct">'.$key2.'</p></div>
                             <div class="toggle toggle'.$j.'_content" id="toggle'.$j.'_content" ><span>'.$model3[$i][$key].'</span></div>
                         </li>
