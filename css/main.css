@@ -12,7 +12,7 @@
 
 .toggler {
     float: left;
-    height: 250px;
+    height: 200px;
     width: 40px;
     background-color: #EEEEEE;
     border: 2px solid #0075B8;
@@ -26,10 +26,11 @@
     float: left; 
     width: 300px; 
     display: block; 
-    min-height: 250px; 
+    height: 200px; 
     border-right: 2px solid #0075B8;
     border-bottom: 1px solid #B8B5B5;
     background-color: #E4E4E4;
+    overflow: scroll;
 }
 
 .spalte_fct {

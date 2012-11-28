@@ -95,7 +95,7 @@
                 </div>
             </h3>
                     
-             <div style="overflow: scroll; min-height: 250px;">
+             <div style="overflow: scroll; max-height: 200px;">
                 <div id="'.$i.'" style="width: 10000px;">';
 
 			for($j=0;$j<count($model5);$j++){
