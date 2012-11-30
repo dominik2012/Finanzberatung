@@ -139,4 +139,15 @@ class SiteController extends Controller
 		$this->render('neu',array('model'=>$funktion, 'model2' =>$filter, 'model6' => $spaltennamen, 'model5' => $spaltennamen2));
 		}
 	}
+        
+        public function actionDetails()
+	{
+		$funktion = new Funktion;
+		$filter = new NeuForm;
+		$spaltennamen2 = Funktion::model()->getTableSchema()->getColumnNames();
+                $spaltennamen = Funktion::model()->attributeLabelsIndexAreNumbers();
+		$model = array($funktion,$filter,);
+		$this->render('details',array('model'=>$funktion, 'model2' =>$filter, 'model6' => $spaltennamen, 'model5' => $spaltennamen2));
+        }
+     
 }

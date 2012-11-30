@@ -454,3 +454,36 @@ div.search-form
 {
 	background: #80CFFF;
 }
+
+.boxes
+{
+        background: #DADADA;
+        border: 1px;
+        border-color: #B8B5B5;
+        margin: 10px;
+        width: max-content;
+        float: left;
+        border-radius: 5px 5px 0px 0px;
+}
+
+#kopfzeile
+{
+        width: 100%;
+        
+}
+
+.topline
+{
+        border: 1px;
+        border-color: #B8B5B5;
+        background: #C0C0C0;
+        text-align: center;
+        padding: 5px;
+        border-radius: 5px 5px 0px 0px;
+        margin-bottom: 5px;
+}
+
+button
+{
+    
+}
