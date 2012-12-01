@@ -2,7 +2,7 @@
 class NeuForm extends CFormModel
 {
 	public $grobphase_id = array();	
-	
+	public $unterphase_id = array();
 	public function rules()
 	{
 		return array(

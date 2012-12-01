@@ -4119,3 +4119,502 @@ REQUEST_URI=/finanzberatung/index.php?r=site/neu
 in C:\xampp\htdocs\Finanzberatung\protected\views\site\neu.php (184)
 in C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php (135)
 in C:\xampp\htdocs\Finanzberatung\index.php (13)
+2012/11/30 12:52:36 [error] [php] Undefined variable: fktName (C:\xampp\htdocs\Finanzberatung\protected\views\site\neu.php:184)
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(870): SiteController->renderFile()
+#1 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(783): SiteController->renderPartial()
+#2 C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php(139): SiteController->render()
+#3 C:\xampp\htdocs\Finanzberatung\framework\web\actions\CInlineAction.php(50): SiteController->actionNeu()
+#4 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): SiteController->runAction()
+#6 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#7 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): SiteController->run()
+#8 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#9 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\Finanzberatung\index.php(13): CWebApplication->run()
+REQUEST_URI=/Finanzberatung/index.php?r=site/neu
+in C:\xampp\htdocs\Finanzberatung\protected\views\site\neu.php (184)
+in C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php (139)
+in C:\xampp\htdocs\Finanzberatung\index.php (13)
+2012/11/30 13:25:45 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[HY000]: General error: 1111 Invalid use of group function. The SQL statement executed was: SELECT * FROM funktion WHERE grobphase_id IN (COUNT(grobphase_id)).
+in C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php (134)
+in C:\xampp\htdocs\Finanzberatung\index.php (13)
+2012/11/30 13:25:45 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY000]: General error: 1111 Invalid use of group function. The SQL statement executed was: SELECT * FROM funktion WHERE grobphase_id IN (COUNT(grobphase_id))' in C:\xampp\htdocs\Finanzberatung\framework\db\CDbCommand.php:528
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\Finanzberatung\framework\db\ar\CActiveRecord.php(1521): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php(134): CActiveRecord->findAllBySql('SELECT * FROM f...')
+#3 C:\xampp\htdocs\Finanzberatung\framework\web\actions\CInlineAction.php(50): SiteController->actionNeu()
+#4 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): CController->run('neu')
+#8 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController('site/neu')
+#9 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\Finanzberatung\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/Finanzberatung/index.php?r=site/neu
+HTTP_REFERER=http://localhost/Finanzberatung/index.php?r=site/neu
+---
+2012/11/30 14:03:19 [error] [php] Illegal string offset 'grobphase_id' (C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php:129)
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): SiteController->runAction()
+#1 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#2 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): SiteController->run()
+#3 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#4 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\Finanzberatung\index.php(13): CWebApplication->run()
+REQUEST_URI=/Finanzberatung/index.php?r=site/neu
+in C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php (129)
+in C:\xampp\htdocs\Finanzberatung\index.php (13)
+2012/11/30 14:13:20 [error] [php] Object of class NeuForm could not be converted to string (C:\xampp\htdocs\Finanzberatung\protected\views\site\neu.php:107)
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(870): SiteController->renderFile()
+#1 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(783): SiteController->renderPartial()
+#2 C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php(139): SiteController->render()
+#3 C:\xampp\htdocs\Finanzberatung\framework\web\actions\CInlineAction.php(50): SiteController->actionNeu()
+#4 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): SiteController->runAction()
+#6 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#7 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): SiteController->run()
+#8 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#9 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\Finanzberatung\index.php(13): CWebApplication->run()
+REQUEST_URI=/Finanzberatung/index.php?r=site/neu
+in C:\xampp\htdocs\Finanzberatung\protected\views\site\neu.php (107)
+in C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php (139)
+in C:\xampp\htdocs\Finanzberatung\index.php (13)
+2012/11/30 14:14:58 [error] [exception.CException] exception 'CException' with message 'Property "Funktion.0" is not defined.' in C:\xampp\htdocs\Finanzberatung\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\db\ar\CActiveRecord.php(144): CComponent->__get('0')
+#1 C:\xampp\htdocs\Finanzberatung\framework\base\CModel.php(593): CActiveRecord->__get('0')
+#2 C:\xampp\htdocs\Finanzberatung\protected\views\site\neu.php(120): CModel->offsetGet(0)
+#3 C:\xampp\htdocs\Finanzberatung\framework\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#4 C:\xampp\htdocs\Finanzberatung\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(870): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#6 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(783): CController->renderPartial('neu', Array, true)
+#7 C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php(139): CController->render('neu', Array)
+#8 C:\xampp\htdocs\Finanzberatung\framework\web\actions\CInlineAction.php(50): SiteController->actionNeu()
+#9 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#10 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#11 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): CController->run('neu')
+#13 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController('site/neu')
+#14 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\Finanzberatung\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/Finanzberatung/index.php?r=site/neu
+HTTP_REFERER=http://localhost/Finanzberatung/index.php?r=site/neu
+---
+2012/11/30 14:16:31 [error] [exception.CException] exception 'CException' with message 'Property "Funktion.0" is not defined.' in C:\xampp\htdocs\Finanzberatung\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\db\ar\CActiveRecord.php(144): CComponent->__get('0')
+#1 C:\xampp\htdocs\Finanzberatung\framework\base\CModel.php(593): CActiveRecord->__get('0')
+#2 C:\xampp\htdocs\Finanzberatung\protected\views\site\neu.php(120): CModel->offsetGet(0)
+#3 C:\xampp\htdocs\Finanzberatung\framework\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#4 C:\xampp\htdocs\Finanzberatung\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(870): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#6 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(783): CController->renderPartial('neu', Array, true)
+#7 C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php(140): CController->render('neu', Array)
+#8 C:\xampp\htdocs\Finanzberatung\framework\web\actions\CInlineAction.php(50): SiteController->actionNeu()
+#9 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#10 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#11 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): CController->run('neu')
+#13 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController('site/neu')
+#14 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\Finanzberatung\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/Finanzberatung/index.php?r=site/neu
+HTTP_REFERER=http://localhost/Finanzberatung/index.php?r=site/neu
+---
+2012/11/30 14:17:25 [error] [php] Undefined variable: fktName (C:\xampp\htdocs\Finanzberatung\protected\views\site\neu.php:203)
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(870): SiteController->renderFile()
+#1 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(783): SiteController->renderPartial()
+#2 C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php(140): SiteController->render()
+#3 C:\xampp\htdocs\Finanzberatung\framework\web\actions\CInlineAction.php(50): SiteController->actionNeu()
+#4 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): SiteController->runAction()
+#6 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#7 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): SiteController->run()
+#8 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#9 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\Finanzberatung\index.php(13): CWebApplication->run()
+REQUEST_URI=/Finanzberatung/index.php?r=site/neu
+in C:\xampp\htdocs\Finanzberatung\protected\views\site\neu.php (203)
+in C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php (140)
+in C:\xampp\htdocs\Finanzberatung\index.php (13)
+2012/11/30 14:21:16 [error] [php] Uninitialized string offset: 1 (C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php:125)
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): SiteController->runAction()
+#1 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#2 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): SiteController->run()
+#3 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#4 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\Finanzberatung\index.php(13): CWebApplication->run()
+REQUEST_URI=/Finanzberatung/index.php?r=site/neu
+in C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php (125)
+in C:\xampp\htdocs\Finanzberatung\index.php (13)
+2012/11/30 15:06:11 [error] [php] Uninitialized string offset: 1 (C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php:125)
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): SiteController->runAction()
+#1 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#2 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): SiteController->run()
+#3 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#4 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\Finanzberatung\index.php(13): CWebApplication->run()
+REQUEST_URI=/Finanzberatung/index.php?r=site/neu
+in C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php (125)
+in C:\xampp\htdocs\Finanzberatung\index.php (13)
+2012/11/30 15:24:39 [error] [php] Undefined variable: fktName (C:\xampp\htdocs\Finanzberatung\protected\views\site\neu.php:204)
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(870): SiteController->renderFile()
+#1 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(783): SiteController->renderPartial()
+#2 C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php(142): SiteController->render()
+#3 C:\xampp\htdocs\Finanzberatung\framework\web\actions\CInlineAction.php(50): SiteController->actionNeu()
+#4 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): SiteController->runAction()
+#6 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#7 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): SiteController->run()
+#8 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#9 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\Finanzberatung\index.php(13): CWebApplication->run()
+REQUEST_URI=/Finanzberatung/index.php?r=site/neu
+in C:\xampp\htdocs\Finanzberatung\protected\views\site\neu.php (204)
+in C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php (142)
+in C:\xampp\htdocs\Finanzberatung\index.php (13)
+2012/11/30 15:31:08 [error] [php] Undefined variable: fktName (C:\xampp\htdocs\Finanzberatung\protected\views\site\neu.php:204)
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(870): SiteController->renderFile()
+#1 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(783): SiteController->renderPartial()
+#2 C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php(138): SiteController->render()
+#3 C:\xampp\htdocs\Finanzberatung\framework\web\actions\CInlineAction.php(50): SiteController->actionNeu()
+#4 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): SiteController->runAction()
+#6 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#7 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): SiteController->run()
+#8 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#9 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\Finanzberatung\index.php(13): CWebApplication->run()
+REQUEST_URI=/Finanzberatung/index.php?r=site/neu
+in C:\xampp\htdocs\Finanzberatung\protected\views\site\neu.php (204)
+in C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php (138)
+in C:\xampp\htdocs\Finanzberatung\index.php (13)
+2012/11/30 18:22:36 [error] [php] Undefined index: unterphase (C:\xampp\htdocs\Finanzberatung\protected\views\site\neu.php:47)
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(870): SiteController->renderFile()
+#1 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(783): SiteController->renderPartial()
+#2 C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php(156): SiteController->render()
+#3 C:\xampp\htdocs\Finanzberatung\framework\web\actions\CInlineAction.php(50): SiteController->actionNeu()
+#4 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): SiteController->runAction()
+#6 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#7 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): SiteController->run()
+#8 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#9 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\Finanzberatung\index.php(13): CWebApplication->run()
+REQUEST_URI=/Finanzberatung/index.php?r=site/neu
+in C:\xampp\htdocs\Finanzberatung\protected\views\site\neu.php (47)
+in C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php (156)
+in C:\xampp\htdocs\Finanzberatung\index.php (13)
+2012/11/30 18:51:03 [error] [php] Undefined variable: fil_unterphase (C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php:134)
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): SiteController->runAction()
+#1 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#2 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): SiteController->run()
+#3 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#4 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\Finanzberatung\index.php(13): CWebApplication->run()
+REQUEST_URI=/Finanzberatung/index.php?r=site/neu
+in C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php (134)
+in C:\xampp\htdocs\Finanzberatung\index.php (13)
+2012/11/30 18:52:10 [error] [php] Array to string conversion (C:\xampp\htdocs\Finanzberatung\protected\views\site\neu.php:119)
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(870): SiteController->renderFile()
+#1 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(783): SiteController->renderPartial()
+#2 C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php(153): SiteController->render()
+#3 C:\xampp\htdocs\Finanzberatung\framework\web\actions\CInlineAction.php(50): SiteController->actionNeu()
+#4 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): SiteController->runAction()
+#6 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#7 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): SiteController->run()
+#8 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#9 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\Finanzberatung\index.php(13): CWebApplication->run()
+REQUEST_URI=/Finanzberatung/index.php?r=site/neu
+in C:\xampp\htdocs\Finanzberatung\protected\views\site\neu.php (119)
+in C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php (153)
+in C:\xampp\htdocs\Finanzberatung\index.php (13)
+2012/11/30 18:56:14 [error] [php] Undefined variable: fktName (C:\xampp\htdocs\Finanzberatung\protected\views\site\neu.php:215)
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(870): SiteController->renderFile()
+#1 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(783): SiteController->renderPartial()
+#2 C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php(153): SiteController->render()
+#3 C:\xampp\htdocs\Finanzberatung\framework\web\actions\CInlineAction.php(50): SiteController->actionNeu()
+#4 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): SiteController->runAction()
+#6 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#7 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): SiteController->run()
+#8 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#9 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\Finanzberatung\index.php(13): CWebApplication->run()
+REQUEST_URI=/Finanzberatung/index.php?r=site/neu
+in C:\xampp\htdocs\Finanzberatung\protected\views\site\neu.php (215)
+in C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php (153)
+in C:\xampp\htdocs\Finanzberatung\index.php (13)
+2012/11/30 23:28:37 [error] [php] Undefined variable: fil_name (C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php:155)
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): SiteController->runAction()
+#1 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#2 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): SiteController->run()
+#3 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#4 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\Finanzberatung\index.php(13): CWebApplication->run()
+REQUEST_URI=/Finanzberatung/index.php?r=site/neu
+in C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php (155)
+in C:\xampp\htdocs\Finanzberatung\index.php (13)
+2012/11/30 23:29:32 [error] [php] Undefined variable: fktName (C:\xampp\htdocs\Finanzberatung\protected\views\site\neu.php:226)
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(870): SiteController->renderFile()
+#1 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(783): SiteController->renderPartial()
+#2 C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php(165): SiteController->render()
+#3 C:\xampp\htdocs\Finanzberatung\framework\web\actions\CInlineAction.php(50): SiteController->actionNeu()
+#4 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): SiteController->runAction()
+#6 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#7 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): SiteController->run()
+#8 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#9 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\Finanzberatung\index.php(13): CWebApplication->run()
+REQUEST_URI=/Finanzberatung/index.php?r=site/neu
+in C:\xampp\htdocs\Finanzberatung\protected\views\site\neu.php (226)
+in C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php (165)
+in C:\xampp\htdocs\Finanzberatung\index.php (13)
+2012/11/30 23:31:27 [error] [php] Undefined variable: fktName (C:\xampp\htdocs\Finanzberatung\protected\views\site\neu.php:226)
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(870): SiteController->renderFile()
+#1 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(783): SiteController->renderPartial()
+#2 C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php(165): SiteController->render()
+#3 C:\xampp\htdocs\Finanzberatung\framework\web\actions\CInlineAction.php(50): SiteController->actionNeu()
+#4 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): SiteController->runAction()
+#6 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#7 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): SiteController->run()
+#8 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#9 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\Finanzberatung\index.php(13): CWebApplication->run()
+REQUEST_URI=/Finanzberatung/index.php?r=site/neu
+in C:\xampp\htdocs\Finanzberatung\protected\views\site\neu.php (226)
+in C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php (165)
+in C:\xampp\htdocs\Finanzberatung\index.php (13)
+2012/12/01 11:51:52 [error] [php] Undefined variable: fil_nummer (C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php:151)
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): SiteController->runAction()
+#1 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#2 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): SiteController->run()
+#3 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#4 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\Finanzberatung\index.php(13): CWebApplication->run()
+REQUEST_URI=/Finanzberatung/index.php?r=site/neu
+in C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php (151)
+in C:\xampp\htdocs\Finanzberatung\index.php (13)
+2012/12/01 12:09:26 [error] [php] Undefined index: COUNT(grobphase_id) (C:\xampp\htdocs\Finanzberatung\protected\models\Funktion.php:257)
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(309): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): SiteController->runAction()
+#2 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#3 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): SiteController->run()
+#4 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#5 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\Finanzberatung\index.php(13): CWebApplication->run()
+REQUEST_URI=/Finanzberatung/index.php?r=site/neu
+in C:\xampp\htdocs\Finanzberatung\protected\models\Funktion.php (257)
+in C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php (147)
+in C:\xampp\htdocs\Finanzberatung\index.php (13)
+2012/12/01 12:11:26 [error] [php] Undefined variable: fktName (C:\xampp\htdocs\Finanzberatung\protected\views\site\neu.php:226)
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(870): SiteController->renderFile()
+#1 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(783): SiteController->renderPartial()
+#2 C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php(168): SiteController->render()
+#3 C:\xampp\htdocs\Finanzberatung\framework\web\actions\CInlineAction.php(50): SiteController->actionNeu()
+#4 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): SiteController->runAction()
+#6 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#7 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): SiteController->run()
+#8 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#9 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\Finanzberatung\index.php(13): CWebApplication->run()
+REQUEST_URI=/Finanzberatung/index.php?r=site/neu
+in C:\xampp\htdocs\Finanzberatung\protected\views\site\neu.php (226)
+in C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php (168)
+in C:\xampp\htdocs\Finanzberatung\index.php (13)
+2012/12/01 12:42:38 [error] [php] Undefined index: DISTINCT(prof_mit_beratung) (C:\xampp\htdocs\Finanzberatung\protected\models\Funktion.php:266)
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(309): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): SiteController->runAction()
+#2 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#3 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): SiteController->run()
+#4 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#5 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\Finanzberatung\index.php(13): CWebApplication->run()
+REQUEST_URI=/Finanzberatung/index.php?r=site/neu
+in C:\xampp\htdocs\Finanzberatung\protected\models\Funktion.php (266)
+in C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php (121)
+in C:\xampp\htdocs\Finanzberatung\index.php (13)
+2012/12/01 12:43:25 [error] [php] Undefined index: DISTINCT(prof_mit_beratung) (C:\xampp\htdocs\Finanzberatung\protected\models\Funktion.php:266)
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(309): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): SiteController->runAction()
+#2 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#3 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): SiteController->run()
+#4 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#5 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\Finanzberatung\index.php(13): CWebApplication->run()
+REQUEST_URI=/Finanzberatung/index.php?r=site/neu
+in C:\xampp\htdocs\Finanzberatung\protected\models\Funktion.php (266)
+in C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php (121)
+in C:\xampp\htdocs\Finanzberatung\index.php (13)
+2012/12/01 12:44:16 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'DISTINCT' in 'field list'. The SQL statement executed was: SELECT `DISTINCT` AS `prof_mit_beratung`
+FROM `funktion`.
+in C:\xampp\htdocs\Finanzberatung\protected\models\Funktion.php (263)
+in C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php (121)
+in C:\xampp\htdocs\Finanzberatung\index.php (13)
+2012/12/01 12:44:16 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'DISTINCT' in 'field list'. The SQL statement executed was: SELECT `DISTINCT` AS `prof_mit_beratung`
+FROM `funktion`' in C:\xampp\htdocs\Finanzberatung\framework\db\CDbCommand.php:528
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\Finanzberatung\protected\models\Funktion.php(263): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php(121): Funktion->getOptionsProfMitBeratung()
+#3 C:\xampp\htdocs\Finanzberatung\framework\web\actions\CInlineAction.php(50): SiteController->actionNeu()
+#4 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): CController->run('neu')
+#8 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController('site/neu')
+#9 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\Finanzberatung\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/Finanzberatung/index.php?r=site/neu
+---
+2012/12/01 12:45:47 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'gesetzFunktion' in 'where clause'. The SQL statement executed was: SELECT * FROM funktion WHERE grobphase_id IN (0,1,2,3,4,5,6,7,8,9,10) AND unterphase_id IN (0,1,2,3,4,5,6,7,8,9,10,11) AND nummer IN (0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107) AND prof_mit_beratung IN (gesetzFunktion) .
+in C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\Finanzberatung\index.php (13)
+2012/12/01 12:45:47 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'gesetzFunktion' in 'where clause'. The SQL statement executed was: SELECT * FROM funktion WHERE grobphase_id IN (0,1,2,3,4,5,6,7,8,9,10) AND unterphase_id IN (0,1,2,3,4,5,6,7,8,9,10,11) AND nummer IN (0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107) AND prof_mit_beratung IN (gesetzFunktion) ' in C:\xampp\htdocs\Finanzberatung\framework\db\CDbCommand.php:528
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\Finanzberatung\framework\db\ar\CActiveRecord.php(1521): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php(173): CActiveRecord->findAllBySql('SELECT * FROM f...')
+#3 C:\xampp\htdocs\Finanzberatung\framework\web\actions\CInlineAction.php(50): SiteController->actionNeu()
+#4 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): CController->run('neu')
+#8 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController('site/neu')
+#9 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\Finanzberatung\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/Finanzberatung/index.php?r=site/neu
+HTTP_REFERER=http://localhost/Finanzberatung/index.php?r=site/neu
+---
+2012/12/01 12:47:08 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'gesetzFunktion' in 'where clause'. The SQL statement executed was: SELECT * FROM funktion WHERE grobphase_id IN (0,1,2,3,4,5,6,7,8,9,10) AND unterphase_id IN (0,1,2,3,4,5,6,7,8,9,10,11) AND nummer IN (0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107) AND prof_mit_beratung IN (gesetzFunktion) .
+in C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\Finanzberatung\index.php (13)
+2012/12/01 12:47:08 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'gesetzFunktion' in 'where clause'. The SQL statement executed was: SELECT * FROM funktion WHERE grobphase_id IN (0,1,2,3,4,5,6,7,8,9,10) AND unterphase_id IN (0,1,2,3,4,5,6,7,8,9,10,11) AND nummer IN (0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107) AND prof_mit_beratung IN (gesetzFunktion) ' in C:\xampp\htdocs\Finanzberatung\framework\db\CDbCommand.php:528
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\Finanzberatung\framework\db\ar\CActiveRecord.php(1521): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php(173): CActiveRecord->findAllBySql('SELECT * FROM f...')
+#3 C:\xampp\htdocs\Finanzberatung\framework\web\actions\CInlineAction.php(50): SiteController->actionNeu()
+#4 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): CController->run('neu')
+#8 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController('site/neu')
+#9 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\Finanzberatung\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/Finanzberatung/index.php?r=site/neu
+HTTP_REFERER=http://localhost/Finanzberatung/index.php?r=site/neu
+---
+2012/12/01 13:04:58 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '[$i],$fil2[$i],$fil2[$i])' at line 1. The SQL statement executed was: SELECT * FROM funktion WHERE grobphase_id IN (0,1,2,3,4,5,6,7,8,9,10) AND unterphase_id IN (0,1,2,3,4,5,6,7,8,9,10,11) AND nummer IN (0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107) AND prof_mit_beratung IN ($fil2[$i],$fil2[$i],$fil2[$i]) .
+in C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\Finanzberatung\index.php (13)
+2012/12/01 13:04:58 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '[$i],$fil2[$i],$fil2[$i])' at line 1. The SQL statement executed was: SELECT * FROM funktion WHERE grobphase_id IN (0,1,2,3,4,5,6,7,8,9,10) AND unterphase_id IN (0,1,2,3,4,5,6,7,8,9,10,11) AND nummer IN (0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107) AND prof_mit_beratung IN ($fil2[$i],$fil2[$i],$fil2[$i]) ' in C:\xampp\htdocs\Finanzberatung\framework\db\CDbCommand.php:528
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\Finanzberatung\framework\db\ar\CActiveRecord.php(1521): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php(173): CActiveRecord->findAllBySql('SELECT * FROM f...')
+#3 C:\xampp\htdocs\Finanzberatung\framework\web\actions\CInlineAction.php(50): SiteController->actionNeu()
+#4 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): CController->run('neu')
+#8 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController('site/neu')
+#9 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\Finanzberatung\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/Finanzberatung/index.php?r=site/neu
+HTTP_REFERER=http://localhost/Finanzberatung/index.php?r=site/neu
+---
+2012/12/01 14:08:13 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') AND r_ausf_geschaeft IN ()' at line 1. The SQL statement executed was: SELECT * FROM funktion WHERE grobphase_id IN (0,1,2,3,4,5,6,7,8,9,10) AND unterphase_id IN (0,1,2,3,4,5,6,7,8,9,10,11) AND nummer IN (0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107) AND priv_mit_beratung IN ('gesetzFunktion','','funktionGesetz') AND prof_mit_beratung IN ('gesetzFunktion','','funktionGesetz') AND priv_ohne_beratung IN ('gesetzFunktion','','funktionGesetz') AND prof_ohne_beratung IN ('gesetzFunktion','','funktionGesetz''gesetzFunktion','','funktionGesetz',) AND r_ausf_geschaeft IN () .
+in C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php (213)
+in C:\xampp\htdocs\Finanzberatung\index.php (13)
+2012/12/01 14:08:13 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') AND r_ausf_geschaeft IN ()' at line 1. The SQL statement executed was: SELECT * FROM funktion WHERE grobphase_id IN (0,1,2,3,4,5,6,7,8,9,10) AND unterphase_id IN (0,1,2,3,4,5,6,7,8,9,10,11) AND nummer IN (0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107) AND priv_mit_beratung IN ('gesetzFunktion','','funktionGesetz') AND prof_mit_beratung IN ('gesetzFunktion','','funktionGesetz') AND priv_ohne_beratung IN ('gesetzFunktion','','funktionGesetz') AND prof_ohne_beratung IN ('gesetzFunktion','','funktionGesetz''gesetzFunktion','','funktionGesetz',) AND r_ausf_geschaeft IN () ' in C:\xampp\htdocs\Finanzberatung\framework\db\CDbCommand.php:528
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\Finanzberatung\framework\db\ar\CActiveRecord.php(1521): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php(213): CActiveRecord->findAllBySql('SELECT * FROM f...')
+#3 C:\xampp\htdocs\Finanzberatung\framework\web\actions\CInlineAction.php(50): SiteController->actionNeu()
+#4 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): CController->run('neu')
+#8 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController('site/neu')
+#9 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\Finanzberatung\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/Finanzberatung/index.php?r=site/neu
+HTTP_REFERER=http://localhost/Finanzberatung/index.php?r=site/neu
+---
+2012/12/01 14:55:58 [error] [php] Undefined index: hsra (C:\xampp\htdocs\Finanzberatung\protected\views\site\neu.php:116)
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(870): SiteController->renderFile()
+#1 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(783): SiteController->renderPartial()
+#2 C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php(249): SiteController->render()
+#3 C:\xampp\htdocs\Finanzberatung\framework\web\actions\CInlineAction.php(50): SiteController->actionNeu()
+#4 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): SiteController->runAction()
+#6 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#7 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): SiteController->run()
+#8 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#9 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\Finanzberatung\index.php(13): CWebApplication->run()
+REQUEST_URI=/Finanzberatung/index.php?r=site/neu
+in C:\xampp\htdocs\Finanzberatung\protected\views\site\neu.php (116)
+in C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php (249)
+in C:\xampp\htdocs\Finanzberatung\index.php (13)
+2012/12/01 17:37:44 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in C:\xampp\htdocs\Finanzberatung\framework\db\CDbConnection.php:382
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\db\CDbConnection.php(331): CDbConnection->open()
+#1 C:\xampp\htdocs\Finanzberatung\framework\db\CDbConnection.php(309): CDbConnection->setActive(true)
+#2 C:\xampp\htdocs\Finanzberatung\framework\base\CModule.php(388): CDbConnection->init()
+#3 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(431): CModule->getComponent('db')
+#4 C:\xampp\htdocs\Finanzberatung\framework\db\ar\CActiveRecord.php(624): CApplication->getDb()
+#5 C:\xampp\htdocs\Finanzberatung\framework\db\ar\CActiveRecord.php(2311): CActiveRecord->getDbConnection()
+#6 C:\xampp\htdocs\Finanzberatung\framework\db\ar\CActiveRecord.php(388): CActiveRecordMetaData->__construct(Object(Funktion))
+#7 C:\xampp\htdocs\Finanzberatung\framework\db\ar\CActiveRecord.php(403): CActiveRecord::model('Funktion')
+#8 C:\xampp\htdocs\Finanzberatung\framework\db\ar\CActiveRecord.php(78): CActiveRecord->getMetaData()
+#9 C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php(112): CActiveRecord->__construct()
+#10 C:\xampp\htdocs\Finanzberatung\framework\web\actions\CInlineAction.php(50): SiteController->actionNeu()
+#11 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#12 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#13 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): CController->run('neu')
+#15 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController('site/neu')
+#16 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#17 C:\xampp\htdocs\Finanzberatung\index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/finanzberatung/index.php?r=site/neu
+HTTP_REFERER=http://localhost/finanzberatung/
+---

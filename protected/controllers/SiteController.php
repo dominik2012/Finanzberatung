@@ -112,42 +112,152 @@ class SiteController extends Controller
 		$funktion = new Funktion;
 		$filter = new NeuForm;
 		$spaltennamen2 = Funktion::model()->getTableSchema()->getColumnNames();
-                $spaltennamen = Funktion::model()->attributeLabelsIndexAreNumbers();
-                $grobphase = new Grobphase;
-		if(isset($_POST['NeuForm']))
+        $spaltennamen = Funktion::model()->attributeLabelsIndexAreNumbers();
+        $grobphase = new Grobphase;
+		
+		//Aufruf der get-Methoden der jeweiligen Models
+		$modelGrobphase = Grobphase::model()->getAttr();
+		$modelUnterphase = Unterphase::model()->getAttr();
+		$modelFunktion = array();
+		$modelFunktion["name"] = Funktion::model()->getNames();
+		$modelFunktion["profmb"] = Funktion::model()->getOptionsProfMitBeratung();
+		$modelFunktion["hsr_aktuell"] = Funktion::model()->getOptionsHSRAktuell();
+		$modelFunktion["hsr_zukuenftig"] = Funktion::model()->getOptionsHSRZukuenftig();
+		
+		//Zuweisung dieser in $model2, $model2[0]["filter"] ist das Model für den Filter selbst... können wir wohl rausnehmen, $model2[1][...] sind die Options für die Filterung
+		$model2[0]["filter"]=$filter;
+		$model2[1]["grobphase"]=$modelGrobphase;
+		$model2[1]["unterphase"]=$modelUnterphase;
+		$model2[1]["name"]= $modelFunktion["name"];
+		$model2[1]["profmb"]= $modelFunktion["profmb"];
+		$model2[1]["privmb"] = $modelFunktion["profmb"];
+		$model2[1]["profob"] = $modelFunktion["profmb"];
+		$model2[1]["privob"] = $modelFunktion["profmb"];
+		$model2[1]["rausfg"] = $modelFunktion["profmb"];
+		$model2[1]["hsra"] =$modelFunktion["hsr_aktuell"];
+		$model2[1]["hsrz"] = $modelFunktion["hsr_zukuenftig"];
+		
+		if(isset($_POST['form_grobphase']))
 		{
 			
-			$filter->grobphase_id = $_POST['NeuForm'];
-			$filter2 = "0 ";
-			$filter3 = $filter->getId();
-			if(isset($filter3["grobphase_id"][0])){
-			$filter2 ="";
-			for($i=0;$i<sizeof($filter3["grobphase_id"]);$i++){
-			$filter2 .= $filter3["grobphase_id"][$i].",";
+			//Zuweisung der Formulareingaben
+			$fil_grobphase = $_POST['form_grobphase'];
+			$fil_unterphase = $_POST['form_unterphase'];
+			$fil_name = $_POST['form_name'];
+			$fil_profmb = $_POST['form_profmb'];
+			$fil_privmb = $_POST['form_privmb'];
+			$fil_profob = $_POST['form_profob'];
+			$fil_privob = $_POST['form_privob'];
+			$fil_rausfg = $_POST['form_rausfg'];
+			$fil_hsra = $_POST['form_hsra'];
+			$fil_hsrz = $_POST['form_hsrz'];
+			
+			
+			//Prüfung, ob Eingaben leer waren, falls leer werden in einem Buffer alle Möglichkeiten gespeichert
+			if($fil_grobphase==""){
+					$fil2= Grobphase::model()->getCount();
+					for($i=0;$i<$fil2;$i++){
+						$fil_grobphase .= $i.",";
+					}
+					$fil_grobphase=substr($fil_grobphase, 0, -1);
 			}
+			if($fil_unterphase==""){
+				$fil2= Unterphase::model()->getCount();
+				for($i=0;$i<$fil2;$i++){
+					$fil_unterphase .= $i.",";
+				}
+				$fil_unterphase = substr($fil_unterphase, 0, -1);
 			}
-			$filter2=substr($filter2, 0, -1);
-			//$filter2 = $filter->grobphase_id;
-			$funktion = Funktion::model()->findAllBySql("SELECT * FROM funktion WHERE grobphase_id IN ($filter2)");
-			$grobphase = Grobphase::model()->findAllBySql("SELECT * FROM grobphase");
+			if($fil_name==""){
+				$fil2= Funktion::model()->getCount();
+				for($i=0;$i<$fil2;$i++){
+					$fil_name .= $i.",";
+				}
+				$fil_name = substr($fil_name, 0, -1);
+			}
+			if($fil_privmb==""){
+				$fil2= Funktion::model()->getOptionsProfMitBeratung();
+				for($i=0;$i<count($fil2);$i++){
+					$fil_privmb .= "'".$fil2[$i]."',";
+				}
+				$fil_privmb = substr($fil_privmb, 0, -1);
+			}
+			if($fil_profmb==""){
+				$fil2= Funktion::model()->getOptionsProfMitBeratung();
+				for($i=0;$i<count($fil2);$i++){
+					$fil_profmb .= "'".$fil2[$i]."',";
+				}
+				$fil_profmb = substr($fil_profmb, 0, -1);
+			}
+			if($fil_privob==""){
+				$fil2= Funktion::model()->getOptionsProfMitBeratung();
+				for($i=0;$i<count($fil2);$i++){
+					$fil_privob .= "'".$fil2[$i]."',";
+				}
+				$fil_privob = substr($fil_privob, 0, -1);
+			}
+			if($fil_profob==""){
+				$fil2= Funktion::model()->getOptionsProfMitBeratung();
+				for($i=0;$i<count($fil2);$i++){
+					$fil_profob .= "'".$fil2[$i]."',";
+				}
+				$fil_profob = substr($fil_profob, 0, -1);
+			}
+			if($fil_rausfg==""){
+				$fil2= Funktion::model()->getOptionsProfMitBeratung();
+				for($i=0;$i<count($fil2);$i++){
+					$fil_rausfg .= "'".$fil2[$i]."',";
+				}
+				$fil_rausfg = substr($fil_rausfg, 0, -1);
+			}
+			if($fil_hsra==""){
+				$fil2= Funktion::model()->getOptionsHSRAktuell();
+				for($i=0;$i<count($fil2);$i++){
+					$fil_hsra .= "'".$fil2[$i]."',";
+				}
+				$fil_hsra = substr($fil_hsra, 0, -1);
+			}
+			if($fil_hsrz==""){
+				$fil2= Funktion::model()->getOptionsHSRZukuenftig();
+				for($i=0;$i<count($fil2);$i++){
+					$fil_hsrz .= "'".$fil2[$i]."',";
+				}
+				$fil_hsrz = substr($fil_hsrz, 0, -1);
+			}
+			
+			//SQL-SubStrings für alle Filter: sucht alle Werte der Spalten, die im jeweiligen Buffer enthalten sind
+			$fil[0] = "grobphase_id IN ($fil_grobphase)";
+			$fil[1] = "unterphase_id IN ($fil_unterphase)";
+			$fil[2] = "nummer IN ($fil_name)";
+			$fil[3] = "priv_mit_beratung IN ($fil_privmb)";
+			$fil[4] = "prof_mit_beratung IN ($fil_profmb)";
+			$fil[5] = "priv_ohne_beratung IN ($fil_privob)";
+			$fil[6] = "prof_ohne_beratung IN ($fil_profob)";
+			$fil[7] = "r_ausf_geschaeft IN ($fil_rausfg)";
+			$fil[8] = "hsr_aktuell IN ($fil_hsra)";
+			$fil[9] = "hsr_zukuenftig IN ($fil_hsrz)";
+			$sql ="SELECT * FROM funktion WHERE ";
+			
+			//Zusammensetzen der SQL-Abfrage
+			for($i=0;$i<count($fil);$i++){
+				$sql .=$fil[$i]." AND ";
+				}
+				
+				//Wegnehmen des letzten "AND "
+				$sql = substr($sql, 0, -4);
+				$funktion = Funktion::model()->findAllBySql("$sql");
+				//Zuweisung von "leer", wenn keine Funktion die Kriterien erfüllt, wird in neu.php abgefragt.
+				if(empty($funktion[0]["id"])){
+					$funktion[0]["id"]="leer";
+					}
+				$grobphase = Grobphase::model()->findAllBySql("SELECT * FROM grobphase");
                         //$funktion = Funktion::model()->findAllByAttributes(array('grobphase_id'=>$filter->grobphase_id));
 			
-			$this->render('neu',array('model'=>$funktion, 'model2' =>$filter, 'model3' =>$funktion, 'model4' => $filter2, 'model6' => $spaltennamen, 'model5' => $spaltennamen2, 'grobphase' => $grobphase,));
+			$this->render('neu',array('fil'=>$sql,'model'=>$funktion, 'model2' =>$model2, 'model3' =>$funktion, 'model4' => $fil_grobphase, 'model6' => $spaltennamen, 'model5' => $spaltennamen2, 'grobphase' => $grobphase,));
 		}
 		else{
 		$model = array($funktion,$filter,);
-		$this->render('neu',array('model'=>$funktion, 'model2' =>$filter, 'model6' => $spaltennamen, 'model5' => $spaltennamen2));
+		$this->render('neu',array('model'=>$funktion, 'model2' =>$model2, 'model6' => $spaltennamen, 'model5' => $spaltennamen2));
 		}
 	}
-        
-        public function actionDetails()
-	{
-		$funktion = new Funktion;
-		$filter = new NeuForm;
-		$spaltennamen2 = Funktion::model()->getTableSchema()->getColumnNames();
-                $spaltennamen = Funktion::model()->attributeLabelsIndexAreNumbers();
-		$model = array($funktion,$filter,);
-		$this->render('details',array('model'=>$funktion, 'model2' =>$filter, 'model6' => $spaltennamen, 'model5' => $spaltennamen2));
-        }
-     
 }

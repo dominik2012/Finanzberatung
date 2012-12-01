@@ -25,30 +25,199 @@
 <body>
     
 <!-- FUNKTIONSFILTER ---------------------------------------------------------->   
-<div style="function" id="function">
-    <div style="function_name" id="function_name"><p>FUNKTIONSFILTER</p></div>
+<div style="function" id="function" class="function" onclick="togglestate(this); return false;">
+    <div style="function_name" id="function_name" title="anzeigen/verstecken des Filters"><p>FUNKTIONSFILTER</p></div>
 
     <div class="form">
-		<?php  $form = $this->beginWidget('CActiveForm', array(
+	
+		<form name="neu_form" id="neu_form" action="/Finanzberatung/index.php?r=site/neu" method="POST">
+		
+                <div>
+                <div id="functionoverview">ALLGEMEIN</div>
+                <div id="functionfilters">    
+		Grobphase:<br> 
+                <select name="select_grobphase" id="select_grobphase" data-placeholder="Grobphase-Filter" style="width:465px;" multiple="multiple">
+                <?php
+			for ($i=0;$i<count($model2[1]["grobphase"]);$i++){
+                           
+                            
+                                echo '<option value="'.$i.'" id="grobphase'.$i.'" name="grobphase'.$i.'");>'.$model2[1]["grobphase"][$i].'</option>';
+                            	
+			}    
+                ?>
+                </select><br>
+                </div>
+                    
+                <div id="functionfilters">   
+		Unterphase:<br> 
+                <select name="select_unterphase" id="select_unterphase" data-placeholder="Unterphase-Filter" style="width:465px;" multiple="multiple">
+                <?php
+			for ($i=0;$i<count($model2[1]["unterphase"]);$i++){
+                           
+                            
+                                echo '<option value="'.$i.'" id="unterphase'.$i.'" name="unterphase'.$i.'");>'.$model2[1]["unterphase"][$i].'</option>';
+                            	
+			}    
+                ?>
+                </select><br>
+                </div>
+                    
+                <div id="functionfilters" style="margin-bottom: 15px;">   
+		Funktionsname:<br> 
+                <select name="select_name" id="select_name" data-placeholder="Name-Filter" style="width:465px;" multiple="multiple">
+                <?php
+			for ($i=0;$i<count($model2[1]["name"]);$i++){
+                           
+                            
+                                echo '<option value="'.($i+1).'" id="name'.$i.'" name="name'.$i.'");>'.$model2[1]["name"][$i].'</option>';
+                            	
+			}    
+                ?>
+                </select><br>
+                </div>
+                <div id="functionoverview">TYP</div>
+                <div style="float: left;">    
+                <div id="functionfilters">   
+		Privat mit Beratung:<br> 
+                <select name="select_privmb" id="select_privmb" data-placeholder="Privmb-Filter" style="width:165px;" multiple="multiple">
+                <?php
+			for ($i=0;$i<count($model2[1]["privmb"]);$i++){
+                           
+                            
+                                echo '<option value="'.$model2[1]["privmb"][$i].'" id="privmb'.$i.'" name="privmb'.$i.'");>'.$model2[1]["privmb"][$i].'</option>';
+                            	
+			}    
+                ?>
+                </select><br>
+                </div>
+                    
+                <div id="functionfilters">       
+		Professionell mit Beratung:<br> 
+                <select name="select_profmb" id="select_profmb" data-placeholder="Profmb-Filter" style="width:165px;" multiple="multiple">
+                <?php
+			for ($i=0;$i<count($model2[1]["profmb"]);$i++){
+                           
+                            
+                                echo '<option value="'.$model2[1]["profmb"][$i].'" id="profmb'.$i.'" name="profmb'.$i.'");>'.$model2[1]["profmb"][$i].'</option>';
+                            	
+			}    
+                ?>
+                </select><br>
+                </div>
+                    
+                <div id="functionfilters" style="margin-bottom: 15px;">       
+		Reines Ausf&uuml;hrungsgesch&auml;ft:<br> 
+                <select name="select_rausfg" id="select_rausfg" data-placeholder="Rausfg-Filter" style="width:165px;" multiple="multiple">
+                <?php
+			for ($i=0;$i<count($model2[1]["rausfg"]);$i++){
+                           
+                            
+                                echo '<option value="'.$model2[1]["rausfg"][$i].'" id="rausfg'.$i.'" name="rausfg'.$i.'");>'.$model2[1]["rausfg"][$i].'</option>';
+                            	
+			}    
+                ?></select><br>
+                </div>
+                </div>
+                
+                <div style="float:left; margin-left: 22px; height: 160px;">
+                <div id="functionfilters">   
+		Privat ohne Beratung:<br> 
+                <select name="select_privob" id="select_privob" data-placeholder="Privob-Filter" style="width:165px;" multiple="multiple">
+                <?php
+			for ($i=0;$i<count($model2[1]["privob"]);$i++){
+                           
+                            
+                                echo '<option value="'.$model2[1]["privob"][$i].'" id="privob'.$i.'" name="privob'.$i.'");>'.$model2[1]["privob"][$i].'</option>';
+                            	
+			}    
+                ?>
+                </select><br>
+                </div>               
+                    
+                <div id="functionfilters">       
+		Professionell ohne Beratung:<br> 
+                <select name="select_profob" id="select_profob" data-placeholder="Profob-Filter" style="width:165px;" multiple="multiple">
+                <?php
+			for ($i=0;$i<count($model2[1]["profob"]);$i++){
+                           
+                            
+                                echo '<option value="'.$model2[1]["profob"][$i].'" id="profob'.$i.'" name="profob'.$i.'");>'.$model2[1]["profob"][$i].'</option>';
+                            	
+			}    
+                ?>
+                </select><br>
+                </div>
+                </div>
+                
+                <div id="functionoverview">HANDLUNGSSPIELRAUM</div>
+                <div>    
+                <div id="functionfilters" style="float: left;">       
+		Handlungsspielraum aktuell:<br> 
+                <select name="select_hsra" id="select_hsra" data-placeholder="Hsra-Filter" style="width:165px;" multiple="multiple">
+                <?php
+			for ($i=0;$i<count($model2[1]["hsra"]);$i++){
+                           
+                            
+                                echo '<option value="'.$model2[1]["hsra"][$i].'" id="hsra'.$i.'" name="hsra'.$i.'");>'.$model2[1]["hsra"][$i].'</option>';
+                            	
+			}    
+                ?>
+                </select><br>
+                </div>
+                    
+                <div id="functionfilters" style="float: left; margin-left: 22px;">       
+		Handlungsspielraum zukuenftlich:<br> 
+                <select name="select_hsrz" id="select_hsrz" data-placeholder="Hsrz-Filter" style="width:165px;" multiple="multiple">
+                <?php
+			for ($i=0;$i<count($model2[1]["hsrz"]);$i++){
+                           
+                            
+                                echo '<option value="'.$model2[1]["hsrz"][$i].'" id="hsrz'.$i.'" name="hsrz'.$i.'");>'.$model2[1]["hsrz"][$i].'</option>';
+                            	
+			}    
+                ?>
+                </select><br>
+                </div>
+                </div>
+				<input type="hidden" name="form_grobphase" value="">
+				<input type="hidden" name="form_unterphase" value="">
+				<input type="hidden" name="form_name" value="">
+				<input type="hidden" name="form_privmb" value="">
+				<input type="hidden" name="form_profmb" value="">
+				<input type="hidden" name="form_privob" value="">
+				<input type="hidden" name="form_profob" value="">
+				<input type="hidden" name="form_rausfg" value="">
+				<input type="hidden" name="form_hsra" value="">
+				<input type="hidden" name="form_hsrz" value=""><br>
+                                
+                                <div style="float: right; margin-top: 15px; margin-right: 38px;">
+				<button type="button" name="submitbutton" value="submitbutton" onClick="toInput();">Submit</button>
+                                </div>
+                                
+                                </div>
+		</form>
+		
+	
+		<?php /* $form = $this->beginWidget('CActiveForm', array(
 			'id'=>'neu-form',
 			'enableClientValidation'=>true,
 			'clientOptions'=>array(
 			'validateOnSubmit'=>true,
                         ),
-                )); ?>
+                )); */?>
 
-		<?php  echo $form->errorSummary($model2); ?>
+		<?php // echo $form->errorSummary($model2[0]["filter"]); ?>
 
-		<div class="row">
-			<?php echo "Grobphasen: ".$form->checkBoxList($model2,'grobphase_id',array('0'=>'0','1'=>'1','2'=>'2','3'=>'3','4'=>'4','5'=>'5','6'=>'6','7'=>'7','8'=>'8','9'=>'9','10'=>'10',),array('separator'=>'','template'=>'<li style="display:inline; padding-left:10px;">{label}{input}</li>',)); 
+	<!--	<div class="row">
+			<?php //echo "Grobphasen: ".$form->dropDownList($model2[0]["filter"],'grobphase_id',$model2[1]["grobphase"],array('separator'=>'','template'=>'<li style="display:inline; padding-left:10px;">{label}{input}</li>',)); 
                         ?>
 		</div>
 		
 		<div class="row buttons">
-		<?php echo CHtml::submitButton('Submit'); ?>
-		</div>
+		<?php //echo CHtml::submitButton('Submit'); ?>
+		</div> -->
 
-		<?php $this->endWidget(); ?>
+		<?php //$this->endWidget(); ?>
 	</div>
 </div>
 <!-- ENDE --------------------------------------------------------------------->   
@@ -59,7 +228,7 @@
 </div>
     
 <div id="draggable" style="display: none;">
-    <div id="dragbutton">FUNKTIONSFILTER</div>
+    <div id="dragbutton">ANZEIGEFILTER</div>
     <div id="dragcontent">
 		<form name="anzeigefilter" id="anzeigefilter">
 		<select id="multiselect" data-placeholder="Anzeigefilter" style="width:350px;" multiple="multiple">
@@ -86,7 +255,7 @@
         <table id="filterlist">
             <tbody>
                 <tr>
-                    <td>Filter: <?php if(isset($model4)){echo "Grobphase(n): ".($model4);}?></td>
+                    <td>Filter: <?php if(isset($fil)){echo $fil;}?></td>
 
                 </tr>
             </tbody>
@@ -96,7 +265,7 @@
 <!-- ACCORDION ---------------------------------------------------------------->    
 <div id="multiAccordion">
    <?php
-    if(isset($model3)){
+    if(isset($model3) && $model3[0]["id"]!="leer"){
 	for($i=0;$i<count($model3);$i++){
             
             $fktNr = $model3[$i]["nummer"];
@@ -115,7 +284,7 @@
                 </div>
             </h3>
                     
-             <div style="height: 210px; overflow: hidden;">
+             <div style="height: 210px; overflow-y: hidden;">
                 <div id="'.$i.'" style="width: 10000px;">';
 
 			for($j=0;$j<count($model5);$j++){
@@ -131,8 +300,8 @@
                             }else if($spaInhalt == "funktionGesetz"){
                                 $spaInhalt = "<img src='/Finanzberatung/css/images/pfeile/funktionGesetz.png' style='padding-top: 70px;'>";
                                 $style = " style='width: 52px; overflow: hidden;'";
-                            }else if($spaInhalt == null){
-                               if($spaName == "Privat mit Beratung" || $spaName == "Privat ohne Beratung" || $spaName == "Professionell mit Beratung" || $spaName == "Professionell ohne Beratung")
+                            }else if($spaInhalt == "keine Abhängig"){
+                               if($spaName == "Privat mit Beratung" || $spaName == "Privat ohne Beratung" || $spaName == "Professionell mit Beratung" || $spaName == "Professionell ohne Beratung" || $spaName == "Reines Ausfuehrungsgeschaeft")
                                 $spaInhalt = "<img src='/Finanzberatung/css/images/pfeile/null.png' style='padding-top: 70px;'>";
                                 $style = " style='width: 52px; overflow: hidden;'";
                             }else if($spaInhalt == "gelb"){
@@ -177,6 +346,7 @@
 <!-- Scripte ------------------------------------------------------------------>
 
 <!-- DETAIL-BUTTON ------------------------------------------------------------>   
+<?php if(isset($model3) && $model3[0]["id"]!="leer"){?>
 <script type="text/javascript"> 
   $(document).ready(function() {               
         $('.detail_button').click( function() {
@@ -189,6 +359,21 @@
           return false;
         });
     });
+</script>  
+<?php } ?>
+
+<!-- FUNKTIONSFILTER SHOW/HIDE -------------------------------------------------->   
+<script type="text/javascript"> 
+    var State1 = 'function';
+    var State2 = State1 + ' functionhover';
+
+    function togglestate(div){
+        if (div.className == State1){
+            div.className = State2;
+        } else {
+            div.className = State1;
+        }
+    }
 </script>  
 
 <!-- ANZEIGEFILTER SHOW/HIDE -------------------------------------------------->   
@@ -227,7 +412,77 @@
             $(val).css('display','block');
         }
     });
-    
+    $("#select_grobphase").multiselect({
+        selectedText: "# of # selected"
+    });
+	$("#select_grobphase").bind("multiselectclick", function(event, ui){
+		
+		var value = ui.value;
+		});
+	$("#select_unterphase").multiselect({
+        selectedText: "# of # selected"
+    });
+	$("#select_unterphase").bind("multiselectclick", function(event, ui){
+		
+		var value = ui.value;
+		});	
+	$("#select_name").multiselect({
+        selectedText: "# of # selected"
+    });
+	$("#select_name").bind("multiselectclick", function(event, ui){
+		
+		var value = ui.value;
+		});
+	$("#select_privmb").multiselect({
+        selectedText: "# of # selected"
+    });
+	$("#select_privmb").bind("multiselectclick", function(event, ui){
+		
+		var value = ui.value;
+		});	
+	$("#select_profmb").multiselect({
+        selectedText: "# of # selected"
+    });
+	$("#select_profmb").bind("multiselectclick", function(event, ui){
+		
+		var value = ui.value;
+		});	
+	$("#select_privob").multiselect({
+        selectedText: "# of # selected"
+    });
+	$("#select_privob").bind("multiselectclick", function(event, ui){
+		
+		var value = ui.value;
+		});	
+	$("#select_profob").multiselect({
+        selectedText: "# of # selected"
+    });
+	$("#select_profob").bind("multiselectclick", function(event, ui){
+		
+		var value = ui.value;
+		});
+	$("#select_rausfg").multiselect({
+        selectedText: "# of # selected"
+    });
+	$("#select_rausfg").bind("multiselectclick", function(event, ui){
+		
+		var value = ui.value;
+		});
+	$("#select_hsra").multiselect({
+        selectedText: "# of # selected"
+    });
+	$("#select_hsra").bind("multiselectclick", function(event, ui){
+		
+		var value = ui.value;
+		});
+	$("#select_hsrz").multiselect({
+        selectedText: "# of # selected"
+    });
+	$("#select_hsrz").bind("multiselectclick", function(event, ui){
+		
+		var value = ui.value;
+		});
+		
 </script>        
 
 <!-- ACCORDION INHALT --------------------------------------------------------->   
@@ -257,6 +512,147 @@
 <script>
     $( "#accordion" ).accordion({ heightStyle: "content", collapsible: true });
 </script>
-
+<script> 
+function toInput(){
+			//Zuweisung der Select-Input in Hidden-Textfields
+			var bufferGrobphase = "";
+			var bufferUnterphase ="";
+			var bufferName ="";
+			var bufferPrivMB ="";
+			var bufferProfMB ="";
+			var bufferPrivOB ="";
+			var bufferProfOB ="";
+			var bufferRausfg ="";
+			var bufferHsra ="";
+			var bufferHsrz ="";
+			var len=document.neu_form.select_grobphase.options.length;
+			var len2=document.neu_form.select_unterphase.options.length;
+			var len3=document.neu_form.select_name.options.length;
+			var len4=document.neu_form.select_profmb.options.length;
+			var len5=document.neu_form.select_hsra.options.length;
+			var len6=document.neu_form.select_hsrz.options.length;
+			var j=0;
+			for (var i=0; i<len; i++)
+			{
+				if (document.neu_form.select_grobphase.options[i].selected && j==0){
+                   bufferGrobphase = bufferGrobphase +document.neu_form.select_grobphase.options[i].value;
+				   j++;
+				}
+                else if (document.neu_form.select_grobphase.options[i].selected && j!=0){
+                   bufferGrobphase = bufferGrobphase +","+document.neu_form.select_grobphase.options[i].value;
+				}
+			}
+			j=0;
+			//alert("hoho");
+			for (var i=0; i<len2; i++)
+			{
+				if (document.neu_form.select_unterphase.options[i].selected && j==0){
+                   bufferUnterphase = bufferUnterphase +document.neu_form.select_unterphase.options[i].value;
+				   j++;
+				}
+                else if (document.neu_form.select_unterphase.options[i].selected && j!=0){
+                   bufferUnterphase = bufferUnterphase +","+document.neu_form.select_unterphase.options[i].value;
+				}
+			}
+			//alert("hehe");
+			j=0;
+			for (var i=0; i<len3; i++)
+			{
+				if (document.neu_form.select_name.options[i].selected && j==0){
+                   bufferName = bufferName +document.neu_form.select_name.options[i].value;
+				   j++;
+				}
+                else if (document.neu_form.select_name.options[i].selected && j!=0){
+                   bufferName = bufferName +","+document.neu_form.select_name.options[i].value;
+				}
+			}
+			j=0;
+			for (var i=0; i<len4; i++)
+			{
+				if (document.neu_form.select_privmb.options[i].selected && j==0){
+                   bufferPrivMB = bufferPrivMB +"'"+document.neu_form.select_privmb.options[i].value+"'";
+				   j++;
+				}
+                else if (document.neu_form.select_privmb.options[i].selected && j!=0){
+                   bufferPrivMB = bufferPrivMB +","+"'"+document.neu_form.select_privmb.options[i].value+"'";
+				}
+			}
+			j=0;
+			for (var i=0; i<len4; i++)
+			{
+				if (document.neu_form.select_profmb.options[i].selected && j==0){
+                   bufferProfMB = bufferProfMB +"'"+document.neu_form.select_profmb.options[i].value+"'";
+				   j++;
+				}
+                else if (document.neu_form.select_profmb.options[i].selected && j!=0){
+                   bufferProfMB = bufferProfMB +","+"'"+document.neu_form.select_profmb.options[i].value+"'";
+				}
+			}
+			j=0;
+			for (var i=0; i<len4; i++)
+			{
+				if (document.neu_form.select_privob.options[i].selected && j==0){
+                   bufferPrivOB = bufferPrivOB +"'"+document.neu_form.select_privob.options[i].value+"'";
+				   j++;
+				}
+                else if (document.neu_form.select_privob.options[i].selected && j!=0){
+                   bufferPrivOB = bufferPrivOB +","+"'"+document.neu_form.select_privob.options[i].value+"'";
+				}
+			}
+			j=0;
+			for (var i=0; i<len4; i++)
+			{
+				if (document.neu_form.select_profob.options[i].selected && j==0){
+                   bufferProfOB = bufferProfOB +"'"+document.neu_form.select_profob.options[i].value+"'";
+				   j++;
+				}
+                else if (document.neu_form.select_profob.options[i].selected && j!=0){
+                   bufferProfOB = bufferProfOB +","+"'"+document.neu_form.select_profob.options[i].value+"'";
+				}
+			}
+			j=0;
+			for (var i=0; i<len4; i++)
+			{
+				if (document.neu_form.select_rausfg.options[i].selected && j==0){
+                   bufferRausfg = bufferRausfg +"'"+document.neu_form.select_rausfg.options[i].value+"'";
+				   j++;
+				}
+                else if (document.neu_form.select_rausfg.options[i].selected && j!=0){
+                   bufferRausfg = bufferRausfg +","+"'"+document.neu_form.select_rausfg.options[i].value+"'";
+				}
+			}
+			j=0;
+			for (var i=0; i<len5; i++)
+			{
+				if (document.neu_form.select_hsra.options[i].selected && j==0){
+                   bufferHsra = bufferHsra +"'"+document.neu_form.select_hsra.options[i].value+"'";
+				   j++;
+				}
+                else if (document.neu_form.select_hsra.options[i].selected && j!=0){
+                   bufferHsra = bufferHsra +","+"'"+document.neu_form.select_hsra.options[i].value+"'";
+				}
+			}
+			j=0;
+			for (var i=0; i<len6; i++)
+			{
+				if (document.neu_form.select_hsrz.options[i].selected && j==0){
+                   bufferHsrz = bufferHsrz +"'"+document.neu_form.select_hsrz.options[i].value+"'";
+				   j++;
+				}
+                else if (document.neu_form.select_hsrz.options[i].selected && j!=0){
+                   bufferHsrz = bufferHsrz +","+"'"+document.neu_form.select_hsrz.options[i].value+"'";
+				}
+			}
+			document.neu_form.form_grobphase.value= bufferGrobphase;
+			document.neu_form.form_unterphase.value= bufferUnterphase;
+			document.neu_form.form_name.value= bufferName;
+			document.neu_form.form_profmb.value= bufferProfMB;
+			document.neu_form.form_rausfg.value=bufferRausfg;
+			document.neu_form.form_hsra.value=bufferHsra;
+			document.neu_form.form_hsrz.value=bufferHsrz;
+			//alert("hihi");
+			document.neu_form.submit();
+			}
+		</script>
 </body>
 </html>

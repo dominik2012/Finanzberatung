@@ -89,4 +89,20 @@ class Unterphase extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+	public function getAttr(){
+		$val = Yii::app()->db->createCommand()->select('*')->from('unterphase');
+		
+		$v = $val->queryAll();
+		$values = array();
+		for($i=0;$i<count($v);$i++){
+		$values[$i] = $v[$i]["name"];
+		}
+		return $values;
+	}
+	public function getCount(){
+		$val = Yii::app()->db->createCommand()->select('COUNT(unterphase_id)')->from('unterphase');
+		$v = $val->queryRow();
+		$value = $v['COUNT(unterphase_id)'];
+		return $value;
+		}
 }

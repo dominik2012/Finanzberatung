@@ -174,8 +174,8 @@ return array(
 2 => 'Name',
 3 => 'Beschreibung',
 4 => 'Privat mit Beratung',
-5 => 'Privat ohne Beratung',
-6 => 'Professionell mit Beratung',
+5 => 'Professionell mit Beratung',
+6 => 'Privat ohne Beratung',
 7 => 'Professionell ohne Beratung',
 8 => 'Hinweis',
 9 => 'Weitere Regulatorien',
@@ -242,4 +242,47 @@ return array(
 			'criteria'=>$criteria,
 		));
 	}
+	public function getNames(){
+		$val = Yii::app()->db->createCommand()->select('nummer,name')->from('funktion')->order('nummer ASC');
+		$v = $val->queryAll();
+		$values = array();
+		for($i=0;$i<count($v);$i++){
+			$values[$i]="[".$v[$i]["nummer"]."] ".$v[$i]["name"];
+			}
+		return $values;
+	}
+	public function getCount(){
+		$val = Yii::app()->db->createCommand()->select('COUNT(id)')->from('funktion');
+		$v = $val->queryRow();
+		$value = $v['COUNT(id)'];
+		return $value;
+		}
+	
+	public function getOptionsProfMitBeratung(){
+		$val = Yii::app()->db->createCommand()->selectDistinct('prof_mit_beratung')->from('funktion');
+		$v = $val->queryAll();
+		$values=array();
+		for($i=0;$i<count($v);$i++){
+			$values[$i]=$v[$i]['prof_mit_beratung'];
+		}
+		return $values;
+		}
+	public function getOptionsHSRAktuell(){
+		$val = Yii::app()->db->createCommand()->selectDistinct('hsr_aktuell')->from('funktion');
+		$v = $val->queryAll();
+		$values=array();
+		for($i=0;$i<count($v);$i++){
+			$values[$i]= $v[$i]['hsr_aktuell'];
+			}
+		return $values;
+		}
+	public function getOptionsHSRZukuenftig(){
+		$val = Yii::app()->db->createCommand()->selectDistinct('hsr_zukuenftig')->from('funktion');
+		$v = $val->queryAll();
+		$values=array();
+		for($i=0;$i<count($v);$i++){
+			$values[$i]= $v[$i]['hsr_zukuenftig'];
+			}
+		return $values;
+		}
 }

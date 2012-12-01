@@ -86,4 +86,21 @@ class Grobphase extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+	
+	public function getAttr(){
+		$val = Yii::app()->db->createCommand()->select('*')->from('grobphase');
+		
+		$v = $val->queryAll();
+		$values = array();
+		for($i=0;$i<count($v);$i++){
+		$values[$i] = $v[$i]["name"];
+		}
+		return $values;
+	}
+	public function getCount(){
+		$val = Yii::app()->db->createCommand()->select('COUNT(grobphase_id)')->from('grobphase');
+		$v = $val->queryRow();
+		$value = $v['COUNT(grobphase_id)'];
+		return $value;
+		}
 }
