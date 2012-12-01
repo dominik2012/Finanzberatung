@@ -13,7 +13,7 @@
 .toggler {
     float: left;
     height: 205px;
-    width: 40px;
+    width: 37px;
     background-color: #EEEEEE;
     border: 2px solid #0075B8;
     border-top: none;
@@ -253,6 +253,12 @@ body
 #viewfilter:hover
 {
         background-color: #1695DD;
+}
+
+#viewfilter:active
+{
+    right: -480px;
+    border: 6px solid #5F5F5F;
 }
 
 #view_name

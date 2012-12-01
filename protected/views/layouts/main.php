@@ -57,6 +57,9 @@
                                 array(  'label'=>'About', 
                                         'url'=>array('/site/page', 'view'=>'about')
                                 ),
+                                array(  'label'=>'Details', 
+                                        'url'=>array('/site/page', 'view'=>'details')
+                                ),
                         ),
                     )); ?>
 	</div><!-- mainmenu -->

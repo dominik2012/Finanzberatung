@@ -255,8 +255,19 @@
         <table id="filterlist">
             <tbody>
                 <tr>
-                    <td>Filter: <?php if(isset($fil)){echo $fil;}?></td>
-
+                    <td>SQL: <?php if(isset($fil)){echo $fil;}?></td>
+                    <!--
+                    <td>GP: <?php if(isset($fil)){echo $model4;}?></td>
+                    <td>UP: <?php if(isset($fil)){echo $unterphase;}?></td>
+                    <td>Fkt: <?php if(isset($fil)){echo $name;}?></td>
+                    <td>PmB: <?php if(isset($fil)){echo $privmb;}?></td>
+                    <td>PoB: <?php if(isset($fil)){echo $privob;}?></td>
+                    <td>PromB: <?php if(isset($fil)){echo $profmb;}?></td>
+                    <td>PromB: <?php if(isset($fil)){echo $profob;}?></td>
+                    <td>RAG: <?php if(isset($fil)){echo $rausfg;}?></td>
+                    <td>HSR(z): <?php if(isset($fil)){echo $hsrz;}?></td>
+                    <td>HSR(g): <?php if(isset($fil)){echo $hsra;}?></td>
+                    -->
                 </tr>
             </tbody>
         </table>
@@ -292,28 +303,29 @@
                             $spaName = $model6[$j];
                             $spaInhalt = $model3[$i][$key];
                             $style = "";
+                            $style1= " style='width: 52px; overflow: hidden;'";
                             
                             //Grafik Abfragen
                             if($spaInhalt == "gesetzFunktion"){
-                                $spaInhalt = "<img src='/Finanzberatung/css/images/pfeile/gesetzFunktion.png' style='padding-top: 70px;'>";
-                                $style = " style='width: 52px; overflow: hidden;'";
+                                $spaInhalt = "<img title='Funktion bedingt durch Gesetz' src='/Finanzberatung/css/images/pfeile/gesetzFunktion.png' style='padding-top: 70px;'>";
+                                $style = $style1;
                             }else if($spaInhalt == "funktionGesetz"){
-                                $spaInhalt = "<img src='/Finanzberatung/css/images/pfeile/funktionGesetz.png' style='padding-top: 70px;'>";
-                                $style = " style='width: 52px; overflow: hidden;'";
+                                $spaInhalt = "<img title='Gesetz bedingt durch Funktion'src='/Finanzberatung/css/images/pfeile/funktionGesetz.png' style='padding-top: 70px;'>";
+                                $style = $style1;
                             }else if($spaInhalt == "keine Abhängig"){
                                if($spaName == "Privat mit Beratung" || $spaName == "Privat ohne Beratung" || $spaName == "Professionell mit Beratung" || $spaName == "Professionell ohne Beratung" || $spaName == "Reines Ausfuehrungsgeschaeft")
-                                $spaInhalt = "<img src='/Finanzberatung/css/images/pfeile/null.png' style='padding-top: 70px;'>";
-                                $style = " style='width: 52px; overflow: hidden;'";
+                                $spaInhalt = "<img title='Keine Regularien'src='/Finanzberatung/css/images/pfeile/null.png' style='padding-top: 70px;'>";
+                                $style = $style1;
                             }else if($spaInhalt == "gelb"){
-                                $spaInhalt = "<img src='/Finanzberatung/css/images/pfeile/gelb.png' style='padding-top: 70px;'>";
-                                $style = " style='width: 52px; overflow: hidden;'";
+                                $spaInhalt = "<img title='Geringer Handlungsspielraum'src='/Finanzberatung/css/images/pfeile/gelb.png' style='padding-top: 70px;'>";
+                                $style = $style1;
                             }else if($spaInhalt == "gruen"){
-                                $spaInhalt = "<img src='/Finanzberatung/css/images/pfeile/gruen.png' style='padding-top: 70px;'>";
-                                $style = " style='width: 52px; overflow: hidden;'";
+                                $spaInhalt = "<img title='Normaler Handlungsspielraum'src='/Finanzberatung/css/images/pfeile/gruen.png' style='padding-top: 70px;'>";
+                                $style = $style1;
                             }
                             else if($spaInhalt == "gelbHoch"){
-                                $spaInhalt = "<img src='/Finanzberatung/css/images/pfeile/gelbHoch.png' style='padding-top: 70px;'>";
-                                $style = " style='width: 52px; overflow: hidden;'";
+                                $spaInhalt = "<img title='Handlungsspielraum zukünftig weiter eingeschränkt'src='/Finanzberatung/css/images/pfeile/gelbHoch.png' style='padding-top: 70px;'>";
+                                $style = $style1;
                             }
                             
                             
@@ -362,7 +374,7 @@
 </script>  
 <?php } ?>
 
-<!-- FUNKTIONSFILTER SHOW/HIDE -------------------------------------------------->   
+<!-- FUNKTIONSFILTER SHOW/HIDE ------------------------------------------------>   
 <script type="text/javascript"> 
     var State1 = 'function';
     var State2 = State1 + ' functionhover';
@@ -509,11 +521,13 @@
 		$('#multiAccordion').multiAccordion();
 	});
 </script>
+
 <script>
     $( "#accordion" ).accordion({ heightStyle: "content", collapsible: true });
 </script>
+
 <script> 
-function toInput(){
+    function toInput(){
 			//Zuweisung der Select-Input in Hidden-Textfields
 			var bufferGrobphase = "";
 			var bufferUnterphase ="";
@@ -653,6 +667,7 @@ function toInput(){
 			//alert("hihi");
 			document.neu_form.submit();
 			}
-		</script>
+</script>
+
 </body>
 </html>

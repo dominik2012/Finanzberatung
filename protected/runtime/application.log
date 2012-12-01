@@ -4618,3 +4618,119 @@ Stack trace:
 REQUEST_URI=/finanzberatung/index.php?r=site/neu
 HTTP_REFERER=http://localhost/finanzberatung/
 ---
+2012/12/01 22:35:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "details".' in C:\xampp\htdocs\Finanzberatung\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(271): CController->missingAction('details')
+#1 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): CController->run('details')
+#2 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController('site/details')
+#3 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\Finanzberatung\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/Finanzberatung/index.php?r=site/details
+---
+2012/12/01 22:36:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "details".' in C:\xampp\htdocs\Finanzberatung\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(271): CController->missingAction('details')
+#1 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): CController->run('details')
+#2 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController('site/details')
+#3 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\Finanzberatung\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/Finanzberatung/index.php?r=site/details
+---
+2012/12/01 22:38:47 [error] [php] Undefined variable: fil_grobphase (C:\xampp\htdocs\Finanzberatung\protected\views\site\neu.php:258)
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(870): SiteController->renderFile()
+#1 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(783): SiteController->renderPartial()
+#2 C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php(256): SiteController->render()
+#3 C:\xampp\htdocs\Finanzberatung\framework\web\actions\CInlineAction.php(50): SiteController->actionNeu()
+#4 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): SiteController->runAction()
+#6 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#7 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): SiteController->run()
+#8 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#9 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\Finanzberatung\index.php(13): CWebApplication->run()
+REQUEST_URI=/Finanzberatung/index.php?r=site/neu
+in C:\xampp\htdocs\Finanzberatung\protected\views\site\neu.php (258)
+in C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php (256)
+in C:\xampp\htdocs\Finanzberatung\index.php (13)
+2012/12/01 22:49:50 [error] [php] Undefined variable: form_grobphase (C:\xampp\htdocs\Finanzberatung\protected\views\site\neu.php:258)
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(870): SiteController->renderFile()
+#1 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(783): SiteController->renderPartial()
+#2 C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php(256): SiteController->render()
+#3 C:\xampp\htdocs\Finanzberatung\framework\web\actions\CInlineAction.php(50): SiteController->actionNeu()
+#4 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): SiteController->runAction()
+#6 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#7 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): SiteController->run()
+#8 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#9 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\Finanzberatung\index.php(13): CWebApplication->run()
+REQUEST_URI=/Finanzberatung/index.php?r=site/neu
+in C:\xampp\htdocs\Finanzberatung\protected\views\site\neu.php (258)
+in C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php (256)
+in C:\xampp\htdocs\Finanzberatung\index.php (13)
+2012/12/01 23:03:27 [error] [php] Undefined variable: profmb (C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php:256)
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): SiteController->runAction()
+#1 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#2 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): SiteController->run()
+#3 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#4 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\Finanzberatung\index.php(13): CWebApplication->run()
+REQUEST_URI=/Finanzberatung/index.php?r=site/neu
+in C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php (256)
+in C:\xampp\htdocs\Finanzberatung\index.php (13)
+2012/12/01 23:17:39 [error] [php] Undefined variable: profmb (C:\xampp\htdocs\Finanzberatung\protected\views\site\neu.php:263)
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(870): SiteController->renderFile()
+#1 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(783): SiteController->renderPartial()
+#2 C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php(256): SiteController->render()
+#3 C:\xampp\htdocs\Finanzberatung\framework\web\actions\CInlineAction.php(50): SiteController->actionNeu()
+#4 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): SiteController->runAction()
+#6 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#7 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): SiteController->run()
+#8 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#9 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\Finanzberatung\index.php(13): CWebApplication->run()
+REQUEST_URI=/Finanzberatung/index.php?r=site/neu
+in C:\xampp\htdocs\Finanzberatung\protected\views\site\neu.php (263)
+in C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php (256)
+in C:\xampp\htdocs\Finanzberatung\index.php (13)
+2012/12/01 23:19:10 [error] [php] Undefined variable: profmb (C:\xampp\htdocs\Finanzberatung\protected\views\site\neu.php:263)
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(870): SiteController->renderFile()
+#1 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(783): SiteController->renderPartial()
+#2 C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php(256): SiteController->render()
+#3 C:\xampp\htdocs\Finanzberatung\framework\web\actions\CInlineAction.php(50): SiteController->actionNeu()
+#4 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): SiteController->runAction()
+#6 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#7 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): SiteController->run()
+#8 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#9 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\Finanzberatung\index.php(13): CWebApplication->run()
+REQUEST_URI=/Finanzberatung/index.php?r=site/neu
+in C:\xampp\htdocs\Finanzberatung\protected\views\site\neu.php (263)
+in C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php (256)
+in C:\xampp\htdocs\Finanzberatung\index.php (13)
+2012/12/01 23:19:31 [error] [php] Undefined variable: profmb (C:\xampp\htdocs\Finanzberatung\protected\views\site\neu.php:263)
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(870): SiteController->renderFile()
+#1 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(783): SiteController->renderPartial()
+#2 C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php(256): SiteController->render()
+#3 C:\xampp\htdocs\Finanzberatung\framework\web\actions\CInlineAction.php(50): SiteController->actionNeu()
+#4 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): SiteController->runAction()
+#6 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#7 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): SiteController->run()
+#8 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#9 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\Finanzberatung\index.php(13): CWebApplication->run()
+REQUEST_URI=/Finanzberatung/index.php?r=site/neu
+in C:\xampp\htdocs\Finanzberatung\protected\views\site\neu.php (263)
+in C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php (256)
+in C:\xampp\htdocs\Finanzberatung\index.php (13)

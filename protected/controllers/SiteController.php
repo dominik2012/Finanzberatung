@@ -112,8 +112,8 @@ class SiteController extends Controller
 		$funktion = new Funktion;
 		$filter = new NeuForm;
 		$spaltennamen2 = Funktion::model()->getTableSchema()->getColumnNames();
-        $spaltennamen = Funktion::model()->attributeLabelsIndexAreNumbers();
-        $grobphase = new Grobphase;
+                $spaltennamen = Funktion::model()->attributeLabelsIndexAreNumbers();
+                $grobphase = new Grobphase;
 		
 		//Aufruf der get-Methoden der jeweiligen Models
 		$modelGrobphase = Grobphase::model()->getAttr();
@@ -124,7 +124,7 @@ class SiteController extends Controller
 		$modelFunktion["hsr_aktuell"] = Funktion::model()->getOptionsHSRAktuell();
 		$modelFunktion["hsr_zukuenftig"] = Funktion::model()->getOptionsHSRZukuenftig();
 		
-		//Zuweisung dieser in $model2, $model2[0]["filter"] ist das Model für den Filter selbst... können wir wohl rausnehmen, $model2[1][...] sind die Options für die Filterung
+		//Zuweisung dieser in $model2, $model2[0]["filter"] ist das Model fï¿½r den Filter selbst... kï¿½nnen wir wohl rausnehmen, $model2[1][...] sind die Options fï¿½r die Filterung
 		$model2[0]["filter"]=$filter;
 		$model2[1]["grobphase"]=$modelGrobphase;
 		$model2[1]["unterphase"]=$modelUnterphase;
@@ -153,7 +153,7 @@ class SiteController extends Controller
 			$fil_hsrz = $_POST['form_hsrz'];
 			
 			
-			//Prüfung, ob Eingaben leer waren, falls leer werden in einem Buffer alle Möglichkeiten gespeichert
+			//Prï¿½fung, ob Eingaben leer waren, falls leer werden in einem Buffer alle Mï¿½glichkeiten gespeichert
 			if($fil_grobphase==""){
 					$fil2= Grobphase::model()->getCount();
 					for($i=0;$i<$fil2;$i++){
@@ -225,7 +225,7 @@ class SiteController extends Controller
 				$fil_hsrz = substr($fil_hsrz, 0, -1);
 			}
 			
-			//SQL-SubStrings für alle Filter: sucht alle Werte der Spalten, die im jeweiligen Buffer enthalten sind
+			//SQL-SubStrings fï¿½r alle Filter: sucht alle Werte der Spalten, die im jeweiligen Buffer enthalten sind
 			$fil[0] = "grobphase_id IN ($fil_grobphase)";
 			$fil[1] = "unterphase_id IN ($fil_unterphase)";
 			$fil[2] = "nummer IN ($fil_name)";
@@ -246,14 +246,14 @@ class SiteController extends Controller
 				//Wegnehmen des letzten "AND "
 				$sql = substr($sql, 0, -4);
 				$funktion = Funktion::model()->findAllBySql("$sql");
-				//Zuweisung von "leer", wenn keine Funktion die Kriterien erfüllt, wird in neu.php abgefragt.
+				//Zuweisung von "leer", wenn keine Funktion die Kriterien erfï¿½llt, wird in neu.php abgefragt.
 				if(empty($funktion[0]["id"])){
 					$funktion[0]["id"]="leer";
 					}
 				$grobphase = Grobphase::model()->findAllBySql("SELECT * FROM grobphase");
                         //$funktion = Funktion::model()->findAllByAttributes(array('grobphase_id'=>$filter->grobphase_id));
 			
-			$this->render('neu',array('fil'=>$sql,'model'=>$funktion, 'model2' =>$model2, 'model3' =>$funktion, 'model4' => $fil_grobphase, 'model6' => $spaltennamen, 'model5' => $spaltennamen2, 'grobphase' => $grobphase,));
+			$this->render('neu',array('fil'=>$sql,'model'=>$funktion, 'model2' =>$model2, 'model3' =>$funktion, 'model4' => $fil_grobphase, 'name' => $fil_name, 'hsrz' => $fil_hsrz, 'hsra' => $fil_hsra, 'privob' => $fil_privob, 'profob' => $fil_profob, 'rausfg' => $fil_rausfg,'unterphase' => $fil_unterphase, 'privmb' => $fil_privmb, 'profmb' => $fil_profmb, 'model6' => $spaltennamen, 'model5' => $spaltennamen2, 'grobphase' => $grobphase,));
 		}
 		else{
 		$model = array($funktion,$filter,);
