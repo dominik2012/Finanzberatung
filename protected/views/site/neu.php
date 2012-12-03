@@ -289,8 +289,8 @@
             echo 
             '<h3>
                 <div>
-                    <div style="float: left;" title="[Funktion-Nr] Funktion-Name">['.$fktNr.']&nbsp;'.$fktName.' </div>
                     <div id="'.$fktNr.'" class="detail_button" title="Detailansicht der Funktion"></div>
+                    <div style="float: left; margin-left: 35px;" title="[Funktion-Nr] Funktion-Name">['.$fktNr.']&nbsp;'.$fktName.' </div>
                     <div id="grobphaseR" title="Grobphase-Name[Grobphase-Nr][Unterphase-Nr]">'.$phaseName.'&nbsp;['.$phaseNr.']['.$uphaseNr.']</div>
                 </div>
             </h3>
@@ -363,9 +363,8 @@
   $(document).ready(function() {               
         $('.detail_button').click( function() {
           var fktNr = this.id;
-          var fktName = "<?php echo $fktName ?>";
           
-          alert(fktNr+fktName);
+          alert(fktNr);
           
           //window.openDialog("http://localhost/finanzberatung/index.php?r=site/detail", "Details - ", "", fktNr);       
           return false;
@@ -408,11 +407,13 @@
 <script type="text/javascript"> 
 
     $("#multiselect").multiselect({
-        selectedText: "# of # selected"
+        header: false,
+        selectedText: "# von # ausgewählt",
+        noneSelectedText: 'Wähle deine Spalten'
     });
-    
-    $("#multiselect").bind("multiselectclick", function(event, ui){
 
+    $("#multiselect").bind("multiselectclick", function(event, ui){
+        
         var value = ui.value;
 
         var val = '.'+value;
@@ -424,71 +425,90 @@
             $(val).css('display','block');
         }
     });
+    
     $("#select_grobphase").multiselect({
-        selectedText: "# of # selected"
+        selectedText: "# von # ausgewählt",
+        noneSelectedText: 'Wähle deine Grobphase(n)'
     });
 	$("#select_grobphase").bind("multiselectclick", function(event, ui){
 		
 		var value = ui.value;
 		});
 	$("#select_unterphase").multiselect({
-        selectedText: "# of # selected"
+        selectedText: "# von # ausgewählt",
+        noneSelectedText: 'Wähle deine Unterphase(n)'
     });
 	$("#select_unterphase").bind("multiselectclick", function(event, ui){
 		
 		var value = ui.value;
 		});	
 	$("#select_name").multiselect({
-        selectedText: "# of # selected"
+        selectedText: "# von # ausgewählt",
+        noneSelectedText: 'Wähle deine Funktion(en)'
     });
 	$("#select_name").bind("multiselectclick", function(event, ui){
 		
 		var value = ui.value;
 		});
 	$("#select_privmb").multiselect({
-        selectedText: "# of # selected"
+        header: false,
+        selectedText: "# von # ausgewählt",
+        noneSelectedText: 'auswählen'        
     });
 	$("#select_privmb").bind("multiselectclick", function(event, ui){
 		
 		var value = ui.value;
 		});	
 	$("#select_profmb").multiselect({
-        selectedText: "# of # selected"
+        header: false,
+        selectedText: "# von # ausgewählt",
+        noneSelectedText: 'auswählen'
+        
     });
 	$("#select_profmb").bind("multiselectclick", function(event, ui){
 		
 		var value = ui.value;
 		});	
 	$("#select_privob").multiselect({
-        selectedText: "# of # selected"
+        header: false,
+        selectedText: "# von # ausgewählt",
+        noneSelectedText: 'auswählen'
     });
 	$("#select_privob").bind("multiselectclick", function(event, ui){
 		
 		var value = ui.value;
 		});	
 	$("#select_profob").multiselect({
-        selectedText: "# of # selected"
+        header: false,
+        selectedText: "# von # ausgewählt",
+        noneSelectedText: 'auswählen'
     });
 	$("#select_profob").bind("multiselectclick", function(event, ui){
 		
 		var value = ui.value;
 		});
 	$("#select_rausfg").multiselect({
-        selectedText: "# of # selected"
+        header: false,
+        selectedText: "# von # ausgewählt",
+        noneSelectedText: 'auswählen'
     });
 	$("#select_rausfg").bind("multiselectclick", function(event, ui){
 		
 		var value = ui.value;
 		});
 	$("#select_hsra").multiselect({
-        selectedText: "# of # selected"
+        header: false,
+        selectedText: "# von # ausgewählt",
+        noneSelectedText: 'auswählen'
     });
 	$("#select_hsra").bind("multiselectclick", function(event, ui){
 		
 		var value = ui.value;
 		});
 	$("#select_hsrz").multiselect({
-        selectedText: "# of # selected"
+        header: false,
+        selectedText: "# von # ausgewählt",
+        noneSelectedText: 'auswählen'
     });
 	$("#select_hsrz").bind("multiselectclick", function(event, ui){
 		

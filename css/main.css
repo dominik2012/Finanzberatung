@@ -21,6 +21,12 @@
     border-left: 1px solid #0075B8;
     cursor: pointer;
     padding-bottom: 3px;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.toggler:hover {
+    background-color: #DAE5EB;
 }
 
 .toggle {
@@ -54,10 +60,11 @@
 }*/
 
 .detail_button {
+        background: url('/Finanzberatung/css/images/detail/details1.png');
         float: left;
-        left: 50%;
+        /*left: 50%;*/
         position: absolute;
-	background-color:#DFDCDC;
+	/*background-color:#DFDCDC;
 	-moz-border-radius:3px;
 	-webkit-border-radius:3px;
 	border-radius:3px;
@@ -65,14 +72,21 @@
 	color:#ffffff;
 	font-family:arial;
 	font-size:8px;
-	font-weight:bold;
-        height: 12px;
-        width: 28px;
+	font-weight:bold;*/
+        height: 20px;
+        width: 20px;
 	text-decoration:none;
-}.detail_button:hover {
-	background-color:#AFAEAE;
-}.detail_button:active {
-	top:2px;
+        margin-top: 1px;
+}
+
+.detail_button:hover {
+	/*background-color:#AFAEAE;*/
+        background: url('/Finanzberatung/css/images/detail/details3.png');
+}
+
+.detail_button:active {
+	/*top:2px;*/
+        background: url('/Finanzberatung/css/images/detail/details2.png');
 }
 
 
@@ -257,8 +271,8 @@ body
 
 #viewfilter:active
 {
-    right: -480px;
-    border: 6px solid #5F5F5F;
+    right: -490px;
+    border: 3px solid #5F5F5F;
 }
 
 #view_name
@@ -490,4 +504,37 @@ div.search-form
 .operations li a:hover
 {
 	background: #80CFFF;
+}
+
+.boxes
+{
+        background: #DADADA;
+        border: 1px;
+        border-color: #B8B5B5;
+        margin: 10px;
+        width: max-content;
+        float: left;
+        border-radius: 5px 5px 0px 0px;
+}
+
+#kopfzeile
+{
+        width: 100%;
+        
+}
+
+.topline
+{
+        border: 1px;
+        border-color: #B8B5B5;
+        background: #C0C0C0;
+        text-align: center;
+        padding: 5px;
+        border-radius: 5px 5px 0px 0px;
+        margin-bottom: 5px;
+}
+
+button
+{
+    
 }
