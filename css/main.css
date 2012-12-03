@@ -52,12 +52,22 @@
     top: 65px;
     width: 200px;
 }
-/*
-#detail {
-    float: left;
-    left: 50%;
-    position: absolute;
-}*/
+
+.submit {
+    background: url('/Finanzberatung/css/images/submit/submit1.png');
+    height: 50px;
+    width: 50px;
+    border: none;
+    margin-top: -1px;
+}
+
+.submit:hover {
+    background: url('/Finanzberatung/css/images/submit/submit2.png');
+}
+
+.submit:active {
+    background: url('/Finanzberatung/css/images/submit/submit3.png');
+}
 
 .detail_button {
         background: url('/Finanzberatung/css/images/detail/details1.png');
@@ -76,7 +86,7 @@
         height: 20px;
         width: 20px;
 	text-decoration:none;
-        margin-top: 1px;
+        margin-top: -1px;
 }
 
 .detail_button:hover {
@@ -111,7 +121,7 @@ body
 #grobphaseR {
     float: right;
     font-size: 10px;
-    margin-top: 4px;
+    margin-top: 1px;
 }
 
 #draggable {
@@ -520,7 +530,6 @@ div.search-form
 #kopfzeile
 {
         width: 100%;
-        
 }
 
 .topline

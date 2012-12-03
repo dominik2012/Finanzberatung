@@ -191,7 +191,7 @@
 				<input type="hidden" name="form_hsrz" value=""><br>
                                 
                                 <div style="float: right; margin-top: 15px; margin-right: 38px;">
-				<button type="button" name="submitbutton" value="submitbutton" onClick="toInput();">Submit</button>
+				<button class="submit" type="button" name="submitbutton" value="submitbutton" onClick="toInput();"></button>
                                 </div>
                                 
                                 </div>
@@ -290,7 +290,7 @@
             '<h3>
                 <div>
                     <div id="'.$fktNr.'" class="detail_button" title="Detailansicht der Funktion"></div>
-                    <div style="float: left; margin-left: 35px;" title="[Funktion-Nr] Funktion-Name">['.$fktNr.']&nbsp;'.$fktName.' </div>
+                    <div style="float: left; margin-left: 35px; font-size: 13px;" title="[Funktion-Nr] Funktion-Name">['.$fktNr.']&nbsp;'.$fktName.' </div>
                     <div id="grobphaseR" title="Grobphase-Name[Grobphase-Nr][Unterphase-Nr]">'.$phaseName.'&nbsp;['.$phaseNr.']['.$uphaseNr.']</div>
                 </div>
             </h3>
