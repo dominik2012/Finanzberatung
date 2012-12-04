@@ -12,7 +12,7 @@
 
 .toggler {
     float: left;
-    height: 205px;
+    height: 195px;
     width: 37px;
     background-color: #EEEEEE;
     border: 2px solid #0075B8;
@@ -33,7 +33,7 @@
     float: left; 
     width: 225px; 
     display: block; 
-    height: 200px; 
+    height: 193px; 
     border-right: 2px solid #0075B8;
     border-bottom: 1px solid #B8B5B5;
     background-color: #E4E4E4;
@@ -133,7 +133,7 @@ body
     background-color: #0075B8;
     text-align: center;
     border-radius: 11px 11px 11px 11px;
-    border: 3px solid #28436D;
+    border: 2px solid #28436D;
     height: 67px;
 }
 

@@ -82,9 +82,21 @@
                 <select name="select_privmb" id="select_privmb" data-placeholder="Privmb-Filter" style="width:165px;" multiple="multiple">
                 <?php
 			for ($i=0;$i<count($model2[1]["privmb"]);$i++){
-                           
+                                    
+                                    $inhaltOri = $model2[1]["privmb"][$i]; 
+                                    
+                                    if($inhaltOri == "gesetzFunktion"){
+                                        $inhalt = "Gesetz -> Funktion";
+                                    }
+                                    else if($inhaltOri == "funktionGesetz"){
+                                        $inhalt = "Funktion -> Gesetz";
+                                    }
+                                    else{
+                                        $inhalt = "Keine Abhängigkeit";
+                                    }
+                                        
                             
-                                echo '<option value="'.$model2[1]["privmb"][$i].'" id="privmb'.$i.'" name="privmb'.$i.'");>'.$model2[1]["privmb"][$i].'</option>';
+                                echo '<option value="'.$model2[1]["privmb"][$i].'" id="privmb'.$i.'" name="privmb'.$i.'");>'.$inhalt.'</option>';
                             	
 			}    
                 ?>
@@ -96,9 +108,20 @@
                 <select name="select_profmb" id="select_profmb" data-placeholder="Profmb-Filter" style="width:165px;" multiple="multiple">
                 <?php
 			for ($i=0;$i<count($model2[1]["profmb"]);$i++){
-                           
+                                
+                                    $inhaltOri = $model2[1]["profmb"][$i];    
+                                    
+                                    if($inhaltOri == "gesetzFunktion"){
+                                        $inhalt = "Gesetz -> Funktion";
+                                    }
+                                    else if($inhaltOri == "funktionGesetz"){
+                                        $inhalt = "Funktion -> Gesetz";
+                                    }
+                                    else{
+                                        $inhalt = "Keine Abhängigkeit";
+                                    }
                             
-                                echo '<option value="'.$model2[1]["profmb"][$i].'" id="profmb'.$i.'" name="profmb'.$i.'");>'.$model2[1]["profmb"][$i].'</option>';
+                                echo '<option value="'.$model2[1]["profmb"][$i].'" id="profmb'.$i.'" name="profmb'.$i.'");>'.$inhalt.'</option>';
                             	
 			}    
                 ?>
@@ -111,8 +134,19 @@
                 <?php
 			for ($i=0;$i<count($model2[1]["rausfg"]);$i++){
                            
-                            
-                                echo '<option value="'.$model2[1]["rausfg"][$i].'" id="rausfg'.$i.'" name="rausfg'.$i.'");>'.$model2[1]["rausfg"][$i].'</option>';
+                                    $inhaltOri = $model2[1]["rausfg"][$i];   
+                                    
+                                    if($inhaltOri == "gesetzFunktion"){
+                                        $inhalt = "Gesetz -> Funktion";
+                                    }
+                                    else if($inhaltOri == "funktionGesetz"){
+                                        $inhalt = "Funktion -> Gesetz";
+                                    }
+                                    else{
+                                        $inhalt = "Keine Abhängigkeit";
+                                    }
+                                    
+                                echo '<option value="'.$model2[1]["rausfg"][$i].'" id="rausfg'.$i.'" name="rausfg'.$i.'");>'.$inhalt.'</option>';
                             	
 			}    
                 ?></select><br>
@@ -126,8 +160,19 @@
                 <?php
 			for ($i=0;$i<count($model2[1]["privob"]);$i++){
                            
-                            
-                                echo '<option value="'.$model2[1]["privob"][$i].'" id="privob'.$i.'" name="privob'.$i.'");>'.$model2[1]["privob"][$i].'</option>';
+                                    $inhaltOri = $model2[1]["privob"][$i];   
+                                    
+                                    if($inhaltOri == "gesetzFunktion"){
+                                        $inhalt = "Gesetz -> Funktion";
+                                    }
+                                    else if($inhaltOri == "funktionGesetz"){
+                                        $inhalt = "Funktion -> Gesetz";
+                                    }
+                                    else{
+                                        $inhalt = "Keine Abhängigkeit";
+                                    }
+                                    
+                                echo '<option value="'.$model2[1]["privob"][$i].'" id="privob'.$i.'" name="privob'.$i.'");>'.$inhalt.'</option>';
                             	
 			}    
                 ?>
@@ -139,9 +184,20 @@
                 <select name="select_profob" id="select_profob" data-placeholder="Profob-Filter" style="width:165px;" multiple="multiple">
                 <?php
 			for ($i=0;$i<count($model2[1]["profob"]);$i++){
-                           
-                            
-                                echo '<option value="'.$model2[1]["profob"][$i].'" id="profob'.$i.'" name="profob'.$i.'");>'.$model2[1]["profob"][$i].'</option>';
+                                
+                                    $inhaltOri = $model2[1]["profob"][$i];    
+                                    
+                                    if($inhaltOri == "gesetzFunktion"){
+                                        $inhalt = "Gesetz -> Funktion";
+                                    }
+                                    else if($inhaltOri == "funktionGesetz"){
+                                        $inhalt = "Funktion -> Gesetz";
+                                    }
+                                    else{
+                                        $inhalt = "Keine Abhängigkeit";
+                                    }
+                                    
+                                echo '<option value="'.$model2[1]["profob"][$i].'" id="profob'.$i.'" name="profob'.$i.'");>'.$inhalt.'</option>';
                             	
 			}    
                 ?>
@@ -157,8 +213,19 @@
                 <?php
 			for ($i=0;$i<count($model2[1]["hsra"]);$i++){
                            
-                            
-                                echo '<option value="'.$model2[1]["hsra"][$i].'" id="hsra'.$i.'" name="hsra'.$i.'");>'.$model2[1]["hsra"][$i].'</option>';
+                                    $inhaltOri = $model2[1]["hsra"][$i];    
+                                
+                                    if($inhaltOri == "gelb"){
+                                        $inhalt = "eingeschränkt";
+                                    }
+                                    else if($inhaltOri == "gruen"){
+                                        $inhalt = "offen";
+                                    }
+                                    else{
+                                        $inhalt = "zukünftig eingeschränkt";
+                                    }
+                                    
+                                echo '<option value="'.$model2[1]["hsra"][$i].'" id="hsra'.$i.'" name="hsra'.$i.'");>'.$inhalt.'</option>';
                             	
 			}    
                 ?>
@@ -171,8 +238,19 @@
                 <?php
 			for ($i=0;$i<count($model2[1]["hsrz"]);$i++){
                            
-                            
-                                echo '<option value="'.$model2[1]["hsrz"][$i].'" id="hsrz'.$i.'" name="hsrz'.$i.'");>'.$model2[1]["hsrz"][$i].'</option>';
+                                    $inhaltOri = $model2[1]["hsrz"][$i];    
+                                
+                                    if($inhaltOri == "gelb"){
+                                        $inhalt = "eingeschränkt";
+                                    }
+                                    else if($inhaltOri == "gruen"){
+                                        $inhalt = "offen";
+                                    }
+                                    else{
+                                        $inhalt = "zukünft. eingeschränkter";
+                                    }
+                                    
+                                echo '<option value="'.$model2[1]["hsrz"][$i].'" id="hsrz'.$i.'" name="hsrz'.$i.'");>'.$inhalt.'</option>';
                             	
 			}    
                 ?>
@@ -295,8 +373,8 @@
                 </div>
             </h3>
                     
-             <div style="height: 210px; overflow-y: hidden;">
-                <div id="'.$i.'" style="width: 10000px;">';
+             <div style="height: 200px; overflow-y: hidden;">
+                <div id="'.$i.'" style="10000px">';
 
 			for($j=0;$j<count($model5);$j++){
                             $key = $model5[$j];
@@ -408,6 +486,7 @@
 
     $("#multiselect").multiselect({
         header: false,
+        height: 500,
         selectedText: "# von # ausgewählt",
         noneSelectedText: 'Wähle deine Spalten'
     });
@@ -428,6 +507,7 @@
     
     $("#select_grobphase").multiselect({
         selectedText: "# von # ausgewählt",
+        height: 344,
         noneSelectedText: 'Wähle deine Grobphase(n)'
     });
 	$("#select_grobphase").bind("multiselectclick", function(event, ui){
@@ -436,6 +516,7 @@
 		});
 	$("#select_unterphase").multiselect({
         selectedText: "# von # ausgewählt",
+        height: 345,
         noneSelectedText: 'Wähle deine Unterphase(n)'
     });
 	$("#select_unterphase").bind("multiselectclick", function(event, ui){
@@ -444,6 +525,7 @@
 		});	
 	$("#select_name").multiselect({
         selectedText: "# von # ausgewählt",
+        height: 295,
         noneSelectedText: 'Wähle deine Funktion(en)'
     });
 	$("#select_name").bind("multiselectclick", function(event, ui){
@@ -452,6 +534,7 @@
 		});
 	$("#select_privmb").multiselect({
         header: false,
+        height: 85,
         selectedText: "# von # ausgewählt",
         noneSelectedText: 'auswählen'        
     });
@@ -461,6 +544,7 @@
 		});	
 	$("#select_profmb").multiselect({
         header: false,
+        height: 85,
         selectedText: "# von # ausgewählt",
         noneSelectedText: 'auswählen'
         
@@ -471,6 +555,7 @@
 		});	
 	$("#select_privob").multiselect({
         header: false,
+        height: 85,
         selectedText: "# von # ausgewählt",
         noneSelectedText: 'auswählen'
     });
@@ -480,6 +565,7 @@
 		});	
 	$("#select_profob").multiselect({
         header: false,
+        height: 85,
         selectedText: "# von # ausgewählt",
         noneSelectedText: 'auswählen'
     });
@@ -489,6 +575,7 @@
 		});
 	$("#select_rausfg").multiselect({
         header: false,
+        height: 85,
         selectedText: "# von # ausgewählt",
         noneSelectedText: 'auswählen'
     });
@@ -498,6 +585,7 @@
 		});
 	$("#select_hsra").multiselect({
         header: false,
+        height: 85,
         selectedText: "# von # ausgewählt",
         noneSelectedText: 'auswählen'
     });
@@ -507,6 +595,7 @@
 		});
 	$("#select_hsrz").multiselect({
         header: false,
+        height: 85,
         selectedText: "# von # ausgewählt",
         noneSelectedText: 'auswählen'
     });
