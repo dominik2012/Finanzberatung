@@ -17,22 +17,24 @@
     <script type="text/javascript">
     //VIEWFILTER
     $(function() {
-        $( "#draggable" ).draggable();
+        $("#draggable" ).draggable();
     });
-</script>
+    </script>
+    
+
 </head>
 <!----------------------------------------------------------------------------->   
 <body>
     
 <!-- FUNKTIONSFILTER ---------------------------------------------------------->   
 <div style="function" id="function" class="function" onclick="togglestate(this); return false;">
-    <div style="function_name" id="function_name" title="anzeigen/verstecken des Filters"><p>FUNKTIONSFILTER</p></div>
+    <div style="function_name" id="function_name"  title="anzeigen/verstecken des Filters"><p>FUNKTIONSFILTER</p></div>
 
     <div class="form">
 	
 		<form name="neu_form" id="neu_form" action="/Finanzberatung/index.php?r=site/neu" method="POST">
 		
-                <div>
+                <div style="margin-bottom: 10px;">
                 <div id="functionoverview">ALLGEMEIN</div>
                 <div id="functionfilters">    
 		Grobphase:<br> 
@@ -40,8 +42,10 @@
                 <?php
 			for ($i=0;$i<count($model2[1]["grobphase"]);$i++){
                            
+                                $inhalt = $model2[1]["grobphase"][$i]; 
+                                $title = str_replace('"',"&#039;",  shortName($inhalt));
                             
-                                echo '<option value="'.$i.'" id="grobphase'.$i.'" name="grobphase'.$i.'");>'.$model2[1]["grobphase"][$i].'</option>';
+                                echo '<option value="'.$i.'" id="grobphase'.$i.'" name="grobphase'.$i.'" title="'.$title.'");>'.$inhalt.'</option>';
                             	
 			}    
                 ?>
@@ -54,41 +58,34 @@
                 <?php
 			for ($i=0;$i<count($model2[1]["unterphase"]);$i++){
                            
-                            
-                                echo '<option value="'.$i.'" id="unterphase'.$i.'" name="unterphase'.$i.'");>'.$model2[1]["unterphase"][$i].'</option>';
+                                $inhalt = $model2[1]["unterphase"][$i]; 
+                                $title = str_replace('"',"&#039;",  shortName($inhalt));
+                                
+                                echo '<option value="'.$i.'" id="unterphase'.$i.'" name="unterphase'.$i.'" title="'.$title.'");>'.$inhalt.'</option>';
                             	
 			}    
                 ?>
                 </select><br>
                 </div>
                     
-                <div id="functionfilters" style="margin-bottom: 15px;">   
-		Funktionsname:<br> 
-                <select name="select_name" id="select_name" data-placeholder="Name-Filter" style="width:465px;" multiple="multiple">
-                <?php
-			for ($i=0;$i<count($model2[1]["name"]);$i++){
-                           
-                            
-                                echo '<option value="'.($i+1).'" id="name'.$i.'" name="name'.$i.'");>'.$model2[1]["name"][$i].'</option>';
-                            	
-			}    
-                ?>
-                </select><br>
+                
                 </div>
+                    
+                <div style="margin-bottom: 10px; height: 160px;">
                 <div id="functionoverview">TYP</div>
                 <div style="float: left;">    
                 <div id="functionfilters">   
 		Privat mit Beratung:<br> 
-                <select name="select_privmb" id="select_privmb" data-placeholder="Privmb-Filter" style="width:165px;" multiple="multiple">
+                <select name="select_privmb" id="select_privmb" data-placeholder="Privmb-Filter" multiple="multiple">
                 <?php
 			for ($i=0;$i<count($model2[1]["privmb"]);$i++){
                                     
-                                    $inhaltOri = $model2[1]["privmb"][$i]; 
+                                    $inhalt = $model2[1]["privmb"][$i]; 
                                     
-                                    if($inhaltOri == "gesetzFunktion"){
+                                    if($inhalt == "gesetzFunktion"){
                                         $inhalt = "Gesetz -> Funktion";
                                     }
-                                    else if($inhaltOri == "funktionGesetz"){
+                                    else if($inhalt == "funktionGesetz"){
                                         $inhalt = "Funktion -> Gesetz";
                                     }
                                     else{
@@ -109,12 +106,12 @@
                 <?php
 			for ($i=0;$i<count($model2[1]["profmb"]);$i++){
                                 
-                                    $inhaltOri = $model2[1]["profmb"][$i];    
+                                    $inhalt = $model2[1]["profmb"][$i];    
                                     
-                                    if($inhaltOri == "gesetzFunktion"){
+                                    if($inhalt == "gesetzFunktion"){
                                         $inhalt = "Gesetz -> Funktion";
                                     }
-                                    else if($inhaltOri == "funktionGesetz"){
+                                    else if($inhalt == "funktionGesetz"){
                                         $inhalt = "Funktion -> Gesetz";
                                     }
                                     else{
@@ -128,18 +125,18 @@
                 </select><br>
                 </div>
                     
-                <div id="functionfilters" style="margin-bottom: 15px;">       
+                <div id="functionfilters" style="margin-bottom: 10px;">       
 		Reines Ausf&uuml;hrungsgesch&auml;ft:<br> 
                 <select name="select_rausfg" id="select_rausfg" data-placeholder="Rausfg-Filter" style="width:165px;" multiple="multiple">
                 <?php
 			for ($i=0;$i<count($model2[1]["rausfg"]);$i++){
                            
-                                    $inhaltOri = $model2[1]["rausfg"][$i];   
+                                    $inhalt = $model2[1]["rausfg"][$i];   
                                     
-                                    if($inhaltOri == "gesetzFunktion"){
+                                    if($inhalt == "gesetzFunktion"){
                                         $inhalt = "Gesetz -> Funktion";
                                     }
-                                    else if($inhaltOri == "funktionGesetz"){
+                                    else if($inhalt == "funktionGesetz"){
                                         $inhalt = "Funktion -> Gesetz";
                                     }
                                     else{
@@ -160,12 +157,12 @@
                 <?php
 			for ($i=0;$i<count($model2[1]["privob"]);$i++){
                            
-                                    $inhaltOri = $model2[1]["privob"][$i];   
+                                    $inhalt = $model2[1]["privob"][$i];   
                                     
-                                    if($inhaltOri == "gesetzFunktion"){
+                                    if($inhalt == "gesetzFunktion"){
                                         $inhalt = "Gesetz -> Funktion";
                                     }
-                                    else if($inhaltOri == "funktionGesetz"){
+                                    else if($inhalt == "funktionGesetz"){
                                         $inhalt = "Funktion -> Gesetz";
                                     }
                                     else{
@@ -185,12 +182,12 @@
                 <?php
 			for ($i=0;$i<count($model2[1]["profob"]);$i++){
                                 
-                                    $inhaltOri = $model2[1]["profob"][$i];    
+                                    $inhalt = $model2[1]["profob"][$i];    
                                     
-                                    if($inhaltOri == "gesetzFunktion"){
+                                    if($inhalt == "gesetzFunktion"){
                                         $inhalt = "Gesetz -> Funktion";
                                     }
-                                    else if($inhaltOri == "funktionGesetz"){
+                                    else if($inhalt == "funktionGesetz"){
                                         $inhalt = "Funktion -> Gesetz";
                                     }
                                     else{
@@ -204,21 +201,22 @@
                 </select><br>
                 </div>
                 </div>
-                
-                <div id="functionoverview">HANDLUNGSSPIELRAUM</div>
-                <div>    
+                </div>
+                    
+                <div style="margin-bottom: 10px; height: 80px;">    
+                <div id="functionoverview">HANDLUNGSSPIELRAUM</div>  
                 <div id="functionfilters" style="float: left;">       
 		Handlungsspielraum aktuell:<br> 
                 <select name="select_hsra" id="select_hsra" data-placeholder="Hsra-Filter" style="width:165px;" multiple="multiple">
                 <?php
 			for ($i=0;$i<count($model2[1]["hsra"]);$i++){
                            
-                                    $inhaltOri = $model2[1]["hsra"][$i];    
+                                    $inhalt = $model2[1]["hsra"][$i];    
                                 
-                                    if($inhaltOri == "gelb"){
+                                    if($inhalt == "gelb"){
                                         $inhalt = "eingeschränkt";
                                     }
-                                    else if($inhaltOri == "gruen"){
+                                    else if($inhalt == "gruen"){
                                         $inhalt = "offen";
                                     }
                                     else{
@@ -238,12 +236,12 @@
                 <?php
 			for ($i=0;$i<count($model2[1]["hsrz"]);$i++){
                            
-                                    $inhaltOri = $model2[1]["hsrz"][$i];    
+                                    $inhalt = $model2[1]["hsrz"][$i];    
                                 
-                                    if($inhaltOri == "gelb"){
+                                    if($inhalt == "gelb"){
                                         $inhalt = "eingeschränkt";
                                     }
-                                    else if($inhaltOri == "gruen"){
+                                    else if($inhalt == "gruen"){
                                         $inhalt = "offen";
                                     }
                                     else{
@@ -257,6 +255,25 @@
                 </select><br>
                 </div>
                 </div>
+                    
+                <div style="margin-bottom: 10px;">    
+                <div id="functionoverview">FUNKTIONSAUSWAHL</div>    
+                <div id="functionfilters" style="margin-bottom: 15px;">   
+		Funktionsname:<br> 
+                <select name="select_name" id="select_name" data-placeholder="Name-Filter" style="width:465px;" multiple="multiple">
+                <?php
+			for ($i=0;$i<count($model2[1]["name"]);$i++){
+                                
+                                $inhalt = $model2[1]["name"][$i];
+                                $title = str_replace('"',"&#039;",  shortName($inhalt));
+                                    
+                                echo '<option value="'.($i+1).'" id="name'.$i.'" name="name'.$i.'" title="'.$title.'");>'.$model2[1]["name"][$i].'</option>';
+                            	
+			}    
+                ?>
+                </select><br>  
+                </div>
+                </div>
 				<input type="hidden" name="form_grobphase" value="">
 				<input type="hidden" name="form_unterphase" value="">
 				<input type="hidden" name="form_name" value="">
@@ -268,11 +285,11 @@
 				<input type="hidden" name="form_hsra" value="">
 				<input type="hidden" name="form_hsrz" value=""><br>
                                 
-                                <div style="float: right; margin-top: 15px; margin-right: 38px;">
+                                <div style="float: right; margin-top: -30px; margin-right: 38px;">
 				<button class="submit" type="button" name="submitbutton" value="submitbutton" onClick="toInput();"></button>
                                 </div>
                                 
-                                </div>
+                                
 		</form>
 		
 	
@@ -312,11 +329,15 @@
 		<select id="multiselect" data-placeholder="Anzeigefilter" style="width:350px;" multiple="multiple">
                 <?php
 			for ($i=0;$i<count($model5);$i++){
+                            
+                            $inhalt = $model6[$i]; 
+                            $title = str_replace('"',"&#039;",  shortName($inhalt));
+                            
                             //Aussortieren von unnötigen Spalten
                             if($model6[$i] == "ID" || $model6[$i] == "Nummer" || $model6[$i] == "Name" || $model6[$i] == "Unterphase" || $model6[$i] == "Grobphase"){
                             
                             }else{
-                                echo '<option value="'.$model5[$i].'" id="'.$model5[$i].'" name="'.$model5[$i].'");>'.$model6[$i].'</option>';
+                                echo '<option value="'.$model5[$i].'" id="'.$model5[$i].'" name="'.$model5[$i].'" title="'.$title.'");>'.$inhalt.'</option>';
                             }	
 			}    
                 ?>
@@ -362,6 +383,9 @@
             $phaseName = $grobphase[$model3[$i]["grobphase_id"]]["name"];
             $phaseNr = $grobphase[$model3[$i]["grobphase_id"]]["grobphase_id"];
             $uphaseNr = $model3[$i]["unterphase_id"];
+            //$uphaseName = $model3[$i]["unterphase_id"]["name"]; 
+
+            if($uphaseNr==0){$uphaseNr="k";}
             
             //Ausgabe Accordion_________________________________________________
             echo 
@@ -369,7 +393,8 @@
                 <div>
                     <div id="'.$fktNr.'" class="detail_button" title="Detailansicht der Funktion"></div>
                     <div style="float: left; margin-left: 35px; font-size: 13px;" title="[Funktion-Nr] Funktion-Name">['.$fktNr.']&nbsp;'.$fktName.' </div>
-                    <div id="grobphaseR" title="Grobphase-Name[Grobphase-Nr][Unterphase-Nr]">'.$phaseName.'&nbsp;['.$phaseNr.']['.$uphaseNr.']</div>
+                    <div id="grobphaseR" title="Grobphase-Nr. Grobphase-Name">'.$phaseNr.'. '.$phaseName.'&nbsp;['.$uphaseNr.']</div>
+                    <!--<div id="grobphaseR" title="">['.$uphaseNr.']</div>-->
                 </div>
             </h3>
                     
@@ -433,6 +458,24 @@
 </div>
 <!-- ACCORDION ENDE ----------------------------------------------------------->   
 
+
+<!-- PHP FUNCTIONS ------------------------------------------------------------>
+<?php
+    //Bei zu langem Namen -> kürzen u. $title als vollen Namen
+    function shortName($inhalt){
+        $inhaltL = mb_strlen($inhalt);
+        
+        if($inhaltL > 55){
+            $title = $inhalt;
+        }else{
+            $title = "";
+        }
+        
+        return $title;
+    }
+?>
+<!-- FUNCTIONS ENDE ----------------------------------------------------------->
+
 <!-- Scripte ------------------------------------------------------------------>
 
 <!-- DETAIL-BUTTON ------------------------------------------------------------>   
@@ -444,7 +487,7 @@
           
           alert(fktNr);
           
-          //window.openDialog("http://localhost/finanzberatung/index.php?r=site/detail", "Details - ", "", fktNr);       
+          //window.openDialog("http://http://localhost/finanzberatung/index.php?r=site/page&view=details", "Details - ", "", fktNr);       
           return false;
         });
     });
@@ -463,6 +506,7 @@
             div.className = State1;
         }
     }
+ 
 </script>  
 
 <!-- ANZEIGEFILTER SHOW/HIDE -------------------------------------------------->   
@@ -775,7 +819,8 @@
 			document.neu_form.form_hsrz.value=bufferHsrz;
 			//alert("hihi");
 			document.neu_form.submit();
-			}
+                        
+	}
 </script>
 
 </body>
