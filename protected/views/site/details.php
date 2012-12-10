@@ -9,29 +9,38 @@
     
 </head>
 <body>
-<?php
-   // if(isset($model3)){ ?>
-    <div class ="boxes" id="kopfzeile" style="text-align: center;">
+
+    <div class ="boxes ui-state-active" id="kopfzeile" style="text-align: center;">
         
             <button id="buttonFirst" style="float: left;"><span class="ui-icon ui-icon-seek-prev"></span></button>
         
-        
             <button id="buttonPrevious" style="float: left;"><span class="ui-icon ui-icon-triangle-1-w"></span></button>
         
-            <span id="Funktionsname" >[49] - Stammdaten erfassen / aktualisieren</span>
+            <button id="close" style="float: left; color: #026890;" onclick="window.close()">schließen</button>
             
-            <button style="float: right;"><span class="ui-icon ui-icon-triangle-1-e"></span></button>
+            <span id="Funktionsname" ><?php echo"[".$funktionsdaten['nummer']."] - ".$funktionsdaten['name'];?></span>
             
             <button style="float: right;"><span class="ui-icon ui-icon-seek-next"></span></button>
             
+            <button style="float: right;"><span class="ui-icon ui-icon-triangle-1-e"></span></button>
+
     </div>
     
-    <div class="boxes" id="Beschreibung" style="width: 45%; margin-left: 2%;">
+    <div class="boxes ui-state-active" id="zeile2">
+        
+        <span>Grobphase/Unterphase</span>
+        
+    </div>
+    <?php
+    if($funktionsdaten['beschreibung']!= null){?>
+    <div class="boxes ui-state-active" id="Beschreibung" style="width: 45%; margin-left: 2%;">
         <div class="topline">Beschreibung</div>
-        <div class="inhalt">Bei bestehender Bankverbindung sind ggfs. Stammdaten zu aktualisieren oder zu ergänzen, bei neuer Bankverbindung sind Mindeststammdaten zu erfassen.</div>
+        <div class="inhalt"><?php echo $funktionsdaten['beschreibung']; ?></div>
     </div>
     
-    <div class="boxes" id="Beratung" style="width: 45%; margin-left: 5%; margin-right: 2%;">
+    <?php } ?>
+    
+    <div class="boxes ui-state-active" id="Beratung" style="width: 45%; margin-left: 5%; margin-right: 2%;">
         <div class="topline">Beratung</div>
         <div class="inhalt">
             <table>
@@ -53,12 +62,18 @@
         </div>
     </div>
     
-    <div class="boxes" id="Regulatorien">
+    <?php
+    if($funktionsdaten['weiterereg']!= null){?>
+    <div class="boxes ui-state-active" id="Regulatorien">
         <div class="topline">Regulatorien</div>
-        <div class="inhalt"></div>
+        <div class="inhalt"><?php echo $funktionsdaten['weiterereg'] ?></div>
     </div>
+    <?php } ?>
     
-    <div class="boxes" id="Spielraum">
+    
+    <?php
+    if($funktionsdaten['hsr_aktuell']!= null || $funktionsdaten['hsr_zukuenftig']!= null){?>
+    <div class="boxes ui-state-active" id="Spielraum">
         <div class="topline">Spielraum</div>
         <div class="inhalt">
             <table>
@@ -67,57 +82,116 @@
                     <td>zukünftig</td>
                 </tr>
                 <tr>
-                    <td>gelb</td>
-                    <td>gelb</td>
+                    <?php if($funktionsdaten['hsr_aktuell'] == 'gruen') { ?>
+                    <td style="background-color: #009000;">  </td>
+                    <?php }
+                    elseif($funktionsdaten['hsr_aktuell'] == 'gelb') { ?>
+                    <td style="background-color: #ffff00;">  </td>
+                    <?php }
+                    elseif($funktionsdaten['hsr_aktuell'] == 'rot') { ?>
+                    <td style="background-color: #009000;">  </td>
+                    <?php }
+                    else{ ?>
+                    <td style="background-color: #ffffff;"> </td>
+                    <?php }
+                    if($funktionsdaten['hsr_zukuenftig'] == 'gruen') { ?>
+                    <td style="background-color: #009000;">  </td>
+                    <?php }
+                    elseif($funktionsdaten['hsr_zukuenftig'] == 'gelb') { ?>
+                    <td style="background-color: #ffff00;">  </td>
+                    <?php }
+                    elseif($funktionsdaten['hsr_zukuenftig'] == 'rot') { ?>
+                    <td style="background-color: #009000;">  </td>
+                    <?php } 
+                    else{ ?>
+                    <td style="background-color: #ffffff;"> </td>
+                    <?php }} ?>
+                    
                 </tr>
             </table>
         </div>
     </div>
     
-    <div class="boxes" id="Hinweise">
+    <?php
+    if($funktionsdaten['hinweis']!= null){?>
+    <div class="boxes ui-state-active" id="Hinweise">
         <div class="topline">Hinweise</div>
-        <div class="inhalt"></div>
+        <div class="inhalt"><?php echo $funktionsdaten['hinweis'] ?></div>
     </div>
+    <?php } ?>
     
-    <div class="boxes" id="Auslegung">
-        <div class="topline">Auslegung</div>
-        <div class="inhalt"></div>
+    <?php
+    if($funktionsdaten['spezialist_vs_generalist']!= null){?>
+    <div class="boxes ui-state-active" id="spezialist_vs_generalist">
+        <div class="topline">Spezialist/Generalist</div>
+        <div class="inhalt"><?php echo $funktionsdaten['spezialist_vs_generalist'] ?></div>
     </div>
-     
-    <div class="boxes" id="Auslegung">
-        <div class="topline">Auslegung</div>
-        <div class="inhalt"></div>
-    </div> 
-    <div class="boxes" id="Auslegung">
-        <div class="topline">Auslegung</div>
-        <div class="inhalt"></div>
-    </div> 
-    <div class="boxes" id="Auslegung">
-        <div class="topline">Auslegung</div>
-        <div class="inhalt"></div>
-    </div> 
-    <div class="boxes" id="Auslegung">
-        <div class="topline">Auslegung</div>
-        <div class="inhalt"></div>
-    </div> 
-    <div class="boxes" id="Auslegung">
-        <div class="topline">Auslegung</div>
-        <div class="inhalt"></div>
-    </div> 
-    <div class="boxes" id="Auslegung">
-        <div class="topline">Auslegung</div>
-        <div class="inhalt"></div>
-    </div> 
-    <div class="boxes" id="Auslegung">
-        <div class="topline">Auslegung</div>
-        <div class="inhalt"></div>
-    </div> 
-    <div class="boxes" id="Auslegung">
-        <div class="topline">Auslegung</div>
-        <div class="inhalt"></div>
-    </div>
+    <?php } ?>
     
-
+    <?php
+    if($funktionsdaten['frontoffice_generalist']!= null){?>
+    <div class="boxes ui-state-active" id="frontoffice_generalist">
+        <div class="topline">Frontoffice Generalist</div>
+        <div class="inhalt"><?php echo $funktionsdaten['frontoffice_generalist'] ?></div>
+    </div>
+    <?php } ?>
+    
+    <?php
+    if($funktionsdaten['frontoffice_experte']!= null){?>
+    <div class="boxes ui-state-active" id="frontoffice_experte">
+        <div class="topline">Frontoffice Experte</div>
+        <div class="inhalt"><?php echo $funktionsdaten['frontoffice_experte'] ?></div>
+    </div>
+    <?php } ?>
+    
+    <?php
+    if($funktionsdaten['backoffice']!= null){?>
+    <div class="boxes ui-state-active" id="backoffice">
+        <div class="topline">Backoffice</div>
+        <div class="inhalt"><?php echo $funktionsdaten['backoffice'] ?></div>
+    </div>
+    <?php } ?>
+    
+    <?php
+    if($funktionsdaten['produktlieferant']!= null){?>
+    <div class="boxes ui-state-active" id="produktlieferant">
+        <div class="topline">Produklieferant</div>
+        <div class="inhalt"><?php echo $funktionsdaten['produktlieferant'] ?></div>
+    </div>
+    <?php } ?>
+    
+    <?php
+    if($funktionsdaten['bank']!= null){?>
+    <div class="boxes ui-state-active" id="bank">
+        <div class="topline">Bank</div>
+        <div class="inhalt"><?php echo $funktionsdaten['bank'] ?></div>
+    </div>
+    <?php } ?>
+    
+    <?php
+    if($funktionsdaten['kunde']!= null){?>
+    <div class="boxes ui-state-active" id="kunde">
+        <div class="topline">Kunde</div>
+        <div class="inhalt"><?php echo $funktionsdaten['kunde'] ?></div>
+    </div>
+    <?php } ?>
+    
+    <?php
+    if($funktionsdaten['verantwortlicher']!= null){?>
+    <div class="boxes ui-state-active" id="verantwortlicher">
+        <div class="topline">Verantwortlicher</div>
+        <div class="inhalt"><?php echo $funktionsdaten['verantwortlicher'] ?></div>
+    </div>
+    <?php } ?>
+    
+    <?php
+    if($funktionsdaten['ressourcen']!= null){?>
+    <div class="boxes ui-state-active" id="ressourcen">
+        <div class="topline">Ressourcen</div>
+        <div class="inhalt"><?php echo $funktionsdaten['ressourcen'] ?></div>
+    </div>
+    <?php } ?>
+    
 
 </body>
 <?php
@@ -126,4 +200,3 @@
  * and open the template in the editor.
  */
 ?>
-

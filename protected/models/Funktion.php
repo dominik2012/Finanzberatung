@@ -285,4 +285,10 @@ return array(
 			}
 		return $values;
 		}
+                
+        public function getRowByNumber($number){
+                $val = Yii::app()->db->createCommand()->select('*')->from('funktion')->where('nummer = '.$number);
+                $v = $val->queryRow();
+                return $v;
+                }
 }

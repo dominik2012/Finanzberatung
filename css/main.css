@@ -530,20 +530,44 @@ div.search-form
 #kopfzeile
 {
         width: 100%;
+        margin-bottom: 1px;
 }
 
 .topline
 {
-        border: 1px;
-        border-color: #B8B5B5;
-        background: #C0C0C0;
-        text-align: center;
-        padding: 5px;
-        border-radius: 5px 5px 0px 0px;
-        margin-bottom: 5px;
+    
+    cursor: pointer;
+    height: 20px;
+    margin-bottom: 2px;
+    padding: 5px 5px 0px 30px;
+    position: relative;
+    font-size: 100%;
+    line-height: 1.3;
+    list-style: none outside none;
+    margin: 0px 0px 0px;
+    outline: 0px none currentColor;
+    text-decoration: none;
+    background-color: #E9E9E9;
+    border: 1px solid #DCDCDC;
+    color: #026890;
+    font-weight: 400;
+    top: 1px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    text-align: center;
+
 }
 
-button
+#zeile2
 {
-    
+    width: 100%;
+    text-align: center;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    margin-top: 0px;
+}
+
+td
+{
+    height: 30px;
 }

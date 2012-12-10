@@ -260,4 +260,9 @@ class SiteController extends Controller
 		$this->render('neu',array('model'=>$funktion, 'model2' =>$model2, 'model6' => $spaltennamen, 'model5' => $spaltennamen2));
 		}
 	}
+        
+         public function actionDetails(){
+            $funktionsdaten = Funktion::model()->getRowByNumber(63);
+            $this->render('details', array('funktionsdaten'=>$funktionsdaten));
+        }
 }

@@ -58,7 +58,7 @@
                                         'url'=>array('/site/page', 'view'=>'about')
                                 ),
                                 array(  'label'=>'Details', 
-                                        'url'=>array('/site/page', 'view'=>'details')
+                                        'url'=>array('/site/details')
                                 ),
                         ),
                     )); ?>
