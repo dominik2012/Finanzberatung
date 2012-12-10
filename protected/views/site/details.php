@@ -52,11 +52,61 @@
                     <td>Reines Ausführungsgeschäft</td>
                 </tr>
                 <tr>
-                    <td>=></td>
-                    <td>=></td>
-                    <td>=></td>
-                    <td>=></td>
-                    <td>=></td>
+                    <td>
+                    <?php 
+                        if($funktionsdaten['priv_mit_beratung']== 'gesetzFunktion'){
+                            echo "<img title='Funktion bedingt durch Gesetz' src='/Finanzberatung/css/images/pfeile/gesetzFunktion.png'>";
+                        }
+                        elseif($funktionsdaten['priv_mit_beratung'] == 'funktionGesetz'){
+                            echo "<img title='Gesetz bedingt durch Funktion'src='/Finanzberatung/css/images/pfeile/funktionGesetz.png'>";
+                        }
+                        else{ echo"";}
+                    ?>
+                    </td>
+                    <td>
+                    <?php 
+                        if($funktionsdaten['prof_mit_beratung'] == 'gesetzFunktion'){
+                            echo "<img title='Funktion bedingt durch Gesetz' src='/Finanzberatung/css/images/pfeile/gesetzFunktion.png'>";
+                        }
+                        elseif($funktionsdaten['prof_mit_beratung'] == 'funktionGesetz'){
+                            echo "<img title='Gesetz bedingt durch Funktion'src='/Finanzberatung/css/images/pfeile/funktionGesetz.png'>";
+                        }
+                        else{ echo"";}
+                    ?>                       
+                    </td>
+                    <td>
+                    <?php 
+                        if($funktionsdaten['priv_ohne_beratung'] == 'gesetzFunktion'){
+                            echo "<img title='Funktion bedingt durch Gesetz' src='/Finanzberatung/css/images/pfeile/gesetzFunktion.png'>";
+                        }
+                        elseif($funktionsdaten['priv_ohne_beratung'] == 'funktionGesetz'){
+                            echo "<img title='Gesetz bedingt durch Funktion'src='/Finanzberatung/css/images/pfeile/funktionGesetz.png'>";
+                        }
+                        else{ echo"";}
+                    ?>
+                    </td>
+                    <td>
+                    <?php 
+                        if($funktionsdaten['prof_ohne_beratung'] == 'gesetzFunktion'){
+                            echo "<img title='Funktion bedingt durch Gesetz' src='/Finanzberatung/css/images/pfeile/gesetzFunktion.png'>";
+                        }
+                        elseif($funktionsdaten['prof_ohne_beratung'] == 'funktionGesetz'){
+                            echo "<img title='Gesetz bedingt durch Funktion'src='/Finanzberatung/css/images/pfeile/funktionGesetz.png'>";
+                        }
+                        else{ echo"";}
+                    ?>
+                    </td>
+                    <td>
+                    <?php 
+                        if($funktionsdaten['r_ausf_geschaeft'] == 'gesetzFunktion'){
+                            echo "<img title='Funktion bedingt durch Gesetz' src='/Finanzberatung/css/images/pfeile/gesetzFunktion.png'>";
+                        }
+                        elseif($funktionsdaten['r_ausf_geschaeft'] == 'funktionGesetz'){
+                            echo "<img title='Gesetz bedingt durch Funktion'src='/Finanzberatung/css/images/pfeile/funktionGesetz.png'>";
+                        }
+                        else{ echo"";}
+                    ?>
+                    </td>
                 </tr>
             </table>
         </div>
