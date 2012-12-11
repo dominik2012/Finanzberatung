@@ -264,7 +264,9 @@ class SiteController extends Controller
 	}
         
          public function actionDetails(){
-            $funktionsdaten = Funktion::model()->getRowByNumber(63);
+            $fktNr = $_POST['fktNr'];
+            //$fktNr = 3;
+            $funktionsdaten = Funktion::model()->getRowByNumber($fktNr);
             $this->render('details', array('funktionsdaten'=>$funktionsdaten));
         }
 }

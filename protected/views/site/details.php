@@ -35,7 +35,16 @@
     if($funktionsdaten['beschreibung']!= null){?>
     <div class="boxes ui-state-active" id="Beschreibung" style="width: 45%; margin-left: 2%;">
         <div class="topline">Beschreibung</div>
-        <div class="inhalt"><?php echo $funktionsdaten['beschreibung']; ?></div>
+        <div class="inhalt"><?php echo $funktionsdaten['beschreibung']; ?>
+            <?php 
+                if(isset($_GET['fktNr'])){
+                    echo $_GET['fktNr'];
+                }else{
+                    echo 'Problem';
+                }
+            
+             ?>
+        </div>
     </div>
     
     <?php } ?>

@@ -5178,3 +5178,136 @@ REQUEST_URI=/Finanzberatung/index.php?r=site/neu
 in C:\xampp\htdocs\Finanzberatung\protected\views\site\neu.php (388)
 in C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php (258)
 in C:\xampp\htdocs\Finanzberatung\index.php (13)
+2012/12/11 13:37:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "details?fktNr=fktNr".' in C:\xampp\htdocs\Finanzberatung\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(271): CController->missingAction('details?fktNr=f...')
+#1 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): CController->run('details?fktNr=f...')
+#2 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController('site/details?fk...')
+#3 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\Finanzberatung\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/Finanzberatung/index.php?r=site/details?fktNr=fktNr
+HTTP_REFERER=http://localhost/Finanzberatung/index.php?r=site/neu
+---
+2012/12/11 13:55:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "details?fktNr=fktNr".' in C:\xampp\htdocs\Finanzberatung\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(271): CController->missingAction('details?fktNr=f...')
+#1 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): CController->run('details?fktNr=f...')
+#2 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController('site/details?fk...')
+#3 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\Finanzberatung\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/Finanzberatung/index.php?r=site/details?fktNr=fktNr
+HTTP_REFERER=http://localhost/Finanzberatung/index.php?r=site/neu
+---
+2012/12/11 13:58:41 [error] [php] Undefined index: fktNr (C:\xampp\htdocs\Finanzberatung\protected\views\site\details.php:38)
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(870): SiteController->renderFile()
+#1 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(783): SiteController->renderPartial()
+#2 C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php(268): SiteController->render()
+#3 C:\xampp\htdocs\Finanzberatung\framework\web\actions\CInlineAction.php(50): SiteController->actionDetails()
+#4 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): SiteController->runAction()
+#6 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#7 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): SiteController->run()
+#8 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#9 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\Finanzberatung\index.php(13): CWebApplication->run()
+REQUEST_URI=/Finanzberatung/index.php?r=site/details
+in C:\xampp\htdocs\Finanzberatung\protected\views\site\details.php (38)
+in C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php (268)
+in C:\xampp\htdocs\Finanzberatung\index.php (13)
+2012/12/11 14:00:33 [error] [php] Undefined index: fktNr (C:\xampp\htdocs\Finanzberatung\protected\views\site\details.php:38)
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(870): SiteController->renderFile()
+#1 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(783): SiteController->renderPartial()
+#2 C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php(268): SiteController->render()
+#3 C:\xampp\htdocs\Finanzberatung\framework\web\actions\CInlineAction.php(50): SiteController->actionDetails()
+#4 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): SiteController->runAction()
+#6 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#7 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): SiteController->run()
+#8 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#9 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\Finanzberatung\index.php(13): CWebApplication->run()
+REQUEST_URI=/Finanzberatung/index.php?r=site/details
+in C:\xampp\htdocs\Finanzberatung\protected\views\site\details.php (38)
+in C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php (268)
+in C:\xampp\htdocs\Finanzberatung\index.php (13)
+2012/12/11 14:42:09 [error] [php] Undefined index: fktNr (C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php:267)
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): SiteController->runAction()
+#1 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#2 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): SiteController->run()
+#3 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#4 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\Finanzberatung\index.php(13): CWebApplication->run()
+REQUEST_URI=/Finanzberatung/index.php?r=site/details
+in C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php (267)
+in C:\xampp\htdocs\Finanzberatung\index.php (13)
+2012/12/11 15:11:52 [error] [php] Undefined index: fktNr (C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php:267)
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): SiteController->runAction()
+#1 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#2 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): SiteController->run()
+#3 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#4 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\Finanzberatung\index.php(13): CWebApplication->run()
+REQUEST_URI=/Finanzberatung/index.php?r=site/details
+in C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php (267)
+in C:\xampp\htdocs\Finanzberatung\index.php (13)
+2012/12/11 15:14:56 [error] [php] Undefined index: fktNr (C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php:267)
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): SiteController->runAction()
+#1 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#2 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): SiteController->run()
+#3 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#4 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\Finanzberatung\index.php(13): CWebApplication->run()
+REQUEST_URI=/Finanzberatung/index.php?r=site/details
+in C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php (267)
+in C:\xampp\htdocs\Finanzberatung\index.php (13)
+2012/12/11 15:18:22 [error] [php] Undefined index: fktNr (C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php:267)
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): SiteController->runAction()
+#1 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#2 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): SiteController->run()
+#3 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#4 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\Finanzberatung\index.php(13): CWebApplication->run()
+REQUEST_URI=/Finanzberatung/index.php?r=site/details
+in C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php (267)
+in C:\xampp\htdocs\Finanzberatung\index.php (13)
+2012/12/11 15:18:44 [error] [php] Undefined index: fktNr (C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php:267)
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): SiteController->runAction()
+#1 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#2 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): SiteController->run()
+#3 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#4 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\Finanzberatung\index.php(13): CWebApplication->run()
+REQUEST_URI=/Finanzberatung/index.php?r=site/details
+in C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php (267)
+in C:\xampp\htdocs\Finanzberatung\index.php (13)
+2012/12/11 15:19:58 [error] [php] Undefined index: fktNr (C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php:267)
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): SiteController->runAction()
+#1 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#2 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): SiteController->run()
+#3 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#4 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\Finanzberatung\index.php(13): CWebApplication->run()
+REQUEST_URI=/Finanzberatung/index.php?r=site/details
+in C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php (267)
+in C:\xampp\htdocs\Finanzberatung\index.php (13)
+2012/12/11 15:38:27 [error] [php] Undefined index: fktNr (C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php:267)
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): SiteController->runAction()
+#1 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#2 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): SiteController->run()
+#3 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#4 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\Finanzberatung\index.php(13): CWebApplication->run()
+REQUEST_URI=/Finanzberatung/index.php?r=site/details
+in C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php (267)
+in C:\xampp\htdocs\Finanzberatung\index.php (13)

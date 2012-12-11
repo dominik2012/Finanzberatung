@@ -394,7 +394,11 @@
             echo 
             '<h3>
                 <div>
-                    <div id="'.$fktNr.'" class="detail_button" title="Detailansicht der Funktion"></div>
+                    <div id="'.$fktNr.'" class="detail_button" title="Detailansicht der Funktion">
+                        <form id="detailForm" name="detailForm" method="POST" action="/Finanzberatung/index.php?r=site/details">
+                            <input type="hidden" name="fktNr" id="fktNr" value="">
+                        </form>
+                    </div>
                     <div style="float: left; margin-left: 35px; font-size: 13px;" title="[Funktion-Nr] Funktion-Name">['.$fktNr.']&nbsp;'.$fktName.' </div>
                     <div id="unterphaseR" title=".$uphaseName.">['.$uphaseNr.']</div>                    
                     <div id="grobphaseR" title="Grobphase-Nr. Grobphase-Name">'.$phaseNr.'. '.$phaseName.'&nbsp;</div>
@@ -487,11 +491,14 @@
 <script type="text/javascript"> 
   $(document).ready(function() {               
         $('.detail_button').click( function() {
+          
           var fktNr = this.id;
-          
+          //alert(fktNr); //Bis hier her gehts!
+          document.detailForm.fktNr.value = fktNr;
           alert(fktNr);
-          
-          //window.openDialog("http://http://localhost/finanzberatung/index.php?r=site/page&view=details", "Details - ", "", fktNr);       
+          alert(document.detailForm.fktNr.value);
+          document.detailForm.submit();
+          window.open("http://localhost/Finanzberatung/index.php?r=site/details"); 
           return false;
         });
     });
