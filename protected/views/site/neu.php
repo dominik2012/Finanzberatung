@@ -41,11 +41,12 @@
                 <select name="select_grobphase" id="select_grobphase" data-placeholder="Grobphase-Filter" style="width:465px;" multiple="multiple">
                 <?php
 			for ($i=0;$i<count($model2[1]["grobphase"]);$i++){
-                           
+                            
+                                $nummer = $i;
                                 $inhalt = $model2[1]["grobphase"][$i]; 
                                 $title = str_replace('"',"&#039;",  shortName($inhalt));
                             
-                                echo '<option value="'.$i.'" id="grobphase'.$i.'" name="grobphase'.$i.'" title="'.$title.'");>'.$inhalt.'</option>';
+                                echo '<option value="'.$i.'" id="grobphase'.$i.'" name="grobphase'.$i.'" title="'.$title.'");>'.$nummer.'. '.$inhalt.'</option>';
                             	
 			}    
                 ?>
@@ -58,10 +59,11 @@
                 <?php
 			for ($i=0;$i<count($model2[1]["unterphase"]);$i++){
                            
+                                $nummer = $i+1;
                                 $inhalt = $model2[1]["unterphase"][$i]; 
                                 $title = str_replace('"',"&#039;",  shortName($inhalt));
                                 
-                                echo '<option value="'.$i.'" id="unterphase'.$i.'" name="unterphase'.$i.'" title="'.$title.'");>'.$inhalt.'</option>';
+                                echo '<option value="'.$i.'" id="unterphase'.$i.'" name="unterphase'.$i.'" title="'.$title.'");>'.$nummer.'.'.$inhalt.'</option>';
                             	
 			}    
                 ?>
@@ -383,6 +385,7 @@
             $phaseName = $grobphase[$model3[$i]["grobphase_id"]]["name"];
             $phaseNr = $grobphase[$model3[$i]["grobphase_id"]]["grobphase_id"];
             $uphaseNr = $model3[$i]["unterphase_id"];
+            //$uphaseName = $unterphase[$model3[$i]["unterphase_id"]]["name"];
             //$uphaseName = $model3[$i]["unterphase_id"]["name"]; 
 
             if($uphaseNr==0){$uphaseNr="k";}
@@ -393,8 +396,9 @@
                 <div>
                     <div id="'.$fktNr.'" class="detail_button" title="Detailansicht der Funktion"></div>
                     <div style="float: left; margin-left: 35px; font-size: 13px;" title="[Funktion-Nr] Funktion-Name">['.$fktNr.']&nbsp;'.$fktName.' </div>
-                    <div id="grobphaseR" title="Grobphase-Nr. Grobphase-Name">'.$phaseNr.'. '.$phaseName.'&nbsp;['.$uphaseNr.']</div>
-                    <!--<div id="grobphaseR" title="">['.$uphaseNr.']</div>-->
+                    <div id="unterphaseR" title=".$uphaseName.">['.$uphaseNr.']</div>                    
+                    <div id="grobphaseR" title="Grobphase-Nr. Grobphase-Name">'.$phaseNr.'. '.$phaseName.'&nbsp;</div>
+                    
                 </div>
             </h3>
                     
