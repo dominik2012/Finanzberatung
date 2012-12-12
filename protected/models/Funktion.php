@@ -286,8 +286,8 @@ return array(
 		return $values;
 		}
                 
-        public function getRowByNumber($number){
-                $val = Yii::app()->db->createCommand()->select('*')->from('funktion')->where('nummer = '.$number);
+        public function getRowByNumber($fktNr){
+                $val = Yii::app()->db->createCommand()->select('*')->from('funktion')->where('nummer = '.$fktNr);
                 $v = $val->queryRow();
                 return $v;
                 }

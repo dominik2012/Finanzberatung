@@ -395,8 +395,8 @@
             '<h3>
                 <div>
                     <div id="'.$fktNr.'" class="detail_button" title="Detailansicht der Funktion">
-                        <form id="detailForm" name="detailForm" method="POST" action="/Finanzberatung/index.php?r=site/details">
-                            <input type="hidden" name="fktNr" id="fktNr" value="">
+                        <form id="detailForm" name="detailForm" method="GET" action="/Finanzberatung/index.php?r=site/details">
+                            <input type="hidden" name="fktNr" id="fktNr" value="'.$fktNr.'">
                         </form>
                     </div>
                     <div style="float: left; margin-left: 35px; font-size: 13px;" title="[Funktion-Nr] Funktion-Name">['.$fktNr.']&nbsp;'.$fktName.' </div>
@@ -490,15 +490,19 @@
 <?php if(isset($model3) && $model3[0]["id"]!="leer"){?>
 <script type="text/javascript"> 
   $(document).ready(function() {               
-        $('.detail_button').click( function() {
+        $('.detail_button').click( function(ev) {
           
           var fktNr = this.id;
-          //alert(fktNr); //Bis hier her gehts!
-          document.detailForm.fktNr.value = fktNr;
-          alert(fktNr);
-          alert(document.detailForm.fktNr.value);
-          document.detailForm.submit();
-          window.open("http://localhost/Finanzberatung/index.php?r=site/details"); 
+          //alert(fktNr); //Bis hier her gehts
+          
+          ev.preventDefault();
+          window.open('http://localhost/Finanzberatung/index.php?r=site/details&fktNr='+fktNr, 'Continue to Application');
+          //document.details.fktNr.value = fktNr;
+          
+          //alert(fktNr);
+          //alert(document.details.fktNr.value);
+          //document.details.submit(); 
+          
           return false;
         });
     });
