@@ -265,8 +265,9 @@ class SiteController extends Controller
         
          public function actionDetails($fktNr){
             $fktNr = (int)($fktNr);
-            //$fktNr = 3;
             $funktionsdaten = Funktion::model()->getRowByNumber($fktNr);
-            $this->render('details', array('funktionsdaten'=>$funktionsdaten));
+            $grobphase = Grobphase::model()->findAllBySql("SELECT * FROM grobphase");
+            $unterphase = Grobphase::model()->findAllBySql("SELECT * FROM unterphase");
+            $this->render('details', array('funktionsdaten'=>$funktionsdaten, 'fktNr'=>$fktNr, 'grobphase'=>$grobphase, 'unterphase'=>$unterphase));
         }
 }

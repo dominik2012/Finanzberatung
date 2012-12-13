@@ -9,42 +9,36 @@
     
 </head>
 <body>
-
+<?php   $fktNr=(int)($fktNr);
+?>
     <div class ="boxes ui-state-active" id="kopfzeile" style="text-align: center;">
         
             <button id="buttonFirst" style="float: left;"><span class="ui-icon ui-icon-seek-prev"></span></button>
         
-            <button id="buttonPrevious" style="float: left;"><span class="ui-icon ui-icon-triangle-1-w"></span></button>
+            <button id="buttonPrevious" style="float: left;" onClick='window.location.href="http://localhost/Finanzberatung/index.php?r=site/details&fktNr=<?php echo ($fktNr-1); ?>"'><span class="ui-icon ui-icon-triangle-1-w"></span></button>
         
             <button id="close" style="float: left; color: #026890;" onclick="window.close()">schließen</button>
             
             <span id="Funktionsname" ><?php echo"[".$funktionsdaten['nummer']."] - ".$funktionsdaten['name'];?></span>
             
-            <button style="float: right;"><span class="ui-icon ui-icon-seek-next"></span></button>
+            <button id="buttonLast" style="float: right;"><span class="ui-icon ui-icon-seek-next"></span></button>
             
-            <button style="float: right;"><span class="ui-icon ui-icon-triangle-1-e"></span></button>
+            <button id="buttonNext" style="float: right;" onClick='window.location.href="http://localhost/Finanzberatung/index.php?r=site/details&fktNr=<?php echo ($fktNr+1); ?>"'><span class="ui-icon ui-icon-triangle-1-e"></span></button>
 
     </div>
     
     <div class="boxes ui-state-active" id="zeile2">
-        
-        <span>Grobphase/Unterphase</span>
-        
+    <?php
+        $phaseName = $grobphase[$funktionsdaten["grobphase_id"]]["name"];
+        $uphaseName = $unterphase[$funktionsdaten["unterphase_id"]]["name"];
+        echo '<span style="padding-right: 15px;"><b>Grobphase:</b> '.$phaseName.'</span><span><b>Unterphase:</b> '.$uphaseName.'</span>';
+    ?>
     </div>
     <?php
     if($funktionsdaten['beschreibung']!= null){?>
     <div class="boxes ui-state-active" id="Beschreibung" style="width: 45%; margin-left: 2%;">
         <div class="topline">Beschreibung</div>
-        <div class="inhalt"><?php echo $funktionsdaten['beschreibung']; ?>
-            <?php 
-                if(isset($_GET['fktNr'])){
-                    echo $_GET['fktNr'];
-                }else{
-                    echo 'Problem';
-                }
-            
-             ?>
-        </div>
+        <div class="inhalt"><?php echo $funktionsdaten['beschreibung']; ?></div>
     </div>
     
     <?php } ?>
