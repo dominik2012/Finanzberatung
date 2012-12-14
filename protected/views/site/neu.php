@@ -27,8 +27,8 @@
 <body>
     
 <!-- FUNKTIONSFILTER ---------------------------------------------------------->   
-<div style="function" id="function" class="function" onclick="togglestate(this); return false;">
-    <div style="function_name" id="function_name"  title="anzeigen/verstecken des Filters"><p>FUNKTIONSFILTER</p></div>
+<div style="function" id="function" class="function" >
+    <div style="function_name" id="function_name"  title="anzeigen/verstecken des Filters" onclick="togglestate();"><p>FUNKTIONSFILTER</p></div>
 
     <div class="form">
 	
@@ -233,7 +233,7 @@
                 </div>
                     
                 <div id="functionfilters" style="float: left; margin-left: 22px;">       
-		Handlungsspielraum zukuenftlich:<br> 
+		Handlungsspielraum Zukunft:<br> 
                 <select name="select_hsrz" id="select_hsrz" data-placeholder="Hsrz-Filter" style="width:165px;" multiple="multiple">
                 <?php
 			for ($i=0;$i<count($model2[1]["hsrz"]);$i++){
@@ -490,7 +490,7 @@
                                 if(isset($fil)){
                                     if($rausfg == "'gesetzFunktion','keine Abhängig','funktionGesetz'"){
                                     }else{
-                                        echo '<p style="color: #0075B8;">REINES AUSFÜHRUNGSGESCHÄFT: '.$rausfg.'</p>';
+                                        echo '<p style="color: #0075B8;">REINES AUSF&Uuml;HRUNGSGESCHÄFT: '.$rausfg.'</p>';
                                     }
                                    
                                 }
@@ -500,7 +500,7 @@
                                 if(isset($fil)){
                                     if($hsrz == "'gelb','gruen','gelbHoch'"){
                                     }else{
-                                        echo '<p style="color: #0075B8;">HANDLUNGSSPIELRAUM ZUKÜNFTIG: '.$hsrz.'</p>';
+                                        echo '<p style="color: #0075B8;">HANDLUNGSSPIELRAUM ZUK&Uuml;NFTIG: '.$hsrz.'</p>';
                                     }
                                    
                                 }
@@ -647,11 +647,6 @@
           
           ev.preventDefault();
           window.open('http://localhost/Finanzberatung/index.php?r=site/details&fktNr='+fktNr, 'Continue to Application');
-          //document.details.fktNr.value = fktNr;
-          
-          //alert(fktNr);
-          //alert(document.details.fktNr.value);
-          //document.details.submit(); 
           
           return false;
         });
@@ -663,8 +658,9 @@
 <script type="text/javascript"> 
     var State1 = 'function';
     var State2 = State1 + ' functionhover';
+    var div = document.getElementById("function");
 
-    function togglestate(div){
+    function togglestate(){
         if (div.className == State1){
             div.className = State2;
         } else {
