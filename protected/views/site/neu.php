@@ -330,6 +330,7 @@
 		<form name="anzeigefilter" id="anzeigefilter">
 		<select id="multiselect" data-placeholder="Anzeigefilter" style="width:350px;" multiple="multiple">
                 <?php
+                        //alter Code Viewfilter
 			/*for ($i=0;$i<count($model5);$i++){
                             
                             $inhalt = $model6[$i]; 
@@ -411,8 +412,8 @@
         <table id="filterlist">
             <tbody>
                 <tr>
-                    <td>SQL: <?php if(isset($fil)){echo $fil;}?></td>
-                    <!--
+                    <td><!--SQL: <?php if(isset($fil)){echo $fil;}?></td>-->
+                    
                     <td>GP: <?php if(isset($fil)){echo $model4;}?></td>
                     <td>UP: <?php if(isset($fil)){echo $unterphase;}?></td>
                     <td>Fkt: <?php if(isset($fil)){echo $name;}?></td>
@@ -423,7 +424,7 @@
                     <td>RAG: <?php if(isset($fil)){echo $rausfg;}?></td>
                     <td>HSR(z): <?php if(isset($fil)){echo $hsrz;}?></td>
                     <td>HSR(g): <?php if(isset($fil)){echo $hsra;}?></td>
-                    -->
+                    
                 </tr>
             </tbody>
         </table>
@@ -440,10 +441,12 @@
             $phaseName = $grobphase[$model3[$i]["grobphase_id"]]["name"];
             $phaseNr = $grobphase[$model3[$i]["grobphase_id"]]["grobphase_id"];
             $uphaseNr = $model3[$i]["unterphase_id"];
-            //$uphaseName = $unterphase[$model3[$i]["unterphase_id"]]["name"];
-            //$uphaseName = $model3[$i]["unterphase_id"]["name"]; 
-
-            if($uphaseNr==0){$uphaseNr="k";}
+            $uphaseName = $unterphase2[$uphaseNr]["name"]; 
+            
+            //keine Unterphase = X
+            if($uphaseNr==0){
+                $uphaseNr="X";
+            }
             
             //Ausgabe Accordion_________________________________________________
             echo 
@@ -455,7 +458,7 @@
                         </form>
                     </div>
                     <div style="float: left; margin-left: 35px; font-size: 13px;" title="[Funktion-Nr] Funktion-Name">['.$fktNr.']&nbsp;'.$fktName.' </div>
-                    <div id="unterphaseR" title=".$uphaseName.">['.$uphaseNr.']</div>                    
+                    <div id="unterphaseR" title="'.$uphaseName.'">['.$uphaseNr.']</div>                    
                     <div id="grobphaseR" title="Grobphase-Nr. Grobphase-Name">'.$phaseNr.'. '.$phaseName.'&nbsp;</div>
                     
                 </div>
