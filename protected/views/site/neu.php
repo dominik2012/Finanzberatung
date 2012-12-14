@@ -330,18 +330,73 @@
 		<form name="anzeigefilter" id="anzeigefilter">
 		<select id="multiselect" data-placeholder="Anzeigefilter" style="width:350px;" multiple="multiple">
                 <?php
-			for ($i=0;$i<count($model5);$i++){
+			/*for ($i=0;$i<count($model5);$i++){
                             
                             $inhalt = $model6[$i]; 
                             $title = str_replace('"',"&#039;",  shortName($inhalt));
                             
                             //Aussortieren von unnötigen Spalten
                             if($model6[$i] == "ID" || $model6[$i] == "Nummer" || $model6[$i] == "Name" || $model6[$i] == "Unterphase" || $model6[$i] == "Grobphase"){
-                            
+                                //do nothing
                             }else{
                                 echo '<option value="'.$model5[$i].'" id="'.$model5[$i].'" name="'.$model5[$i].'" title="'.$title.'");>'.$inhalt.'</option>';
-                            }	
-			}    
+                            }*/
+                            
+                            //Beschreibung
+                            echo '<optgroup label="Beschreibung">';            
+                            for ($i=3;$i<4;$i++){
+                                $inhalt = $model6[$i]; 
+                                $title = str_replace('"',"&#039;",  shortName($inhalt));
+                                echo '<option value="'.$model5[$i].'" id="'.$model5[$i].'" name="'.$model5[$i].'" title="'.$title.'");>'.$inhalt.'</option>';
+                            }
+                            echo '</optgroup>';
+                            
+                            //Beratung
+                            echo '<optgroup label="Beratung">';            
+                            for ($i=4;$i<8;$i++){
+                                $inhalt = $model6[$i]; 
+                                $title = str_replace('"',"&#039;",  shortName($inhalt));
+                                echo '<option value="'.$model5[$i].'" id="'.$model5[$i].'" name="'.$model5[$i].'" title="'.$title.'");>'.$inhalt.'</option>';
+                            }
+                            echo '</optgroup>';
+                            
+                            //Gesetz
+                            echo '<optgroup label="Gesetz">';            
+                            for ($i=8;$i<10;$i++){
+                                $inhalt = $model6[$i]; 
+                                $title = str_replace('"',"&#039;",  shortName($inhalt));
+                                echo '<option value="'.$model5[$i].'" id="'.$model5[$i].'" name="'.$model5[$i].'" title="'.$title.'");>'.$inhalt.'</option>';
+                            }
+                            echo '</optgroup>';
+                            
+                            //Handlungsspielraum
+                            echo '<optgroup label="Handlungsspielraum">';            
+                            for ($i=10;$i<12;$i++){
+                                $inhalt = $model6[$i]; 
+                                $title = str_replace('"',"&#039;",  shortName($inhalt));
+                                echo '<option value="'.$model5[$i].'" id="'.$model5[$i].'" name="'.$model5[$i].'" title="'.$title.'");>'.$inhalt.'</option>';
+                            }
+                            echo '</optgroup>';
+                            
+                            //Personenbeteiligung
+                            echo '<optgroup label="Personenbeteiligung">';            
+                            for ($i=13;$i<22;$i++){
+                                $inhalt = $model6[$i]; 
+                                $title = str_replace('"',"&#039;",  shortName($inhalt));
+                                echo '<option value="'.$model5[$i].'" id="'.$model5[$i].'" name="'.$model5[$i].'" title="'.$title.'");>'.$inhalt.'</option>';
+                            }
+                            echo '</optgroup>';
+                            
+                            //Funktionskopplung
+                            echo '<optgroup label="Funktionskopplung">';            
+                            for ($i=22;$i<27;$i++){
+                                $inhalt = $model6[$i]; 
+                                $title = str_replace('"',"&#039;",  shortName($inhalt));
+                                echo '<option value="'.$model5[$i].'" id="'.$model5[$i].'" name="'.$model5[$i].'" title="'.$title.'");>'.$inhalt.'</option>';
+                            }
+                            echo '</optgroup>';
+                                                          
+			//}    
                 ?>
                 </select>
 		</form>
