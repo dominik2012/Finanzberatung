@@ -13,9 +13,46 @@
     $fktNr=(int)($fktNr);
 ?>
     
+    <?php
+        $j=0;
+        $sprung[$j] = 0;
+        $temp = 1;
+        $length = count($funktion);
+        
+        for($i=0;$i<$length;$i++){
+            
+            if($temp == $funktion[$i]['grobphase_id']){
+                
+            }else{
+                $sprung[$j] = $funktion[$i]['nummer'];
+                $j++;
+            }
+            
+            $temp = $funktion[$i]['grobphase_id'];
+            
+        }
+        
+        $nr = 0;
+        $length2 = count($sprung);
+        for($i=1;$i<$length2;$i++){
+            if($fktNr < $sprung[$i]){
+                $nr = $i;
+                break;
+            }
+        }
+    ?>
+    
+    <div>
+        <?php
+        echo "Sprung-Nr:".$sprung[$nr];
+        echo "   Fkt-Nr:".$fktNr;
+        print_r($sprung);
+        ?>
+    </div>
+    
     <div class ="boxes ui-state-active" id="kopfzeile" style="text-align: center;">
         
-            <button id="buttonFirst" style="float: left;"><span class="ui-icon ui-icon-seek-prev"></span></button>
+            <button id="buttonFirst" style="float: left;" onClick='window.location.href="http://localhost/Finanzberatung/index.php?r=site/details&fktNr=<?php echo ($sprung[$nr]); ?>"'><span class="ui-icon ui-icon-seek-prev"></span></button>
         
             <button id="buttonPrevious" style="float: left;" onClick='window.location.href="http://localhost/Finanzberatung/index.php?r=site/details&fktNr=<?php echo ($fktNr-1); ?>"'><span class="ui-icon ui-icon-triangle-1-w"></span></button>
         
@@ -23,7 +60,7 @@
             
             <span id="Funktionsname" ><?php echo"[".$funktionsdaten['nummer']."] - ".$funktionsdaten['name'];?></span>
             
-            <button id="buttonLast" style="float: right;"><span class="ui-icon ui-icon-seek-next"></span></button>
+            <button id="buttonLast" style="float: right;" onClick='window.location.href="http://localhost/Finanzberatung/index.php?r=site/details&fktNr=<?php echo ($sprung[$nr-1]); ?>"'><span class="ui-icon ui-icon-seek-next"></span></button>
             
             <button id="buttonNext" style="float: right;" onClick='window.location.href="http://localhost/Finanzberatung/index.php?r=site/details&fktNr=<?php echo ($fktNr+1); ?>"'><span class="ui-icon ui-icon-triangle-1-e"></span></button>
 
@@ -39,6 +76,8 @@
         echo '<span style="padding-right: 15px;"><b>Grobphase:</b> '.$phaseNr.'. '.$phaseName.'</span><span><b>Unterphase:</b> '.$uphaseNr.'. '.$uphaseName.'</span>';
     ?>
     </div>
+   
+    
     <?php
     if($funktionsdaten['beschreibung']!= null){?>
     <div class="boxes ui-state-active" id="Beschreibung" style="width: 45%; margin-left: 2%;">
@@ -249,6 +288,7 @@
         <div class="inhalt"><?php echo $funktionsdaten['ressourcen'] ?></div>
     </div>
     <?php } ?>
+    
     
 
 </body>
