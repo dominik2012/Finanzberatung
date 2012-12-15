@@ -449,6 +449,7 @@
                     <td><?php 
                                 if(isset($fil)){
                                     if($privmb == "'gesetzFunktion','keine Abhängig','funktionGesetz'"){
+                                        echo '<p style="color: #0075B8;">PRIVAT MIT BERATUNG: '.$privmb.'</p>';
                                     }else{
                                         echo '<p style="color: #0075B8;">PRIVAT MIT BERATUNG: '.$privmb.'</p>';
                                     }
