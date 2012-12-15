@@ -91,7 +91,7 @@
                                         $inhalt = "Funktion -> Gesetz";
                                     }
                                     else{
-                                        $inhalt = "Keine Abhängigkeit";
+                                        $inhalt = "Keine Abh&auml;ngigkeit";
                                     }
                                         
                             
@@ -117,7 +117,7 @@
                                         $inhalt = "Funktion -> Gesetz";
                                     }
                                     else{
-                                        $inhalt = "Keine Abhängigkeit";
+                                        $inhalt = "Keine Abh&auml;ngigkeit";
                                     }
                             
                                 echo '<option value="'.$model2[1]["profmb"][$i].'" id="profmb'.$i.'" name="profmb'.$i.'");>'.$inhalt.'</option>';
@@ -142,7 +142,7 @@
                                         $inhalt = "Funktion -> Gesetz";
                                     }
                                     else{
-                                        $inhalt = "Keine Abhängigkeit";
+                                        $inhalt = "Keine Abh&auml;ngigkeit";
                                     }
                                     
                                 echo '<option value="'.$model2[1]["rausfg"][$i].'" id="rausfg'.$i.'" name="rausfg'.$i.'");>'.$inhalt.'</option>';
@@ -168,7 +168,7 @@
                                         $inhalt = "Funktion -> Gesetz";
                                     }
                                     else{
-                                        $inhalt = "Keine Abhängigkeit";
+                                        $inhalt = "Keine Abh&auml;ngigkeit";
                                     }
                                     
                                 echo '<option value="'.$model2[1]["privob"][$i].'" id="privob'.$i.'" name="privob'.$i.'");>'.$inhalt.'</option>';
@@ -193,7 +193,7 @@
                                         $inhalt = "Funktion -> Gesetz";
                                     }
                                     else{
-                                        $inhalt = "Keine Abhängigkeit";
+                                        $inhalt = "Keine Abh&auml;ngigkeit";
                                     }
                                     
                                 echo '<option value="'.$model2[1]["profob"][$i].'" id="profob'.$i.'" name="profob'.$i.'");>'.$inhalt.'</option>';
@@ -412,7 +412,7 @@
         <table id="filterlist">
             <tbody>
                 <tr>
-                    <td><!--SQL: <?php if(isset($fil)){echo $fil;}?></td>-->
+                    <!--<td>SQL: <?php if(isset($fil)){echo $fil;}?></td>-->
                     
                     <td><?php 
                                 if(isset($fil)){
@@ -533,7 +533,8 @@
             $phaseName = $grobphase[$model3[$i]["grobphase_id"]]["name"];
             $phaseNr = $grobphase[$model3[$i]["grobphase_id"]]["grobphase_id"];
             $uphaseNr = $model3[$i]["unterphase_id"];
-            $uphaseName = $unterphase2[$uphaseNr]["name"]; 
+            $uphaseName = $unterphase2[$uphaseNr]["name"];
+            //$fktGesetze = $gesetze[$i]["name"];
             
             //keine Unterphase = X
             if($uphaseNr==0){
@@ -549,6 +550,7 @@
                             <input type="hidden" name="fktNr" id="fktNr" value="'.$fktNr.'">
                         </form>
                     </div>
+                    <div title="Detail"></div>
                     <div style="float: left; margin-left: 35px; font-size: 13px;" title="[Funktion-Nr] Funktion-Name">['.$fktNr.']&nbsp;'.$fktName.' </div>
                     <div id="unterphaseR" title="'.$uphaseName.'">['.$uphaseNr.']</div>                    
                     <div id="grobphaseR" title="Grobphase-Nr. Grobphase-Name">'.$phaseNr.'. '.$phaseName.'&nbsp;</div>
@@ -575,17 +577,17 @@
                                 $style = $style1;
                             }else if($spaInhalt == "keine Abhängig"){
                                if($spaName == "Privat mit Beratung" || $spaName == "Privat ohne Beratung" || $spaName == "Professionell mit Beratung" || $spaName == "Professionell ohne Beratung" || $spaName == "Reines Ausfuehrungsgeschaeft")
-                                $spaInhalt = "<img title='Keine Regularien'src='/Finanzberatung/css/images/pfeile/null.png' style='padding-top: 70px;'>";
+                                $spaInhalt = "<img title='Keine Regularien' src='/Finanzberatung/css/images/pfeile/null.png' style='padding-top: 70px;'>";
                                 $style = $style1;
                             }else if($spaInhalt == "gelb"){
-                                $spaInhalt = "<img title='Geringer Handlungsspielraum'src='/Finanzberatung/css/images/pfeile/gelb.png' style='padding-top: 70px;'>";
+                                $spaInhalt = "<img title='Geringer Handlungsspielraum' src='/Finanzberatung/css/images/pfeile/gelb.png' style='padding-top: 70px;'>";
                                 $style = $style1;
                             }else if($spaInhalt == "gruen"){
-                                $spaInhalt = "<img title='Normaler Handlungsspielraum'src='/Finanzberatung/css/images/pfeile/gruen.png' style='padding-top: 70px;'>";
+                                $spaInhalt = "<img title='Normaler Handlungsspielraum' src='/Finanzberatung/css/images/pfeile/gruen.png' style='padding-top: 70px;'>";
                                 $style = $style1;
                             }
                             else if($spaInhalt == "gelbHoch"){
-                                $spaInhalt = "<img title='Handlungsspielraum zukünftig weiter eingeschränkt'src='/Finanzberatung/css/images/pfeile/gelbHoch.png' style='padding-top: 70px;'>";
+                                $spaInhalt = "<img title='Handlungsspielraum zukünftig weiter eingeschränkt' src='/Finanzberatung/css/images/pfeile/gelbHoch.png' style='padding-top: 70px;'>";
                                 $style = $style1;
                             }
                             

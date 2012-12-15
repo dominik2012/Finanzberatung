@@ -27,6 +27,7 @@
  * @property string $verantwortlicher
  * @property string $ressourcen
  * @property string $funktionsfolge
+ * @property string $sprungstelle
  * @property string $kanalwechsel
  * @property string $inputdaten
  * @property string $outputdaten
@@ -62,17 +63,18 @@ class Funktion extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('nummer, name, beschreibung, priv_mit_beratung, priv_ohne_beratung, prof_mit_beratung, prof_ohne_beratung, hinweis, weiterereg, hsr_aktuell, hsr_zukuenftig, r_ausf_geschaeft, spezialist_vs_generalist, frontoffice_generalist, frontoffice_experte, backoffice, produktlieferant, bank, kunde, verantwortlicher, ressourcen, funktionsfolge, kanalwechsel, inputdaten, outputdaten, datenfluss, grobphase_id, unterphase_id', 'required'),
+			array('nummer, name, beschreibung, priv_mit_beratung, priv_ohne_beratung, prof_mit_beratung, prof_ohne_beratung, hinweis, weiterereg, hsr_aktuell, hsr_zukuenftig, r_ausf_geschaeft, spezialist_vs_generalist, frontoffice_generalist, frontoffice_experte, backoffice, produktlieferant, bank, kunde, verantwortlicher, ressourcen, funktionsfolge, sprungstelle, kanalwechsel, inputdaten, outputdaten, datenfluss, grobphase_id, unterphase_id', 'required'),
 			array('nummer, grobphase_id, unterphase_id', 'length', 'max'=>4),
 			array('name', 'length', 'max'=>50),
 			array('priv_mit_beratung, priv_ohne_beratung, prof_mit_beratung, prof_ohne_beratung, r_ausf_geschaeft, spezialist_vs_generalist, frontoffice_generalist, frontoffice_experte, backoffice, produktlieferant, bank, kunde', 'length', 'max'=>1),
 			array('hsr_aktuell, hsr_zukuenftig', 'length', 'max'=>10),
 			array('verantwortlicher, ressourcen, inputdaten, outputdaten, datenfluss', 'length', 'max'=>20),
 			array('funktionsfolge', 'length', 'max'=>150),
+                        array('sprungstelle', 'length', 'max'=>150),
 			array('kanalwechsel', 'length', 'max'=>30),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, nummer, name, beschreibung, priv_mit_beratung, priv_ohne_beratung, prof_mit_beratung, prof_ohne_beratung, hinweis, weiterereg, hsr_aktuell, hsr_zukuenftig, r_ausf_geschaeft, spezialist_vs_generalist, frontoffice_generalist, frontoffice_experte, backoffice, produktlieferant, bank, kunde, verantwortlicher, ressourcen, funktionsfolge, kanalwechsel, inputdaten, outputdaten, datenfluss, grobphase_id, unterphase_id', 'safe', 'on'=>'search'),
+			array('id, nummer, name, beschreibung, priv_mit_beratung, priv_ohne_beratung, prof_mit_beratung, prof_ohne_beratung, hinweis, weiterereg, hsr_aktuell, hsr_zukuenftig, r_ausf_geschaeft, spezialist_vs_generalist, frontoffice_generalist, frontoffice_experte, backoffice, produktlieferant, bank, kunde, verantwortlicher, ressourcen, funktionsfolge, sprungstelle, kanalwechsel, inputdaten, outputdaten, datenfluss, grobphase_id, unterphase_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -87,7 +89,8 @@ class Funktion extends CActiveRecord
 			'unterphase' => array(self::BELONGS_TO, 'Unterphase', 'unterphase_id'),
 			'grobphase' => array(self::BELONGS_TO, 'Grobphase', 'grobphase_id'),
 			'business_rules' => array(self::MANY_MANY, 'BusinessRule', 'nm_funktion_business_rule(f_id,br_id)'),
-		);
+                        'gesetze' => array(self::MANY_MANY, 'Gesetz', 'nm_funktion_gesetz(f_id,g_id)'),
+                    );
 	}
 
 	/**
@@ -119,6 +122,7 @@ class Funktion extends CActiveRecord
 			'verantwortlicher' => 'Verantwortlicher',
 			'ressourcen' => 'Ressourcen',
 			'funktionsfolge' => 'Funktionsfolge',
+                        'sprungstelle' => 'Sprungstelle',
 			'kanalwechsel' => 'Kanalwechsel',
 			'inputdaten' => 'Inputdaten',
 			'outputdaten' => 'Outputdaten',
@@ -153,6 +157,7 @@ class Funktion extends CActiveRecord
 			'verantwortlicher' => 'verantwortlicher',
 			'ressourcen' => 'ressourcen',
 			'funktionsfolge' => 'funktionsfolge',
+                        'sprungstelle' => 'sprungstelle',
 			'kanalwechsel' => 'kanalwechsel',
 			'inputdaten' => 'inputdaten',
 			'outputdaten' => 'outputdaten',
@@ -192,12 +197,13 @@ return array(
 20 => 'Verantwortlicher',
 21 => 'Ressourcen',
 22 => 'Funktionsfolge',
-23 => 'Kanalwechsel',
-24 => 'Inputdaten',
-25 => 'Outputdaten',
-26 => 'Datenfluss',
-27 => 'Grobphase',
-28 => 'Unterphase',
+23 => 'Sprungstelle',
+24 => 'Kanalwechsel',
+25 => 'Inputdaten',
+26 => 'Outputdaten',
+27 => 'Datenfluss',
+28 => 'Grobphase',
+29 => 'Unterphase',
 );
 }
         
@@ -231,6 +237,7 @@ return array(
 		$criteria->compare('verantwortlicher',$this->verantwortlicher,true);
 		$criteria->compare('ressourcen',$this->ressourcen,true);
 		$criteria->compare('funktionsfolge',$this->funktionsfolge,true);
+                $criteria->compare('sprungstelle',$this->sprungstelle,true);
 		$criteria->compare('kanalwechsel',$this->kanalwechsel,true);
 		$criteria->compare('inputdaten',$this->inputdaten,true);
 		$criteria->compare('outputdaten',$this->outputdaten,true);
