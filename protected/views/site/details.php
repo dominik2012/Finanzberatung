@@ -9,8 +9,10 @@
     
 </head>
 <body>
-<?php   $fktNr=(int)($fktNr);
+<?php   
+    $fktNr=(int)($fktNr);
 ?>
+    
     <div class ="boxes ui-state-active" id="kopfzeile" style="text-align: center;">
         
             <button id="buttonFirst" style="float: left;"><span class="ui-icon ui-icon-seek-prev"></span></button>
@@ -30,8 +32,11 @@
     <div class="boxes ui-state-active" id="zeile2">
     <?php
         $phaseName = $grobphase[$funktionsdaten["grobphase_id"]]["name"];
+        $phaseNr = $funktionsdaten["grobphase_id"];
         $uphaseName = $unterphase[$funktionsdaten["unterphase_id"]]["name"];
-        echo '<span style="padding-right: 15px;"><b>Grobphase:</b> '.$phaseName.'</span><span><b>Unterphase:</b> '.$uphaseName.'</span>';
+        $uphaseNr = $funktionsdaten["unterphase_id"];
+        
+        echo '<span style="padding-right: 15px;"><b>Grobphase:</b> '.$phaseNr.'. '.$phaseName.'</span><span><b>Unterphase:</b> '.$uphaseNr.'. '.$uphaseName.'</span>';
     ?>
     </div>
     <?php

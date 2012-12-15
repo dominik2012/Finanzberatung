@@ -115,7 +115,7 @@ class SiteController extends Controller
                 $spaltennamen = Funktion::model()->attributeLabelsIndexAreNumbers();
                 $grobphase = new Grobphase;
                 $unterphase2 = Grobphase::model()->findAllBySql("SELECT * FROM unterphase");
-                //$model = Gesetz::model()->with('name','gesetz')->findAll();
+                //$model = Gesetz::model()->findAllByPk(4);
                 //$gesetze = $model->gesetz;
 		
 		//Aufruf der get-Methoden der jeweiligen Models
@@ -261,7 +261,7 @@ class SiteController extends Controller
 		}
 		else{
 		$model = array($funktion,$filter,);
-		$this->render('neu',array('model'=>$funktion, 'model2' =>$model2, 'model6' => $spaltennamen, 'model5' => $spaltennamen2));
+		$this->render('neu',array(/*'gesetze'=>$gesetze, */'model'=>$funktion, 'model2' =>$model2, 'model6' => $spaltennamen, 'model5' => $spaltennamen2));
 		}
 	}
         

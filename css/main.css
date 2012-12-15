@@ -133,7 +133,7 @@
 
 .popup{
     position:fixed;
-    top:35%;
+    top:25%;
     left:35%;
     width:650px;
     height:300px;
@@ -175,6 +175,8 @@
     margin-bottom: 10px;
     color: #DDD;
     font-weight: bold;
+    cursor: move;
+    border-bottom: 1px solid #797979;
 }
 
 .gesetzContent {
