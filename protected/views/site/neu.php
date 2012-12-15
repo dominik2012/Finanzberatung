@@ -449,7 +449,6 @@
                     <td><?php 
                                 if(isset($fil)){
                                     if($privmb == "'gesetzFunktion','keine Abhängig','funktionGesetz'"){
-                                        echo '<p style="color: #0075B8;">PRIVAT MIT BERATUNG: '.$privmb.'</p>';
                                     }else{
                                         echo '<p style="color: #0075B8;">PRIVAT MIT BERATUNG: '.$privmb.'</p>';
                                     }
@@ -551,8 +550,8 @@
                             <input type="hidden" name="fktNr" id="fktNr" value="'.$fktNr.'">
                         </form>
                     </div>
-                    <div title="Detail"></div>
-                    <div style="float: left; margin-left: 35px; font-size: 13px;" title="[Funktion-Nr] Funktion-Name">['.$fktNr.']&nbsp;'.$fktName.' </div>
+                    <div id="gesetz_'.$fktNr.'" class="gesetz_button" title="Gesetze"></div>
+                    <div style="float: left; margin-left: 37px; font-size: 13px;" title="[Funktion-Nr] Funktion-Name">['.$fktNr.']&nbsp;'.$fktName.' </div>
                     <div id="unterphaseR" title="'.$uphaseName.'">['.$uphaseNr.']</div>                    
                     <div id="grobphaseR" title="Grobphase-Nr. Grobphase-Name">'.$phaseNr.'. '.$phaseName.'&nbsp;</div>
                     

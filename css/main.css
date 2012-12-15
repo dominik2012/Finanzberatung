@@ -87,16 +87,48 @@
         width: 20px;
 	text-decoration:none;
         margin-top: -1px;
+        margin-left: -5px;
 }
 
 .detail_button:hover {
 	/*background-color:#AFAEAE;*/
-        background: url('/Finanzberatung/css/images/detail/details3.png');
+        background: url('/Finanzberatung/css/images/detail/details2.png');
 }
 
 .detail_button:active {
 	/*top:2px;*/
-        background: url('/Finanzberatung/css/images/detail/details2.png');
+        background: url('/Finanzberatung/css/images/detail/details3.png');
+}
+
+.gesetz_button {
+        background: url('/Finanzberatung/css/images/gesetz/gesetz1.png');
+        float: left;
+        /*left: 50%;*/
+        position: absolute;
+	/*background-color:#DFDCDC;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+	display:inline-block;
+	color:#ffffff;
+	font-family:arial;
+	font-size:8px;
+	font-weight:bold;*/
+        height: 20px;
+        width: 20px;
+	text-decoration:none;
+        margin-top: -1px;
+        margin-left: 14px;
+}
+
+.gesetz_button:hover {
+	/*background-color:#AFAEAE;*/
+        background: url('/Finanzberatung/css/images/gesetz/gesetz2.png');
+}
+
+.gesetz_button:active {
+	/*top:2px;*/
+        background: url('/Finanzberatung/css/images/gesetz/gesetz3.png');
 }
 
 
