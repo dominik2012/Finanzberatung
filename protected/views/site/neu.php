@@ -17,7 +17,8 @@
     <script type="text/javascript">
     //VIEWFILTER
     $(function() {
-        $("#draggable" ).draggable();
+        $("#draggable").draggable();
+        $("#popup").draggable();
     });
     </script>
     
@@ -662,15 +663,18 @@
 </script>
 
 <script type="text/javascript">
-    $('.gesetz_button').click( 
+    $('.gesetz_button').click(
+            
         
             function popUp(){
                 
                 var fktName = this.attributes["name"].value;
                 
+                var popupID = this.id;
+                
                 var popup = document.createElement('div');
                 popup.className = 'popup';
-                popup.id = 'test';
+                popup.id = 'popup_' + popupID;
                 var cancel = document.createElement('div');
                 cancel.className = 'cancel';
                 cancel.innerHTML = 'close';
@@ -685,6 +689,9 @@
                 popup.appendChild(gesetzTop);
                 popup.appendChild(gesetzContent);                                    
                 document.body.appendChild(popup);
+                
+                $('#popup_' + popupID).draggable();
+                
                 return false;
             });
 </script>
