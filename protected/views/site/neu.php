@@ -530,11 +530,17 @@
             
             $fktNr = $model3[$i]["nummer"];
             $fktName = $model3[$i]["name"];
+            $fktNrName = '['.$fktNr.'] '.$fktName;
+            $fktNrName_short = substr( $fktNrName , 0 , 95 );
+            
             $phaseName = $grobphase[$model3[$i]["grobphase_id"]]["name"];
             $phaseNr = $grobphase[$model3[$i]["grobphase_id"]]["grobphase_id"];
+            $phaseNrName = $phaseNr.'. '.$phaseName;
+            
             $uphaseNr = $model3[$i]["unterphase_id"];
             $uphaseName = $unterphase2[$uphaseNr]["name"];
             //$fktGesetze = $gesetze[$i]["name"];
+            $fktGesetze = $uphaseName; //TESTING
             
             //keine Unterphase = X
             if($uphaseNr==0){
@@ -550,10 +556,10 @@
                             <input type="hidden" name="fktNr" id="fktNr" value="'.$fktNr.'">
                         </form>
                     </div>
-                    <div id="gesetz_'.$fktNr.'" class="gesetz_button" title="Gesetze"></div>
-                    <div style="float: left; margin-left: 37px; font-size: 13px;" title="[Funktion-Nr] Funktion-Name">['.$fktNr.']&nbsp;'.$fktName.' </div>
+                    <div id="'.$fktNr.'" name="'.$fktNrName_short.'" class="gesetz_button" title="Gesetze" onClick="popUp();"></div>
+                    <div style="float: left; margin-left: 37px; font-size: 13px;" title="[Funktion-Nr] Funktion-Name">'.$fktNrName.'</div>
                     <div id="unterphaseR" title="'.$uphaseName.'">['.$uphaseNr.']</div>                    
-                    <div id="grobphaseR" title="Grobphase-Nr. Grobphase-Name">'.$phaseNr.'. '.$phaseName.'&nbsp;</div>
+                    <div id="grobphaseR" title="Grobphase-Nr. Grobphase-Name">'.$phaseNrName.'&nbsp;</div>
                     
                 </div>
             </h3>
@@ -652,8 +658,36 @@
           
           return false;
         });
-    });
-</script>  
+  });
+</script>
+
+<script type="text/javascript">
+    $('.gesetz_button').click( 
+        
+            function popUp(){
+                
+                var fktName = this.attributes["name"].value;
+                
+                var popup = document.createElement('div');
+                popup.className = 'popup';
+                popup.id = 'test';
+                var cancel = document.createElement('div');
+                cancel.className = 'cancel';
+                cancel.innerHTML = 'close';
+                cancel.onclick = function (e) { popup.parentNode.removeChild(popup) };
+                var gesetzTop = document.createElement('div');
+                gesetzTop.className = 'gesetzeTop';
+                gesetzTop.innerHTML = fktName;
+                var gesetzContent = document.createElement('div');
+                gesetzContent.className = 'gesetzeContent';
+                gesetzContent.innerHTML = 'Gesetze blabla';
+                popup.appendChild(cancel);
+                popup.appendChild(gesetzTop);
+                popup.appendChild(gesetzContent);                                    
+                document.body.appendChild(popup);
+                return false;
+            });
+</script>
 <?php } ?>
 
 <!-- FUNKTIONSFILTER SHOW/HIDE ------------------------------------------------>   

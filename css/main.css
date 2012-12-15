@@ -131,6 +131,55 @@
         background: url('/Finanzberatung/css/images/gesetz/gesetz3.png');
 }
 
+.popup{
+    position:fixed;
+    top:35%;
+    left:35%;
+    width:650px;
+    height:300px;
+    padding:10px;
+    background-color:rgb(240,240,240);
+    border:2px solid grey;
+    z-index:100000000000000000;
+    box-shadow: 5px 5px 20px #888;
+}
+
+.cancel{
+    display:relative;
+    cursor:pointer;
+    margin:-6px;
+    float:right;
+    height:10px;
+    width:40px;
+    padding:0 0 5px 0;
+    background-color:red;
+    text-align:center;
+    font-weight:bold;
+    font-size:11px;
+    color:white;
+    border-radius:3px;
+    z-index:100000000000000000;
+}
+
+.cancel:hover{
+    background:rgb(255,50,50);
+}
+
+.gesetzeTop {
+    background-color: #0075B8;
+    width: 664px;
+    height: 18px;
+    padding: 3px;
+    margin-top: -10px;
+    margin-left: -10px;
+    margin-bottom: 10px;
+    color: #DDD;
+    font-weight: bold;
+}
+
+.gesetzContent {
+    
+}
 
 body
 {
