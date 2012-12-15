@@ -50,23 +50,23 @@
         ?>
     </div>
     
-    <div class ="boxes ui-state-active" id="kopfzeile" style="text-align: center;">
+    <div class ="kopfzeile" style="text-align: center;">
         
-            <button id="buttonFirst" style="float: left;" onClick='window.location.href="http://localhost/Finanzberatung/index.php?r=site/details&fktNr=<?php echo ($sprung[$nr]); ?>"'><span class="ui-icon ui-icon-seek-prev"></span></button>
+            <button id="buttonFirst" style="float: left; height: 25px;" onClick='window.location.href="http://localhost/Finanzberatung/index.php?r=site/details&fktNr=<?php echo ($sprung[$nr]); ?>"'><span class="ui-icon ui-icon-seek-prev"></span></button>
         
-            <button id="buttonPrevious" style="float: left;" onClick='window.location.href="http://localhost/Finanzberatung/index.php?r=site/details&fktNr=<?php echo ($fktNr-1); ?>"'><span class="ui-icon ui-icon-triangle-1-w"></span></button>
+            <button id="buttonPrevious" style="float: left; height: 25px;" onClick='window.location.href="http://localhost/Finanzberatung/index.php?r=site/details&fktNr=<?php echo ($fktNr-1); ?>"'><span class="ui-icon ui-icon-triangle-1-w"></span></button>
         
-            <button id="close" style="float: left; color: #026890;" onclick="window.close()">schließen</button>
+            <button id="close" style="float: left; color: #026890; height: 25px;" onclick="window.close()">schließen</button>
             
             <span id="Funktionsname" ><?php echo"[".$funktionsdaten['nummer']."] - ".$funktionsdaten['name'];?></span>
             
-            <button id="buttonLast" style="float: right;" onClick='window.location.href="http://localhost/Finanzberatung/index.php?r=site/details&fktNr=<?php echo ($sprung[$nr-1]); ?>"'><span class="ui-icon ui-icon-seek-next"></span></button>
+            <button id="buttonLast" style="float: right; height: 25px;" onClick='window.location.href="http://localhost/Finanzberatung/index.php?r=site/details&fktNr=<?php echo ($sprung[$nr-1]); ?>"'><span class="ui-icon ui-icon-seek-next"></span></button>
             
-            <button id="buttonNext" style="float: right;" onClick='window.location.href="http://localhost/Finanzberatung/index.php?r=site/details&fktNr=<?php echo ($fktNr+1); ?>"'><span class="ui-icon ui-icon-triangle-1-e"></span></button>
+            <button id="buttonNext" style="float: right; height: 25px;" onClick='window.location.href="http://localhost/Finanzberatung/index.php?r=site/details&fktNr=<?php echo ($fktNr+1); ?>"'><span class="ui-icon ui-icon-triangle-1-e"></span></button>
 
     </div>
     
-    <div class="boxes ui-state-active" id="zeile2">
+    <div class="kopfzeile2">
     <?php
         $phaseName = $grobphase[$funktionsdaten["grobphase_id"]]["name"];
         $phaseNr = $funktionsdaten["grobphase_id"];
@@ -77,20 +77,20 @@
     ?>
     </div>
    
-    
+    <div class="row">
     <?php
     if($funktionsdaten['beschreibung']!= null){?>
-    <div class="boxes ui-state-active" id="Beschreibung" style="width: 45%; margin-left: 2%;">
+    <div class="beschreibung">
         <div class="topline">Beschreibung</div>
         <div class="inhalt"><?php echo $funktionsdaten['beschreibung']; ?></div>
     </div>
     
     <?php } ?>
     
-    <div class="boxes ui-state-active" id="Beratung" style="width: 45%; margin-left: 5%; margin-right: 2%;">
+    <div class="beratung">
         <div class="topline">Beratung</div>
         <div class="inhalt">
-            <table>
+            <table class="inhalte">
                 <tr>
                     <td>Privat mit Beratung</td>
                     <td>Privat ohne Beratung</td>
@@ -158,10 +158,12 @@
             </table>
         </div>
     </div>
+    </div>
     
+    <div class="row">
     <?php
     if($funktionsdaten['weiterereg']!= null){?>
-    <div class="boxes ui-state-active" id="Regulatorien">
+    <div class="regulatorien">
         <div class="topline">Regulatorien</div>
         <div class="inhalt"><?php echo $funktionsdaten['weiterereg'] ?></div>
     </div>
@@ -170,10 +172,10 @@
     
     <?php
     if($funktionsdaten['hsr_aktuell']!= null || $funktionsdaten['hsr_zukuenftig']!= null){?>
-    <div class="boxes ui-state-active" id="Spielraum">
+    <div class="smallbox">
         <div class="topline">Spielraum</div>
         <div class="inhalt">
-            <table>
+            <table class="inhalte">
                 <tr>
                     <td>aktuell</td>
                     <td>zukünftig</td>
@@ -209,85 +211,62 @@
         </div>
     </div>
     
-    <?php
-    if($funktionsdaten['hinweis']!= null){?>
-    <div class="boxes ui-state-active" id="Hinweise">
+
+    <div class="smallbox">
         <div class="topline">Hinweise</div>
         <div class="inhalt"><?php echo $funktionsdaten['hinweis'] ?></div>
     </div>
-    <?php } ?>
-    
-    <?php
-    if($funktionsdaten['spezialist_vs_generalist']!= null){?>
-    <div class="boxes ui-state-active" id="spezialist_vs_generalist">
+
+    <div class="smallbox">
         <div class="topline">Spezialist/Generalist</div>
         <div class="inhalt"><?php echo $funktionsdaten['spezialist_vs_generalist'] ?></div>
     </div>
-    <?php } ?>
-    
-    <?php
-    if($funktionsdaten['frontoffice_generalist']!= null){?>
-    <div class="boxes ui-state-active" id="frontoffice_generalist">
+
+
+    <div class="smallbox">
         <div class="topline">Frontoffice Generalist</div>
         <div class="inhalt"><?php echo $funktionsdaten['frontoffice_generalist'] ?></div>
     </div>
-    <?php } ?>
+
     
-    <?php
-    if($funktionsdaten['frontoffice_experte']!= null){?>
-    <div class="boxes ui-state-active" id="frontoffice_experte">
+
+
+    <div class="smallbox">
         <div class="topline">Frontoffice Experte</div>
         <div class="inhalt"><?php echo $funktionsdaten['frontoffice_experte'] ?></div>
     </div>
-    <?php } ?>
-    
-    <?php
-    if($funktionsdaten['backoffice']!= null){?>
-    <div class="boxes ui-state-active" id="backoffice">
+
+    <div class="smallbox">
         <div class="topline">Backoffice</div>
         <div class="inhalt"><?php echo $funktionsdaten['backoffice'] ?></div>
     </div>
-    <?php } ?>
-    
-    <?php
-    if($funktionsdaten['produktlieferant']!= null){?>
-    <div class="boxes ui-state-active" id="produktlieferant">
+
+    <div class="smallbox">
         <div class="topline">Produklieferant</div>
         <div class="inhalt"><?php echo $funktionsdaten['produktlieferant'] ?></div>
     </div>
-    <?php } ?>
-    
-    <?php
-    if($funktionsdaten['bank']!= null){?>
-    <div class="boxes ui-state-active" id="bank">
+
+    <div class="smallbox">
         <div class="topline">Bank</div>
         <div class="inhalt"><?php echo $funktionsdaten['bank'] ?></div>
     </div>
-    <?php } ?>
-    
-    <?php
-    if($funktionsdaten['kunde']!= null){?>
-    <div class="boxes ui-state-active" id="kunde">
+
+    <div class="smallbox">
         <div class="topline">Kunde</div>
         <div class="inhalt"><?php echo $funktionsdaten['kunde'] ?></div>
     </div>
-    <?php } ?>
-    
-    <?php
-    if($funktionsdaten['verantwortlicher']!= null){?>
-    <div class="boxes ui-state-active" id="verantwortlicher">
+
+    <div class="smallbox">
         <div class="topline">Verantwortlicher</div>
         <div class="inhalt"><?php echo $funktionsdaten['verantwortlicher'] ?></div>
     </div>
-    <?php } ?>
-    
-    <?php
-    if($funktionsdaten['ressourcen']!= null){?>
-    <div class="boxes ui-state-active" id="ressourcen">
+
+    <div class="smallboxLast">
         <div class="topline">Ressourcen</div>
         <div class="inhalt"><?php echo $funktionsdaten['ressourcen'] ?></div>
     </div>
-    <?php } ?>
+  </div>
+
     
     
 
