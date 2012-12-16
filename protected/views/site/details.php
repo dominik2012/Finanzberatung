@@ -82,7 +82,7 @@
     if($funktionsdaten['beschreibung']!= null){?>
     <div class="beschreibung">
         <div class="topline">Beschreibung</div>
-        <div class="inhalt"><?php echo $funktionsdaten['beschreibung']; ?></div>
+        <div class="inhalt2"><?php echo $funktionsdaten['beschreibung']; ?></div>
     </div>
     
     <?php } ?>
