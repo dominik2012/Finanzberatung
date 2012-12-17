@@ -8179,3 +8179,14 @@ Stack trace:
 REQUEST_URI=/Finanzberatung/index.php?r=site/details&fktNr=103
 in C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php (334)
 in C:\xampp\htdocs\Finanzberatung\index.php (13)
+2012/12/17 16:38:08 [error] [php] Undefined variable: funktion2 (C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php:258)
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): SiteController->runAction()
+#1 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#2 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): SiteController->run()
+#3 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#4 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\Finanzberatung\index.php(13): CWebApplication->run()
+REQUEST_URI=/Finanzberatung/index.php?r=site/neu
+in C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php (258)
+in C:\xampp\htdocs\Finanzberatung\index.php (13)
