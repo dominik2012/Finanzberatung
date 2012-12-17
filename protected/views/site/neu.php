@@ -541,7 +541,7 @@
             $uphaseNr = $model3[$i]["unterphase_id"];
             $uphaseName = $unterphase2[$uphaseNr]["name"];
             //$fktGesetze = $gesetze[$i]["name"];
-            $fktGesetze = $phaseName; //TESTING
+            //$fktGesetze = $phaseName; //TESTING
             
             //keine Unterphase = X
             if($uphaseNr==0){
@@ -557,7 +557,7 @@
                             <input type="hidden" name="fktNr" id="fktNr" value="'.$fktNr.'">
                         </form>
                     </div>
-                    <div data-gesetze="'.$fktGesetze.'" id="'.$fktNr.'" name="'.$fktNrName_short.'" class="gesetz_button" title="Gesetze" onClick="popUp();"></div>
+                    <div data-gesetze=".$fktGesetze." id="'.$fktNr.'" name="'.$fktNrName_short.'" class="gesetz_button" title="Gesetze" onClick="popUp();"></div>
                     <div style="float: left; margin-left: 37px; font-size: 13px;" title="[Funktion-Nr] Funktion-Name">'.$fktNrName.'</div>
                     <div id="unterphaseR" title="'.$uphaseName.'">['.$uphaseNr.']</div>                    
                     <div id="grobphaseR" title="Grobphase-Nr. Grobphase-Name">'.$phaseNrName.'&nbsp;</div>

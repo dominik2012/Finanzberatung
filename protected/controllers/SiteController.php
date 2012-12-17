@@ -115,8 +115,8 @@ class SiteController extends Controller
                 $spaltennamen = Funktion::model()->attributeLabelsIndexAreNumbers();
                 $grobphase = new Grobphase;
                 $unterphase2 = Grobphase::model()->findAllBySql("SELECT * FROM unterphase");
-                //$model = Gesetz::model()->findAllByPk(4);
-                //$gesetze = $model->gesetz;
+                //$gesetz = Gesetz::model()->findAllBySql("SELECT * FROM gesetz");
+                //$gesetze = $gesetz->gesetze;
 		
 		//Aufruf der get-Methoden der jeweiligen Models
 		$modelGrobphase = Grobphase::model()->getAttr();
@@ -257,7 +257,7 @@ class SiteController extends Controller
                                 //$unterphase = Grobphase::model()->findAllBySql("SELECT * FROM unterphase");
                                 //$funktion = Funktion::model()->findAllByAttributes(array('grobphase_id'=>$filter->grobphase_id));
 			
-			$this->render('neu',array('unterphase2'=>$unterphase2,'fil'=>$sql,'model'=>$funktion, 'model2' =>$model2, 'model3' =>$funktion, 'model4' => $fil_grobphase, 'name' => $fil_name, 'hsrz' => $fil_hsrz, 'hsra' => $fil_hsra, 'privob' => $fil_privob, 'profob' => $fil_profob, 'rausfg' => $fil_rausfg,'unterphase' => $fil_unterphase, 'privmb' => $fil_privmb, 'profmb' => $fil_profmb, 'model6' => $spaltennamen, 'model5' => $spaltennamen2, 'grobphase' => $grobphase,));
+			$this->render('neu',array(/*'gesetze'=>$gesetze, */'unterphase2'=>$unterphase2,'fil'=>$sql,'model'=>$funktion, 'model2' =>$model2, 'model3' =>$funktion, 'model4' => $fil_grobphase, 'name' => $fil_name, 'hsrz' => $fil_hsrz, 'hsra' => $fil_hsra, 'privob' => $fil_privob, 'profob' => $fil_profob, 'rausfg' => $fil_rausfg,'unterphase' => $fil_unterphase, 'privmb' => $fil_privmb, 'profmb' => $fil_profmb, 'model6' => $spaltennamen, 'model5' => $spaltennamen2, 'grobphase' => $grobphase,));
 		}
 		else{
 		$model = array($funktion,$filter,);

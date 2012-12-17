@@ -16,6 +16,7 @@
     <?php
         $j=0;
         $sprung[$j] = 0;
+        $lastFct = 0;
         $temp = 1;
         $length = count($funktion);
         
@@ -28,43 +29,32 @@
                 $j++;
             }
             
+            $lastFct = $funktion[$i]['nummer'];
+            
             $temp = $funktion[$i]['grobphase_id'];
             
         }
         
-        $nr = 0;
-        $length2 = count($sprung);
-        for($i=1;$i<$length2;$i++){
-            if($fktNr < $sprung[$i]){
-                $nr = $i;
-                break;
-            }
-        }
+        
     ?>
-    
-    <div>
-        <?php
-        echo "Sprung-Nr:".$sprung[$nr];
-        echo "   Fkt-Nr:".$fktNr;
-        print_r($sprung);
-        ?>
-    </div>
     
     <div class ="kopfzeile" style="text-align: center;">
         
-            <button id="buttonFirst" style="float: left; height: 25px;" onClick='window.location.href="http://localhost/Finanzberatung/index.php?r=site/details&fktNr=<?php echo ($sprung[$nr]); ?>"'><span class="ui-icon ui-icon-seek-prev"></span></button>
+            <button id="buttonFirst" style="float: left; height: 25px;" onClick='prevPhase(<?php echo $fktNr ?>)' ><span class="ui-icon ui-icon-seek-prev"></span></button>
         
-            <button id="buttonPrevious" style="float: left; height: 25px;" onClick='window.location.href="http://localhost/Finanzberatung/index.php?r=site/details&fktNr=<?php echo ($fktNr-1); ?>"'><span class="ui-icon ui-icon-triangle-1-w"></span></button>
+            <button id="buttonPrevious" style="float: left; height: 25px;" onClick='prevFkt(<?php echo $fktNr ?>)'><span class="ui-icon ui-icon-triangle-1-w"></span></button>
         
             <button id="close" style="float: left; color: #026890; height: 25px;" onclick="window.close()">schließen</button>
             
             <span id="Funktionsname" ><?php echo"[".$funktionsdaten['nummer']."] - ".$funktionsdaten['name'];?></span>
             
-            <button id="buttonLast" style="float: right; height: 25px;" onClick='window.location.href="http://localhost/Finanzberatung/index.php?r=site/details&fktNr=<?php echo ($sprung[$nr-1]); ?>"'><span class="ui-icon ui-icon-seek-next"></span></button>
+            <button id="buttonLast" style="float: right; height: 25px;" onClick='nextPhase(<?php echo $fktNr ?>)' ><span class="ui-icon ui-icon-seek-next"></span></button>
             
-            <button id="buttonNext" style="float: right; height: 25px;" onClick='window.location.href="http://localhost/Finanzberatung/index.php?r=site/details&fktNr=<?php echo ($fktNr+1); ?>"'><span class="ui-icon ui-icon-triangle-1-e"></span></button>
+            <button id="buttonNext" style="float: right; height: 25px;" onClick='nextFkt(<?php echo $fktNr ?>)'><span class="ui-icon ui-icon-triangle-1-e"></span></button>
 
     </div>
+    
+   
     
     <div class="kopfzeile2">
     <?php
@@ -73,7 +63,8 @@
         $uphaseName = $unterphase[$funktionsdaten["unterphase_id"]]["name"];
         $uphaseNr = $funktionsdaten["unterphase_id"];
         
-        echo '<span style="padding-right: 15px;"><b>Grobphase:</b> '.$phaseNr.'. '.$phaseName.'</span><span><b>Unterphase:</b> '.$uphaseNr.'. '.$uphaseName.'</span>';
+        echo '<div class="kRight"><span>Unterphase: '.$uphaseNr.'. '.$uphaseName.'</span></div>';
+        echo '<div class="kLeft"><span>Grobphase: '.$phaseNr.'. '.$phaseName.'</span></div>';
     ?>
     </div>
    
@@ -161,15 +152,19 @@
     </div>
     
     <div class="row">
-    <?php
-    if($funktionsdaten['weiterereg']!= null){?>
     <div class="regulatorien">
         <div class="topline">Regulatorien</div>
         <div class="inhalt"><?php echo $funktionsdaten['weiterereg'] ?></div>
     </div>
-    <?php } ?>
     
+    <div class="hinweise">
+        <div class="topline">Hinweise</div>
+        <div class="inhalt2"><?php echo $funktionsdaten['hinweis'] ?></div>
+    </div>  
+    </div>
     
+    <div class="row">
+        
     <?php
     if($funktionsdaten['hsr_aktuell']!= null || $funktionsdaten['hsr_zukuenftig']!= null){?>
     <div class="smallbox">
@@ -177,8 +172,8 @@
         <div class="inhalt">
             <table class="inhalte">
                 <tr>
-                    <td>aktuell</td>
-                    <td>zukünftig</td>
+                    <td style="width: 61px;">aktuell</td>
+                    <td style="width: 61px;">zukünftig</td>
                 </tr>
                 <tr>
                     <?php if($funktionsdaten['hsr_aktuell'] == 'gruen') { ?>
@@ -209,14 +204,8 @@
                 </tr>
             </table>
         </div>
-    </div>
-    
-
-    <div class="smallbox">
-        <div class="topline">Hinweise</div>
-        <div class="inhalt"><?php echo $funktionsdaten['hinweis'] ?></div>
-    </div>
-
+    </div>    
+        
     <div class="smallbox">
         <div class="topline">Spezialist/Generalist</div>
         <div class="inhalt"><?php echo $funktionsdaten['spezialist_vs_generalist'] ?></div>
@@ -260,14 +249,101 @@
         <div class="topline">Verantwortlicher</div>
         <div class="inhalt"><?php echo $funktionsdaten['verantwortlicher'] ?></div>
     </div>
-
+        
     <div class="smallboxLast">
         <div class="topline">Ressourcen</div>
         <div class="inhalt"><?php echo $funktionsdaten['ressourcen'] ?></div>
     </div>
   </div>
+  
+  <!-- Functions for next/prev Function/Phase -->  
+  <script>
+      function prevFkt(fktNr){
+          var funktion = fktNr;
+          var lastFct  = <?php echo $lastFct ?>;
+          var sprung   = <?php echo json_encode($sprung); ?>;
+          
+          if(funktion == sprung[0]){
+              funktion = lastFct;
+          }else {
+              funktion = funktion-1;
+          }
+          
+          window.location.href="http://localhost/Finanzberatung/index.php?r=site/details&fktNr="+funktion;
+      }
+      
+      function nextFkt(fktNr) {
+          var funktion = fktNr;
+          var lastFct  = <?php echo $lastFct ?>;
+          
+          if(funktion == lastFct) {
+              funktion = 1;
+          }else {
+              funktion = funktion+1;
+          }
+          
+          window.location.href="http://localhost/Finanzberatung/index.php?r=site/details&fktNr="+funktion;
+      }
+      
+      function prevPhase(fktNr){
+          var funktion = fktNr;
+          var sprung   = <?php echo json_encode($sprung); ?>;
+          
+          var nr = 0;
+          var arrLength = sprung.length;
+          
+          for(var i=0;i<=arrLength-1;i++) {
+              
+              if(funktion == sprung[0] || funktion < sprung[1]) {
+                  nr = arrLength-1;
+                  break;
+              }else if(funktion == sprung[i]) {
+                  nr = i-1;
+                  break;
+              }else if(funktion > sprung[arrLength-1]){
+                  nr = sprung[arrLength-2];
+                  break;
+              }else if(funktion < sprung[i]){
+                  nr = i-2;
+                  break;
+              }
+          }
 
-    
+          funktion = sprung[nr];
+          window.location.href="http://localhost/Finanzberatung/index.php?r=site/details&fktNr="+funktion;
+      }
+      
+      function nextPhase(fktNr){
+          var funktion = fktNr;
+          var sprung   = <?php echo json_encode($sprung); ?>;
+          
+          var nr = 0;
+          var arrLength = sprung.length;
+          
+          for(var i=1;i<=arrLength;i++) {
+              if(funktion < sprung[1]) {
+                  nr = 1;
+                  break;
+              }else if(funktion < sprung[arrLength-1] && funktion > sprung[arrLength-2]){
+                  nr = arrLength-1;
+                  break;
+              }else  if(funktion == sprung[arrLength-1] || funktion > sprung[arrLength-1]) {
+                  nr = 0;
+                  break;    
+              }else  if(funktion == sprung[i]) {
+                  nr = i+1;
+                  break;
+              }else  if(funktion < sprung[i]) {
+                  nr = i;
+                  break;
+              }
+          }
+          
+          funktion = sprung[nr];
+          window.location.href="http://localhost/Finanzberatung/index.php?r=site/details&fktNr="+funktion;
+      }
+      
+  </script>    
     
 
 </body>
