@@ -546,12 +546,14 @@
             $uphaseNr = $model3[$i]["unterphase_id"];
             $uphaseName = $unterphase2[$uphaseNr]["name"];
             $sprungstelle = $model3[$i]["sprungstelle"];
+            $funktionsfolge = $model3[$i]["funktionsfolge"];
             //$fktGesetze = $gesetze[$i]["name"];
             $fktGesetze = $phaseName; //TESTING
             
             //keine Unterphase = X
             if($uphaseNr==0){
                 $uphaseNr="X";
+                $uphaseName="keine Unterphase";
             }
             
             //Ausgabe Accordion_________________________________________________
@@ -565,19 +567,25 @@
                     </div>';
                     
                     if($fktGesetze == null){
-                        echo '<div class="gesetz_button_null"></div>';
+                        echo '<div class="gesetz_button_null" title="Gesetze" ></div>';
                     }else{
                         echo '<div data-gesetze="'.$fktGesetze.'" id="'.$fktNr.'" name="'.$fktNrName_short.'" class="gesetz_button" title="Gesetze" onClick="popUp();"></div>';
                     }
             
                     if($sprungstelle == null){
-                        echo '<div class="spruenge_button_null"></div>';
+                        echo '<div class="spruenge_button_null" title="Sprungstellen" ></div>';
                     }else{
                         echo '<div data-spruenge="'.$sprungstelle.'" id="'.$fktNr.'" name="'.$fktNrName_short.'" class="spruenge_button" title="Sprungstellen" onClick="popUp2();"></div>';
                     }
+                    
+                    if($funktionsfolge == null){
+                        echo '<div class="folge_button_null" title="Funktionsfolge" ></div>';
+                    }else{
+                        echo '<div data-folge="'.$funktionsfolge.'" id="'.$fktNr.'" name="'.$fktNrName_short.'" class="folge_button" title="Funktionsfolge" onClick="popUp3();"></div>';
+                    }
                    
                     echo '
-                    <div style="float: left; margin-left: 54px; font-size: 13px;" title="[Funktion-Nr] Funktion-Name">'.$fktNrName.'</div>
+                    <div style="float: left; margin-left: 73px; font-size: 13px;" title="[Funktion-Nr] Funktion-Name">'.$fktNrName.'</div>
                     <div id="unterphaseR" title="'.$uphaseName.'">['.$uphaseNr.']</div>                    
                     <div id="grobphaseR" title="Grobphase-Nr. Grobphase-Name">'.$phaseNrName.'&nbsp;</div>
                     
@@ -727,7 +735,7 @@
                 
                 var popup = document.createElement('div');
                 popup.className = 'popupSpruenge';
-                popup.id = 'popup_' + popupID;
+                popup.id = 'popup_2' + popupID;
                 var cancel = document.createElement('div');
                 cancel.className = 'cancel';
                 cancel.innerHTML = 'close';
@@ -743,7 +751,40 @@
                 popup.appendChild(gesetzContent);                                    
                 document.body.appendChild(popup);
                 
-                $('#popup_' + popupID).draggable();
+                $('#popup_2' + popupID).draggable();
+                
+                return false;
+     });
+     
+     $('.folge_button').click(
+            
+        
+            function popUp3(){
+                
+                var fktName = this.attributes["name"].value;
+                var spruenge = this.attributes["data-folge"].value;
+                
+                var popupID = this.id;
+                
+                var popup = document.createElement('div');
+                popup.className = 'popupFolge';
+                popup.id = 'popup_3' + popupID;
+                var cancel = document.createElement('div');
+                cancel.className = 'cancel';
+                cancel.innerHTML = 'close';
+                cancel.onclick = function (e) { popup.parentNode.removeChild(popup) };
+                var gesetzTop = document.createElement('div');
+                gesetzTop.className = 'folgeTop';
+                gesetzTop.innerHTML = fktName;
+                var gesetzContent = document.createElement('div');
+                gesetzContent.className = 'folgeContent';
+                gesetzContent.innerHTML = spruenge;
+                popup.appendChild(cancel);
+                popup.appendChild(gesetzTop);
+                popup.appendChild(gesetzContent);                                  
+                document.body.appendChild(popup);
+                
+                $('#popup_3' + popupID).draggable();
                 
                 return false;
      });

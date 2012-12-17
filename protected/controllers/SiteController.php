@@ -115,6 +115,7 @@ class SiteController extends Controller
                 $spaltennamen = Funktion::model()->attributeLabelsIndexAreNumbers();
                 $grobphase = new Grobphase;
                 $unterphase2 = Grobphase::model()->findAllBySql("SELECT * FROM unterphase");
+                $funktionGes = Funktion::model()->findAllBySql("SELECT * FROM funktion");
                 //$gesetz = Gesetz::model()->findAllBySql("SELECT * FROM gesetz");
                 //$gesetze = $gesetz->gesetze;
 		
@@ -254,6 +255,35 @@ class SiteController extends Controller
 					$funktion[0]["id"]="leer";
 					}
 				$grobphase = Grobphase::model()->findAllBySql("SELECT * FROM grobphase");
+                        
+
+                        //Array mit Funktionsfolgen 
+                        /*
+                        $arrFolge = 0;
+                        $temp = 0;
+                        $j=0;
+                        
+                        for($i=0; $i<count($funktionGes); $i++){
+                            if($funktionGes[$i]["funktionsfolge"] == "x"){
+                                if($temp == 1){
+                                    $j++;
+                                }
+                                $k=0;
+                                $temp = 0;
+                                $arrFolge[$j]["folge"] = $i;
+                                $k++;
+                            }else if($funktionGes[$i]["funktionsfolge"] == "o"){
+                                if($temp == 0){
+                                    $j++;
+                                }
+                                $k=0;
+                                $temp = 1;
+                                $arrFolge[$j][$k] = $i;
+                                $k++;
+                            }else if($funktionGes[$i]["funktionsfolge"] == null){
+                                //do nothing
+                            }
+                        } */
 			
 			$this->render('neu',array('unterphase2'=>$unterphase2,'fil'=>$sql,'model'=>$funktion, 'model2' =>$model2, 'model3' =>$funktion, 'model4' => $fil_grobphase, 'name' => $fil_name, 'hsrz' => $fil_hsrz, 'hsra' => $fil_hsra, 'privob' => $fil_privob, 'profob' => $fil_profob, 'rausfg' => $fil_rausfg,'unterphase' => $fil_unterphase, 'privmb' => $fil_privmb, 'profmb' => $fil_profmb, 'model6' => $spaltennamen, 'model5' => $spaltennamen2, 'grobphase' => $grobphase,));
 		}

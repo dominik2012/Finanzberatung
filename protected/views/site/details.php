@@ -231,9 +231,14 @@
         <div class="inhalt"><?php echo $funktionsdaten['verantwortlicher'] ?></div>
     </div>
         
-    <div class="smallboxLast">
+    <div class="smallbox">
         <div class="topline">Ressourcen</div>
         <div class="inhalt"><?php echo $funktionsdaten['ressourcen'] ?></div>
+    </div>
+        
+    <div class="smallboxLast">
+        <div class="topline">Sprungstellen</div>
+        <div class="inhalt"><?php echo $funktionsdaten['sprungstelle'] ?></div>
     </div>
   </div>
   
