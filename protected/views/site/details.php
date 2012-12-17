@@ -19,8 +19,6 @@
     $nPhase = $nextPhase;
 ?>
     
-<?php print_r($sprung); ?>
-    
     <div class ="kopfzeile" style="text-align: center;">
         
             <button id="buttonFirst" style="float: left; height: 25px;" onClick='window.location.href="<?php echo $link.$pPhase ?>";' ><span class="ui-icon ui-icon-seek-prev"></span></button>

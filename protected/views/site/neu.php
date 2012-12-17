@@ -545,6 +545,7 @@
             
             $uphaseNr = $model3[$i]["unterphase_id"];
             $uphaseName = $unterphase2[$uphaseNr]["name"];
+            $sprungstelle = $model3[$i]["sprungstelle"];
             //$fktGesetze = $gesetze[$i]["name"];
             //$fktGesetze = $phaseName; //TESTING
             
@@ -563,7 +564,8 @@
                         </form>
                     </div>
                     <div data-gesetze=".$fktGesetze." id="'.$fktNr.'" name="'.$fktNrName_short.'" class="gesetz_button" title="Gesetze" onClick="popUp();"></div>
-                    <div style="float: left; margin-left: 37px; font-size: 13px;" title="[Funktion-Nr] Funktion-Name">'.$fktNrName.'</div>
+                    <div data-spruenge="'.$sprungstelle.'" id="'.$fktNr.'" name="'.$fktNrName_short.'" class="spruenge_button" title="Sprungstellen" onClick="popUp2();"></div>
+                    <div style="float: left; margin-left: 54px; font-size: 13px;" title="[Funktion-Nr] Funktion-Name">'.$fktNrName.'</div>
                     <div id="unterphaseR" title="'.$uphaseName.'">['.$uphaseNr.']</div>                    
                     <div id="grobphaseR" title="Grobphase-Nr. Grobphase-Name">'.$phaseNrName.'&nbsp;</div>
                     
@@ -699,7 +701,40 @@
                 $('#popup_' + popupID).draggable();
                 
                 return false;
-            });
+     });
+     
+     $('.spruenge_button').click(
+            
+        
+            function popUp2(){
+                
+                var fktName = this.attributes["name"].value;
+                var spruenge = this.attributes["data-spruenge"].value;
+                
+                var popupID = this.id;
+                
+                var popup = document.createElement('div');
+                popup.className = 'popup';
+                popup.id = 'popup_' + popupID;
+                var cancel = document.createElement('div');
+                cancel.className = 'cancel';
+                cancel.innerHTML = 'close';
+                cancel.onclick = function (e) { popup.parentNode.removeChild(popup) };
+                var gesetzTop = document.createElement('div');
+                gesetzTop.className = 'gesetzeTop';
+                gesetzTop.innerHTML = fktName;
+                var gesetzContent = document.createElement('div');
+                gesetzContent.className = 'gesetzeContent';
+                gesetzContent.innerHTML = spruenge;
+                popup.appendChild(cancel);
+                popup.appendChild(gesetzTop);
+                popup.appendChild(gesetzContent);                                    
+                document.body.appendChild(popup);
+                
+                $('#popup_' + popupID).draggable();
+                
+                return false;
+     });
 </script>
 <?php } ?>
 
