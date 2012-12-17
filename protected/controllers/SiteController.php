@@ -271,6 +271,89 @@ class SiteController extends Controller
             $funktion = Funktion::model()->findAllBySql("SELECT * FROM funktion");
             $grobphase = Grobphase::model()->findAllBySql("SELECT * FROM grobphase");
             $unterphase = Grobphase::model()->findAllBySql("SELECT * FROM unterphase");
-            $this->render('details', array(/*'gesetze'=>$gesetze, */'funktion'=>$funktion, 'funktionsdaten'=>$funktionsdaten, 'fktNr'=>$fktNr, 'grobphase'=>$grobphase, 'unterphase'=>$unterphase));
+            
+            $j=0;
+            $sprung[$j] = 0;
+            $lastFct = 0;
+            $temp = 1;
+            $length = count($funktion);
+            
+            $nr = 0;
+            $prevFkt = 0;
+            $nextFkt = 0;
+            $prevPhase = 0;
+            $nextPhase = 0;
+        
+            for($i=0;$i<$length;$i++){
+            
+                if($temp == $funktion[$i]['grobphase_id']){
+                
+                }else{
+                    $sprung[$j] = $funktion[$i]['nummer'];
+                    $j++;
+                }
+            
+                $lastFct = $funktion[$i]['nummer'];
+            
+                $temp = $funktion[$i]['grobphase_id'];
+            
+            }
+            $arrLength = count($sprung);
+            
+            //prevFct
+            if($fktNr == $sprung[0]){
+                $prevFkt = $lastFct;
+            }else {
+                $prevFkt = $fktNr-1;
+            }
+            
+            //nextFct
+            if($fktNr == $lastFct) {
+                $nextFkt = 1;
+            }else {
+                $nextFkt = $fktNr+1;
+            }
+            
+            //prevPhase
+            for($i=0;$i<=$arrLength-1;$i++) {
+              
+                if($fktNr == $sprung[0] || $fktNr < $sprung[1]) {
+                    $nr = $arrLength-1;
+                    break;
+                }else if($fktNr == $sprung[$i]) {
+                    $nr = $i-1;
+                    break;
+                }else if($fktNr > $sprung[$arrLength-1]){
+                    $nr = $sprung[$arrLength-2];
+                    break;
+                }else if($fktNr < $sprung[$i]){
+                    $nr = $i-2;
+                    break;
+                }
+            }
+            $prevPhase = $sprung[$nr];
+            
+            //nextPhase
+            for($i=1;$i<=$arrLength;$i++) {
+                if($fktNr < $sprung[1]) {
+                    $nr = 1;
+                    break;
+                }else if($fktNr < $sprung[$arrLength-1] && $fktNr > $sprung[$arrLength-2]){
+                    $nr = $arrLength-1;
+                    break;
+                }else  if($fktNr == $sprung[$arrLength-1] || $fktNr > $sprung[$arrLength-1]) {
+                    $nr = 0;
+                    break;    
+                }else  if($fktNr == $sprung[$i]) {
+                    $nr = $i+1;
+                    break;
+                }else  if($fktNr < $sprung[$i]) {
+                    $nr = $i;
+                    break;
+                }
+            }
+            $nextPhase = $sprung[$nr];
+            
+            $this->render('details', array('sprung'=>$sprung, 'nextPhase'=>$nextPhase, 'prevPhase'=>$prevPhase, 'prevFkt'=>$prevFkt, 'nextFkt'=>$nextFkt, 'funktion'=>$funktion, 'funktionsdaten'=>$funktionsdaten, 'fktNr'=>$fktNr, 'grobphase'=>$grobphase, 'unterphase'=>$unterphase));
         }
 }

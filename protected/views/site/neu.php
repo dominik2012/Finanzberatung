@@ -20,6 +20,11 @@
         $("#draggable").draggable();
         $("#popup").draggable();
     });
+    
+    //Funktion ruft alle Funktionen ab
+    function start(){
+        document.forms["neu_form"].submit();
+    }
     </script>
     
 

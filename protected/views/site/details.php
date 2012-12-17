@@ -10,47 +10,30 @@
 </head>
 <body>
 <?php   
-    $fktNr=(int)($fktNr);
+    $fktNr = (int)($fktNr);
+    $link = "http://localhost/Finanzberatung/index.php?r=site/details&fktNr=";
+    $sprung = $sprung;
+    $pFkt = $prevFkt;
+    $nFkt = $nextFkt;
+    $pPhase = $prevPhase;
+    $nPhase = $nextPhase;
 ?>
     
-    <?php
-        $j=0;
-        $sprung[$j] = 0;
-        $lastFct = 0;
-        $temp = 1;
-        $length = count($funktion);
-        
-        for($i=0;$i<$length;$i++){
-            
-            if($temp == $funktion[$i]['grobphase_id']){
-                
-            }else{
-                $sprung[$j] = $funktion[$i]['nummer'];
-                $j++;
-            }
-            
-            $lastFct = $funktion[$i]['nummer'];
-            
-            $temp = $funktion[$i]['grobphase_id'];
-            
-        }
-        
-        
-    ?>
+<?php print_r($sprung); ?>
     
     <div class ="kopfzeile" style="text-align: center;">
         
-            <button id="buttonFirst" style="float: left; height: 25px;" onClick='prevPhase(<?php echo $fktNr ?>)' ><span class="ui-icon ui-icon-seek-prev"></span></button>
+            <button id="buttonFirst" style="float: left; height: 25px;" onClick='window.location.href="<?php echo $link.$pPhase ?>";' ><span class="ui-icon ui-icon-seek-prev"></span></button>
         
-            <button id="buttonPrevious" style="float: left; height: 25px;" onClick='prevFkt(<?php echo $fktNr ?>)'><span class="ui-icon ui-icon-triangle-1-w"></span></button>
+            <button id="buttonPrevious" style="float: left; height: 25px;" onClick='window.location.href="<?php echo $link.$pFkt ?>";'><span class="ui-icon ui-icon-triangle-1-w"></span></button>
         
             <button id="close" style="float: left; color: #026890; height: 25px;" onclick="window.close()">schließen</button>
             
             <span id="Funktionsname" ><?php echo"[".$funktionsdaten['nummer']."] - ".$funktionsdaten['name'];?></span>
             
-            <button id="buttonLast" style="float: right; height: 25px;" onClick='nextPhase(<?php echo $fktNr ?>)' ><span class="ui-icon ui-icon-seek-next"></span></button>
+            <button id="buttonLast" style="float: right; height: 25px;" onClick='window.location.href="<?php echo $link.$nPhase ?>";' ><span class="ui-icon ui-icon-seek-next"></span></button>
             
-            <button id="buttonNext" style="float: right; height: 25px;" onClick='nextFkt(<?php echo $fktNr ?>)'><span class="ui-icon ui-icon-triangle-1-e"></span></button>
+            <button id="buttonNext" style="float: right; height: 25px;" onClick='window.location.href="<?php echo $link.$nFkt ?>";'><span class="ui-icon ui-icon-triangle-1-e"></span></button>
 
     </div>
     
@@ -256,95 +239,6 @@
     </div>
   </div>
   
-  <!-- Functions for next/prev Function/Phase -->  
-  <script>
-      function prevFkt(fktNr){
-          var funktion = fktNr;
-          var lastFct  = <?php echo $lastFct ?>;
-          var sprung   = <?php echo json_encode($sprung); ?>;
-          
-          if(funktion == sprung[0]){
-              funktion = lastFct;
-          }else {
-              funktion = funktion-1;
-          }
-          
-          window.location.href="http://localhost/Finanzberatung/index.php?r=site/details&fktNr="+funktion;
-      }
-      
-      function nextFkt(fktNr) {
-          var funktion = fktNr;
-          var lastFct  = <?php echo $lastFct ?>;
-          
-          if(funktion == lastFct) {
-              funktion = 1;
-          }else {
-              funktion = funktion+1;
-          }
-          
-          window.location.href="http://localhost/Finanzberatung/index.php?r=site/details&fktNr="+funktion;
-      }
-      
-      function prevPhase(fktNr){
-          var funktion = fktNr;
-          var sprung   = <?php echo json_encode($sprung); ?>;
-          
-          var nr = 0;
-          var arrLength = sprung.length;
-          
-          for(var i=0;i<=arrLength-1;i++) {
-              
-              if(funktion == sprung[0] || funktion < sprung[1]) {
-                  nr = arrLength-1;
-                  break;
-              }else if(funktion == sprung[i]) {
-                  nr = i-1;
-                  break;
-              }else if(funktion > sprung[arrLength-1]){
-                  nr = sprung[arrLength-2];
-                  break;
-              }else if(funktion < sprung[i]){
-                  nr = i-2;
-                  break;
-              }
-          }
-
-          funktion = sprung[nr];
-          window.location.href="http://localhost/Finanzberatung/index.php?r=site/details&fktNr="+funktion;
-      }
-      
-      function nextPhase(fktNr){
-          var funktion = fktNr;
-          var sprung   = <?php echo json_encode($sprung); ?>;
-          
-          var nr = 0;
-          var arrLength = sprung.length;
-          
-          for(var i=1;i<=arrLength;i++) {
-              if(funktion < sprung[1]) {
-                  nr = 1;
-                  break;
-              }else if(funktion < sprung[arrLength-1] && funktion > sprung[arrLength-2]){
-                  nr = arrLength-1;
-                  break;
-              }else  if(funktion == sprung[arrLength-1] || funktion > sprung[arrLength-1]) {
-                  nr = 0;
-                  break;    
-              }else  if(funktion == sprung[i]) {
-                  nr = i+1;
-                  break;
-              }else  if(funktion < sprung[i]) {
-                  nr = i;
-                  break;
-              }
-          }
-          
-          funktion = sprung[nr];
-          window.location.href="http://localhost/Finanzberatung/index.php?r=site/details&fktNr="+funktion;
-      }
-      
-  </script>    
-    
 
 </body>
 <?php
