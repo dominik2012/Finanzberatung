@@ -547,7 +547,7 @@
             $uphaseName = $unterphase2[$uphaseNr]["name"];
             $sprungstelle = $model3[$i]["sprungstelle"];
             //$fktGesetze = $gesetze[$i]["name"];
-            //$fktGesetze = $phaseName; //TESTING
+            $fktGesetze = $phaseName; //TESTING
             
             //keine Unterphase = X
             if($uphaseNr==0){
@@ -562,9 +562,21 @@
                         <form id="detailForm" name="detailForm" method="GET" action="/Finanzberatung/index.php?r=site/details">
                             <input type="hidden" name="fktNr" id="fktNr" value="'.$fktNr.'">
                         </form>
-                    </div>
-                    <div data-gesetze=".$fktGesetze." id="'.$fktNr.'" name="'.$fktNrName_short.'" class="gesetz_button" title="Gesetze" onClick="popUp();"></div>
-                    <div data-spruenge="'.$sprungstelle.'" id="'.$fktNr.'" name="'.$fktNrName_short.'" class="spruenge_button" title="Sprungstellen" onClick="popUp2();"></div>
+                    </div>';
+                    
+                    if($fktGesetze == null){
+                        echo '<div class="gesetz_button_null"></div>';
+                    }else{
+                        echo '<div data-gesetze="'.$fktGesetze.'" id="'.$fktNr.'" name="'.$fktNrName_short.'" class="gesetz_button" title="Gesetze" onClick="popUp();"></div>';
+                    }
+            
+                    if($sprungstelle == null){
+                        echo '<div class="spruenge_button_null"></div>';
+                    }else{
+                        echo '<div data-spruenge="'.$sprungstelle.'" id="'.$fktNr.'" name="'.$fktNrName_short.'" class="spruenge_button" title="Sprungstellen" onClick="popUp2();"></div>';
+                    }
+                   
+                    echo '
                     <div style="float: left; margin-left: 54px; font-size: 13px;" title="[Funktion-Nr] Funktion-Name">'.$fktNrName.'</div>
                     <div id="unterphaseR" title="'.$uphaseName.'">['.$uphaseNr.']</div>                    
                     <div id="grobphaseR" title="Grobphase-Nr. Grobphase-Name">'.$phaseNrName.'&nbsp;</div>
@@ -681,7 +693,7 @@
                 var popupID = this.id;
                 
                 var popup = document.createElement('div');
-                popup.className = 'popup';
+                popup.className = 'popupGesetze';
                 popup.id = 'popup_' + popupID;
                 var cancel = document.createElement('div');
                 cancel.className = 'cancel';
@@ -714,17 +726,17 @@
                 var popupID = this.id;
                 
                 var popup = document.createElement('div');
-                popup.className = 'popup';
+                popup.className = 'popupSpruenge';
                 popup.id = 'popup_' + popupID;
                 var cancel = document.createElement('div');
                 cancel.className = 'cancel';
                 cancel.innerHTML = 'close';
                 cancel.onclick = function (e) { popup.parentNode.removeChild(popup) };
                 var gesetzTop = document.createElement('div');
-                gesetzTop.className = 'gesetzeTop';
+                gesetzTop.className = 'spruengeTop';
                 gesetzTop.innerHTML = fktName;
                 var gesetzContent = document.createElement('div');
-                gesetzContent.className = 'gesetzeContent';
+                gesetzContent.className = 'spruengeContent';
                 gesetzContent.innerHTML = spruenge;
                 popup.appendChild(cancel);
                 popup.appendChild(gesetzTop);
