@@ -75,7 +75,16 @@
                 ?>
                 </select><br>
                 </div>
-                    
+                <div id="functionfilters">
+		Gesetze:<br>
+				<select name="select_gesetze" id="select_gesetze" data-placeholder="Gesetze-Filter" style="width:465px;" multiple="multiple">
+				<?php
+				for($i=0;$i<count($model2[1]["gesetze"]);$i++){
+					echo '<option value="'.$i.'" id="gesetze'.$i.'" name="gesetze'.$i.'" >'.$model2[1]["gesetze"][$i]["gesetz"].'</option>';
+					}
+					?>
+				</select><br>
+                </div>    
                 
                 </div>
                     
@@ -291,9 +300,9 @@
 				<input type="hidden" name="form_profob" value="">
 				<input type="hidden" name="form_rausfg" value="">
 				<input type="hidden" name="form_hsra" value="">
-				<input type="hidden" name="form_hsrz" value=""><br>
-                                
-                                <div style="float: right; margin-top: -30px; margin-right: 38px;">
+				<input type="hidden" name="form_hsrz" value="">
+                <input type="hidden" name="form_gesetze" value=""><br/>                 
+                                <div style="float: right; margin-top: -77px; margin-right: 30px;">
 				<button class="submit" type="button" name="submitbutton" value="submitbutton" onClick="toInput();"></button>
                                 </div>
                                 
@@ -368,8 +377,8 @@
                             echo '</optgroup>';
                             
                             //Gesetz
-                            echo '<optgroup label="Gesetz">';            
-                            for ($i=8;$i<10;$i++){
+                            echo '<optgroup label="Hinweis">';            
+                            for ($i=8;$i<9;$i++){
                                 $inhalt = $model6[$i]; 
                                 $title = str_replace('"',"&#039;",  shortName($inhalt));
                                 echo '<option value="'.$model5[$i].'" id="'.$model5[$i].'" name="'.$model5[$i].'" title="'.$title.'");>'.$inhalt.'</option>';
@@ -547,9 +556,11 @@
             $uphaseName = $unterphase2[$uphaseNr]["name"];
             $sprungstelle = $model3[$i]["sprungstelle"];
             $funktionsfolge = $model3[$i]["funktionsfolge"];
-            //$fktGesetze = $gesetze[$i]["name"];
-            $fktGesetze = $phaseName; //TESTING
-            
+            $fktGesetze ="";
+			for($k=0;$k<count($gesetze[$i]);$k++){
+			
+            $fktGesetze .=($k+1).'. '.$gesetze[$i][$k]["gesetz"].'<br/>'; //TESTING
+            }
             //keine Unterphase = X
             if($uphaseNr==0){
                 $uphaseNr="X";
@@ -865,6 +876,19 @@
 		
 		var value = ui.value;
 		});	
+	$("#select_unterphase").bind("multiselectclick", function(event, ui){
+		
+		var value = ui.value;
+		});	
+		$("#select_gesetze").multiselect({
+        selectedText: "# von # ausgewählt",
+        height: 345,
+        noneSelectedText: 'Wähle dein(e) Gesetz(e)'
+    });
+	$("#select_gesetze").bind("multiselectclick", function(event, ui){
+		
+		var value = ui.value;
+		});
 	$("#select_name").multiselect({
         selectedText: "# von # ausgewählt",
         height: 295,
@@ -990,12 +1014,14 @@
 			var bufferRausfg ="";
 			var bufferHsra ="";
 			var bufferHsrz ="";
+			var bufferGesetze ="";
 			var len=document.neu_form.select_grobphase.options.length;
 			var len2=document.neu_form.select_unterphase.options.length;
 			var len3=document.neu_form.select_name.options.length;
 			var len4=document.neu_form.select_profmb.options.length;
 			var len5=document.neu_form.select_hsra.options.length;
 			var len6=document.neu_form.select_hsrz.options.length;
+			var len7=document.neu_form.select_gesetze.options.length;
 			var j=0;
 			for (var i=0; i<len; i++)
 			{
@@ -1108,6 +1134,16 @@
                    bufferHsrz = bufferHsrz +","+"'"+document.neu_form.select_hsrz.options[i].value+"'";
 				}
 			}
+			for (var i=0; i<len7; i++)
+			{
+				if (document.neu_form.select_gesetze.options[i].selected && j==0){
+                   bufferGesetze = bufferGesetze +(document.neu_form.select_gesetze.options[i].value+1);
+				   j++;
+				}
+                else if (document.neu_form.select_gesetze.options[i].selected && j!=0){
+                   bufferGesetze = bufferGesetze +","+(document.neu_form.select_gesetze.options[i].value+1);
+				}
+			}
 			document.neu_form.form_grobphase.value= bufferGrobphase;
 			document.neu_form.form_unterphase.value= bufferUnterphase;
 			document.neu_form.form_name.value= bufferName;
@@ -1115,6 +1151,7 @@
 			document.neu_form.form_rausfg.value=bufferRausfg;
 			document.neu_form.form_hsra.value=bufferHsra;
 			document.neu_form.form_hsrz.value=bufferHsrz;
+			document.neu_form.form_gesetze.value=bufferGesetze;
 			//alert("hihi");
 			document.neu_form.submit();
                         

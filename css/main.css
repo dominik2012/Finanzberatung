@@ -398,9 +398,9 @@ body
 .function
 {
 	height: 500px;
-	width: 500px;
+	width: 550px;
 	z-index: 1000;
-	left: -500px;
+	left: -550px;
         padding-left: 20px;
         margin-top: 34px;
 	position: fixed;
@@ -417,7 +417,7 @@ body
 .functionhover
 {
         height: 500px;
-	width: 500px;
+	width: 550px;
 	z-index: 1000;
         padding-left: 20px;
         margin-top: 34px;

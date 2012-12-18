@@ -127,7 +127,7 @@ class SiteController extends Controller
 		$modelFunktion["profmb"] = Funktion::model()->getOptionsProfMitBeratung();
 		$modelFunktion["hsr_aktuell"] = Funktion::model()->getOptionsHSRAktuell();
 		$modelFunktion["hsr_zukuenftig"] = Funktion::model()->getOptionsHSRZukuenftig();
-		
+		$modelGesetz = Gesetz::model()->findAllBySql("SELECT * FROM gesetz");
 		//Zuweisung dieser in $model2, $model2[0]["filter"] ist das Model f�r den Filter selbst... k�nnen wir wohl rausnehmen, $model2[1][...] sind die Options f�r die Filterung
 		$model2[0]["filter"]=$filter;
 		$model2[1]["grobphase"]=$modelGrobphase;
@@ -140,7 +140,7 @@ class SiteController extends Controller
 		$model2[1]["rausfg"] = $modelFunktion["profmb"];
 		$model2[1]["hsra"] =$modelFunktion["hsr_aktuell"];
 		$model2[1]["hsrz"] = $modelFunktion["hsr_zukuenftig"];
-		
+		$model2[1]["gesetze"] = $modelGesetz;
 		if(isset($_POST['form_grobphase']))
 		{
 			
@@ -155,7 +155,7 @@ class SiteController extends Controller
 			$fil_rausfg = $_POST['form_rausfg'];
 			$fil_hsra = $_POST['form_hsra'];
 			$fil_hsrz = $_POST['form_hsrz'];
-			
+			$fil_gesetze = $_POST['form_gesetze'];
 			
 			//Pr�fung, ob Eingaben leer waren, falls leer werden in einem Buffer alle M�glichkeiten gespeichert
 			if($fil_grobphase==""){
@@ -241,7 +241,10 @@ class SiteController extends Controller
 			$fil[8] = "hsr_aktuell IN ($fil_hsra)";
 			$fil[9] = "hsr_zukuenftig IN ($fil_hsrz)";
 			$sql ="SELECT * FROM funktion WHERE ";
-			
+			if(!empty($fil_gesetze)){
+			$fil[10] = "gesetz.id IN ($fil_gesetze)";
+			$sql ="SELECT * FROM funktion INNER JOIN nm_funktion_gesetz ON funktion.id = nm_funktion_gesetz.f_id INNER JOIN gesetz ON nm_funktion_gesetz.g_id = gesetz.id WHERE ";
+			}
 			//Zusammensetzen der SQL-Abfrage
 			for($i=0;$i<count($fil);$i++){
 				$sql .=$fil[$i]." AND ";
@@ -253,6 +256,10 @@ class SiteController extends Controller
 				//Zuweisung von "leer", wenn keine Funktion die Kriterien erf�llt, wird in neu.php abgefragt.
 				if(empty($funktion[0]["id"])){
 					$funktion[0]["id"]="leer";
+					}
+				$gesetze = array();
+				for($i=0;$i<count($funktion);$i++){
+					$gesetze[$i]=$funktion[$i]->gesetze;
 					}
 				$grobphase = Grobphase::model()->findAllBySql("SELECT * FROM grobphase");
                         
@@ -285,7 +292,7 @@ class SiteController extends Controller
                             }
                         } */
 			
-			$this->render('neu',array('unterphase2'=>$unterphase2,'fil'=>$sql,'model'=>$funktion, 'model2' =>$model2, 'model3' =>$funktion, 'model4' => $fil_grobphase, 'name' => $fil_name, 'hsrz' => $fil_hsrz, 'hsra' => $fil_hsra, 'privob' => $fil_privob, 'profob' => $fil_profob, 'rausfg' => $fil_rausfg,'unterphase' => $fil_unterphase, 'privmb' => $fil_privmb, 'profmb' => $fil_profmb, 'model6' => $spaltennamen, 'model5' => $spaltennamen2, 'grobphase' => $grobphase,));
+			$this->render('neu',array('gesetze'=>$gesetze,'unterphase2'=>$unterphase2,'fil'=>$sql,'model'=>$funktion, 'model2' =>$model2, 'model3' =>$funktion, 'model4' => $fil_grobphase, 'name' => $fil_name, 'hsrz' => $fil_hsrz, 'hsra' => $fil_hsra, 'privob' => $fil_privob, 'profob' => $fil_profob, 'rausfg' => $fil_rausfg,'unterphase' => $fil_unterphase, 'privmb' => $fil_privmb, 'profmb' => $fil_profmb, 'model6' => $spaltennamen, 'model5' => $spaltennamen2, 'grobphase' => $grobphase,));
 		}
 		else{
 		$model = array($funktion,$filter,);

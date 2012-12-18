@@ -8223,3 +8223,42 @@ Stack trace:
 REQUEST_URI=/Finanzberatung/index.php?r=site/neu
 in C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php (272)
 in C:\xampp\htdocs\Finanzberatung\index.php (13)
+2012/12/18 09:10:50 [error] [php] Undefined index: gesetze (C:\xampp\htdocs\Finanzberatung\protected\views\site\neu.php:66)
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(870): SiteController->renderFile()
+#1 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(783): SiteController->renderPartial()
+#2 C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php(294): SiteController->render()
+#3 C:\xampp\htdocs\Finanzberatung\framework\web\actions\CInlineAction.php(50): SiteController->actionNeu()
+#4 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): SiteController->runAction()
+#6 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#7 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): SiteController->run()
+#8 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#9 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\Finanzberatung\index.php(13): CWebApplication->run()
+REQUEST_URI=/Finanzberatung/index.php?r=site/neu
+in C:\xampp\htdocs\Finanzberatung\protected\views\site\neu.php (66)
+in C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php (294)
+in C:\xampp\htdocs\Finanzberatung\index.php (13)
+2012/12/18 09:13:56 [error] [php] Undefined index: form_gesetze (C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php:158)
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): SiteController->runAction()
+#1 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#2 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): SiteController->run()
+#3 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#4 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\Finanzberatung\index.php(13): CWebApplication->run()
+REQUEST_URI=/Finanzberatung/index.php?r=site/neu
+in C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php (158)
+in C:\xampp\htdocs\Finanzberatung\index.php (13)
+2012/12/18 09:15:33 [error] [php] Undefined index: form_gesetze (C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php:158)
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): SiteController->runAction()
+#1 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#2 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): SiteController->run()
+#3 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#4 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\Finanzberatung\index.php(13): CWebApplication->run()
+REQUEST_URI=/Finanzberatung/index.php?r=site/neu
+in C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php (158)
+in C:\xampp\htdocs\Finanzberatung\index.php (13)

@@ -134,7 +134,7 @@
     
     <div class="row">
     <div class="regulatorien">
-        <div class="topline">Regulatorien</div>
+        <div class="topline">Gesetze</div>
         <div class="inhalt"><?php echo $funktionsdaten['weiterereg'] ?></div>
     </div>
     
