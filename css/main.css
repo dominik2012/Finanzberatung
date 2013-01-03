@@ -822,6 +822,19 @@ div.search-form
         box-shadow: 4px 5px 10px 2px #C5C5C5;
 }
 
+.funktionsfolge
+{
+        width: 48%;
+        min-width: 580px;
+        margin: 0 auto;
+        margin-bottom: 30px;
+        min-height: 150px;
+        text-align: left;
+        color: white;
+        float: right;
+        box-shadow: 4px 5px 10px 2px #C5C5C5;
+}
+
 
 .regulatorien
 {

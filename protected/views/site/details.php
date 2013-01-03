@@ -152,33 +152,38 @@
         <div class="topline">Sprungstellen</div>
         <div class="inhalt3">
             <?php
+                
                 $ausgabe = explode(",",$funktionsdaten['sprungstelle']);
                 $ausgabeLength = count($ausgabe);
 
                 for($i=0;$i<$ausgabeLength;$i++){
-                    $funktionsNr = $funktion[$ausgabe[$i]]["nummer"];
-                    $funktionsName = $funktion[$ausgabe[$i]]["name"];
+                    if(isset($funktion[$ausgabe[$i]]["nummer"])){
+                        $funktionsNr = $funktion[$ausgabe[$i]]["nummer"];
+                        $funktionsName = $funktion[$ausgabe[$i]]["name"];
                     
-                    //echo '<a href="'.$link.$funktionsNr.'">['.$funktionsNr.'] '.$funktionsName.'</a></br></br>';
-                    echo '['.$funktionsNr.'] '.$funktionsName.'</br></br>';
+                        echo '<a href="'.$link.$funktionsNr.'">['.$funktionsNr.'] '.$funktionsName.'</a></br></br>';
+                        //echo '['.$funktionsNr.'] '.$funktionsName.'</br></br>';
+                    }
                 } 
             ?>
         </div>
     </div>
 
-    <div class="funktionsfolgen">
+    <div class="funktionsfolge">
         <div class="topline">Funktionsfolgen</div>
         <div class="inhalt3">
             <?php
                 $ausgabe = explode(",",$funktionsdaten['funktionsfolge']);
                 $ausgabeLength = count($ausgabe);
-
+                
                 for($i=0;$i<$ausgabeLength;$i++){
-                    $funktionsNr = $funktion[$ausgabe[$i]]["nummer"];
-                    $funktionsName = $funktion[$ausgabe[$i]]["name"];
+                    if(isset($funktion[$ausgabe[$i]]["nummer"])){
+                        $funktionsNr = $funktion[$ausgabe[$i]]["nummer"];
+                        $funktionsName = $funktion[$ausgabe[$i]]["name"];
                     
-                    //echo '<a href="'.$link.$funktionsNr.'">['.$funktionsNr.'] '.$funktionsName.'</a></br></br>';
-                    echo '['.$funktionsNr.'] '.$funktionsName.'</br></br>';
+                        echo '<a href="'.$link.$funktionsNr.'">['.$funktionsNr.'] '.$funktionsName.'</a></br></br>';
+                        //echo '['.$funktionsNr.'] '.$funktionsName.'</br></br>';
+                    }
                 } 
             ?>
         </div>
