@@ -116,7 +116,29 @@ class SiteController extends Controller
                 $spaltennamen = Funktion::model()->attributeLabelsIndexAreNumbers();
                 $grobphase = new Grobphase;
                 $unterphase2 = Grobphase::model()->findAllBySql("SELECT * FROM unterphase");
+                
                 $funktionGes = Funktion::model()->findAllBySql("SELECT * FROM funktion");
+                $spruengeLength = count($funktionGes);
+                $link = "http://localhost/Finanzberatung/index.php?r=site/details&fktNr=";
+                $ausgabeGesamt = "";
+                for($i=0;$i<$spruengeLength;$i++){
+                        $sprungstellen = $funktionGes[$i]["sprungstelle"];
+                      if($sprungstellen != null){
+                        $fktNummern = explode(",", $sprungstellen);
+                        $fktNrLength = count($fktNummern);
+                        for($j=0; $j<$fktNrLength; $j++){
+                           
+                            $fktNr = $funktionGes[$fktNummern[$j]]["nummer"];
+                            $fktName = $funktionGes[$fktNummern[$j]]["name"];
+                            //$temp = '<a class="links" href="'.$link.$fktNr.'">['.$fktNr.'] '.$fktName.'</a></br></br>';
+                            $temp = $fktNr.',,'.$fktName;
+                            $ausgabeGesamt .= $temp ;
+                        }
+                        $sprungstellenArr[$i] = $ausgabeGesamt;
+                      }else{
+                        $sprungstellenArr[$i] = null;  
+                      }
+                }
                 //$gesetz = Gesetz::model()->findAllBySql("SELECT * FROM gesetz");
                 //$gesetze = $gesetz->gesetze;
 		
@@ -302,7 +324,7 @@ class SiteController extends Controller
                             }
                         } */
 			
-			$this->render('neu',array('gesetze'=>$gesetze,'unterphase2'=>$unterphase2,'fil'=>$sql,'model'=>$funktion, 'model2' =>$model2, 'model3' =>$funktion, 'model4' => $fil_grobphase, 'name' => $fil_name, 'hsrz' => $fil_hsrz, 'hsra' => $fil_hsra, 'privob' => $fil_privob, 'profob' => $fil_profob, 'rausfg' => $fil_rausfg,'unterphase' => $fil_unterphase, 'privmb' => $fil_privmb, 'profmb' => $fil_profmb, 'model6' => $spaltennamen, 'model5' => $spaltennamen2, 'grobphase' => $grobphase,));
+			$this->render('neu',array( 'sprungstellenArr' => $sprungstellenArr, 'gesetze'=>$gesetze,'unterphase2'=>$unterphase2,'fil'=>$sql,'model'=>$funktion, 'model2' =>$model2, 'model3' =>$funktion, 'model4' => $fil_grobphase, 'name' => $fil_name, 'hsrz' => $fil_hsrz, 'hsra' => $fil_hsra, 'privob' => $fil_privob, 'profob' => $fil_profob, 'rausfg' => $fil_rausfg,'unterphase' => $fil_unterphase, 'privmb' => $fil_privmb, 'profmb' => $fil_profmb, 'model6' => $spaltennamen, 'model5' => $spaltennamen2, 'grobphase' => $grobphase,));
 		}
 		else{
 		$model = array($funktion,$filter,);
