@@ -133,20 +133,32 @@
     <div class="row">
     <div class="regulatorien">
         <div class="topline">Gesetze</div>
-        <div class="inhalt3"><?php echo $funktionsdaten['weiterereg']; ?></div>
+        <div class="inhalt2"><?php for($i=0;$i<count($gesetze);$i++){echo ($i+1).". ".$gesetze[$i]["gesetz"].'<br/>';} ?></div>
     </div>
         
-    <div class="businessRules">
-        <div class="topline">Business Rules</div>
-        <div class="inhaltBR"><?php for($i=0;$i<count($business_rules);$i++){echo ($i+1).". ".$business_rules[$i]["name"].":     ".$business_rules[$i]["beschreibung"].'<br/>';} ?></div>
-    </div>  
-        
-        <div class="hinweise">
+    <div class="hinweise">
         <div class="topline">Hinweise</div>
         <div class="inhalt2"><?php echo $funktionsdaten['hinweis']; ?></div>
     </div>
     </div>
-    
+        
+    <div class="row">
+    <div class="auslegung">
+        <div class="topline">Auslegung</div>
+        <div class="inhaltBR"><?php //for($i=0;$i<count($business_rules);$i++){echo ($i+1).". ".$business_rules[$i]["name"].":     ".$business_rules[$i]["beschreibung"].'<br/>';} ?></div>
+    </div> 
+        
+    <div class="businessRules">
+        <div class="topline">Business Rules</div>
+        <div class="inhaltBR"><?php for($i=0;$i<count($business_rules);$i++){echo ($i+1).". ".$business_rules[$i]["name"].":     ".$business_rules[$i]["beschreibung"].'<br/>';} ?></div>
+    </div>
+        
+    </div>
+
+    <div class="row">
+        
+    </div>
+
     <div class="row">
     <div class="sprungstelle">
         <div class="topline">Sprungstellen</div>
@@ -161,7 +173,7 @@
                         $funktionsNr = $funktion[$ausgabe[$i]]["nummer"];
                         $funktionsName = $funktion[$ausgabe[$i]]["name"];
                     
-                        echo '<a href="'.$link.$funktionsNr.'">['.$funktionsNr.'] '.$funktionsName.'</a></br></br>';
+                        echo '<a class="links" href="'.$link.$funktionsNr.'">['.$funktionsNr.'] '.$funktionsName.'</a></br></br>';
                         //echo '['.$funktionsNr.'] '.$funktionsName.'</br></br>';
                     }
                 } 
@@ -181,7 +193,7 @@
                         $funktionsNr = $funktion[$ausgabe[$i]]["nummer"];
                         $funktionsName = $funktion[$ausgabe[$i]]["name"];
                     
-                        echo '<a href="'.$link.$funktionsNr.'">['.$funktionsNr.'] '.$funktionsName.'</a></br></br>';
+                        echo '<a class="links" href="'.$link.$funktionsNr.'">['.$funktionsNr.'] '.$funktionsName.'</a></br></br>';
                         //echo '['.$funktionsNr.'] '.$funktionsName.'</br></br>';
                     }
                 } 

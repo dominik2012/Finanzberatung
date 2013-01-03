@@ -313,11 +313,13 @@ class SiteController extends Controller
          public function actionDetails($fktNr){
             $fktNr = (int)($fktNr);
             //$funktionsdaten = Funktion::model()->getRowByNumber($fktNr);
-			$funktionsdaten = Funktion::model()->findBySql("SELECT * FROM funktion WHERE nummer = $fktNr");
+            $funktionsdaten = Funktion::model()->findBySql("SELECT * FROM funktion WHERE nummer = $fktNr");
             $funktion = Funktion::model()->findAllBySql("SELECT * FROM funktion");
             $grobphase = Grobphase::model()->findAllBySql("SELECT * FROM grobphase");
             $unterphase = Grobphase::model()->findAllBySql("SELECT * FROM unterphase");
             $business_rules = $funktionsdaten->business_rules;
+            $gesetze = $funktionsdaten->gesetze;
+            //$auslegung = $funktionsdaten->auslegung;
 			//$business_rules= "asd";
             $j=0;
             $sprung[$j] = 0;
@@ -401,6 +403,6 @@ class SiteController extends Controller
             }
             $nextPhase = $sprung[$nr];
             
-            $this->render('details', array('business_rules' => $business_rules, 'sprung'=>$sprung, 'nextPhase'=>$nextPhase, 'prevPhase'=>$prevPhase, 'prevFkt'=>$prevFkt, 'nextFkt'=>$nextFkt, 'funktion'=>$funktion, 'funktionsdaten'=>$funktionsdaten, 'fktNr'=>$fktNr, 'grobphase'=>$grobphase, 'unterphase'=>$unterphase));
+            $this->render('details', array( 'gesetze' => $gesetze, 'business_rules' => $business_rules, 'sprung'=>$sprung, 'nextPhase'=>$nextPhase, 'prevPhase'=>$prevPhase, 'prevFkt'=>$prevFkt, 'nextFkt'=>$nextFkt, 'funktion'=>$funktion, 'funktionsdaten'=>$funktionsdaten, 'fktNr'=>$fktNr, 'grobphase'=>$grobphase, 'unterphase'=>$unterphase));
         }
 }

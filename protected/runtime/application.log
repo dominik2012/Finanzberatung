@@ -8840,3 +8840,66 @@ REQUEST_URI=/Finanzberatung/index.php?r=site/details&fktNr=49
 in C:\xampp\htdocs\Finanzberatung\protected\views\site\details.php (161)
 in C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php (404)
 in C:\xampp\htdocs\Finanzberatung\index.php (13)
+2013/01/03 13:41:14 [error] [exception.CException] exception 'CException' with message 'Property "Funktion.auslegung" is not defined.' in C:\xampp\htdocs\Finanzberatung\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\db\ar\CActiveRecord.php(144): CComponent->__get('auslegung')
+#1 C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php(321): CActiveRecord->__get('auslegung')
+#2 [internal function]: SiteController->actionDetails('46')
+#3 C:\xampp\htdocs\Finanzberatung\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(SiteController), Array)
+#4 C:\xampp\htdocs\Finanzberatung\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(SiteController), Object(ReflectionMethod), Array)
+#5 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#6 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#7 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): CController->run('details')
+#9 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController('site/details')
+#10 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\Finanzberatung\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/Finanzberatung/index.php?r=site/details&fktNr=46
+HTTP_REFERER=http://localhost/Finanzberatung/index.php?r=site/neu
+---
+2013/01/03 13:49:42 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'auslegung_auslegung.br_id)' in 'on clause'. The SQL statement executed was: SELECT `auslegung`.`id` AS `t1_c0`, `auslegung`.`name` AS `t1_c1`, `auslegung`.`beschreibung` AS `t1_c2` FROM `auslegung` `auslegung`  INNER JOIN `nm_auslegung_business_rule` `auslegung_auslegung` ON (`auslegung_auslegung`.`a_id`=:ypl0) AND (`auslegung`.`id`=`auslegung_auslegung`.`br_id)`).
+in C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php (321)
+in C:\xampp\htdocs\Finanzberatung\index.php (13)
+2013/01/03 13:49:42 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'auslegung_auslegung.br_id)' in 'on clause'. The SQL statement executed was: SELECT `auslegung`.`id` AS `t1_c0`, `auslegung`.`name` AS `t1_c1`, `auslegung`.`beschreibung` AS `t1_c2` FROM `auslegung` `auslegung`  INNER JOIN `nm_auslegung_business_rule` `auslegung_auslegung` ON (`auslegung_auslegung`.`a_id`=:ypl0) AND (`auslegung`.`id`=`auslegung_auslegung`.`br_id)`)' in C:\xampp\htdocs\Finanzberatung\framework\db\CDbCommand.php:528
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\Finanzberatung\framework\db\ar\CActiveFinder.php(784): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\Finanzberatung\framework\db\ar\CActiveFinder.php(499): CJoinElement->runQuery(Object(CJoinQuery))
+#3 C:\xampp\htdocs\Finanzberatung\framework\db\ar\CActiveFinder.php(167): CJoinElement->lazyFind(Object(Funktion))
+#4 C:\xampp\htdocs\Finanzberatung\framework\db\ar\CActiveRecord.php(273): CActiveFinder->lazyFind(Object(Funktion))
+#5 C:\xampp\htdocs\Finanzberatung\framework\db\ar\CActiveRecord.php(142): CActiveRecord->getRelated('auslegung')
+#6 C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php(321): CActiveRecord->__get('auslegung')
+#7 [internal function]: SiteController->actionDetails('46')
+#8 C:\xampp\htdocs\Finanzberatung\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(SiteController), Array)
+#9 C:\xampp\htdocs\Finanzberatung\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(SiteController), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): CController->run('details')
+#14 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController('site/details')
+#15 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\Finanzberatung\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/Finanzberatung/index.php?r=site/details&fktNr=46
+HTTP_REFERER=http://localhost/Finanzberatung/index.php?r=site/neu
+---
+2013/01/03 13:56:20 [error] [php] Undefined variable: auslegung (C:\xampp\htdocs\Finanzberatung\protected\views\site\details.php:153)
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(870): SiteController->renderFile()
+#1 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(783): SiteController->renderPartial()
+#2 C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php(405): SiteController->render()
+#3 unknown(0): SiteController->actionDetails()
+#4 C:\xampp\htdocs\Finanzberatung\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs()
+#5 C:\xampp\htdocs\Finanzberatung\framework\web\actions\CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#6 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(309): CInlineAction->runWithParams()
+#7 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): SiteController->runAction()
+#8 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#9 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): SiteController->run()
+#10 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#11 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\Finanzberatung\index.php(13): CWebApplication->run()
+REQUEST_URI=/Finanzberatung/index.php?r=site/details&fktNr=46
+in C:\xampp\htdocs\Finanzberatung\protected\views\site\details.php (153)
+in C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php (405)
+in C:\xampp\htdocs\Finanzberatung\index.php (13)

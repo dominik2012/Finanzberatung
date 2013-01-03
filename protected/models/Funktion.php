@@ -107,7 +107,7 @@ class Funktion extends CActiveRecord
 			'unterphase' => array(self::BELONGS_TO, 'Unterphase', 'unterphase_id'),
 			'grobphase' => array(self::BELONGS_TO, 'Grobphase', 'grobphase_id'),
 			'business_rules' => array(self::MANY_MANY, 'BusinessRule', 'nm_funktion_business_rule(f_id,br_id)'),
-            'gesetze' => array(self::MANY_MANY, 'Gesetz', 'nm_funktion_gesetz(f_id,g_id)'),
+                        'gesetze' => array(self::MANY_MANY, 'Gesetz', 'nm_funktion_gesetz(f_id,g_id)'),
             );
 	}
 
@@ -128,8 +128,8 @@ class Funktion extends CActiveRecord
 			'hinweis' => 'Hinweis',
 			'weiterereg' => 'Weitere Regularien',
 			'hsr_aktuell' => 'Handlungsspielraum Aktuell',
-			'hsr_zukuenftig' => 'Handlungsspielraum Zukünftig',
-			'r_ausf_geschaeft' => 'Reines Ausführungsgeschäft',
+			'hsr_zukuenftig' => 'Handlungsspielraum Zukï¿½nftig',
+			'r_ausf_geschaeft' => 'Reines Ausfï¿½hrungsgeschï¿½ft',
 			'spezialist_vs_generalist' => 'Spezialist Vs Generalist',
 			'frontoffice_generalist' => 'Frontoffice Generalist',
 			'frontoffice_experte' => 'Frontoffice Experte',
