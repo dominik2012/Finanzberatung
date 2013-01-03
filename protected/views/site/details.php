@@ -147,6 +147,44 @@
     </div>
     </div>
     
+    <div class="row">
+    <div class="sprungstelle">
+        <div class="topline">Sprungstellen</div>
+        <div class="inhalt3">
+            <?php
+                $ausgabe = explode(",",$funktionsdaten['sprungstelle']);
+                $ausgabeLength = count($ausgabe);
+
+                for($i=0;$i<$ausgabeLength;$i++){
+                    $funktionsNr = $funktion[$ausgabe[$i]]["nummer"];
+                    $funktionsName = $funktion[$ausgabe[$i]]["name"];
+                    
+                    //echo '<a href="'.$link.$funktionsNr.'">['.$funktionsNr.'] '.$funktionsName.'</a></br></br>';
+                    echo '['.$funktionsNr.'] '.$funktionsName.'</br></br>';
+                } 
+            ?>
+        </div>
+    </div>
+
+    <div class="funktionsfolgen">
+        <div class="topline">Funktionsfolgen</div>
+        <div class="inhalt3">
+            <?php
+                $ausgabe = explode(",",$funktionsdaten['funktionsfolge']);
+                $ausgabeLength = count($ausgabe);
+
+                for($i=0;$i<$ausgabeLength;$i++){
+                    $funktionsNr = $funktion[$ausgabe[$i]]["nummer"];
+                    $funktionsName = $funktion[$ausgabe[$i]]["name"];
+                    
+                    //echo '<a href="'.$link.$funktionsNr.'">['.$funktionsNr.'] '.$funktionsName.'</a></br></br>';
+                    echo '['.$funktionsNr.'] '.$funktionsName.'</br></br>';
+                } 
+            ?>
+        </div>
+    </div>
+    </div>
+    
     <div class="row">  
     <?php
     if($funktionsdaten['hsr_aktuell']!= null || $funktionsdaten['hsr_zukuenftig']!= null){?>
@@ -193,11 +231,7 @@
         <div class="topline">Ressourcen</div>
         <div class="inhalt3"><?php echo $funktionsdaten['ressourcen']; ?></div>
     </div>
-        
-    <div class="smallbox">
-        <div class="topline">Sprungstellen</div>
-        <div class="inhalt3"><?php echo $funktionsdaten['sprungstelle']; ?></div>
-    </div>
+
     </div>
     
     <div class="row">   
