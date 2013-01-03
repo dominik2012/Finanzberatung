@@ -374,6 +374,8 @@
                                 $title = str_replace('"',"&#039;",  shortName($inhalt));
                                 echo '<option value="'.$model5[$i].'" id="'.$model5[$i].'" name="'.$model5[$i].'" title="'.$title.'");>'.$inhalt.'</option>';
                             }
+							// Reines Ausfuehrungsgeschaeft
+							echo '<option value="'.$model5[12].'" id="'.$model5[12].'" name="'.$model5[12].'" title="'.$model6[12].'");>'.$model6[12].'</option>';
                             echo '</optgroup>';
                             
                             //Gesetz
@@ -411,7 +413,31 @@
                                 echo '<option value="'.$model5[$i].'" id="'.$model5[$i].'" name="'.$model5[$i].'" title="'.$title.'");>'.$inhalt.'</option>';
                             }
                             echo '</optgroup>';
-                                                          
+                            echo '<optgroup label="Szenario Filiale">';
+							for ($i=30;$i<35;$i++){
+                                $inhalt = $model6[$i]; 
+                                $title = str_replace('"',"&#039;",  shortName($inhalt));
+                                echo '<option value="'.$model5[$i].'" id="'.$model5[$i].'" name="'.$model5[$i].'" title="'.$title.'");>'.$inhalt.'</option>';
+                            }
+                            echo '</optgroup>';	
+							echo '<optgroup label="Szenario Online">';
+							for ($i=35;$i<40;$i++){
+                                $inhalt = $model6[$i]; 
+                                $title = str_replace('"',"&#039;",  shortName($inhalt));
+                                echo '<option value="'.$model5[$i].'" id="'.$model5[$i].'" name="'.$model5[$i].'" title="'.$title.'");>'.$inhalt.'</option>';
+                            }
+                            echo '</optgroup>';
+							echo '<optgroup label="Szenario Mobil">';
+							for ($i=40;$i<45;$i++){
+                                $inhalt = $model6[$i]; 
+                                $title = str_replace('"',"&#039;",  shortName($inhalt));
+                                echo '<option value="'.$model5[$i].'" id="'.$model5[$i].'" name="'.$model5[$i].'" title="'.$title.'");>'.$inhalt.'</option>';
+                            }
+                            echo '</optgroup>';
+							// Business Rule
+							$inhalt_br = $model6[45];
+							$title_br = str_replace('"',"&#039;",  shortName($inhalt_br));
+							echo '<option value="'.$model5[45].'" id="'.$model5[45].'" name="'.$model5[45].'" title="'.$title_br.'");>'.$inhalt_br.'</option>';
 			//}    
                 ?>
                 </select>
@@ -614,6 +640,7 @@
                             $style1= " style='width: 52px; overflow: hidden;'";
                             
                             //Grafik Abfragen
+						if($j<45){
                             if($spaInhalt == "gesetzFunktion"){
                                 $spaInhalt = "<img title='Funktion bedingt durch Gesetz' src='/Finanzberatung/css/images/pfeile/gesetzFunktion.png' style='padding-top: 70px;'>";
                                 $style = $style1;
@@ -635,7 +662,7 @@
                                 $spaInhalt = "<img title='Handlungsspielraum zukünftig weiter eingeschränkt' src='/Finanzberatung/css/images/pfeile/gelbHoch.png' style='padding-top: 70px;'>";
                                 $style = $style1;
                             }
-                            
+                            }
                             
                             //Ausgabe Inhalt pro Accordion______________________
                             
@@ -741,7 +768,8 @@
                 
                 var fktName = this.attributes["name"].value;
                 var spruenge = this.attributes["data-spruenge"].value;
-                
+                var spruengeArr = spruenge.split(",");
+                var ausgabe;
                 var popupID = this.id;
                 
                 var popup = document.createElement('div');
@@ -756,7 +784,8 @@
                 gesetzTop.innerHTML = fktName;
                 var gesetzContent = document.createElement('div');
                 gesetzContent.className = 'spruengeContent';
-                gesetzContent.innerHTML = spruenge;
+                gesetzContent.innerHTML = spruengeArr;
+                
                 popup.appendChild(cancel);
                 popup.appendChild(gesetzTop);
                 popup.appendChild(gesetzContent);                                    
@@ -836,18 +865,42 @@
 
 <!-- MULTISELECT -------------------------------------------------------------->   
 <script type="text/javascript"> 
+	function dump(obj) {
+    var out = '';
+    for (var i in obj) {
+        out += i + ": " + obj[i] + "\n";
+    }
 
+    alert(out);
+	}
     $("#multiselect").multiselect({
         header: false,
         height: 500,
         selectedText: "# von # ausgewählt",
-        noneSelectedText: 'Wähle deine Spalten'
+        noneSelectedText: 'Wähle deine Spalten',
+		optgrouptoggle: function(event, ui){
+		var values = $.map(ui.inputs, function(checkbox){
+         return checkbox.value;
+		}).join(", ");
+		var val = values.split(", ");
+		//dump(val);
+		for(var i=0;i<val.length;i++){
+			val[i]= '.'+val[i];
+			//alert(val[i]);
+			if($(val[i]).is(':visible')){
+				$(val[i]).css('display','none');
+			}
+			else{
+				$(val[i]).css('display','block');
+			}
+		}
+		}
     });
 
     $("#multiselect").bind("multiselectclick", function(event, ui){
         
         var value = ui.value;
-
+		
         var val = '.'+value;
 
         if($(val).is(':visible')){
@@ -857,11 +910,25 @@
             $(val).css('display','block');
         }
     });
-    
+    $("#multiselect").bind("optgrouptoggle", function(event, ui){
+	alert ("jojo");
+        var values = $.map(ui.inputs, function(checkbox){
+         for(var i=0;i<values.length;i++){
+			var val = '.'+values[i];
+			alert(val);
+			if($(val).is(':visible')){
+				$(val).css('display','none');
+			}
+        else{
+            $(val).css('display','block');
+			}
+		}
+		}
+    )});
     $("#select_grobphase").multiselect({
         selectedText: "# von # ausgewählt",
         height: 344,
-        noneSelectedText: 'Wähle deine Grobphase(n)'
+        noneSelectedText: 'Wählen Sie ihre Grobphase(n)'
     });
 	$("#select_grobphase").bind("multiselectclick", function(event, ui){
 		
@@ -870,7 +937,7 @@
 	$("#select_unterphase").multiselect({
         selectedText: "# von # ausgewählt",
         height: 345,
-        noneSelectedText: 'Wähle deine Unterphase(n)'
+        noneSelectedText: 'Wählen Sie ihre Unterphase(n)'
     });
 	$("#select_unterphase").bind("multiselectclick", function(event, ui){
 		
@@ -883,7 +950,7 @@
 		$("#select_gesetze").multiselect({
         selectedText: "# von # ausgewählt",
         height: 345,
-        noneSelectedText: 'Wähle dein(e) Gesetz(e)'
+        noneSelectedText: 'Wählen Sie ihr(e) Gesetz(e)'
     });
 	$("#select_gesetze").bind("multiselectclick", function(event, ui){
 		
@@ -892,7 +959,7 @@
 	$("#select_name").multiselect({
         selectedText: "# von # ausgewählt",
         height: 295,
-        noneSelectedText: 'Wähle deine Funktion(en)'
+        noneSelectedText: 'Wählen Sie ihre Funktion(en)'
     });
 	$("#select_name").bind("multiselectclick", function(event, ui){
 		

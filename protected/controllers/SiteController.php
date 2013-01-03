@@ -112,6 +112,7 @@ class SiteController extends Controller
 		$funktion = new Funktion;
 		$filter = new NeuForm;
 		$spaltennamen2 = Funktion::model()->getTableSchema()->getColumnNames();
+		$spaltennamen2[45] = "b_name";
                 $spaltennamen = Funktion::model()->attributeLabelsIndexAreNumbers();
                 $grobphase = new Grobphase;
                 $unterphase2 = Grobphase::model()->findAllBySql("SELECT * FROM unterphase");
@@ -261,6 +262,15 @@ class SiteController extends Controller
 				for($i=0;$i<count($funktion);$i++){
 					$gesetze[$i]=$funktion[$i]->gesetze;
 					}
+				$business_rules = array();
+				for($i=0;$i<count($funktion);$i++){
+					$business_rules=$funktion[$i]->business_rules;
+					$br_buffer ="";
+					for($j=0;$j<count($business_rules);$j++){
+						$br_buffer  .= $business_rules[$j]["name"].'<br/>';
+						}
+					$funktion[$i]["b_name"]= $br_buffer;
+					}
 				$grobphase = Grobphase::model()->findAllBySql("SELECT * FROM grobphase");
                         
 
@@ -302,11 +312,13 @@ class SiteController extends Controller
         
          public function actionDetails($fktNr){
             $fktNr = (int)($fktNr);
-            $funktionsdaten = Funktion::model()->getRowByNumber($fktNr);
+            //$funktionsdaten = Funktion::model()->getRowByNumber($fktNr);
+			$funktionsdaten = Funktion::model()->findBySql("SELECT * FROM funktion WHERE nummer = $fktNr");
             $funktion = Funktion::model()->findAllBySql("SELECT * FROM funktion");
             $grobphase = Grobphase::model()->findAllBySql("SELECT * FROM grobphase");
             $unterphase = Grobphase::model()->findAllBySql("SELECT * FROM unterphase");
-            
+            $business_rules = $funktionsdaten->business_rules;
+			//$business_rules= "asd";
             $j=0;
             $sprung[$j] = 0;
             $lastFct = 0;
@@ -389,6 +401,6 @@ class SiteController extends Controller
             }
             $nextPhase = $sprung[$nr];
             
-            $this->render('details', array('sprung'=>$sprung, 'nextPhase'=>$nextPhase, 'prevPhase'=>$prevPhase, 'prevFkt'=>$prevFkt, 'nextFkt'=>$nextFkt, 'funktion'=>$funktion, 'funktionsdaten'=>$funktionsdaten, 'fktNr'=>$fktNr, 'grobphase'=>$grobphase, 'unterphase'=>$unterphase));
+            $this->render('details', array('business_rules' => $business_rules, 'sprung'=>$sprung, 'nextPhase'=>$nextPhase, 'prevPhase'=>$prevPhase, 'prevFkt'=>$prevFkt, 'nextFkt'=>$nextFkt, 'funktion'=>$funktion, 'funktionsdaten'=>$funktionsdaten, 'fktNr'=>$fktNr, 'grobphase'=>$grobphase, 'unterphase'=>$unterphase));
         }
 }

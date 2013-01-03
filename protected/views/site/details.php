@@ -50,18 +50,16 @@
     </div>
    
     <div class="row">
-    <?php
-    if($funktionsdaten['beschreibung']!= null){?>
+  
+    
     <div class="beschreibung">
         <div class="topline">Beschreibung</div>
         <div class="inhalt2"><?php echo $funktionsdaten['beschreibung']; ?></div>
     </div>
     
-    <?php } ?>
-    
     <div class="beratung">
         <div class="topline">Beratung</div>
-        <div class="inhalt">
+        <div class="inhalt3">
             <table class="inhalte">
                 <tr>
                     <td>Privat mit Beratung</td>
@@ -135,22 +133,26 @@
     <div class="row">
     <div class="regulatorien">
         <div class="topline">Gesetze</div>
-        <div class="inhalt"><?php echo $funktionsdaten['weiterereg'] ?></div>
+        <div class="inhalt3"><?php echo $funktionsdaten['weiterereg']; ?></div>
     </div>
-    
-    <div class="hinweise">
-        <div class="topline">Hinweise</div>
-        <div class="inhalt2"><?php echo $funktionsdaten['hinweis'] ?></div>
-    </div>  
-    </div>
-    
-    <div class="row">
         
+    <div class="businessRules">
+        <div class="topline">Business Rules</div>
+        <div class="inhaltBR"><?php for($i=0;$i<count($business_rules);$i++){echo ($i+1).". ".$business_rules[$i]["name"].":     ".$business_rules[$i]["beschreibung"].'<br/>';} ?></div>
+    </div>  
+        
+        <div class="hinweise">
+        <div class="topline">Hinweise</div>
+        <div class="inhalt2"><?php echo $funktionsdaten['hinweis']; ?></div>
+    </div>
+    </div>
+    
+    <div class="row">  
     <?php
     if($funktionsdaten['hsr_aktuell']!= null || $funktionsdaten['hsr_zukuenftig']!= null){?>
     <div class="smallbox">
         <div class="topline">Spielraum</div>
-        <div class="inhalt">
+        <div class="inhalt3">
             <table class="inhalte">
                 <tr>
                     <td style="width: 61px;">aktuell</td>
@@ -186,59 +188,165 @@
             </table>
         </div>
     </div>    
+    
+    <div class="smallbox">
+        <div class="topline">Ressourcen</div>
+        <div class="inhalt3"><?php echo $funktionsdaten['ressourcen']; ?></div>
+    </div>
         
     <div class="smallbox">
+        <div class="topline">Sprungstellen</div>
+        <div class="inhalt3"><?php echo $funktionsdaten['sprungstelle']; ?></div>
+    </div>
+    </div>
+    
+    <div class="row">   
+    <div class="smallbox">
         <div class="topline">Spezialist/Generalist</div>
-        <div class="inhalt"><?php echo $funktionsdaten['spezialist_vs_generalist'] ?></div>
+        <div class="inhalt">
+            <?php 
+                if($funktionsdaten['spezialist_vs_generalist'] == "akteur"){
+                    echo "Akteur";
+                }else if($funktionsdaten['spezialist_vs_generalist'] == "betroffener"){
+                    echo "Betroffener";
+                } 
+            ?>
+        </div>
     </div>
 
 
     <div class="smallbox">
         <div class="topline">Frontoffice Generalist</div>
-        <div class="inhalt"><?php echo $funktionsdaten['frontoffice_generalist'] ?></div>
+        <div class="inhalt">
+            <?php 
+                if($funktionsdaten['frontoffice_generalist'] == "akteur"){
+                    echo "Akteur";
+                }else if($funktionsdaten['frontoffice_generalist'] == "betroffener"){
+                    echo "Betroffener";
+                } 
+            ?>
+        </div>
     </div>
-
-    
-
 
     <div class="smallbox">
         <div class="topline">Frontoffice Experte</div>
-        <div class="inhalt"><?php echo $funktionsdaten['frontoffice_experte'] ?></div>
+        <div class="inhalt">
+            <?php 
+                if($funktionsdaten['frontoffice_experte'] == "akteur"){
+                    echo "Akteur";
+                }else if($funktionsdaten['frontoffice_experte'] == "betroffener"){
+                    echo "Betroffener";
+                } 
+            ?>
+        </div>
     </div>
 
     <div class="smallbox">
         <div class="topline">Backoffice</div>
-        <div class="inhalt"><?php echo $funktionsdaten['backoffice'] ?></div>
+        <div class="inhalt">
+            <?php 
+                if($funktionsdaten['backoffice'] == "akteur"){
+                    echo "Akteur";
+                }else if($funktionsdaten['backoffice'] == "betroffener"){
+                    echo "Betroffener";
+                } 
+            ?>
+        </div>
     </div>
 
     <div class="smallbox">
         <div class="topline">Produklieferant</div>
-        <div class="inhalt"><?php echo $funktionsdaten['produktlieferant'] ?></div>
+        <div class="inhalt">
+            <?php 
+                if($funktionsdaten['produktlieferant'] == "akteur"){
+                    echo "Akteur";
+                }else if($funktionsdaten['produktlieferant'] == "betroffener"){
+                    echo "Betroffener";
+                } 
+            ?>
+        </div>
     </div>
 
     <div class="smallbox">
         <div class="topline">Bank</div>
-        <div class="inhalt"><?php echo $funktionsdaten['bank'] ?></div>
+        <div class="inhalt">
+            <?php 
+                if($funktionsdaten['bank'] == "akteur"){
+                    echo "Akteur";
+                }else if($funktionsdaten['bank'] == "betroffener"){
+                    echo "Betroffener";
+                } 
+            ?>
+        </div>
     </div>
 
     <div class="smallbox">
         <div class="topline">Kunde</div>
-        <div class="inhalt"><?php echo $funktionsdaten['kunde'] ?></div>
+        <div class="inhalt">
+            <?php 
+                if($funktionsdaten['kunde'] == "akteur"){
+                    echo "Akteur";
+                }else if($funktionsdaten['kunde'] == "betroffener"){
+                    echo "Betroffener";
+                } 
+            ?>
+        </div>
     </div>
 
     <div class="smallbox">
         <div class="topline">Verantwortlicher</div>
-        <div class="inhalt"><?php echo $funktionsdaten['verantwortlicher'] ?></div>
+        <div class="inhalt"><?php echo $funktionsdaten['verantwortlicher']; ?></div>
     </div>
-        
-    <div class="smallbox">
-        <div class="topline">Ressourcen</div>
-        <div class="inhalt"><?php echo $funktionsdaten['ressourcen'] ?></div>
+  </div>
+    
+  <div class="row">
+    <div class="smallboxSzenarien">
+        <div class="topline">Filiale - Minimum <?php echo '['.$funktionsdaten['filiale_minimum_dauer'].'min]' ?></div>
+        <div class="inhaltSzenarien"><?php echo $funktionsdaten['filiale_minimum']; ?></div>
     </div>
-        
-    <div class="smallboxLast">
-        <div class="topline">Sprungstellen</div>
-        <div class="inhalt"><?php echo $funktionsdaten['sprungstelle'] ?></div>
+      
+    <div class="smallboxSzenarien">
+        <div class="topline">Filiale - Empfehlung <?php echo '['.$funktionsdaten['filiale_empfehlung_dauer'].'min]' ?></div>
+        <div class="inhaltSzenarien"><?php echo $funktionsdaten['filiale_empfehlung']; ?></div>
+    </div>
+      
+    <div class="smallboxSzenarien">
+        <div class="topline">Filiale - Kommentar</div>
+        <div class="inhaltSzenarien"><?php echo $funktionsdaten['filiale_kommentar']; ?></div>
+    </div>
+  </div>
+    
+  <div class="row">
+    <div class="smallboxSzenarien">
+        <div class="topline">Online - Minimum <?php echo '['.$funktionsdaten['online_minimum_dauer'].'min]' ?></div>
+        <div class="inhaltSzenarien"><?php echo $funktionsdaten['online_minimum']; ?></div>
+    </div>
+      
+    <div class="smallboxSzenarien">
+        <div class="topline">Online - Empfehlung <?php echo '['.$funktionsdaten['online_empfehlung_dauer'].'min]' ?></div>
+        <div class="inhaltSzenarien"><?php echo $funktionsdaten['online_empfehlung']; ?></div>
+    </div>
+      
+    <div class="smallboxSzenarien">
+        <div class="topline">Online - Kommentar</div>
+        <div class="inhaltSzenarien"><?php echo $funktionsdaten['online_kommentar']; ?></div>
+    </div>
+  </div>
+    
+  <div class="row">
+    <div class="smallboxSzenarien">
+        <div class="topline">Mobil - Minimum <?php echo '['.$funktionsdaten['mobil_minimum_dauer'].'min]' ?></div>
+        <div class="inhaltSzenarien"><?php echo $funktionsdaten['mobil_minimum']; ?></div>
+    </div>
+      
+    <div class="smallboxSzenarien">
+        <div class="topline">Mobil - Empfehlung <?php echo '['.$funktionsdaten['mobil_empfehlung_dauer'].'min]' ?></div>
+        <div class="inhaltSzenarien"><?php echo $funktionsdaten['mobil_empfehlung']; ?></div>
+    </div>
+      
+    <div class="smallboxSzenarien">
+        <div class="topline">Mobil - Kommentar</div>
+        <div class="inhaltSzenarien"><?php echo $funktionsdaten['mobil_kommentar']; ?></div>
     </div>
   </div>
   
