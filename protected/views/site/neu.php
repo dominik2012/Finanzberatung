@@ -588,6 +588,8 @@
             $funktionsfolge = $funktionsfolgenArr[$i];
             //$funktionsfolge = $model3[$i]["funktionsfolge"];
             
+            $kanalwechsel = $model3[$i]["kanalwechsel"];
+            
             $fktGesetze ="";
 			for($k=0;$k<count($gesetze[$i]);$k++){
 			
@@ -618,13 +620,19 @@
                     if($sprungstelle == null){
                         echo '<div class="spruenge_button_null" title="Sprungstellen" ></div>';
                     }else{
-                        echo '<div data-sprungstelle="'.$sprungstelle.'"  id="'.$fktNr.'" name="'.$fktNrName_short.'" class="spruenge_button" title="Sprungstellen" onClick="popUp2()"></div>';
+                        echo '<div data-sprungstelle="'.$sprungstelle.'"  id="'.$fktNr.'" name="'.$fktNrName_short.'" class="spruenge_button" title="Sprungstellen" onClick="popUp2();"></div>';
                     }
                     
                     if($funktionsfolge == null){
                         echo '<div class="folge_button_null" title="Funktionsfolge" ></div>';
                     }else{
                         echo '<div data-folge="'.$funktionsfolge.'" id="'.$fktNr.'" name="'.$fktNrName_short.'" class="folge_button" title="Funktionsfolge" onClick="popUp3();"></div>';
+                    }
+                    
+                    if($kanalwechsel == null){
+                        echo '<div class="kanal_button_null" title="Kanalwechsel" ></div>';
+                    }else{
+                        echo '<div data-kanal="" id="'.$fktNr.'" name="'.$fktNrName_short.'" class="kanal_button" title="'.$kanalwechsel.'"></div>';
                     }
                    
                     echo '
