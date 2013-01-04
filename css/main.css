@@ -788,6 +788,7 @@ div.search-form
         width: 48%;
         min-width: 580px;
         margin: 0 auto;
+        margin-top: 26px;
         min-height: 150px;
         text-align: center;
         color: white;
@@ -841,7 +842,6 @@ div.search-form
         width: 48%;
         min-width: 580px;
         margin: 0 auto;
-        margin-top: 26px;
         min-height: 150px;
         text-align: center;
         color: white;

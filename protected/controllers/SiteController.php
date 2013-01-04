@@ -133,8 +133,8 @@ class SiteController extends Controller
                             $fktNr = $funktionGes[$fktNummern[$j]]["nummer"];
                             $fktName = $funktionGes[$fktNummern[$j]]["name"];
                             
-                            $temp = '<a class="links" href="'.$link.$fktNr.'">['.$fktNr.'] '.$fktName.'</a></br></br>';
-                            //$temp = '['.$fktNr.'] '.$fktName.'</br>';
+                            //$temp = '<a class="links" href="'.$link.$fktNr.'">['.$fktNr.'] '.$fktName.'</a></br></br>';
+                            $temp = '['.$fktNr.'] '.$fktName.'</br>';
                             
                             /*if($j == $fktNrLength-1){
                                 $temp = $fktNr;

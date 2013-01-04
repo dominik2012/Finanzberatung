@@ -613,10 +613,10 @@
                         echo '<div data-gesetze="'.$fktGesetze.'" id="'.$fktNr.'" name="'.$fktNrName_short.'" class="gesetz_button" title="Gesetze" onClick="popUp();"></div>';
                     }
             
-                    if($sprungstelle[0][0] == null){
+                    if($sprungstelle == null){
                         echo '<div class="spruenge_button_null" title="Sprungstellen" ></div>';
                     }else{
-                        echo '<div data-sprungstelle="'.$sprungstelle.'"  id="'.$fktNr.'" name="'.$fktNrName_short.'" class="spruenge_button" title="Sprungstellen" onClick="popUp2();"></div>';
+                        echo '<div data-sprungstelle="'.$sprungstelle.'"  id="'.$fktNr.'" name="'.$fktNrName_short.'" class="spruenge_button" title="Sprungstellen" onClick="popUp2()"></div>';
                     }
                     
                     if($funktionsfolge == null){
@@ -771,6 +771,8 @@
                 var funktionsName = this.attributes["name"].value;
                 var spruenge = this.attributes["data-sprungstelle"].value;
                 var popupID = this.id;
+                
+                //alert(link);
                 //var ausgabe;
                 //var spruengeArr = spruenge.split(",,");
                 /*    
