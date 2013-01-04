@@ -120,24 +120,40 @@ class SiteController extends Controller
                 $funktionGes = Funktion::model()->findAllBySql("SELECT * FROM funktion");
                 $spruengeLength = count($funktionGes);
                 $link = "http://localhost/Finanzberatung/index.php?r=site/details&fktNr=";
-                $ausgabeGesamt = "";
+                
                 for($i=0;$i<$spruengeLength;$i++){
                         $sprungstellen = $funktionGes[$i]["sprungstelle"];
+                        $temp = null;
+                        $ausgabeGesamt = null;
                       if($sprungstellen != null){
                         $fktNummern = explode(",", $sprungstellen);
                         $fktNrLength = count($fktNummern);
+                        
                         for($j=0; $j<$fktNrLength; $j++){
-                           
                             $fktNr = $funktionGes[$fktNummern[$j]]["nummer"];
                             $fktName = $funktionGes[$fktNummern[$j]]["name"];
-                            //$temp = '<a class="links" href="'.$link.$fktNr.'">['.$fktNr.'] '.$fktName.'</a></br></br>';
-                            $temp = $fktNr.',,'.$fktName;
-                            $ausgabeGesamt .= $temp ;
+                            
+                            $temp = '<a class="links" href="'.$link.$fktNr.'">['.$fktNr.'] '.$fktName.'</a></br></br>';
+                            //$temp = '['.$fktNr.'] '.$fktName.'</br>';
+                            
+                            /*if($j == $fktNrLength-1){
+                                $temp = $fktNr;
+                            }else{
+                                $temp = $fktNr.',,';
+                            }
+                            */
+                            
+                            if($ausgabeGesamt == null){
+                                $ausgabeGesamt = $temp;
+                            }else{
+                                $ausgabeGesamt .= $temp;
+                            }
                         }
                         $sprungstellenArr[$i] = $ausgabeGesamt;
                       }else{
-                        $sprungstellenArr[$i] = null;  
+                        $sprungstellenArr[$i] = null;
                       }
+                      
                 }
                 //$gesetz = Gesetz::model()->findAllBySql("SELECT * FROM gesetz");
                 //$gesetze = $gesetz->gesetze;

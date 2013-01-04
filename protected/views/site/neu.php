@@ -582,6 +582,7 @@
             $uphaseName = $unterphase2[$uphaseNr]["name"];
             
             $sprungstelle = $sprungstellenArr[$i];
+            //echo $sprungstelle;
             //$sprungstelle = $model3[$i]["sprungstelle"];
             
             $funktionsfolge = $model3[$i]["funktionsfolge"];
@@ -612,10 +613,10 @@
                         echo '<div data-gesetze="'.$fktGesetze.'" id="'.$fktNr.'" name="'.$fktNrName_short.'" class="gesetz_button" title="Gesetze" onClick="popUp();"></div>';
                     }
             
-                    if($sprungstelle == null){
+                    if($sprungstelle[0][0] == null){
                         echo '<div class="spruenge_button_null" title="Sprungstellen" ></div>';
                     }else{
-                        echo '<div data-spruenge="'.$sprungstellenArr[$i].'" id="'.$fktNr.'" name="'.$fktNrName_short.'" class="spruenge_button" title="Sprungstellen" onClick="popUp2();"></div>';
+                        echo '<div data-sprungstelle="'.$sprungstelle.'"  id="'.$fktNr.'" name="'.$fktNrName_short.'" class="spruenge_button" title="Sprungstellen" onClick="popUp2();"></div>';
                     }
                     
                     if($funktionsfolge == null){
@@ -768,25 +769,26 @@
             function popUp2(){
                 
                 var funktionsName = this.attributes["name"].value;
-                var spruenge = this.attributes["data-spruenge"].value;
+                var spruenge = this.attributes["data-sprungstelle"].value;
                 var popupID = this.id;
-                
-                var ausgabe;
-                var spruengeArr = spruenge.split(",,");
-
+                //var ausgabe;
+                //var spruengeArr = spruenge.split(",,");
+                /*    
                 for(var i=0; i<spruengeArr.length; i++){
                   if(i==0){
                         var fktNr = spruengeArr[i];
                         var fktName = spruengeArr[i+1];
-                        ausgabe = '<a class="links" href="http://localhost/Finanzberatung/index.php?r=site/details&fktNr="'+fktNr+'">['+fktNr+'] '+fktName+'</a></br></br>';
+                        //ausgabe = '<a class="links" href="http://localhost/Finanzberatung/index.php?r=site/details&fktNr="'+fktNr+'">['+fktNr+'] '+fktName+'</a></br></br>';
+                        ausgabe += '['+fktNr+'] '+fktName+'</br></br>';
                   }else{
                     if(i%2 == 0){
                         var fktNr = spruengeArr[i];
                         var fktName = spruengeArr[i+1];
-                        ausgabe += '<a class="links" href="http://localhost/Finanzberatung/index.php?r=site/details&fktNr="'+fktNr+'">['+fktNr+'] '+fktName+'</a></br></br>';
+                        //ausgabe += '<a class="links" href="http://localhost/Finanzberatung/index.php?r=site/details&fktNr="'+fktNr+'">['+fktNr+'] '+fktName+'</a></br></br>';
+                        ausgabe += '['+fktNr+'] '+fktName+'</br></br>';
                     }
                   }
-                }
+                }*/
                 
                 var popup = document.createElement('div');
                 popup.className = 'popupSpruenge';
@@ -800,7 +802,7 @@
                 gesetzTop.innerHTML = funktionsName;
                 var gesetzContent = document.createElement('div');
                 gesetzContent.className = 'spruengeContent';
-                gesetzContent.innerHTML = ausgabe;
+                gesetzContent.innerHTML = spruenge;
                 
                 popup.appendChild(cancel);
                 popup.appendChild(gesetzTop);
