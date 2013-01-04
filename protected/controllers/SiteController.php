@@ -123,6 +123,7 @@ class SiteController extends Controller
                 
                 for($i=0;$i<$spruengeLength;$i++){
                         $sprungstellen = $funktionGes[$i]["sprungstelle"];
+                        $funktionsfolgen = $funktionGes[$i]["funktionsfolge"];
                         $temp = null;
                         $ausgabeGesamt = null;
                       if($sprungstellen != null){
@@ -135,14 +136,7 @@ class SiteController extends Controller
                             
                             //$temp = '<a class="links" href="'.$link.$fktNr.'">['.$fktNr.'] '.$fktName.'</a></br></br>';
                             $temp = '['.$fktNr.'] '.$fktName.'</br>';
-                            
-                            /*if($j == $fktNrLength-1){
-                                $temp = $fktNr;
-                            }else{
-                                $temp = $fktNr.',,';
-                            }
-                            */
-                            
+
                             if($ausgabeGesamt == null){
                                 $ausgabeGesamt = $temp;
                             }else{
@@ -154,6 +148,29 @@ class SiteController extends Controller
                         $sprungstellenArr[$i] = null;
                       }
                       
+                      $temp = null;
+                      $ausgabeGesamt = null;
+                      if($funktionsfolgen != null){
+                        $fktNummern = explode(",", $funktionsfolgen);
+                        $fktNrLength = count($fktNummern);
+                        
+                        for($j=0; $j<$fktNrLength; $j++){
+                            $fktNr = $funktionGes[$fktNummern[$j]]["nummer"];
+                            $fktName = $funktionGes[$fktNummern[$j]]["name"];
+                            
+                            //$temp = '<a class="links" href="'.$link.$fktNr.'">['.$fktNr.'] '.$fktName.'</a></br></br>';
+                            $temp = '['.$fktNr.'] '.$fktName.'</br>';
+
+                            if($ausgabeGesamt == null){
+                                $ausgabeGesamt = $temp;
+                            }else{
+                                $ausgabeGesamt .= $temp;
+                            }
+                        }
+                        $funktionsfolgenArr[$i] = $ausgabeGesamt;
+                      }else{
+                        $funktionsfolgenArr[$i] = null;
+                      }
                 }
                 //$gesetz = Gesetz::model()->findAllBySql("SELECT * FROM gesetz");
                 //$gesetze = $gesetz->gesetze;
@@ -340,7 +357,7 @@ class SiteController extends Controller
                             }
                         } */
 			
-			$this->render('neu',array( 'sprungstellenArr' => $sprungstellenArr, 'gesetze'=>$gesetze,'unterphase2'=>$unterphase2,'fil'=>$sql,'model'=>$funktion, 'model2' =>$model2, 'model3' =>$funktion, 'model4' => $fil_grobphase, 'name' => $fil_name, 'hsrz' => $fil_hsrz, 'hsra' => $fil_hsra, 'privob' => $fil_privob, 'profob' => $fil_profob, 'rausfg' => $fil_rausfg,'unterphase' => $fil_unterphase, 'privmb' => $fil_privmb, 'profmb' => $fil_profmb, 'model6' => $spaltennamen, 'model5' => $spaltennamen2, 'grobphase' => $grobphase,));
+			$this->render('neu',array( 'funktionsfolgenArr' => $funktionsfolgenArr,'sprungstellenArr' => $sprungstellenArr, 'gesetze'=>$gesetze,'unterphase2'=>$unterphase2,'fil'=>$sql,'model'=>$funktion, 'model2' =>$model2, 'model3' =>$funktion, 'model4' => $fil_grobphase, 'name' => $fil_name, 'hsrz' => $fil_hsrz, 'hsra' => $fil_hsra, 'privob' => $fil_privob, 'profob' => $fil_profob, 'rausfg' => $fil_rausfg,'unterphase' => $fil_unterphase, 'privmb' => $fil_privmb, 'profmb' => $fil_profmb, 'model6' => $spaltennamen, 'model5' => $spaltennamen2, 'grobphase' => $grobphase,));
 		}
 		else{
 		$model = array($funktion,$filter,);

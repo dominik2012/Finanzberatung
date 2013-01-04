@@ -585,7 +585,9 @@
             //echo $sprungstelle;
             //$sprungstelle = $model3[$i]["sprungstelle"];
             
-            $funktionsfolge = $model3[$i]["funktionsfolge"];
+            $funktionsfolge = $funktionsfolgenArr[$i];
+            //$funktionsfolge = $model3[$i]["funktionsfolge"];
+            
             $fktGesetze ="";
 			for($k=0;$k<count($gesetze[$i]);$k++){
 			
