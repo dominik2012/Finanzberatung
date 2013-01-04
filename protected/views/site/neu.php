@@ -572,7 +572,13 @@
             $fktNr = $model3[$i]["nummer"];
             $fktName = $model3[$i]["name"];
             $fktNrName = '['.$fktNr.'] '.$fktName;
-            $fktNrName_short = substr( $fktNrName , 0 , 95 );
+            $fktNrName_short = substr($fktNrName , 0 , 95 );
+            $title = str_replace('"',"&#039;",  shortName2($fktNrName));
+            $fktNameLaenge = mb_strlen($fktNrName);
+            if($fktNameLaenge > 90){
+                $fktNrName = substr($fktNrName, 0 , 90);
+                $fktNrName .= "...";
+            }
             
             $phaseName = $grobphase[$model3[$i]["grobphase_id"]]["name"];
             $phaseNr = $grobphase[$model3[$i]["grobphase_id"]]["grobphase_id"];
@@ -636,7 +642,7 @@
                     }
                    
                     echo '
-                    <div style="float: left; margin-left: 73px; font-size: 13px;" title="[Funktion-Nr] Funktion-Name">'.$fktNrName.'</div>
+                    <div style="float: left; margin-left: 73px; font-size: 13px;" title="'.$title.'">'.$fktNrName.'</div>
                     <div id="unterphaseR" title="Unterphase: '.$uphaseName.'">['.$uphaseNr.']</div>                    
                     <div id="grobphaseR" title="Grobphase-Nr. Grobphase-Name">'.$phaseNrName.'&nbsp;</div>
                     
@@ -654,7 +660,7 @@
                             $style1= " style='width: 52px; overflow: hidden;'";
                             
                             //Grafik Abfragen
-						if($j<45){
+                            if($j<45){
                             if($spaInhalt == "gesetzFunktion"){
                                 $spaInhalt = "<img title='Funktion bedingt durch Gesetz' src='/Finanzberatung/css/images/pfeile/gesetzFunktion.png' style='padding-top: 70px;'>";
                                 $style = $style1;
@@ -712,6 +718,18 @@
         $inhaltL = mb_strlen($inhalt);
         
         if($inhaltL > 55){
+            $title = $inhalt;
+        }else{
+            $title = "";
+        }
+        
+        return $title;
+    }
+    
+    function shortName2($inhalt){
+        $inhaltL = mb_strlen($inhalt);
+        
+        if($inhaltL > 90){
             $title = $inhalt;
         }else{
             $title = "";
@@ -782,6 +800,7 @@
                 var spruenge = this.attributes["data-sprungstelle"].value;
                 var popupID = this.id;
                 
+                //alert($(window).width());
                 //alert(link);
                 //var ausgabe;
                 //var spruengeArr = spruenge.split(",,");
