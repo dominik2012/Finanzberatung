@@ -626,7 +626,7 @@
                    
                     echo '
                     <div style="float: left; margin-left: 73px; font-size: 13px;" title="[Funktion-Nr] Funktion-Name">'.$fktNrName.'</div>
-                    <div id="unterphaseR" title="'.$uphaseName.'">['.$uphaseNr.']</div>                    
+                    <div id="unterphaseR" title="Unterphase: '.$uphaseName.'">['.$uphaseNr.']</div>                    
                     <div id="grobphaseR" title="Grobphase-Nr. Grobphase-Name">'.$phaseNrName.'&nbsp;</div>
                     
                 </div>
@@ -893,7 +893,7 @@
         header: false,
         height: 500,
         selectedText: "# von # ausgewählt",
-        noneSelectedText: 'Wähle deine Spalten',
+        noneSelectedText: 'Wählen Sie Ihre Spalten',
 		optgrouptoggle: function(event, ui){
 		var values = $.map(ui.inputs, function(checkbox){
          return checkbox.value;
@@ -944,7 +944,7 @@
     $("#select_grobphase").multiselect({
         selectedText: "# von # ausgewählt",
         height: 344,
-        noneSelectedText: 'Wählen Sie ihre Grobphase(n)'
+        noneSelectedText: 'Wählen Sie Ihre Grobphase(n)'
     });
 	$("#select_grobphase").bind("multiselectclick", function(event, ui){
 		
@@ -953,7 +953,7 @@
 	$("#select_unterphase").multiselect({
         selectedText: "# von # ausgewählt",
         height: 345,
-        noneSelectedText: 'Wählen Sie ihre Unterphase(n)'
+        noneSelectedText: 'Wählen Sie Ihre Unterphase(n)'
     });
 	$("#select_unterphase").bind("multiselectclick", function(event, ui){
 		
@@ -966,7 +966,7 @@
 		$("#select_gesetze").multiselect({
         selectedText: "# von # ausgewählt",
         height: 345,
-        noneSelectedText: 'Wählen Sie ihr(e) Gesetz(e)'
+        noneSelectedText: 'Wählen Sie Ihr(e) Gesetz(e)'
     });
 	$("#select_gesetze").bind("multiselectclick", function(event, ui){
 		
@@ -975,7 +975,7 @@
 	$("#select_name").multiselect({
         selectedText: "# von # ausgewählt",
         height: 295,
-        noneSelectedText: 'Wählen Sie ihre Funktion(en)'
+        noneSelectedText: 'Wählen Sie Ihre Funktion(en)'
     });
 	$("#select_name").bind("multiselectclick", function(event, ui){
 		

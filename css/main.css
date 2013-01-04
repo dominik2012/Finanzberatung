@@ -845,7 +845,7 @@ div.search-form
         min-height: 150px;
         text-align: center;
         color: white;
-        float: left;
+        float: right;
         box-shadow: 4px 5px 10px 2px #C5C5C5;
 }
 
@@ -946,7 +946,7 @@ div.search-form
 .beratung {
     width: 48%;
     min-width: 580px;
-    float: right;
+    float: left;
     box-shadow: 4px 5px 10px 2px #C5C5C5;
 }
 

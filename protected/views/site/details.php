@@ -52,10 +52,6 @@
     <div class="row">
   
     
-    <div class="beschreibung">
-        <div class="topline">Beschreibung</div>
-        <div class="inhalt2"><?php echo $funktionsdaten['beschreibung']; ?></div>
-    </div>
     
     <div class="beratung">
         <div class="topline">Beratung</div>
@@ -128,14 +124,21 @@
             </table>
         </div>
     </div>
-    </div>
     
-    <div class="row">
     <div class="regulatorien">
         <div class="topline">Gesetze</div>
         <div class="inhalt2"><?php for($i=0;$i<count($gesetze);$i++){echo ($i+1).". ".$gesetze[$i]["gesetz"].'<br/>';} ?></div>
     </div>
         
+    </div>
+    
+    <div class="row">
+    	
+    <div class="beschreibung">
+        <div class="topline">Beschreibung</div>
+        <div class="inhalt2"><?php echo $funktionsdaten['beschreibung']; ?></div>
+    </div>
+    
     <div class="hinweise">
         <div class="topline">Hinweise</div>
         <div class="inhalt2"><?php echo $funktionsdaten['hinweis']; ?></div>
