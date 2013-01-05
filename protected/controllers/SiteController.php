@@ -115,7 +115,9 @@ class SiteController extends Controller
 		$spaltennamen2[45] = "b_name";
                 $spaltennamen = Funktion::model()->attributeLabelsIndexAreNumbers();
                 $grobphase = new Grobphase;
-                $unterphase2 = Grobphase::model()->findAllBySql("SELECT * FROM unterphase");
+                $unterphase2 = Unterphase::model()->findAllBySql("SELECT * FROM unterphase");
+                $gesetz2 = Gesetz::model()->findAllBySql("SELECT * FROM gesetz");
+                //$gesetze = $gesetz->gesetze;
                 
                 $funktionGes = Funktion::model()->findAllBySql("SELECT * FROM funktion");
                 $spruengeLength = count($funktionGes);
@@ -172,8 +174,6 @@ class SiteController extends Controller
                         $funktionsfolgenArr[$i] = null;
                       }
                 }
-                //$gesetz = Gesetz::model()->findAllBySql("SELECT * FROM gesetz");
-                //$gesetze = $gesetz->gesetze;
 		
 		//Aufruf der get-Methoden der jeweiligen Models
 		$modelGrobphase = Grobphase::model()->getAttr();
@@ -357,7 +357,7 @@ class SiteController extends Controller
                             }
                         } */
 			
-			$this->render('neu',array( 'funktionsfolgenArr' => $funktionsfolgenArr,'sprungstellenArr' => $sprungstellenArr, 'gesetze'=>$gesetze,'unterphase2'=>$unterphase2,'fil'=>$sql,'model'=>$funktion, 'model2' =>$model2, 'model3' =>$funktion, 'model4' => $fil_grobphase, 'name' => $fil_name, 'hsrz' => $fil_hsrz, 'hsra' => $fil_hsra, 'privob' => $fil_privob, 'profob' => $fil_profob, 'rausfg' => $fil_rausfg,'unterphase' => $fil_unterphase, 'privmb' => $fil_privmb, 'profmb' => $fil_profmb, 'model6' => $spaltennamen, 'model5' => $spaltennamen2, 'grobphase' => $grobphase,));
+			$this->render('neu',array( 'gesetz2' => $gesetz2, 'funktionsfolgenArr' => $funktionsfolgenArr,'sprungstellenArr' => $sprungstellenArr, 'gesetze'=>$gesetze,'unterphase2'=>$unterphase2,'fil'=>$sql,'model'=>$funktion, 'model2' =>$model2, 'model3' =>$funktion, 'model4' => $fil_grobphase, 'name' => $fil_name, 'hsrz' => $fil_hsrz, 'hsra' => $fil_hsra, 'privob' => $fil_privob, 'profob' => $fil_profob, 'rausfg' => $fil_rausfg,'unterphase' => $fil_unterphase, 'privmb' => $fil_privmb, 'profmb' => $fil_profmb, 'fil_gesetze' => $fil_gesetze, 'model6' => $spaltennamen, 'model5' => $spaltennamen2, 'grobphase' => $grobphase,));
 		}
 		else{
 		$model = array($funktion,$filter,);

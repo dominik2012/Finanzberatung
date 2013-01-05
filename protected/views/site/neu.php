@@ -41,7 +41,7 @@
 		<form name="neu_form" id="neu_form" action="/Finanzberatung/index.php?r=site/neu" method="POST">
 		
                 <div style="margin-bottom: 10px;">
-                <div id="functionoverview">ALLGEMEIN</div>
+                <div id="functionoverview">Allgemein</div>
                 <div id="functionfilters">    
 		Grobphase:<br> 
                 <select name="select_grobphase" id="select_grobphase" data-placeholder="Grobphase-Filter" style="width:465px;" multiple="multiple">
@@ -89,7 +89,7 @@
                 </div>
                     
                 <div style="margin-bottom: 10px; height: 160px;">
-                <div id="functionoverview">TYP</div>
+                <div id="functionoverview">Beratung</div>
                 <div style="float: left;">    
                 <div id="functionfilters">   
 		Privat mit Beratung:<br> 
@@ -221,7 +221,7 @@
                 </div>
                     
                 <div style="margin-bottom: 10px; height: 80px;">    
-                <div id="functionoverview">HANDLUNGSSPIELRAUM</div>  
+                <div id="functionoverview">Handlungsspielraum</div>  
                 <div id="functionfilters" style="float: left;">       
 		Handlungsspielraum aktuell:<br> 
                 <select name="select_hsra" id="select_hsra" data-placeholder="Hsra-Filter" style="width:165px;" multiple="multiple">
@@ -248,7 +248,7 @@
                 </div>
                     
                 <div id="functionfilters" style="float: left; margin-left: 22px;">       
-		Handlungsspielraum Zukunft:<br> 
+		Handlungsspielraum zuk&uuml;nftig:<br> 
                 <select name="select_hsrz" id="select_hsrz" data-placeholder="Hsrz-Filter" style="width:165px;" multiple="multiple">
                 <?php
 			for ($i=0;$i<count($model2[1]["hsrz"]);$i++){
@@ -274,7 +274,7 @@
                 </div>
                     
                 <div style="margin-bottom: 10px;">    
-                <div id="functionoverview">FUNKTIONSAUSWAHL</div>    
+                <div id="functionoverview">Funktionsvergleich</div>    
                 <div id="functionfilters" style="margin-bottom: 15px;">   
 		Funktionsname:<br> 
                 <select name="select_name" id="select_name" data-placeholder="Name-Filter" style="width:465px;" multiple="multiple">
@@ -301,7 +301,7 @@
 				<input type="hidden" name="form_rausfg" value="">
 				<input type="hidden" name="form_hsra" value="">
 				<input type="hidden" name="form_hsrz" value="">
-                <input type="hidden" name="form_gesetze" value=""><br/>                 
+                                <input type="hidden" name="form_gesetze" value=""><br/>                 
                                 <div style="float: right; margin-top: -77px; margin-right: 30px;">
 				<button class="submit" type="button" name="submitbutton" value="submitbutton" onClick="toInput();"></button>
                                 </div>
@@ -379,12 +379,15 @@
                             echo '</optgroup>';
                             
                             //Gesetz
-                            echo '<optgroup label="Hinweis">';            
+                            echo '<optgroup label="Regulatorien">';            
                             for ($i=8;$i<9;$i++){
                                 $inhalt = $model6[$i]; 
                                 $title = str_replace('"',"&#039;",  shortName($inhalt));
                                 echo '<option value="'.$model5[$i].'" id="'.$model5[$i].'" name="'.$model5[$i].'" title="'.$title.'");>'.$inhalt.'</option>';
                             }
+                            $inhalt_br = $model6[45];
+                            $title_br = str_replace('"',"&#039;",  shortName($inhalt_br));
+                            echo '<option value="'.$model5[45].'" id="'.$model5[45].'" name="'.$model5[45].'" title="'.$title_br.'");>'.$inhalt_br.'</option>';
                             echo '</optgroup>';
                             
                             //Handlungsspielraum
@@ -414,31 +417,28 @@
                             }
                             echo '</optgroup>';
                             echo '<optgroup label="Szenario Filiale">';
-							for ($i=30;$i<35;$i++){
+                            for ($i=30;$i<35;$i++){
                                 $inhalt = $model6[$i]; 
                                 $title = str_replace('"',"&#039;",  shortName($inhalt));
                                 echo '<option value="'.$model5[$i].'" id="'.$model5[$i].'" name="'.$model5[$i].'" title="'.$title.'");>'.$inhalt.'</option>';
                             }
                             echo '</optgroup>';	
-							echo '<optgroup label="Szenario Online">';
-							for ($i=35;$i<40;$i++){
+                            echo '<optgroup label="Szenario Online">';
+                            for ($i=35;$i<40;$i++){
                                 $inhalt = $model6[$i]; 
                                 $title = str_replace('"',"&#039;",  shortName($inhalt));
                                 echo '<option value="'.$model5[$i].'" id="'.$model5[$i].'" name="'.$model5[$i].'" title="'.$title.'");>'.$inhalt.'</option>';
                             }
                             echo '</optgroup>';
-							echo '<optgroup label="Szenario Mobil">';
-							for ($i=40;$i<45;$i++){
+                            echo '<optgroup label="Szenario Mobil">';
+                            for ($i=40;$i<45;$i++){
                                 $inhalt = $model6[$i]; 
                                 $title = str_replace('"',"&#039;",  shortName($inhalt));
                                 echo '<option value="'.$model5[$i].'" id="'.$model5[$i].'" name="'.$model5[$i].'" title="'.$title.'");>'.$inhalt.'</option>';
                             }
                             echo '</optgroup>';
-							// Business Rule
-							$inhalt_br = $model6[45];
-							$title_br = str_replace('"',"&#039;",  shortName($inhalt_br));
-							echo '<option value="'.$model5[45].'" id="'.$model5[45].'" name="'.$model5[45].'" title="'.$title_br.'");>'.$inhalt_br.'</option>';
-			//}    
+                            
+                            //}    
                 ?>
                 </select>
 		</form>
@@ -449,118 +449,201 @@
 <!-- CONTENT MIDDLE ----------------------------------------------------------->       
 <div id="contentarea">
     <!-- Filterleiste mit Anzeige für gefilterte Phasen -->
-    <div>
-        <table id="filterlist">
-            <tbody>
-                <tr>
-                    <!--<td>SQL: <?php if(isset($fil)){echo $fil;}?></td>-->
-                    
-                    <td><?php 
-                                if(isset($fil)){
-                                    if($model4 == "0,1,2,3,4,5,6,7,8,9,10"){ 
+    <div class="filterlist">
+        
+                            <?php
+                                //Grobphase
+                                $gp_count = count($grobphase);
+                                $grobphase_full = null;
+                                for($i=0;$i<$gp_count;$i++){
+                                    if($i==$gp_count-1){
+                                        $grobphase_full .= $i;
                                     }else{
-                                        echo '<p style="color: #0075B8;">GROPHASE: '.$model4.'</p>';
+                                        $grobphase_full .= $i.',';
+                                    }
+                                }
+                                
+                                //Unterphase
+                                $up_count = count($unterphase2);
+                                $unterphase_full = null;
+                                for($i=0;$i<$up_count;$i++){
+                                    if($i==$up_count-1){
+                                        $unterphase_full .= $i;
+                                    }else{
+                                        $unterphase_full .= $i.',';
+                                    }
+                                }
+                                /*
+                                //Funktion (Fehler)
+                                $fkt_count = count($model3);
+                                $fkt_full = null;
+                                for($i=0;$i<$fkt_count;$i++){
+                                    if($i==$fkt_count-1){
+                                        $fkt_full .= $i.',105,106,107';
+                                    }else{
+                                        $fkt_full .= $i.',';
+                                    }
+                                }
+                                 
+                                
+                                //Gesetze
+                                $gesetz_count = count($gesetze);
+                                $gesetz_full = null;
+                                for($i=0;$i<$gesetz_count;$i++){
+                                    if($i==$gesetz_count-1){
+                                        $gesetz_full .= $i;
+                                    }else{
+                                        $gesetz_full .= $i.',';
+                                    }
+                                }*/
+                                
+                                //PRIVMB
+                                $privmb_count = count($model3);
+                                $privmb_full = null;
+                                for($i=0;$i<$privmb_count;$i++){
+                                    if($i==$privmb_count-1){
+                                        $privmb_full .= $i;
+                                    }else{
+                                        $privmb_full .= $i.',';
+                                    }
+                                }
+                                
+                            ?>
+        
+                            <?php 
+                                if(isset($fil)){
+                                    if($model4 == $grobphase_full){ 
+                                    }else{
+                                        $temp = null;
+                                        $temp = explode(",",$model4);
+                                        $model4 = null;
+                                        for($i=0;$i<count($temp);$i++){
+                                            $temp[$i]= '['.$grobphase[$temp[$i]]["grobphase_id"].'] '.$grobphase[$temp[$i]]["name"];
+                                            if($i==count($temp)-1){
+                                                $model4 .= $temp[$i];
+                                            }else{
+                                                $model4 .= $temp[$i].', ';
+                                            }
+                                        }
+                                        echo '<div class="filterlist_inner"><p style="color: #0075B8;">GROBPHASE: '.$model4.'</p></div>';
                                     }
                                    
                                 }
-                            ?>
-                    </td>
-                    
-                    <td><?php 
                                 if(isset($fil)){
-                                    if($unterphase == "0,1,2,3,4,5,6,7,8,9,10,11"){
+                                    if($unterphase == $unterphase_full){
                                     }else{
-                                        echo '<p style="color: #0075B8;">UNTERPHASE: '.$unterphase.'</p>';
+                                        $temp = null;
+                                        $temp = explode(",",$unterphase);
+                                        $unterphase = null;
+                                        for($i=0;$i<count($temp);$i++){
+                                            $temp[$i]= '['.$unterphase2[$temp[$i]]["unterphase_id"].'] '.$unterphase2[$temp[$i]]["name"];
+                                            if($i==count($temp)-1){
+                                                $unterphase .= $temp[$i];
+                                            }else{
+                                                $unterphase .= $temp[$i].', ';
+                                            }
+                                        }
+                                        echo '<div class="filterlist_inner"><p style="color: #0075B8;">UNTERPHASE: '.$unterphase.'</p></div>';
                                     }
                                    
                                 }
-                            ?>
-                    </td>
-                    
-                    <td><?php 
+                                
                                 if(isset($fil)){
-                                    if($name == "0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107"){
+                                    if($fil_gesetze == null){
                                     }else{
-                                        echo '<p style="color: #0075B8;">FUNKTION: '.$name.'</p>';
+                                        $temp = null;
+                                        $temp = explode(",",$fil_gesetze);
+                                        $fil_gesetze = null;
+                                        for($i=0;$i<count($temp);$i++){
+                                           // $temp[$i]= '['.$gesetz2[$temp[$i]]["id"].'] '.$gesetz2[$temp[$i]]["gesetz"];
+                                            if($i==count($temp)-1){
+                                                $fil_gesetze .= $temp[$i];
+                                            }else{
+                                                $fil_gesetze .= $temp[$i].', ';
+                                            }
+                                        }
+                                        echo '<div class="filterlist_inner"><p style="color: #0075B8;">GESETZ: '.$fil_gesetze.'</p></div>';
                                     }
                                    
-                                }
-                            ?>
-                    </td>
-                    <td><?php 
+                                }/*
+                                if(isset($fil)){
+                                    if($name == $fkt_full){
+                                    }else{
+                                        echo '<div class="filterlist_inner"><p style="color: #0075B8;">FUNKTION: </p></div>';
+                                    }
+                                   
+                                }*/
                                 if(isset($fil)){
                                     if($privmb == "'gesetzFunktion','keine Abhängig','funktionGesetz'"){
                                     }else{
-                                        echo '<p style="color: #0075B8;">PRIVAT MIT BERATUNG: '.$privmb.'</p>';
+                                        $privmb = str_replace("'gesetzFunktion'", " Gesetz -> Funktion", $privmb);
+                                        $privmb = str_replace("'keine Abhängig'", " Keine Abh&auml;ngigkeit", $privmb);
+                                        $privmb = str_replace("'funktionGesetz'", " Funktion -> Gesetz", $privmb);
+                                        echo '<div class="filterlist_inner"><p style="color: #0075B8;">PRIVAT MIT BERATUNG: '.$privmb.'</p></div>';
                                     }
                                    
                                 }
-                            ?>
-                    </td>
-                    <td><?php 
                                 if(isset($fil)){
                                     if($privob == "'gesetzFunktion','keine Abhängig','funktionGesetz'"){
                                     }else{
-                                        echo '<p style="color: #0075B8;">PRIVAT OHNE BERATUNG: '.$privob.'</p>';
+                                        $privob = str_replace("'gesetzFunktion'", " Gesetz -> Funktion", $privob);
+                                        $privob = str_replace("'keine Abhängig'", " Keine Abh&auml;ngigkeit", $privob);
+                                        $privob = str_replace("'funktionGesetz'", " Funktion -> Gesetz", $privob);
+                                        echo '<div class="filterlist_inner"><p style="color: #0075B8;">PRIVAT OHNE BERATUNG: '.$privob.'</p></div>';
                                     }
                                    
                                 }
-                            ?>
-                    </td>
-                    <td><?php 
                                 if(isset($fil)){
                                     if($profmb == "'gesetzFunktion','keine Abhängig','funktionGesetz'"){
                                     }else{
-                                        echo '<p style="color: #0075B8;">PROFESSIONELL OHNE BERATUNG: '.$profmb.'</p>';
+                                        $profmb = str_replace("'gesetzFunktion'", " Gesetz -> Funktion", $profmb);
+                                        $profmb = str_replace("'keine Abhängig'", " Keine Abh&auml;ngigkeit", $profmb);
+                                        $profmb = str_replace("'funktionGesetz'", " Funktion -> Gesetz", $profmb);
+                                        echo '<div class="filterlist_inner"><p style="color: #0075B8;">PROFESSIONELL OHNE BERATUNG: '.$profmb.'</p></div>';
                                     }
                                    
                                 }
-                            ?>
-                    </td>
-                    <td><?php 
                                 if(isset($fil)){
                                     if($profob == "'gesetzFunktion','keine Abhängig','funktionGesetz'"){
                                     }else{
-                                        echo '<p style="color: #0075B8;">PROFESSIONELL MIT BERATUNG: '.$profob.'</p>';
+                                        $profob = str_replace("'gesetzFunktion'", " Gesetz -> Funktion", $profob);
+                                        $profob = str_replace("'keine Abhängig'", " Keine Abh&auml;ngigkeit", $profob);
+                                        $profob = str_replace("'funktionGesetz'", " Funktion -> Gesetz", $profob);
+                                        echo '<div class="filterlist_inner"><p style="color: #0075B8;">PROFESSIONELL MIT BERATUNG: '.$profob.'</p></div>';
                                     }
                                    
                                 }
-                            ?>
-                    </td>
-                    <td><?php 
                                 if(isset($fil)){
                                     if($rausfg == "'gesetzFunktion','keine Abhängig','funktionGesetz'"){
                                     }else{
-                                        echo '<p style="color: #0075B8;">REINES AUSF&Uuml;HRUNGSGESCHÄFT: '.$rausfg.'</p>';
+                                        $rausfg = str_replace("'gesetzFunktion'", " Gesetz -> Funktion", $rausfg);
+                                        $rausfg = str_replace("'keine Abhängig'", " Keine Abh&auml;ngigkeit", $rausfg);
+                                        $rausfg = str_replace("'funktionGesetz'", " Funktion -> Gesetz", $rausfg);
+                                        echo '<div class="filterlist_inner"><p style="color: #0075B8;">REINES AUSF&Uuml;HRUNGSGESCHÄFT: '.$rausfg.'</p></div>';
                                     }
                                    
                                 }
-                            ?>
-                    </td>
-                    <td><?php 
                                 if(isset($fil)){
                                     if($hsrz == "'gelb','gruen','gelbHoch'"){
                                     }else{
-                                        echo '<p style="color: #0075B8;">HANDLUNGSSPIELRAUM ZUK&Uuml;NFTIG: '.$hsrz.'</p>';
+                                        $hsrz = str_replace("'gelb'", " eingeschr&auml;nkt", $hsrz);
+                                        $hsrz = str_replace("'gruen'", " offen", $hsrz);
+                                        $hsrz = str_replace("'gelbHoch'", " zuk&uuml;nft. eingeschr&auml;nkter", $hsrz);
+                                        echo '<div class="filterlist_inner"><p style="color: #0075B8;">HANDLUNGSSPIELRAUM ZUK&Uuml;NFTIG: '.$hsrz.'</p></div>';
                                     }
                                    
                                 }
-                            ?>
-                    </td>
-                    <td> <?php 
                                 if(isset($fil)){
                                     if($hsra == "'gruen','gelb'"){
                                     }else{
-                                        echo '<p style="color: #0075B8;">HANDLUNGSSPIELRAUM GEGENWART: '.$hsra.'</p>';
+                                        $hsra = str_replace("'gelb'", " eingeschr&auml;nkt", $hsra);
+                                        $hsra = str_replace("'gruen'", " offen", $hsra);
+                                        $hsra = str_replace("'gelbHoch'", " zuk&uuml;nft. eingeschr&auml;nkter", $hsra);
+                                        echo '<div class="filterlist_inner"><p style="color: #0075B8;">HANDLUNGSSPIELRAUM AKTUELL: '.$hsra.'</p></div>';
                                     }
                                    
                                 }
-                            ?>
-                    </td>
-                    
-                </tr>
-            </tbody>
-        </table>
+                          ?>
     </div>
     
 <!-- ACCORDION ---------------------------------------------------------------->    
@@ -642,7 +725,7 @@
                     }
                    
                     echo '
-                    <div style="float: left; margin-left: 73px; font-size: 13px;" title="'.$title.'">'.$fktNrName.'</div>
+                    <div style="float: left; margin-left: 75px; font-size: 13px;" title="'.$title.'">'.$fktNrName.'</div>
                     <div id="unterphaseR" title="Unterphase: '.$uphaseName.'">['.$uphaseNr.']</div>                    
                     <div id="grobphaseR" title="Grobphase-Nr. Grobphase-Name">'.$phaseNrName.'&nbsp;</div>
                     

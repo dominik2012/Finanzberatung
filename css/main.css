@@ -214,7 +214,6 @@
     top:25%;
     left:35%;
     width:650px;
-    height:300px;
     padding:10px;
     background-color:rgb(240,240,240);
     border:2px solid grey;
@@ -383,22 +382,30 @@ body
     padding-bottom: 4px;
 }
 
-#filterlist
+.filterlist
 {
-        position: relative;
-        margin: auto;
+        height: 15px;
+        padding: 4px 10px 15px 4px;
         margin-bottom: 10px;
         background-color: #DADADA;
         color: black;
         font-weight: bold;
         font-size: 11px;
-        border-radius: 11px 11px 11px 11px;
+        border-radius: 4px;
         border: 1px solid #C4C4C4;
 }
 
-#filterlist td  
+.filterlist_inner
 {
+        background-color: #D1CECE;
+        color: black;
         font-weight: bold;
+        font-size: 11px;
+        margin-right: 10px;
+        padding: 5px 5px 0px 5px;
+        float: left;
+        border-radius: 4px;
+        border: 1px solid #C4C4C4;
 }
 
 #contentarea
@@ -421,7 +428,8 @@ body
     width: 459px;
     color: black;
     font-weight: bold;
-    padding-top: 5px;
+    font-size: 14px;
+    padding-top: 2px;
     text-align: center;
 }
 
