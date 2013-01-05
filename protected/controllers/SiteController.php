@@ -214,6 +214,7 @@ class SiteController extends Controller
 			$fil_gesetze = $_POST['form_gesetze'];
 			
 			//Pr�fung, ob Eingaben leer waren, falls leer werden in einem Buffer alle M�glichkeiten gespeichert
+			/*
 			if($fil_grobphase==""){
 					$fil2= Grobphase::model()->getCount();
 					for($i=0;$i<$fil2;$i++){
@@ -284,21 +285,58 @@ class SiteController extends Controller
 				}
 				$fil_hsrz = substr($fil_hsrz, 0, -1);
 			}
-			
+			*/
 			//SQL-SubStrings f�r alle Filter: sucht alle Werte der Spalten, die im jeweiligen Buffer enthalten sind
-			$fil[0] = "grobphase_id IN ($fil_grobphase)";
-			$fil[1] = "unterphase_id IN ($fil_unterphase)";
-			$fil[2] = "nummer IN ($fil_name)";
-			$fil[3] = "priv_mit_beratung IN ($fil_privmb)";
-			$fil[4] = "prof_mit_beratung IN ($fil_profmb)";
-			$fil[5] = "priv_ohne_beratung IN ($fil_privob)";
-			$fil[6] = "prof_ohne_beratung IN ($fil_profob)";
-			$fil[7] = "r_ausf_geschaeft IN ($fil_rausfg)";
-			$fil[8] = "hsr_aktuell IN ($fil_hsra)";
-			$fil[9] = "hsr_zukuenftig IN ($fil_hsrz)";
+			$index = 0;
+			$fil[0]="";
+			if(!empty($fil_grobphase)){
+			$fil[$index] = "grobphase_id IN ($fil_grobphase)";
+			$index++;
+			}
+			if(!empty($fil_unterphase)){
+			$fil[$index] = "unterphase_id IN ($fil_unterphase)";
+			$index++;
+			}
+			if(!empty($fil_name)){
+			$fil[$index] = "nummer IN ($fil_name)";
+			$index++;
+			}
+			if(!empty($fil_privmb)){
+			$fil[$index] = "priv_mit_beratung IN ($fil_privmb)";
+			$index++;
+			}
+			if(!empty($fil_profmb)){
+			$fil[$index] = "prof_mit_beratung IN ($fil_profmb)";
+			$index++;
+			}
+			if(!empty($fil_privob)){
+			$fil[$index] = "priv_ohne_beratung IN ($fil_privob)";
+			$index++;
+			}
+			if(!empty($fil_profob)){
+			$fil[$index] = "prof_ohne_beratung IN ($fil_profob)";
+			$index++;
+			}
+			if(!empty($fil_rausfg)){
+			$fil[$index] = "r_ausf_geschaeft IN ($fil_rausfg)";
+			$index++;
+			}
+			if(!empty($fil_hsra)){
+			$fil[$index] = "hsr_aktuell IN ($fil_hsra)";
+			$index++;
+			}
+			if(!empty($fil_hsrz)){
+			$fil[$index] = "hsr_zukuenftig IN ($fil_hsrz)";
+			$index++;
+			}
+			
 			$sql ="SELECT * FROM funktion WHERE ";
+			if($fil[0] == ""){
+			$sql ="SELECT * FROM funktion";
+			}
 			if(!empty($fil_gesetze)){
-			$fil[10] = "gesetz.id IN ($fil_gesetze)";
+			$fil[$index] = "gesetz.id IN ($fil_gesetze)";
+			$index++;
 			$sql ="SELECT * FROM funktion INNER JOIN nm_funktion_gesetz ON funktion.id = nm_funktion_gesetz.f_id INNER JOIN gesetz ON nm_funktion_gesetz.g_id = gesetz.id WHERE ";
 			}
 			//Zusammensetzen der SQL-Abfrage
@@ -313,6 +351,7 @@ class SiteController extends Controller
 				if(empty($funktion[0]["id"])){
 					$funktion[0]["id"]="leer";
 					}
+				if($funktion[0]["id"]!="leer"){
 				$gesetze = array();
 				for($i=0;$i<count($funktion);$i++){
 					$gesetze[$i]=$funktion[$i]->gesetze;
@@ -326,6 +365,7 @@ class SiteController extends Controller
 						}
 					$funktion[$i]["b_name"]= $br_buffer;
 					}
+				}
 				$grobphase = Grobphase::model()->findAllBySql("SELECT * FROM grobphase");
                         
 
@@ -356,8 +396,12 @@ class SiteController extends Controller
                                 //do nothing
                             }
                         } */
-			
-			$this->render('neu',array( 'gesetz2' => $gesetz2, 'funktionsfolgenArr' => $funktionsfolgenArr,'sprungstellenArr' => $sprungstellenArr, 'gesetze'=>$gesetze,'unterphase2'=>$unterphase2,'fil'=>$sql,'model'=>$funktion, 'model2' =>$model2, 'model3' =>$funktion, 'model4' => $fil_grobphase, 'name' => $fil_name, 'hsrz' => $fil_hsrz, 'hsra' => $fil_hsra, 'privob' => $fil_privob, 'profob' => $fil_profob, 'rausfg' => $fil_rausfg,'unterphase' => $fil_unterphase, 'privmb' => $fil_privmb, 'profmb' => $fil_profmb, 'fil_gesetze' => $fil_gesetze, 'model6' => $spaltennamen, 'model5' => $spaltennamen2, 'grobphase' => $grobphase,));
+			if($funktion[0]["id"]!="leer"){
+				$this->render('neu',array( 'gesetz2' => $gesetz2, 'funktionsfolgenArr' => $funktionsfolgenArr,'sprungstellenArr' => $sprungstellenArr, 'gesetze'=>$gesetze,'unterphase2'=>$unterphase2,'fil'=>$sql,'model'=>$funktion, 'model2' =>$model2, 'model3' =>$funktion, 'model4' => $fil_grobphase, 'name' => $fil_name, 'hsrz' => $fil_hsrz, 'hsra' => $fil_hsra, 'privob' => $fil_privob, 'profob' => $fil_profob, 'rausfg' => $fil_rausfg,'unterphase' => $fil_unterphase, 'privmb' => $fil_privmb, 'profmb' => $fil_profmb, 'fil_gesetze' => $fil_gesetze, 'model6' => $spaltennamen, 'model5' => $spaltennamen2, 'grobphase' => $grobphase,));
+			}
+			else{
+				$this->render('neu',array('model'=>$funktion, 'model2' =>$model2, 'model6' => $spaltennamen, 'model5' => $spaltennamen2, 'leer' => 'leer',));
+				}
 		}
 		else{
 		$model = array($funktion,$filter,);

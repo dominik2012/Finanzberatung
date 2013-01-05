@@ -134,7 +134,7 @@
     
     <div class="row">
     	
-    <div class="beschreibung">
+    <div class="beschreibung2">
         <div class="topline">Beschreibung</div>
         <div class="inhalt2"><?php echo $funktionsdaten['beschreibung']; ?></div>
     </div>
@@ -163,7 +163,7 @@
     </div>
 
     <div class="row">
-    <div class="sprungstelle">
+    <div class="sprungstelle2">
         <div class="topline">Sprungstellen</div>
         <div class="inhalt3">
             <?php
@@ -184,7 +184,7 @@
         </div>
     </div>
 
-    <div class="funktionsfolge">
+    <div class="funktionsfolge2">
         <div class="topline">Funktionsfolgen</div>
         <div class="inhalt3">
             <?php
@@ -250,6 +250,21 @@
     <div class="smallbox">
         <div class="topline">Ressourcen</div>
         <div class="inhalt3"><?php echo $funktionsdaten['ressourcen']; ?></div>
+    </div>
+        
+    <div class="smallbox">
+        <div class="topline">Inputdaten</div>
+        <div class="inhalt3"><?php echo $funktionsdaten['inputdaten']; ?></div>
+    </div>
+        
+    <div class="smallbox">
+        <div class="topline">Outputdaten</div>
+        <div class="inhalt3"><?php echo $funktionsdaten['outputdaten']; ?></div>
+    </div>
+        
+    <div class="smallbox">
+        <div class="topline">Kanalwechsel</div>
+        <div class="inhalt3"><?php echo $funktionsdaten['kanalwechsel']; ?></div>
     </div>
 
     </div>
