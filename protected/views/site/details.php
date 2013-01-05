@@ -21,17 +21,17 @@
     
     <div class ="kopfzeile" style="text-align: center;">
         
-            <button id="buttonFirst" style="float: left; height: 25px;" onClick='window.location.href="<?php echo $link.$pPhase ?>";' ><span class="ui-icon ui-icon-seek-prev"></span></button>
+            <button class="button_schließen" onClick='window.location.href="<?php echo $link.$pPhase ?>";' ><<</button>
         
-            <button id="buttonPrevious" style="float: left; height: 25px;" onClick='window.location.href="<?php echo $link.$pFkt ?>";'><span class="ui-icon ui-icon-triangle-1-w"></span></button>
+            <button class="button_schließen" onClick='window.location.href="<?php echo $link.$pFkt ?>";'><</button>
         
-            <button id="close" style="float: left; color: #026890; height: 25px;" onclick="window.close()">schließen</button>
+            <button class="button_schließen" onclick="window.close()">schließen</button>
             
             <span id="Funktionsname" ><?php echo"[".$funktionsdaten['nummer']."] - ".$funktionsdaten['name'];?></span>
             
-            <button id="buttonLast" style="float: right; height: 25px;" onClick='window.location.href="<?php echo $link.$nPhase ?>";' ><span class="ui-icon ui-icon-seek-next"></span></button>
+            <button class="button_schließen" style="float:right;" onClick='window.location.href="<?php echo $link.$nPhase ?>";' >>></span></button>
             
-            <button id="buttonNext" style="float: right; height: 25px;" onClick='window.location.href="<?php echo $link.$nFkt ?>";'><span class="ui-icon ui-icon-triangle-1-e"></span></button>
+            <button class="button_schließen" style="float:right;" onClick='window.location.href="<?php echo $link.$nFkt ?>";'>></span></button>
 
     </div>
     
