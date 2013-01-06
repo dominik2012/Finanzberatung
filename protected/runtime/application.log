@@ -10462,3 +10462,16 @@ REQUEST_URI=/Finanzberatung/index.php?r=site/neu
 in C:\xampp\htdocs\Finanzberatung\protected\views\site\neu.php (499)
 in C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php (400)
 in C:\xampp\htdocs\Finanzberatung\index.php (13)
+2013/01/06 17:20:02 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\Finanzberatung\framework\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): CController->run('details')
+#4 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController('site/details')
+#5 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\Finanzberatung\index.php(13): CApplication->run()
+#7 {main}
+REQUEST_URI=/Finanzberatung/index.php?r=site/details
+HTTP_REFERER=http://localhost/Finanzberatung/index.php?r=site/neu
+---

@@ -656,6 +656,7 @@
                             $spaInhalt = $model3[$i][$key];
                             $style = "";
                             $style1= " style='width: 52px; overflow: hidden;'";
+                            $style2= " style='width: 85px;'";
                             
                             //Grafik Abfragen
                             if($j<45){
@@ -678,11 +679,10 @@
                             }
                             else if($spaInhalt == "gelbHoch"){
                                 $spaInhalt = "<img title='Handlungsspielraum zukünftig weiter eingeschränkt' src='/Finanzberatung/css/images/pfeile/gelbHoch.png' style='padding-top: 70px;'>";
-                                $style = $style1;/*
-                            }else if($spaName == "Filiale Minimum"){
-                                $spaName .= ' ['.$model3[$j]["filiale_minimum_dauer"].'min]';
-                            }else if($spaName == "Filiale Empfehlung"){
-                                $spaName .= ' ['.$model3[$j]["filiale_empfehlung_dauer"].'min]';*/
+                                $style = $style1;
+                            }else if($spaName == "Filiale Minimum Dauer" || $spaName == "Filiale Empfehlung Dauer" || $spaName == "Online Minimum Dauer" || $spaName == "Online Empfehlung Dauer" || $spaName == "Mobil Minimum Dauer" || $spaName == "Mobil Empfehlung Dauer"){
+                                $spaInhalt .= ' min';
+                                $style = $style2;
                             }
                             }
                             
