@@ -656,7 +656,6 @@
                             $spaInhalt = $model3[$i][$key];
                             $style = "";
                             $style1= " style='width: 52px; overflow: hidden;'";
-                            $style2= " style='width: 85px;'";
                             
                             //Grafik Abfragen
                             if($j<45){
@@ -667,7 +666,7 @@
                                 $spaInhalt = "<img title='Gesetz bedingt durch Funktion'src='/Finanzberatung/css/images/pfeile/funktionGesetz.png' style='padding-top: 70px;'>";
                                 $style = $style1;
                             }else if($spaInhalt == "keine Abhängig"){
-                               if($spaName == "Privat mit Beratung" || $spaName == "Privat ohne Beratung" || $spaName == "Professionell mit Beratung" || $spaName == "Professionell ohne Beratung" || $spaName == "Reines Ausfuehrungsgeschaeft")
+                               //if($spaName == "Privat mit Beratung" || $spaName == "Privat ohne Beratung" || $spaName == "Professionell mit Beratung" || $spaName == "Professionell ohne Beratung" || $spaName == "Reines Ausfuehrungsgeschäft")
                                 $spaInhalt = "<img title='Keine Regularien' src='/Finanzberatung/css/images/pfeile/null.png' style='padding-top: 70px;'>";
                                 $style = $style1;
                             }else if($spaInhalt == "gelb"){
@@ -682,7 +681,7 @@
                                 $style = $style1;
                             }else if($spaName == "Filiale Minimum Dauer" || $spaName == "Filiale Empfehlung Dauer" || $spaName == "Online Minimum Dauer" || $spaName == "Online Empfehlung Dauer" || $spaName == "Mobil Minimum Dauer" || $spaName == "Mobil Empfehlung Dauer"){
                                 $spaInhalt .= ' min';
-                                $style = $style2;
+                                $style = $style1;
                             }
                             }
                             
@@ -801,26 +800,19 @@
                 var funktionsName = this.attributes["name"].value;
                 var spruenge = this.attributes["data-sprungstelle"].value;
                 var popupID = this.id;
-                
+                /*
                 //alert($(window).width());
                 //alert(link);
-                //var ausgabe;
+                var ausgabe = "";
                 //var spruengeArr = spruenge.split(",,");
-                /*    
-                for(var i=0; i<spruengeArr.length; i++){
-                  if(i==0){
-                        var fktNr = spruengeArr[i];
-                        var fktName = spruengeArr[i+1];
-                        //ausgabe = '<a class="links" href="http://localhost/Finanzberatung/index.php?r=site/details&fktNr="'+fktNr+'">['+fktNr+'] '+fktName+'</a></br></br>';
-                        ausgabe += '['+fktNr+'] '+fktName+'</br></br>';
-                  }else{
-                    if(i%2 == 0){
-                        var fktNr = spruengeArr[i];
-                        var fktName = spruengeArr[i+1];
-                        //ausgabe += '<a class="links" href="http://localhost/Finanzberatung/index.php?r=site/details&fktNr="'+fktNr+'">['+fktNr+'] '+fktName+'</a></br></br>';
-                        ausgabe += '['+fktNr+'] '+fktName+'</br></br>';
-                    }
-                  }
+                var fktArr = spruenge.split(",,");
+                var i=0;
+                while(i<fktArr.length){
+                  var fktNr = fktArr[i++];
+                  var fktName = fktArr[i++];
+                  var fktNr = fktNr.replace(" ","");
+                  ausgabe += '<a class="links" href="http://localhost/Finanzberatung/index.php?r=site/details&fktNr="'+fktNr+'">['+fktNr+'] '+fktName+'</a></br></br>';
+                  //ausgabe += '['+fktNr+'] '+fktName+'</br>';
                 }*/
                 
                 var popup = document.createElement('div');

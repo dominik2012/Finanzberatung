@@ -138,6 +138,11 @@ class SiteController extends Controller
                             
                             //$temp = '<a class="links" href="'.$link.$fktNr.'">['.$fktNr.'] '.$fktName.'</a></br></br>';
                             $temp = '['.$fktNr.']  '.$fktName.'</br>';
+                            /*$temp = $fktNr.',,'.$fktName.',,';
+                            if($j == $fktNrLength-1){
+                                $length = strlen($temp);
+                                $temp = $temp.substr(0, $length-2);
+                            }*/
 
                             if($ausgabeGesamt == null){
                                 $ausgabeGesamt = $temp;
