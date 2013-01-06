@@ -472,7 +472,7 @@ class SiteController extends Controller
                     $nr = $i-1;
                     break;
                 }else if($fktNr > $sprung[$arrLength-1]){
-                    $nr = $sprung[$arrLength-2];
+                    $nr = $arrLength-2;
                     break;
                 }else if($fktNr < $sprung[$i]){
                     $nr = $i-2;
