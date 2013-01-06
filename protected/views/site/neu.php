@@ -403,7 +403,7 @@
                             
                             //Personenbeteiligung
                             echo '<optgroup label="Personenbeteiligung">';            
-                            for ($i=13;$i<22;$i++){
+                            for ($i=13;$i<21;$i++){
                                 $inhalt = $model6[$i]; 
                                 $title = str_replace('"',"&#039;",  shortName($inhalt));
                                 echo '<option value="'.$model5[$i].'" id="'.$model5[$i].'" name="'.$model5[$i].'" title="'.$title.'");>'.$inhalt.'</option>';

@@ -245,11 +245,6 @@
                 </tr>
             </table>
         </div>
-    </div>    
-    
-    <div class="smallbox">
-        <div class="topline">Ressourcen</div>
-        <div class="inhalt3"><?php echo $funktionsdaten['ressourcen']; ?></div>
     </div>
         
     <div class="smallbox">
