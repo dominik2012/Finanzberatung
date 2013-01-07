@@ -121,7 +121,6 @@ class SiteController extends Controller
                 
                 $funktionGes = Funktion::model()->findAllBySql("SELECT * FROM funktion");
                 $spruengeLength = count($funktionGes);
-                $link = "http://localhost/Finanzberatung/index.php?r=site/details&fktNr=";
                 
                 for($i=0;$i<$spruengeLength;$i++){
                         $sprungstellen = $funktionGes[$i]["sprungstelle"];
@@ -135,10 +134,8 @@ class SiteController extends Controller
                         for($j=0; $j<$fktNrLength; $j++){
                             $fktNr = $funktionGes[$fktNummern[$j]]["nummer"]-1;
                             $fktName = $funktionGes[$fktNr-1]["name"];
-                            
-                            //$temp = '<a class="links" href="'.$link.$fktNr.'">['.$fktNr.'] '.$fktName.'</a></br></br>';
-                            //$temp = '['.$fktNr.']  '.$fktName.'</br>';
                             $temp = '['.$fktNr.']  '.$fktName.',,';
+                            
                             if($j == $fktNrLength-1){
                                 $length = strlen($temp);
                                 $temp = $temp.substr(0, $length-2);
@@ -164,10 +161,8 @@ class SiteController extends Controller
                         for($j=0; $j<$fktNrLength; $j++){
                             $fktNr = $funktionGes[$fktNummern[$j]]["nummer"]-1;
                             $fktName = $funktionGes[$fktNr-1]["name"];
-                            
-                            //$temp = '<a class="links" href="'.$link.$fktNr.'">['.$fktNr.'] '.$fktName.'</a></br></br>';
-                            //$temp = '['.$fktNr.']  '.$fktName.'</br>';
                             $temp = '['.$fktNr.']  '.$fktName.',,';
+                            
                             if($j == $fktNrLength-1){
                                 $length = strlen($temp);
                                 $temp = $temp.substr(0, $length-2);
@@ -429,6 +424,7 @@ class SiteController extends Controller
             
             $business_rules = $funktionsdaten->business_rules;
             $gesetze = $funktionsdaten->gesetze;
+            $auslegung = $funktionsdaten->auslegungen;
             //$business_rules = $funktionsdaten['business_rules'];
             //$gesetze = $funktionsdaten['gesetze'];
             //$auslegung = $funktionsdaten->auslegung;
@@ -485,7 +481,7 @@ class SiteController extends Controller
                     $nr = $i-1;
                     break;
                 }else if($fktNr > $sprung[$arrLength-1]){
-                    $nr = $sprung[$arrLength-2];
+                    $nr = $arrLength-2;
                     break;
                 }else if($fktNr < $sprung[$i]){
                     $nr = $i-2;
@@ -515,6 +511,6 @@ class SiteController extends Controller
             }
             $nextPhase = $sprung[$nr];
             
-            $this->render('details', array( 'gesetze' => $gesetze, 'business_rules' => $business_rules, 'sprung'=>$sprung, 'nextPhase'=>$nextPhase, 'prevPhase'=>$prevPhase, 'prevFkt'=>$prevFkt, 'nextFkt'=>$nextFkt, 'funktion'=>$funktion, 'funktionsdaten'=>$funktionsdaten, 'fktNr'=>$fktNr, 'grobphase'=>$grobphase, 'unterphase'=>$unterphase));
+            $this->render('details', array( 'auslegungen' => $auslegung, 'gesetze' => $gesetze, 'business_rules' => $business_rules, 'sprung'=>$sprung, 'nextPhase'=>$nextPhase, 'prevPhase'=>$prevPhase, 'prevFkt'=>$prevFkt, 'nextFkt'=>$nextFkt, 'funktion'=>$funktion, 'funktionsdaten'=>$funktionsdaten, 'fktNr'=>$fktNr, 'grobphase'=>$grobphase, 'unterphase'=>$unterphase));
         }
 }

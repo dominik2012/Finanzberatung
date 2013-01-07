@@ -387,6 +387,8 @@
                                 $title = str_replace('"',"&#039;",  shortName($inhalt));
                                 echo '<option value="'.$model5[$i].'" id="'.$model5[$i].'" name="'.$model5[$i].'" title="'.$title.'");>'.$inhalt.'</option>';
                             }
+                            
+                            //Business Rule
                             $inhalt_br = $model6[45];
                             $title_br = str_replace('"',"&#039;",  shortName($inhalt_br));
                             echo '<option value="'.$model5[45].'" id="'.$model5[45].'" name="'.$model5[45].'" title="'.$title_br.'");>'.$inhalt_br.'</option>';
@@ -457,7 +459,7 @@
 					echo '<div class="filterlist_inner"><p style="color: #0075B8;">Die Suche ergab keine Ergebnisse.</p></div>';
 				}
 				if(isset($model3)){
-	
+                                        //echo $fil;
                                 if(isset($fil)){
 
                                     if(!empty($model4)){ 

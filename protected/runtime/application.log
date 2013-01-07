@@ -10700,3 +10700,206 @@ Stack trace:
 REQUEST_URI=/Finanzberatung/index.php?r=site/details&fktNr=616263
 in C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php (425)
 in C:\xampp\htdocs\Finanzberatung\index.php (13)
+2013/01/07 16:52:23 [error] [php] Undefined index: auslegungen (C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php:429)
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\web\actions\CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#1 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(309): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): SiteController->runAction()
+#3 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#4 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): SiteController->run()
+#5 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#6 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\Finanzberatung\index.php(13): CWebApplication->run()
+REQUEST_URI=/Finanzberatung/index.php?r=site/details&fktNr=7
+in C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php (429)
+in C:\xampp\htdocs\Finanzberatung\index.php (13)
+2013/01/07 16:55:36 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php:429)
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\web\actions\CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#1 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(309): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): SiteController->runAction()
+#3 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#4 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): SiteController->run()
+#5 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#6 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\Finanzberatung\index.php(13): CWebApplication->run()
+REQUEST_URI=/Finanzberatung/index.php?r=site/details&fktNr=60
+in C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php (429)
+in C:\xampp\htdocs\Finanzberatung\index.php (13)
+2013/01/07 16:57:41 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php:429)
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\web\actions\CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#1 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(309): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): SiteController->runAction()
+#3 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#4 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): SiteController->run()
+#5 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#6 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\Finanzberatung\index.php(13): CWebApplication->run()
+REQUEST_URI=/Finanzberatung/index.php?r=site/details&fktNr=74
+in C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php (429)
+in C:\xampp\htdocs\Finanzberatung\index.php (13)
+2013/01/07 17:23:17 [error] [exception.CDbException] exception 'CDbException' with message 'The relation "business_rules" in active record class "Funktion" is specified with an invalid foreign key "nm_auslegung_business_rule(a_id". There is no such column in the table "business_rule".' in C:\xampp\htdocs\Finanzberatung\framework\db\ar\CActiveFinder.php:1066
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\db\ar\CActiveFinder.php(613): CJoinElement->joinOneMany(Object(CJoinElement), 'nm_auslegung_bu...', Object(CJoinElement), Object(CJoinElement))
+#1 C:\xampp\htdocs\Finanzberatung\framework\db\ar\CActiveFinder.php(492): CJoinElement->applyLazyCondition(Object(CJoinQuery), Object(Funktion))
+#2 C:\xampp\htdocs\Finanzberatung\framework\db\ar\CActiveFinder.php(167): CJoinElement->lazyFind(Object(Funktion))
+#3 C:\xampp\htdocs\Finanzberatung\framework\db\ar\CActiveRecord.php(273): CActiveFinder->lazyFind(Object(Funktion))
+#4 C:\xampp\htdocs\Finanzberatung\framework\db\ar\CActiveRecord.php(142): CActiveRecord->getRelated('auslegungen')
+#5 C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php(429): CActiveRecord->__get('auslegungen')
+#6 [internal function]: SiteController->actionDetails('74')
+#7 C:\xampp\htdocs\Finanzberatung\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(SiteController), Array)
+#8 C:\xampp\htdocs\Finanzberatung\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(SiteController), Object(ReflectionMethod), Array)
+#9 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#10 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#11 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): CController->run('details')
+#13 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController('site/details')
+#14 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\Finanzberatung\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/Finanzberatung/index.php?r=site/details&fktNr=74
+HTTP_REFERER=http://localhost/Finanzberatung/index.php?r=site/neu
+---
+2013/01/07 17:23:37 [error] [exception.CDbException] exception 'CDbException' with message 'The relation "business_rules" in active record class "Funktion" is specified with an invalid foreign key "nm_auslegung_business_rule(a_id". There is no such column in the table "business_rule".' in C:\xampp\htdocs\Finanzberatung\framework\db\ar\CActiveFinder.php:1066
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\db\ar\CActiveFinder.php(613): CJoinElement->joinOneMany(Object(CJoinElement), 'nm_auslegung_bu...', Object(CJoinElement), Object(CJoinElement))
+#1 C:\xampp\htdocs\Finanzberatung\framework\db\ar\CActiveFinder.php(492): CJoinElement->applyLazyCondition(Object(CJoinQuery), Object(Funktion))
+#2 C:\xampp\htdocs\Finanzberatung\framework\db\ar\CActiveFinder.php(167): CJoinElement->lazyFind(Object(Funktion))
+#3 C:\xampp\htdocs\Finanzberatung\framework\db\ar\CActiveRecord.php(273): CActiveFinder->lazyFind(Object(Funktion))
+#4 C:\xampp\htdocs\Finanzberatung\framework\db\ar\CActiveRecord.php(142): CActiveRecord->getRelated('auslegungen')
+#5 C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php(429): CActiveRecord->__get('auslegungen')
+#6 [internal function]: SiteController->actionDetails('74')
+#7 C:\xampp\htdocs\Finanzberatung\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(SiteController), Array)
+#8 C:\xampp\htdocs\Finanzberatung\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(SiteController), Object(ReflectionMethod), Array)
+#9 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#10 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#11 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): CController->run('details')
+#13 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController('site/details')
+#14 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\Finanzberatung\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/Finanzberatung/index.php?r=site/details&fktNr=74
+HTTP_REFERER=http://localhost/Finanzberatung/index.php?r=site/neu
+---
+2013/01/07 17:24:02 [error] [exception.CDbException] exception 'CDbException' with message 'The relation "business_rules" in active record class "Funktion" is specified with an invalid foreign key "nm_auslegung_business_rule(a_id". There is no such column in the table "business_rule".' in C:\xampp\htdocs\Finanzberatung\framework\db\ar\CActiveFinder.php:1066
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\db\ar\CActiveFinder.php(613): CJoinElement->joinOneMany(Object(CJoinElement), 'nm_auslegung_bu...', Object(CJoinElement), Object(CJoinElement))
+#1 C:\xampp\htdocs\Finanzberatung\framework\db\ar\CActiveFinder.php(492): CJoinElement->applyLazyCondition(Object(CJoinQuery), Object(Funktion))
+#2 C:\xampp\htdocs\Finanzberatung\framework\db\ar\CActiveFinder.php(167): CJoinElement->lazyFind(Object(Funktion))
+#3 C:\xampp\htdocs\Finanzberatung\framework\db\ar\CActiveRecord.php(273): CActiveFinder->lazyFind(Object(Funktion))
+#4 C:\xampp\htdocs\Finanzberatung\framework\db\ar\CActiveRecord.php(142): CActiveRecord->getRelated('auslegungen')
+#5 C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php(429): CActiveRecord->__get('auslegungen')
+#6 [internal function]: SiteController->actionDetails('74')
+#7 C:\xampp\htdocs\Finanzberatung\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(SiteController), Array)
+#8 C:\xampp\htdocs\Finanzberatung\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(SiteController), Object(ReflectionMethod), Array)
+#9 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#10 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#11 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): CController->run('details')
+#13 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController('site/details')
+#14 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\Finanzberatung\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/Finanzberatung/index.php?r=site/details&fktNr=74
+HTTP_REFERER=http://localhost/Finanzberatung/index.php?r=site/neu
+---
+2013/01/07 17:45:11 [error] [exception.CDbException] exception 'CDbException' with message 'The relation "business_rules" in active record class "Funktion" is specified with an invalid foreign key "nm_auslegung_business_rule(a_id". There is no such column in the table "business_rule".' in C:\xampp\htdocs\Finanzberatung\framework\db\ar\CActiveFinder.php:1066
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\db\ar\CActiveFinder.php(613): CJoinElement->joinOneMany(Object(CJoinElement), 'nm_auslegung_bu...', Object(CJoinElement), Object(CJoinElement))
+#1 C:\xampp\htdocs\Finanzberatung\framework\db\ar\CActiveFinder.php(492): CJoinElement->applyLazyCondition(Object(CJoinQuery), Object(Funktion))
+#2 C:\xampp\htdocs\Finanzberatung\framework\db\ar\CActiveFinder.php(167): CJoinElement->lazyFind(Object(Funktion))
+#3 C:\xampp\htdocs\Finanzberatung\framework\db\ar\CActiveRecord.php(273): CActiveFinder->lazyFind(Object(Funktion))
+#4 C:\xampp\htdocs\Finanzberatung\framework\db\ar\CActiveRecord.php(142): CActiveRecord->getRelated('auslegungen')
+#5 C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php(429): CActiveRecord->__get('auslegungen')
+#6 [internal function]: SiteController->actionDetails('60')
+#7 C:\xampp\htdocs\Finanzberatung\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(SiteController), Array)
+#8 C:\xampp\htdocs\Finanzberatung\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(SiteController), Object(ReflectionMethod), Array)
+#9 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#10 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#11 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): CController->run('details')
+#13 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController('site/details')
+#14 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\Finanzberatung\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/Finanzberatung/index.php?r=site/details&fktNr=60
+HTTP_REFERER=http://localhost/Finanzberatung/index.php?r=site/neu
+---
+2013/01/07 17:54:39 [error] [php] Undefined offset: 46 (C:\xampp\htdocs\Finanzberatung\protected\views\site\neu.php:396)
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(870): SiteController->renderFile()
+#1 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(783): SiteController->renderPartial()
+#2 C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php(407): SiteController->render()
+#3 C:\xampp\htdocs\Finanzberatung\framework\web\actions\CInlineAction.php(50): SiteController->actionNeu()
+#4 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): SiteController->runAction()
+#6 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#7 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): SiteController->run()
+#8 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#9 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\Finanzberatung\index.php(13): CWebApplication->run()
+REQUEST_URI=/Finanzberatung/index.php?r=site/neu
+in C:\xampp\htdocs\Finanzberatung\protected\views\site\neu.php (396)
+in C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php (407)
+in C:\xampp\htdocs\Finanzberatung\index.php (13)
+2013/01/07 18:08:47 [error] [php] Undefined offset: 96 (C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php:493)
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\web\actions\CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#1 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(309): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): SiteController->runAction()
+#3 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#4 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): SiteController->run()
+#5 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#6 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\Finanzberatung\index.php(13): CWebApplication->run()
+REQUEST_URI=/Finanzberatung/index.php?r=site/details&fktNr=104
+in C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php (493)
+in C:\xampp\htdocs\Finanzberatung\index.php (13)
+2013/01/07 18:08:57 [error] [php] Undefined offset: 96 (C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php:493)
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\web\actions\CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#1 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(309): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): SiteController->runAction()
+#3 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#4 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): SiteController->run()
+#5 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#6 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\Finanzberatung\index.php(13): CWebApplication->run()
+REQUEST_URI=/Finanzberatung/index.php?r=site/details&fktNr=103
+in C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php (493)
+in C:\xampp\htdocs\Finanzberatung\index.php (13)
+2013/01/07 18:09:07 [error] [php] Undefined offset: 96 (C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php:493)
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\web\actions\CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#1 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(309): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): SiteController->runAction()
+#3 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#4 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): SiteController->run()
+#5 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#6 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\Finanzberatung\index.php(13): CWebApplication->run()
+REQUEST_URI=/Finanzberatung/index.php?r=site/details&fktNr=103
+in C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php (493)
+in C:\xampp\htdocs\Finanzberatung\index.php (13)
+2013/01/07 18:23:51 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1. The SQL statement executed was: SELECT * FROM funktion WHERE  .
+in C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php (354)
+in C:\xampp\htdocs\Finanzberatung\index.php (13)
+2013/01/07 18:23:51 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1. The SQL statement executed was: SELECT * FROM funktion WHERE  ' in C:\xampp\htdocs\Finanzberatung\framework\db\CDbCommand.php:528
+Stack trace:
+#0 C:\xampp\htdocs\Finanzberatung\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\Finanzberatung\framework\db\ar\CActiveRecord.php(1521): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\Finanzberatung\protected\controllers\SiteController.php(354): CActiveRecord->findAllBySql('SELECT * FROM f...')
+#3 C:\xampp\htdocs\Finanzberatung\framework\web\actions\CInlineAction.php(50): SiteController->actionNeu()
+#4 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\Finanzberatung\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(283): CController->run('neu')
+#8 C:\xampp\htdocs\Finanzberatung\framework\web\CWebApplication.php(142): CWebApplication->runController('site/neu')
+#9 C:\xampp\htdocs\Finanzberatung\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\Finanzberatung\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/Finanzberatung/index.php?r=site/neu
+HTTP_REFERER=http://localhost/Finanzberatung/index.php?r=site/neu
+---

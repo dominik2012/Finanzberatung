@@ -148,7 +148,7 @@
     <div class="row">
     <div class="auslegung">
         <div class="topline">Auslegung</div>
-        <div class="inhaltBR"><?php //for($i=0;$i<count($business_rules);$i++){echo ($i+1).". ".$business_rules[$i]["name"].":     ".$business_rules[$i]["beschreibung"].'<br/>';} ?></div>
+        <div class="inhaltBR"><?php /*for($i=0;$i<count($auslegungen);$i++){echo ($i+1).". ".$auslegungen[$i]["name"].":     ".$auslegungen[$i]["beschreibung"].'<br/>';} */?></div>
     </div> 
         
     <div class="businessRules">

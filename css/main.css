@@ -1028,9 +1028,15 @@ div.search-form
     padding-bottom: 5px;
 }
 
-.links 
+a.links 
 {
     text-decoration: none;
+    color: #555;
+}
+
+a.links:hover {
+    font-weight: bold;
+    color: #555;
 }
 
 .inhalt2 {

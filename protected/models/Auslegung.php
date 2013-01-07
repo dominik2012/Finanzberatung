@@ -54,6 +54,7 @@ class Auslegung extends CActiveRecord
 		return array(
 			'gesetze' => array(self::MANY_MANY, 'Gesetz', 'nm_auslegung_gesetz(a_id,g_id)'),
 			'business_rules' => array(self::MANY_MANY, 'BusinessRule', 'nm_auslegung_business_rule(a_id,br_id)'),
+                        'funktionen' => array(self::MANY_MANY, 'Funktion', 'nm_auslegung_business_rule(a_id,br_id)', 'through' => 'business_rules'),
 		);
 	}
 

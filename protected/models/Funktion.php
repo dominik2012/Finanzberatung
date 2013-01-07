@@ -108,6 +108,7 @@ class Funktion extends CActiveRecord
 			'grobphase' => array(self::BELONGS_TO, 'Grobphase', 'grobphase_id'),
 			'business_rules' => array(self::MANY_MANY, 'BusinessRule', 'nm_funktion_business_rule(f_id,br_id)'),
                         'gesetze' => array(self::MANY_MANY, 'Gesetz', 'nm_funktion_gesetz(f_id,g_id)'),
+                        'auslegungen' => array(self::MANY_MANY, 'Auslegung', 'nm_auslegung_business_rule(a_id,br_id)', 'through' => 'business_rules'),
             );
 	}
 
@@ -192,7 +193,7 @@ class Funktion extends CActiveRecord
 			'verantwortlicher' => 'verantwortlicher',
 			'ressourcen' => 'ressourcen',
 			'funktionsfolge' => 'funktionsfolge',
-            'sprungstelle' => 'sprungstelle',
+                        'sprungstelle' => 'sprungstelle',
 			'kanalwechsel' => 'kanalwechsel',
 			'inputdaten' => 'inputdaten',
 			'outputdaten' => 'outputdaten',
