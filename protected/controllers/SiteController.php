@@ -133,16 +133,16 @@ class SiteController extends Controller
                         $fktNrLength = count($fktNummern);
                         
                         for($j=0; $j<$fktNrLength; $j++){
-                            $fktNr = $funktionGes[$fktNummern[$j]]["nummer"];
-                            $fktName = $funktionGes[$fktNummern[$j]]["name"];
+                            $fktNr = $funktionGes[$fktNummern[$j]]["nummer"]-1;
+                            $fktName = $funktionGes[$fktNr-1]["name"];
                             
                             //$temp = '<a class="links" href="'.$link.$fktNr.'">['.$fktNr.'] '.$fktName.'</a></br></br>';
-                            $temp = '['.$fktNr.']  '.$fktName.'</br>';
-                            /*$temp = $fktNr.',,'.$fktName.',,';
+                            //$temp = '['.$fktNr.']  '.$fktName.'</br>';
+                            $temp = '['.$fktNr.']  '.$fktName.',,';
                             if($j == $fktNrLength-1){
                                 $length = strlen($temp);
                                 $temp = $temp.substr(0, $length-2);
-                            }*/
+                            }
 
                             if($ausgabeGesamt == null){
                                 $ausgabeGesamt = $temp;
