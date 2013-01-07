@@ -245,6 +245,15 @@
     box-shadow: 5px 5px 20px #888;
 }
 
+.popupLink {
+    cursor: pointer;
+    margin-bottom: 3px;
+}
+
+.popupLink:hover {
+    font-weight: bold;
+}
+
 .cancel{
     display:relative;
     cursor:pointer;

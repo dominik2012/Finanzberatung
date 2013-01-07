@@ -756,6 +756,16 @@
           
           return false;
         });
+        
+        $('.popupLink').click( function(ev) {
+          
+          var fktNr = this.id;
+          
+          ev.preventDefault();
+          window.open('http://localhost/Finanzberatung/index.php?r=site/details&fktNr='+fktNr, 'Continue to Application');
+          
+          return false;
+        });
   });
 </script>
 
@@ -792,19 +802,21 @@
                 return false;
      });
      
+     function openDetail(fktNr){
+        window.open('http://localhost/Finanzberatung/index.php?r=site/details&fktNr='+fktNr, 'Continue to Application');
+        return false;
+     }
+     
      $('.spruenge_button').click(
             
-        
+            
             function popUp2(){
                 
                 var funktionsName = this.attributes["name"].value;
                 var spruenge = this.attributes["data-sprungstelle"].value;
                 var popupID = this.id;
                 
-                //alert($(window).width());
-                //alert(link);
                 var ausgabe = "";
-                //var spruengeArr = spruenge.split(",,");
                 var fktArr = spruenge.split(",,");
                 var i=0;
                 while(i<fktArr.length){
@@ -812,9 +824,7 @@
                   var fktNr = temp.replace(/\D+/g,"");
                   var fktName = fktArr[i];
                   i++;
-                  //var fktNr = fktNr.replace(" ","");
-                  ausgabe += '<a class="links" href="http://localhost/Finanzberatung/index.php?r=site/details&fktNr="'+fktNr+'">'+fktName+'</a></br></br>';
-                  //ausgabe += '['+fktNr+'] '+fktName+'</br>';
+                  ausgabe += '<div id="'+fktNr+'" class="popupLink" onclick="openDetail('+fktNr+')">'+fktName+'</div>';
                 }
                 
                 var popup = document.createElement('div');
@@ -846,10 +856,20 @@
         
             function popUp3(){
                 
-                var fktName = this.attributes["name"].value;
+                var funktionsName = this.attributes["name"].value;
                 var spruenge = this.attributes["data-folge"].value;
-                
                 var popupID = this.id;
+                
+                var ausgabe = "";
+                var fktArr = spruenge.split(",,");
+                var i=0;
+                while(i<fktArr.length){
+                  var temp = fktArr[i];
+                  var fktNr = temp.replace(/\D+/g,"");
+                  var fktName = fktArr[i];
+                  i++;
+                  ausgabe += '<div id="'+fktNr+'" class="popupLink" onclick="openDetail('+fktNr+')">'+fktName+'</div>';
+                }
                 
                 var popup = document.createElement('div');
                 popup.className = 'popupFolge';
@@ -860,10 +880,10 @@
                 cancel.onclick = function (e) { popup.parentNode.removeChild(popup) };
                 var gesetzTop = document.createElement('div');
                 gesetzTop.className = 'folgeTop';
-                gesetzTop.innerHTML = fktName;
+                gesetzTop.innerHTML = funktionsName;
                 var gesetzContent = document.createElement('div');
                 gesetzContent.className = 'folgeContent';
-                gesetzContent.innerHTML = spruenge;
+                gesetzContent.innerHTML = ausgabe;
                 popup.appendChild(cancel);
                 popup.appendChild(gesetzTop);
                 popup.appendChild(gesetzContent);                                  
@@ -873,6 +893,7 @@
                 
                 return false;
      });
+     
 </script>
 <?php } ?>
 
