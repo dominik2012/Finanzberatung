@@ -49,13 +49,14 @@
     ?>
     </div>
    
+    <div class="headline_details">
+        Allgemein
+    </div>
     <div class="row">
-  
-    
-    
     <div class="beratung">
         <div class="topline">Beratung</div>
         <div class="inhalt3">
+      <?php if($funktionsdaten['priv_mit_beratung'] != "keine Abhängig" && $funktionsdaten['prof_mit_beratung'] != "keine Abhängig" && $funktionsdaten['priv_ohne_beratung'] != "keine Abhängig" && $funktionsdaten['prof_ohne_beratung'] != "keine Abhängig" && $funktionsdaten['r_ausf_geschaeft'] != "keine Abhängig"){ ?>
             <table class="inhalte">
                 <tr>
                     <td>Privat mit Beratung</td>
@@ -122,6 +123,7 @@
                     </td>
                 </tr>
             </table>
+  <?php }?>
         </div>
     </div>
     
@@ -144,7 +146,10 @@
         <div class="inhalt2"><?php echo $funktionsdaten['hinweis']; ?></div>
     </div>
     </div>
-        
+    
+    <div class="headline_details">
+        Beschreibung Gesetze
+    </div>
     <div class="row">
     <div class="auslegung">
         <div class="topline">Auslegung</div>
@@ -158,10 +163,65 @@
         
     </div>
 
-    <div class="row">
-        
+    <!-- Szenarien -------------------------------------------------------------->
+    <div class="headline_details">
+        Szenarien
     </div>
-
+    
+  <div class="row">
+    <div class="smallboxSzenarien">
+        <div class="topline" >Filiale - Minimum <?php echo '['.$funktionsdaten['filiale_minimum_dauer'].'min] <div class="info_button" title="Minimum muss durchgef&uuml;hrt werden!"></div>' ?></div>
+        <div class="inhaltSzenarien"><?php echo $funktionsdaten['filiale_minimum']; ?></div>
+    </div>
+      
+    <div class="smallboxSzenarien">
+        <div class="topline" >Filiale - Empfehlung <?php echo '['.$funktionsdaten['filiale_empfehlung_dauer'].'min] <div class="info_button" title="Empfehlung kann durchgef&uuml;hrt werden! Die Dauer wird zu Minimum addiert!"></div>' ?></div>
+        <div class="inhaltSzenarien"><?php echo $funktionsdaten['filiale_empfehlung']; ?></div>
+    </div>
+      
+    <div class="smallboxSzenarien">
+        <div class="topline">Filiale - Kommentar</div>
+        <div class="inhaltSzenarien"><?php echo $funktionsdaten['filiale_kommentar']; ?></div>
+    </div>
+  </div>
+    
+  <div class="row">
+    <div class="smallboxSzenarien">
+        <div class="topline" >Online - Minimum <?php echo '['.$funktionsdaten['online_minimum_dauer'].'min] <div class="info_button"></div> <div class="info_button" title="Minimum muss durchgef&uuml;hrt werden!"></div>' ?></div>
+        <div class="inhaltSzenarien"><?php echo $funktionsdaten['online_minimum']; ?></div>
+    </div>
+      
+    <div class="smallboxSzenarien">
+        <div class="topline" >Online - Empfehlung <?php echo '['.$funktionsdaten['online_empfehlung_dauer'].'min] <div class="info_button" title="Empfehlung kann durchgef&uuml;hrt werden! Die Dauer wird zu Minimum addiert!"></div>' ?></div>
+        <div class="inhaltSzenarien"><?php echo $funktionsdaten['online_empfehlung']; ?></div>
+    </div>
+      
+    <div class="smallboxSzenarien">
+        <div class="topline">Online - Kommentar</div>
+        <div class="inhaltSzenarien"><?php echo $funktionsdaten['online_kommentar']; ?></div>
+    </div>
+  </div>
+    
+  <div class="row">
+    <div class="smallboxSzenarien">
+        <div class="topline" >Mobil - Minimum <?php echo '['.$funktionsdaten['mobil_minimum_dauer'].'min] <div class="info_button" title="Minimum muss durchgef&uuml;hrt werden!"></div>' ?></div>
+        <div class="inhaltSzenarien"><?php echo $funktionsdaten['mobil_minimum']; ?></div>
+    </div>
+      
+    <div class="smallboxSzenarien">
+        <div class="topline">Mobil - Empfehlung <?php echo '['.$funktionsdaten['mobil_empfehlung_dauer'].'min] <div class="info_button" title="Empfehlung kann durchgef&uuml;hrt werden! Die Dauer wird zu Minimum addiert!"></div>' ?></div>
+        <div class="inhaltSzenarien"><?php echo $funktionsdaten['mobil_empfehlung']; ?></div>
+    </div>
+      
+    <div class="smallboxSzenarien">
+        <div class="topline">Mobil - Kommentar</div>
+        <div class="inhaltSzenarien"><?php echo $funktionsdaten['mobil_kommentar']; ?></div>
+    </div>
+  </div>
+    
+    <div class="headline_details">
+        Wechselm&ouml;glichkeiten
+    </div>
     <div class="row">
     <div class="sprungstelle2">
         <div class="topline">Sprungstellen</div>
@@ -205,9 +265,13 @@
     </div>
     </div>
     
+    
+    <div class="headline_details">
+        Sonstiges
+    </div>
     <div class="row">  
     <?php
-    if($funktionsdaten['hsr_aktuell']!= null || $funktionsdaten['hsr_zukuenftig']!= null){?>
+    if($funktionsdaten['hsr_aktuell']!= "keine Abhängig" || $funktionsdaten['hsr_zukuenftig']!= "keine Abhängig"){?>
     <div class="smallbox">
         <div class="topline">Spielraum</div>
         <div class="inhalt3">
@@ -264,6 +328,9 @@
 
     </div>
     
+    <div class="headline_details">
+        Akteure und Betroffene
+    </div>
     <div class="row">   
     <div class="smallbox">
         <div class="topline">Spezialist/Generalist</div>
@@ -362,57 +429,8 @@
         <div class="inhalt"><?php echo $funktionsdaten['verantwortlicher']; ?></div>
     </div>
   </div>
-    
-  <div class="row">
-    <div class="smallboxSzenarien">
-        <div class="topline">Filiale - Minimum <?php echo '['.$funktionsdaten['filiale_minimum_dauer'].'min]' ?></div>
-        <div class="inhaltSzenarien"><?php echo $funktionsdaten['filiale_minimum']; ?></div>
-    </div>
-      
-    <div class="smallboxSzenarien">
-        <div class="topline">Filiale - Empfehlung <?php echo '['.$funktionsdaten['filiale_empfehlung_dauer'].'min]' ?></div>
-        <div class="inhaltSzenarien"><?php echo $funktionsdaten['filiale_empfehlung']; ?></div>
-    </div>
-      
-    <div class="smallboxSzenarien">
-        <div class="topline">Filiale - Kommentar</div>
-        <div class="inhaltSzenarien"><?php echo $funktionsdaten['filiale_kommentar']; ?></div>
-    </div>
-  </div>
-    
-  <div class="row">
-    <div class="smallboxSzenarien">
-        <div class="topline">Online - Minimum <?php echo '['.$funktionsdaten['online_minimum_dauer'].'min]' ?></div>
-        <div class="inhaltSzenarien"><?php echo $funktionsdaten['online_minimum']; ?></div>
-    </div>
-      
-    <div class="smallboxSzenarien">
-        <div class="topline">Online - Empfehlung <?php echo '['.$funktionsdaten['online_empfehlung_dauer'].'min]' ?></div>
-        <div class="inhaltSzenarien"><?php echo $funktionsdaten['online_empfehlung']; ?></div>
-    </div>
-      
-    <div class="smallboxSzenarien">
-        <div class="topline">Online - Kommentar</div>
-        <div class="inhaltSzenarien"><?php echo $funktionsdaten['online_kommentar']; ?></div>
-    </div>
-  </div>
-    
-  <div class="row">
-    <div class="smallboxSzenarien">
-        <div class="topline">Mobil - Minimum <?php echo '['.$funktionsdaten['mobil_minimum_dauer'].'min]' ?></div>
-        <div class="inhaltSzenarien"><?php echo $funktionsdaten['mobil_minimum']; ?></div>
-    </div>
-      
-    <div class="smallboxSzenarien">
-        <div class="topline">Mobil - Empfehlung <?php echo '['.$funktionsdaten['mobil_empfehlung_dauer'].'min]' ?></div>
-        <div class="inhaltSzenarien"><?php echo $funktionsdaten['mobil_empfehlung']; ?></div>
-    </div>
-      
-    <div class="smallboxSzenarien">
-        <div class="topline">Mobil - Kommentar</div>
-        <div class="inhaltSzenarien"><?php echo $funktionsdaten['mobil_kommentar']; ?></div>
-    </div>
-  </div>
+  
+  
   
 
 </body>

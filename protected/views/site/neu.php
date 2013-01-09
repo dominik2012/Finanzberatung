@@ -20,11 +20,6 @@
         $("#draggable").draggable();
         $("#popup").draggable();
     });
-    
-    //Funktion ruft alle Funktionen ab
-    function start(){
-        document.forms["neu_form"].submit();
-    }
     </script>
     
 
@@ -291,8 +286,7 @@
                 ?>
                 </select><br>  
                 </div>
-                </div>
-                
+                        </div>
 				<input type="hidden" name="form_grobphase" value="">
 				<input type="hidden" name="form_unterphase" value="">
 				<input type="hidden" name="form_name" value="">
@@ -306,7 +300,7 @@
                                 <input type="hidden" name="form_gesetze" value=""><br/>                 
                                 <div style="float: right; margin-top: 315px; margin-right: 16px;">
 				<button class="submit" type="button" name="submitbutton" value="submitbutton" onClick="toInput();"></button>
-                                </div>
+                        </div>
                                 
                 </div>                
 		</form>
@@ -347,19 +341,6 @@
 		<form name="anzeigefilter" id="anzeigefilter">
 		<select id="multiselect" data-placeholder="Anzeigefilter" style="width:350px;" multiple="multiple">
                 <?php
-                        //alter Code Viewfilter
-			/*for ($i=0;$i<count($model5);$i++){
-                            
-                            $inhalt = $model6[$i]; 
-                            $title = str_replace('"',"&#039;",  shortName($inhalt));
-                            
-                            //Aussortieren von unnötigen Spalten
-                            if($model6[$i] == "ID" || $model6[$i] == "Nummer" || $model6[$i] == "Name" || $model6[$i] == "Unterphase" || $model6[$i] == "Grobphase"){
-                                //do nothing
-                            }else{
-                                echo '<option value="'.$model5[$i].'" id="'.$model5[$i].'" name="'.$model5[$i].'" title="'.$title.'");>'.$inhalt.'</option>';
-                            }*/
-                            
                             //Beschreibung
                             echo '<optgroup label="Beschreibung">';            
                             for ($i=3;$i<4;$i++){
@@ -451,7 +432,7 @@
     
 <!-- CONTENT MIDDLE ----------------------------------------------------------->       
 <div id="contentarea">
-    <!-- Filterleiste mit Anzeige für gefilterte Phasen -->
+    <!-- Anzeige für gesetzte Filter ------------------------------------------>
     <div class="filterlist">
         
                             <?php
@@ -588,12 +569,8 @@
             $uphaseName = $unterphase2[$uphaseNr]["name"];
             
             $sprungstelle = $sprungstellenArr[$i];
-            //echo $sprungstelle;
-            //$sprungstelle = $model3[$i]["sprungstelle"];
-            
             $funktionsfolge = $funktionsfolgenArr[$i];
-            //$funktionsfolge = $model3[$i]["funktionsfolge"];
-            
+
             $kanalwechsel = $model3[$i]["kanalwechsel"];
             
             $fktGesetze ="";
@@ -697,9 +674,7 @@
                             ';
                             
 			}
-                        
-                        
-                        
+
             echo '
                 <noscript>
                     <p>Please enable JavaScript to get the full experience.</p>
@@ -754,7 +729,7 @@
           var fktNr = this.id;
           
           ev.preventDefault();
-          window.open('http://localhost/Finanzberatung/index.php?r=site/details&fktNr='+fktNr, 'Continue to Application');
+          window.open('http://localhost/Finanzberatung/index.php?r=site/details&fktNr='+fktNr, 'Weiter zur Detailansicht');
           
           return false;
         });
@@ -764,17 +739,25 @@
           var fktNr = this.id;
           
           ev.preventDefault();
-          window.open('http://localhost/Finanzberatung/index.php?r=site/details&fktNr='+fktNr, 'Continue to Application');
+          window.open('http://localhost/Finanzberatung/index.php?r=site/details&fktNr='+fktNr, 'Weiter zur Detailansicht');
           
           return false;
         });
   });
 </script>
 
+<!-- Popups ------------------------------------------------------------------->
 <script type="text/javascript">
+    
+    //Funktion für Popups, um zur Detailansicht zu springen
+     function openDetail(fktNr){
+        window.open('http://localhost/Finanzberatung/index.php?r=site/details&fktNr='+fktNr, 'Weiter zur Detailansicht');
+        return false;
+     }
+    
+    //Gesetz Popup
     $('.gesetz_button').click(
             
-        
             function popUp(){
                 
                 var fktName = this.attributes["name"].value;
@@ -803,14 +786,9 @@
                 
                 return false;
      });
-     
-     function openDetail(fktNr){
-        window.open('http://localhost/Finanzberatung/index.php?r=site/details&fktNr='+fktNr, 'Continue to Application');
-        return false;
-     }
-     
+
+     //Funktionssprünge Popup
      $('.spruenge_button').click(
-            
             
             function popUp2(){
                 
@@ -853,9 +831,9 @@
                 return false;
      });
      
+     //Funktionsfolgen Popup
      $('.folge_button').click(
             
-        
             function popUp3(){
                 
                 var funktionsName = this.attributes["name"].value;
@@ -1162,11 +1140,11 @@
 			for (var i=0; i<len; i++)
 			{
 				if (document.neu_form.select_grobphase.options[i].selected && j==0){
-                   bufferGrobphase = bufferGrobphase +document.neu_form.select_grobphase.options[i].value;
-				   j++;
+                                    bufferGrobphase = bufferGrobphase +document.neu_form.select_grobphase.options[i].value;
+                                    j++;
 				}
-                else if (document.neu_form.select_grobphase.options[i].selected && j!=0){
-                   bufferGrobphase = bufferGrobphase +","+document.neu_form.select_grobphase.options[i].value;
+                                else if (document.neu_form.select_grobphase.options[i].selected && j!=0){
+                                    bufferGrobphase = bufferGrobphase +","+document.neu_form.select_grobphase.options[i].value;
 				}
 			}
 			j=0;
@@ -1174,11 +1152,11 @@
 			for (var i=0; i<len2; i++)
 			{
 				if (document.neu_form.select_unterphase.options[i].selected && j==0){
-                   bufferUnterphase = bufferUnterphase +document.neu_form.select_unterphase.options[i].value;
-				   j++;
+                                    bufferUnterphase = bufferUnterphase +document.neu_form.select_unterphase.options[i].value;
+                                    j++;
 				}
-                else if (document.neu_form.select_unterphase.options[i].selected && j!=0){
-                   bufferUnterphase = bufferUnterphase +","+document.neu_form.select_unterphase.options[i].value;
+                                else if (document.neu_form.select_unterphase.options[i].selected && j!=0){
+                                    bufferUnterphase = bufferUnterphase +","+document.neu_form.select_unterphase.options[i].value;
 				}
 			}
 			//alert("hehe");
@@ -1186,22 +1164,22 @@
 			for (var i=0; i<len3; i++)
 			{
 				if (document.neu_form.select_name.options[i].selected && j==0){
-                   bufferName = bufferName +document.neu_form.select_name.options[i].value;
-				   j++;
+                                    bufferName = bufferName +document.neu_form.select_name.options[i].value;
+                                    j++;
 				}
-                else if (document.neu_form.select_name.options[i].selected && j!=0){
-                   bufferName = bufferName +","+document.neu_form.select_name.options[i].value;
+                                else if (document.neu_form.select_name.options[i].selected && j!=0){
+                                    bufferName = bufferName +","+document.neu_form.select_name.options[i].value;
 				}
 			}
 			j=0;
 			for (var i=0; i<len4; i++)
 			{
 				if (document.neu_form.select_privmb.options[i].selected && j==0){
-                   bufferPrivMB = bufferPrivMB +"'"+document.neu_form.select_privmb.options[i].value+"'";
-				   j++;
+                                    bufferPrivMB = bufferPrivMB +"'"+document.neu_form.select_privmb.options[i].value+"'";
+                                    j++;
 				}
-                else if (document.neu_form.select_privmb.options[i].selected && j!=0){
-                   bufferPrivMB = bufferPrivMB +","+"'"+document.neu_form.select_privmb.options[i].value+"'";
+                                else if (document.neu_form.select_privmb.options[i].selected && j!=0){
+                                    bufferPrivMB = bufferPrivMB +","+"'"+document.neu_form.select_privmb.options[i].value+"'";
 				}
 			}
 			
@@ -1209,76 +1187,76 @@
 			for (var i=0; i<len4; i++)
 			{
 				if (document.neu_form.select_profmb.options[i].selected && j==0){
-                   bufferProfMB = bufferProfMB +"'"+document.neu_form.select_profmb.options[i].value+"'";
-				   j++;
+                                    bufferProfMB = bufferProfMB +"'"+document.neu_form.select_profmb.options[i].value+"'";
+                                    j++;
 				}
-                else if (document.neu_form.select_profmb.options[i].selected && j!=0){
-                   bufferProfMB = bufferProfMB +","+"'"+document.neu_form.select_profmb.options[i].value+"'";
+                                else if (document.neu_form.select_profmb.options[i].selected && j!=0){
+                                    bufferProfMB = bufferProfMB +","+"'"+document.neu_form.select_profmb.options[i].value+"'";
 				}
 			}
 			j=0;
 			for (var i=0; i<len4; i++)
 			{
 				if (document.neu_form.select_privob.options[i].selected && j==0){
-                   bufferPrivOB = bufferPrivOB +"'"+document.neu_form.select_privob.options[i].value+"'";
-				   j++;
+                                    bufferPrivOB = bufferPrivOB +"'"+document.neu_form.select_privob.options[i].value+"'";
+                                    j++;
 				}
-                else if (document.neu_form.select_privob.options[i].selected && j!=0){
-                   bufferPrivOB = bufferPrivOB +","+"'"+document.neu_form.select_privob.options[i].value+"'";
+                                else if (document.neu_form.select_privob.options[i].selected && j!=0){
+                                    bufferPrivOB = bufferPrivOB +","+"'"+document.neu_form.select_privob.options[i].value+"'";
 				}
 			}
 			j=0;
 			for (var i=0; i<len4; i++)
 			{
 				if (document.neu_form.select_profob.options[i].selected && j==0){
-                   bufferProfOB = bufferProfOB +"'"+document.neu_form.select_profob.options[i].value+"'";
-				   j++;
+                                    bufferProfOB = bufferProfOB +"'"+document.neu_form.select_profob.options[i].value+"'";
+                                    j++;
 				}
-                else if (document.neu_form.select_profob.options[i].selected && j!=0){
-                   bufferProfOB = bufferProfOB +","+"'"+document.neu_form.select_profob.options[i].value+"'";
+                                else if (document.neu_form.select_profob.options[i].selected && j!=0){
+                                    bufferProfOB = bufferProfOB +","+"'"+document.neu_form.select_profob.options[i].value+"'";
 				}
 			}
 			j=0;
 			for (var i=0; i<len4; i++)
 			{
 				if (document.neu_form.select_rausfg.options[i].selected && j==0){
-                   bufferRausfg = bufferRausfg +"'"+document.neu_form.select_rausfg.options[i].value+"'";
-				   j++;
+                                    bufferRausfg = bufferRausfg +"'"+document.neu_form.select_rausfg.options[i].value+"'";
+                                    j++;
 				}
-                else if (document.neu_form.select_rausfg.options[i].selected && j!=0){
-                   bufferRausfg = bufferRausfg +","+"'"+document.neu_form.select_rausfg.options[i].value+"'";
+                                else if (document.neu_form.select_rausfg.options[i].selected && j!=0){
+                                    bufferRausfg = bufferRausfg +","+"'"+document.neu_form.select_rausfg.options[i].value+"'";
 				}
 			}
 			j=0;
 			for (var i=0; i<len5; i++)
 			{
 				if (document.neu_form.select_hsra.options[i].selected && j==0){
-                   bufferHsra = bufferHsra +"'"+document.neu_form.select_hsra.options[i].value+"'";
-				   j++;
+                                    bufferHsra = bufferHsra +"'"+document.neu_form.select_hsra.options[i].value+"'";
+                                    j++;
 				}
-                else if (document.neu_form.select_hsra.options[i].selected && j!=0){
-                   bufferHsra = bufferHsra +","+"'"+document.neu_form.select_hsra.options[i].value+"'";
+                                else if (document.neu_form.select_hsra.options[i].selected && j!=0){
+                                    bufferHsra = bufferHsra +","+"'"+document.neu_form.select_hsra.options[i].value+"'";
 				}
 			}
 			j=0;
 			for (var i=0; i<len6; i++)
 			{
 				if (document.neu_form.select_hsrz.options[i].selected && j==0){
-                   bufferHsrz = bufferHsrz +"'"+document.neu_form.select_hsrz.options[i].value+"'";
-				   j++;
+                                    bufferHsrz = bufferHsrz +"'"+document.neu_form.select_hsrz.options[i].value+"'";
+                                    j++;
 				}
-                else if (document.neu_form.select_hsrz.options[i].selected && j!=0){
-                   bufferHsrz = bufferHsrz +","+"'"+document.neu_form.select_hsrz.options[i].value+"'";
+                                else if (document.neu_form.select_hsrz.options[i].selected && j!=0){
+                                    bufferHsrz = bufferHsrz +","+"'"+document.neu_form.select_hsrz.options[i].value+"'";
 				}
 			}
 			for (var i=0; i<len7; i++)
 			{
 				if (document.neu_form.select_gesetze.options[i].selected && j==0){
-                   bufferGesetze = bufferGesetze +"'"+document.neu_form.select_gesetze.options[i].value+"'";
-				   j++;
+                                    bufferGesetze = bufferGesetze +"'"+document.neu_form.select_gesetze.options[i].value+"'";
+                                    j++;
 				}
-                else if (document.neu_form.select_gesetze.options[i].selected && j!=0){
-                   bufferGesetze = bufferGesetze +","+"'"+document.neu_form.select_gesetze.options[i].value+"'";
+                                else if (document.neu_form.select_gesetze.options[i].selected && j!=0){
+                                    bufferGesetze = bufferGesetze +","+"'"+document.neu_form.select_gesetze.options[i].value+"'";
 				}
 			}
 			document.neu_form.form_grobphase.value= bufferGrobphase;
