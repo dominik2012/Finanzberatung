@@ -1,8 +1,8 @@
 <!doctype html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="utf-8">
-    <title>accordion demo</title>
+    <title>Funktionsfilter</title>
     
     <link rel="stylesheet" href="/finanzberatung/jquery-multi/css/jquery-ui-1.8.9.custom/jquery-ui-1.8.9.custom.css">
     <link rel="stylesheet" href="/finanzberatung/multiselect/jquery.multiselect.css">
@@ -34,7 +34,7 @@
     <div class="form">
 	
 		<form name="neu_form" id="neu_form" action="/Finanzberatung/index.php?r=site/neu" method="POST">
-                    <div style="float:left;">
+                <div style="float:left;">
                 <div class="allgemein">
                 <div id="functionoverview">Allgemein</div>
                 <div id="functionfilters">    
@@ -264,7 +264,8 @@
                 ?>
                 </select><br>
                 </div>
-                </div></div>
+                </div>
+                </div>
                 
                     <div style="float: right;">
                 <div class="funktionsvergleich">    
@@ -740,9 +741,10 @@
     
     //Gesetz Popup
     $('.gesetz_button').click(
-            
+
             function popUp(){
                 
+                //if(getElementByID('popup_' + popupID)){
                 var fktName = this.attributes["name"].value;
                 var gesetze = this.attributes["data-gesetze"].value;
                 var popupID = this.id;
@@ -766,7 +768,7 @@
                 document.body.appendChild(popup);
                 
                 $('#popup_' + popupID).draggable();
-                
+                //}
                 return false;
      });
 
@@ -1115,11 +1117,11 @@
 			var len2=document.neu_form.select_unterphase.options.length;
 			var len3=document.neu_form.select_name.options.length;
 			var len4=document.neu_form.select_profmb.options.length;
-			
 			var len5=document.neu_form.select_hsra.options.length;
 			var len6=document.neu_form.select_hsrz.options.length;
 			var len7=document.neu_form.select_gesetze.options.length;
 			var j=0;
+                        
 			for (var i=0; i<len; i++)
 			{
 				if (document.neu_form.select_grobphase.options[i].selected && j==0){
