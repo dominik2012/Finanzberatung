@@ -440,7 +440,7 @@
 					echo '<div class="filterlist_inner"><p style="color: #0075B8;">Die Suche ergab keine Ergebnisse.</p></div>';
 				}
 				if(isset($model3)){
-                                        //echo $fil;
+
                                 if(isset($fil)){
 
                                     if(!empty($model4)){ 
