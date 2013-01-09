@@ -291,6 +291,7 @@ class SiteController extends Controller
 				$fil_hsrz = substr($fil_hsrz, 0, -1);
 			}
 			*/
+                        
 			//SQL-SubStrings f�r alle Filter: sucht alle Werte der Spalten, die im jeweiligen Buffer enthalten sind
 			$index = 0;
 			$fil[0]="";
@@ -406,7 +407,7 @@ class SiteController extends Controller
 			}
 			else{
 				$this->render('neu',array('model'=>$funktion, 'model2' =>$model2, 'model6' => $spaltennamen, 'model5' => $spaltennamen2, 'leer' => 'leer',));
-				}
+			}
 		}
 		else{
 		$model = array($funktion,$filter,);

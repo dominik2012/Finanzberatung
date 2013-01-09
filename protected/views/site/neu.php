@@ -800,9 +800,9 @@
                 var fktArr = spruenge.split(",,");
                 var i=0;
                 while(i<fktArr.length){
-                  var temp = fktArr[i];
-                  var fktNr = temp.replace(/\D+/g,"");
                   var fktName = fktArr[i];
+                  var temp = fktName.substring(0,5);
+                  var fktNr = temp.replace(/\D+/g,"");
                   i++;
                   ausgabe += '<div id="'+fktNr+'" class="popupLink" onclick="openDetail('+fktNr+')">'+fktName+'</div>';
                 }
@@ -844,9 +844,9 @@
                 var fktArr = spruenge.split(",,");
                 var i=0;
                 while(i<fktArr.length){
-                  var temp = fktArr[i];
-                  var fktNr = temp.replace(/\D+/g,"");
                   var fktName = fktArr[i];
+                  var temp = fktName.substring(0,5);
+                  var fktNr = temp.replace(/\D+/g,"");
                   i++;
                   ausgabe += '<div id="'+fktNr+'" class="popupLink" onclick="openDetail('+fktNr+')">'+fktName+'</div>';
                 }
