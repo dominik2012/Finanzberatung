@@ -725,23 +725,8 @@
 <script type="text/javascript"> 
   $(document).ready(function() {               
         $('.detail_button').click( function(ev) {
-          
-          var fktNr = this.id;
-          
           ev.preventDefault();
-          window.open('http://localhost/Finanzberatung/index.php?r=site/details&fktNr='+fktNr, 'Weiter zur Detailansicht');
-          
-          return false;
-        });
-        
-        $('.popupLink').click( function(ev) {
-          
-          var fktNr = this.id;
-          
-          ev.preventDefault();
-          window.open('http://localhost/Finanzberatung/index.php?r=site/details&fktNr='+fktNr, 'Weiter zur Detailansicht');
-          
-          return false;
+          openDetail(this.id);
         });
   });
 </script>
@@ -749,7 +734,7 @@
 <!-- Popups ------------------------------------------------------------------->
 <script type="text/javascript">
     
-    //Funktion für Popups, um zur Detailansicht zu springen
+    //Funktion, um zur Detailansicht zu springen
      function openDetail(fktNr){
         window.open('http://localhost/Finanzberatung/index.php?r=site/details&fktNr='+fktNr, 'Weiter zur Detailansicht');
         return false;
