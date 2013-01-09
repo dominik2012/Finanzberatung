@@ -102,11 +102,9 @@
                                     }
                                     else{
                                         $inhalt = "Keine Abh&auml;ngigkeit";
-                                    }
-                                        
+                                    }  
                             
                                 echo '<option value="'.$model2[1]["privmb"][$i].'" id="privmb'.$i.'" name="privmb'.$i.'");>'.$inhalt.'</option>';
-                            	
 			}    
                 ?>
                 </select><br>
@@ -799,16 +797,16 @@
                 cancel.className = 'cancel';
                 cancel.innerHTML = 'close';
                 cancel.onclick = function (e) { popup.parentNode.removeChild(popup) };
-                var gesetzTop = document.createElement('div');
-                gesetzTop.className = 'spruengeTop';
-                gesetzTop.innerHTML = funktionsName;
-                var gesetzContent = document.createElement('div');
-                gesetzContent.className = 'spruengeContent';
-                gesetzContent.innerHTML = ausgabe;
+                var sprungTop = document.createElement('div');
+                sprungTop.className = 'spruengeTop';
+                sprungTop.innerHTML = funktionsName;
+                var sprungContent = document.createElement('div');
+                sprungContent.className = 'spruengeContent';
+                sprungContent.innerHTML = ausgabe;
                 
                 popup.appendChild(cancel);
-                popup.appendChild(gesetzTop);
-                popup.appendChild(gesetzContent);                                    
+                popup.appendChild(sprungTop);
+                popup.appendChild(sprungContent);                                    
                 document.body.appendChild(popup);
                 
                 $('#popup_2' + popupID).draggable();
@@ -822,11 +820,11 @@
             function popUp3(){
                 
                 var funktionsName = this.attributes["name"].value;
-                var spruenge = this.attributes["data-folge"].value;
+                var folge = this.attributes["data-folge"].value;
                 var popupID = this.id;
                 
                 var ausgabe = "";
-                var fktArr = spruenge.split(",,");
+                var fktArr = folge.split(",,");
                 var i=0;
                 while(i<fktArr.length){
                   var fktName = fktArr[i];
@@ -843,15 +841,15 @@
                 cancel.className = 'cancel';
                 cancel.innerHTML = 'close';
                 cancel.onclick = function (e) { popup.parentNode.removeChild(popup) };
-                var gesetzTop = document.createElement('div');
-                gesetzTop.className = 'folgeTop';
-                gesetzTop.innerHTML = funktionsName;
-                var gesetzContent = document.createElement('div');
-                gesetzContent.className = 'folgeContent';
-                gesetzContent.innerHTML = ausgabe;
+                var folgeTop = document.createElement('div');
+                folgeTop.className = 'folgeTop';
+                folgeTop.innerHTML = funktionsName;
+                var folgeContent = document.createElement('div');
+                folgeContent.className = 'folgeContent';
+                folgeContent.innerHTML = ausgabe;
                 popup.appendChild(cancel);
-                popup.appendChild(gesetzTop);
-                popup.appendChild(gesetzContent);                                  
+                popup.appendChild(folgeTop);
+                popup.appendChild(folgeContent);                                  
                 document.body.appendChild(popup);
                 
                 $('#popup_3' + popupID).draggable();
@@ -1255,7 +1253,6 @@
 			document.neu_form.form_hsra.value=bufferHsra;
 			document.neu_form.form_hsrz.value=bufferHsrz;
 			document.neu_form.form_gesetze.value=bufferGesetze;
-			//alert("hihi");
 			document.neu_form.submit();
                         
 	}
