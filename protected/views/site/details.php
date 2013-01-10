@@ -29,7 +29,7 @@
             
             <span id="Funktionsname" ><?php echo"[".$funktionsdaten['nummer']."] - ".$funktionsdaten['name'];?></span>
             
-            <button class="button_schließen" style="float:right;" onClick='window.location.href="<?php echo $link.$nPhase ?>";' >>></span></button>
+            <button class="button_schließen" style="float:right; margin-right: 5px;" onClick='window.location.href="<?php echo $link.$nPhase ?>";' >>></span></button>
             
             <button class="button_schließen" style="float:right;" onClick='window.location.href="<?php echo $link.$nFkt ?>";'>></span></button>
 

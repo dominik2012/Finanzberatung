@@ -588,9 +588,6 @@
             '<h3>
                 <div>
                     <div id="'.$fktNr.'" class="detail_button" title="Detailansicht der Funktion">
-                        <form id="detailForm" name="detailForm" method="GET" action="/Finanzberatung/index.php?r=site/details">
-                            <input type="hidden" name="fktNr" id="fktNr" value="'.$fktNr.'">
-                        </form>
                     </div>';
                     
                     if($fktGesetze == null){
@@ -722,23 +719,36 @@
 <!-- DETAIL-BUTTON ------------------------------------------------------------>   
 <?php if(isset($model3) && $model3[0]["id"]!="leer"){?>
 <script type="text/javascript"> 
-  $(document).ready(function() {               
-        $('.detail_button').click( function(ev) {
-          ev.preventDefault();
-          openDetail(this.id);
-        });
-  });
+    
+     //Funktion, um zur Detailansicht zu springen
+     function openDetail(fktNr){
+        
+        var link = 'http://localhost/Finanzberatung/index.php?r=site/details&fktNr='+fktNr;
+        
+        //Testen auf IE
+        if(-[1,]){
+            window.open(link);
+        }else{
+            window.open(link, '_blank, resize=yes, scrollbars=yes, fullscreen=yes', 'height='+screen.height,'width='+screen.width);
+        }
+        
+        return false;
+     }
+     
 </script>
 
 <!-- Popups ------------------------------------------------------------------->
 <script type="text/javascript">
     
-    //Funktion, um zur Detailansicht zu springen
-     function openDetail(fktNr){
-        window.open('http://localhost/Finanzberatung/index.php?r=site/details&fktNr='+fktNr, 'Weiter zur Detailansicht');
-        return false;
-     }
-    
+    //Detail Button
+    $('.detail_button').click(
+            function open(){
+                document.body.style.cursor="progress";
+                openDetail(this.id);
+                document.body.style.cursor="default";
+                return false;
+            })
+            
     //Gesetz Popup
     $('.gesetz_button').click(
 
@@ -786,7 +796,7 @@
                 var i=0;
                 while(i<fktArr.length){
                   var fktName = fktArr[i];
-                  var temp = fktName.substring(0,5);
+                  var temp = fktName.substring(1,5);
                   var fktNr = temp.replace(/\D+/g,"");
                   i++;
                   ausgabe += '<div id="'+fktNr+'" class="popupLink" onclick="openDetail('+fktNr+')">'+fktName+'</div>';
@@ -830,7 +840,7 @@
                 var i=0;
                 while(i<fktArr.length){
                   var fktName = fktArr[i];
-                  var temp = fktName.substring(0,5);
+                  var temp = fktName.substring(1,5);
                   var fktNr = temp.replace(/\D+/g,"");
                   i++;
                   ausgabe += '<div id="'+fktNr+'" class="popupLink" onclick="openDetail('+fktNr+')">'+fktName+'</div>';
@@ -1077,11 +1087,7 @@
         $('.toggle').hide();
         $('.toggler').click( function() {
           var target = this.id + '_content';
-          // Use ID-selectors to toggle a single element.
-          // $('#' + target).toggle();
-          // Use class-selectors to toggle groups of elements.
           $('.' + target).toggle();
-          // $('.toggle.always').toggle();
         });
         $('#toggle_everything').click( function() { $('.toggle').toggle(); });
     });
@@ -1101,6 +1107,7 @@
 
 <script> 
     function toInput(){
+                        document.body.style.cursor="progress";
 			//Zuweisung der Select-Input in Hidden-Textfields
 			var bufferGrobphase = "";
 			var bufferUnterphase ="";
@@ -1256,6 +1263,7 @@
 			document.neu_form.form_hsrz.value=bufferHsrz;
 			document.neu_form.form_gesetze.value=bufferGesetze;
 			document.neu_form.submit();
+                        document.body.style.cursor="default";
                         
 	}
 </script>
