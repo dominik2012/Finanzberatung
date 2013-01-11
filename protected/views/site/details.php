@@ -287,6 +287,12 @@
                     elseif($funktionsdaten['hsr_aktuell'] == 'gelb') { ?>
                     <td style="background-color: #ffff00;">  </td>
                     <?php }
+                    elseif($funktionsdaten['hsr_aktuell'] == 'gelbHoch'){ 
+                    echo "<td> <img src='/Finanzberatung/css/images/pfeile/gelbHoch.png'></td>";
+                    }
+                    elseif($funktionsdaten['hsr_aktuell'] == 'gelbRunter'){ 
+                    echo "<td > <img style='transform: rotate(180deg);' src='/Finanzberatung/css/images/pfeile/gelbHoch.png'></td>";
+                    }
                     elseif($funktionsdaten['hsr_aktuell'] == 'rot') { ?>
                     <td style="background-color: #009000;">  </td>
                     <?php }
@@ -299,6 +305,12 @@
                     elseif($funktionsdaten['hsr_zukuenftig'] == 'gelb') { ?>
                     <td style="background-color: #ffff00;">  </td>
                     <?php }
+                    elseif($funktionsdaten['hsr_zukuenftig'] == 'gelbHoch'){ 
+                    echo "<td> <img src='/Finanzberatung/css/images/pfeile/gelbHoch.png'></td>"; 
+                    }
+                    elseif($funktionsdaten['hsr_zukuenftig'] == 'gelbRunter'){ 
+                    echo "<td > <img style='transform: rotate(180deg);' src='/Finanzberatung/css/images/pfeile/gelbHoch.png'></td>";
+                    }
                     elseif($funktionsdaten['hsr_zukuenftig'] == 'rot') { ?>
                     <td style="background-color: #009000;">  </td>
                     <?php } 
