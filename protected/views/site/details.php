@@ -153,7 +153,25 @@
     <div class="row">
     <div class="auslegung">
         <div class="topline">Auslegung</div>
-        <div class="inhaltBR"><?php /*for($i=0;$i<count($auslegungen);$i++){echo ($i+1).". ".$auslegungen[$i]["name"].":     ".$auslegungen[$i]["beschreibung"].'<br/>';} */?></div>
+        <div class="inhaltBR"><?php 
+		if(!empty($auslegungenGesetz) && !empty($auslegungenGesetz[0][0]["name"])){
+			echo "Auslegungen der Gesetze: <br/>";
+			for($i=0;$i<count($auslegungenGesetz);$i++){
+				for($j=0;$j<count($auslegungenGesetz[$i]);$j++){
+					echo "Auslegung für Gesetz <b>".($i+1).". ".$gesetze[$i]["gesetz"]."</b>: ".$auslegungenGesetz[$i][$j]["name"].":     ".$auslegungenGesetz[$i][$j]["beschreibung"].'<br/><br/>';
+				}
+			}
+		}	
+		
+		if(!empty($auslegungenBR)){
+			echo "<br/>Auslegungen der Business Rules: <br/>";
+			for($i=0;$i<count($auslegungenBR);$i++){
+				for($j=0;$j<count($auslegungenBR[$i]);$j++){
+					echo "Auslegung für Business Rule <b>".($i+1).". ".$business_rules[$i]["name"]."</b>: ".$auslegungenBR[$i][$j]["name"].":     ".$auslegungenBR[$i][$j]["beschreibung"].'<br/><br/>';
+				}
+			}
+		}
+		?></div>
     </div> 
         
     <div class="businessRules">
@@ -325,17 +343,17 @@
         
     <div class="smallbox">
         <div class="topline">Inputdaten</div>
-        <div class="inhalt3"><?php echo $funktionsdaten['inputdaten']; ?></div>
+        <div class="inhalt4"><?php echo $funktionsdaten['inputdaten']; ?></div>
     </div>
         
     <div class="smallbox">
         <div class="topline">Outputdaten</div>
-        <div class="inhalt3"><?php echo $funktionsdaten['outputdaten']; ?></div>
+        <div class="inhalt4"><?php echo $funktionsdaten['outputdaten']; ?></div>
     </div>
         
     <div class="smallbox">
         <div class="topline">Kanalwechsel</div>
-        <div class="inhalt3"><?php echo $funktionsdaten['kanalwechsel']; ?></div>
+        <div class="inhalt4"><?php echo $funktionsdaten['kanalwechsel']; ?></div>
     </div>
 
     </div>

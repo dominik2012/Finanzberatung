@@ -1087,6 +1087,19 @@ a.links:hover {
     overflow: auto;
 }
 
+.inhalt4 {
+    max-height: 136px;
+    text-align: left;
+    padding-top: 20px;
+    background-color: #E4E4E4;
+    color: black;
+    border: 1px solid gainsboro;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    overflow: auto;
+}
+
 .inhalte td {
     text-align: center;
     font-weight: bold;

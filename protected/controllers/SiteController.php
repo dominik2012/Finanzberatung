@@ -425,7 +425,34 @@ class SiteController extends Controller
             
             $business_rules = $funktionsdaten->business_rules;
             $gesetze = $funktionsdaten->gesetze;
-            $auslegung = $funktionsdaten->auslegungen;
+			if(!empty($gesetze)){
+				$bufferGesetze="";
+				for($i=0;$i<count($gesetze);$i++){
+					$bufferGesetze .= "'".$gesetze[$i]["id"]."',";
+					}
+				$bufferGesetze =substr($bufferGesetze, 0, -1);
+				$gesetzModel = Gesetz::model()->findAllBySql("SELECT * FROM gesetz WHERE id IN($bufferGesetze)");
+				for($i=0;$i<count($gesetzModel);$i++){
+					$auslegungG[$i] = $gesetzModel[$i]->auslegungen;
+				}
+			}
+			else{
+				$auslegungG=null;
+				}
+			if(!empty($business_rules)){
+				$bufferBR="";
+				for($i=0;$i<count($business_rules);$i++){
+					$bufferBR .= "'".$business_rules[$i]["id"]."',";
+					}
+				$bufferBR =substr($bufferBR, 0, -1);
+				$BRModel = BusinessRule::model()->findAllBySql("SELECT * FROM business_rule WHERE id IN($bufferBR)");
+				for($i=0;$i<count($BRModel);$i++){
+					$auslegungBR[$i] = $BRModel[$i]->auslegungen;
+				}
+			}
+			else{
+				$auslegungBR=null;
+				}
             //$business_rules = $funktionsdaten['business_rules'];
             //$gesetze = $funktionsdaten['gesetze'];
             //$auslegung = $funktionsdaten->auslegung;
@@ -512,6 +539,6 @@ class SiteController extends Controller
             }
             $nextPhase = $sprung[$nr];
             
-            $this->render('details', array( 'auslegungen' => $auslegung, 'gesetze' => $gesetze, 'business_rules' => $business_rules, 'sprung'=>$sprung, 'nextPhase'=>$nextPhase, 'prevPhase'=>$prevPhase, 'prevFkt'=>$prevFkt, 'nextFkt'=>$nextFkt, 'funktion'=>$funktion, 'funktionsdaten'=>$funktionsdaten, 'fktNr'=>$fktNr, 'grobphase'=>$grobphase, 'unterphase'=>$unterphase));
+            $this->render('details', array( 'auslegungenGesetz' => $auslegungG, 'auslegungenBR' => $auslegungBR, 'gesetze' => $gesetze, 'business_rules' => $business_rules, 'sprung'=>$sprung, 'nextPhase'=>$nextPhase, 'prevPhase'=>$prevPhase, 'prevFkt'=>$prevFkt, 'nextFkt'=>$nextFkt, 'funktion'=>$funktion, 'funktionsdaten'=>$funktionsdaten, 'fktNr'=>$fktNr, 'grobphase'=>$grobphase, 'unterphase'=>$unterphase));
         }
 }

@@ -52,7 +52,7 @@ class Gesetz extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'auslegungen' => array(self::MANY_MANY, 'Auslegung', 'nm_auslegung_gesetz(a_id,g_id)'),
+			'auslegungen' => array(self::MANY_MANY, 'Auslegung', 'nm_auslegung_gesetz(g_id,a_id)'),
 		);
 	}
 
